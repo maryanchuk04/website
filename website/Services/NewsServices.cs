@@ -11,10 +11,11 @@ namespace website.Services
         public readonly IMongoCollection<News> _news;
         public NewsServices(IMongoClient client)
         {
-            var db = client.GetDatabase("website");
+            var db = client.GetDatabase("College");
             _news = db.GetCollection<News>("News");
 
         }
+
         public void Delete(string ID)  => _news.DeleteOne(x => x.id == ID);
 
 
@@ -25,11 +26,7 @@ namespace website.Services
 
 
         public void Insert(News obj) => _news.InsertOne(obj);
-
-     
-        
-        
-
+      
         public void Update(News obj)
         {
             throw new NotImplementedException();
