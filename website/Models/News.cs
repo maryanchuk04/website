@@ -1,0 +1,34 @@
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace website
+{
+    public class News
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string id { get; }
+        [BsonElement("title")]
+        public string title { get; set; }
+        [BsonElement("text")]
+        public string text { get; set; }
+        [BsonElement("image")]
+        public string image { get; set; }
+        [BsonElement("date")]
+        public DateTime date
+        {
+            get { return date; }
+            set
+            {
+                date = DateTime.Now;
+            }
+
+        }
+
+
+    }
+}
