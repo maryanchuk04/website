@@ -11,7 +11,7 @@ namespace website
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string id { get; }
+        public string id { get; set; }
         [BsonElement("title")]
         public string title { get; set; }
         [BsonElement("text")]
@@ -19,15 +19,8 @@ namespace website
         [BsonElement("image")]
         public string image { get; set; }
         [BsonElement("date")]
-        public DateTime date
-        {
-            get { return date; }
-            set
-            {
-                date = DateTime.Now;
-            }
-
-        }
+        public DateTime date { get; set; }
+        
 
 
     }

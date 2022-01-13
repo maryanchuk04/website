@@ -4,84 +4,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using website.Services;
 
 namespace website.Controllers
 {
+    [Route("/news")]
+    [ApiController]
     public class NewsController : Controller
     {
-        // GET: NewsController
-        public ActionResult Index()
+        public readonly NewsServices _news;
+        public NewsController(NewsServices newsData)
         {
-            return View();
+            _news = newsData;
         }
 
-        // GET: NewsController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet("/news")]
+        public ActionResult GetList()
         {
-            return View();
+            return Ok(_news.GetAll());
         }
 
-        // GET: NewsController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        [HttpPost("/news/add")]
+        public void InsertOneNews([FromBody] News news) => _news.Insert(news);
 
-        // POST: NewsController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: NewsController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: NewsController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: NewsController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: NewsController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
