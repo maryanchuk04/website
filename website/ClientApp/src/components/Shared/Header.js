@@ -4,7 +4,7 @@ function Header() {
     return (
         <header class="header" >
             <div className="body_header">
-                <div class="container_header">
+                <div class="container_all">
                      <div className="mainInfo"> 
                          <div className="About_us">
                              <div className="text">
@@ -19,14 +19,20 @@ function Header() {
                  </div>
             </div>
             <div className="menu_header">
-            <div class="container_header">
-                  <div class="menu">
-                             <p>Новини</p>
-                             <p>Кращі студенти </p>
-                             <p>Спеціальності</p>
-                             <p>Студенту</p>
-                         </div>
-                 </div>
+                <div class="container_all">
+                    <div class="menu">
+                             
+                                <p>Новини</p>
+                                <p>Кращі студенти </p>
+                                <p>Спеціальності</p>
+                                <p>Студенту</p>
+                                <p>Абітурієнту</p>
+                                <p>Історія
+
+                                </p>
+                            
+                    </div>
+                </div>
             </div>
         </header> 
     )
