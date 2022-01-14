@@ -1,0 +1,40 @@
+.mainInfo{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.menu{
+   
+    display: flex;
+    margin: 0 auto;
+}
+.menu_header{
+    background-color: rgb(47, 86, 94);
+}
+.menu p{
+    padding: 0px 15px;
+    font-size:20px;
+}
+.body_header{
+    background-color: rgb(96, 127, 133);
+}
+.image{
+    width: 200px;
+    height: 200px;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+}
+.About_us{
+    display: flex;
+   justify-content: space-between;
+
+   
+}
+.text{
+    font-size: 40px;
+    width: 50%;
+}
