@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{9F1C5EE6-A934-405A-B32E-BF6CF108BF56}|Default">
+  <MonoDevelop.Ide.ItemProperties.website PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="website/Controllers/NewsController.cs">
+    <Files>
+      <File FileName="website/Services/NewsServices.cs" Line="28" Column="10" />
+      <File FileName="website/Services/IDataServices.cs" Line="15" Column="20" />
+      <File FileName="website/Services/EmployerServices.cs" Line="1" Column="1" />
+      <File FileName="website/Controllers/NewsController.cs" Line="25" Column="10" />
+      <File FileName="website/Controllers/EmployerController.cs" Line="31" Column="10" />
+      <File FileName="website/Models/Employer.cs" Line="19" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="website" expanded="True">
+            <Node name="website" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="NewsController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Services" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mac/Desktop/website/website/Controllers/EmployerController.cs" relfile="website/Controllers/EmployerController.cs" line="25" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
