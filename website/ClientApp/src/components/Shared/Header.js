@@ -20,18 +20,23 @@ function Header() {
             </div>
             <div className="menu_header">
                 <div class="container_all">
-                    <div class="menu">
-                             
-                                <p>Новини</p>
-                                <p>Кращі студенти </p>
-                                <p>Спеціальності</p>
-                                <p>Студенту</p>
-                                <p>Абітурієнту</p>
-                                <p>Історія
-
-                                </p>
+                  
+                                
+                               <nav>
+                                   <ul>
+                                       <li>Новини</li>
+                                       <li>Досягнення 
+                                         
+                                       </li>
+                                       <li>Студенту</li>
+                                       <li>Абітурієнту</li>
+                                       <li>Спеціальності</li>
+                                       <li>Історія</li>
+                                       <li>Адміністрація</li>
+                                   </ul>
+                               </nav>
                             
-                    </div>
+                    
                 </div>
             </div>
         </header> 

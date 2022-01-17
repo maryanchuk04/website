@@ -5,37 +5,37 @@
     flex-direction: column;
     
 }
-.menu{
-   
-    display: flex;
-align-items: center;
-}
-.menu p{
-    padding: 0px 15px;
-    font-size:30px;
-    display: inline-block;
-}
-.menu p:hover{
-    color: rgb(255, 169, 56);
-    
-}
-.menu p:first-child{
-    padding-left: 0px;
-   
-}
+
 .container_all{
     margin:0 auto;
     height: 100%;
     width: 1100px;
-}.menu_header .container_all {
-   align-items: center;
 }
+.container_all ul li{
+    padding: 0 10px;
+    list-style: none;
+    font-size:23px;
+    margin: 0;
+}
+.container_all nav{
+    display: flex;
+   height: 100%;
+    align-items: center;
+    margin:0 auto;
+}
+.container_all  ul{
+    margin: 0;
+    display: flex;
+
+}
+
 .menu_header{
-    background-color: rgb(47, 86, 94);
+    height: 50px;
+    background-color: #396FC5;
 }
 
 .body_header{
-    background-color: rgb(96, 127, 133);
+    background-color: #A0C8F5;
 }
 .image{
     width: 200px;
