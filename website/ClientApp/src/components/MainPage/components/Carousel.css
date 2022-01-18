@@ -1,0 +1,17 @@
+.image_info img{
+
+    height: 100% !important;
+    width: 100%;
+}
+.image_info {
+display: flex  !important;
+
+    height: 100% !important;
+    width: 100%;
+}
+.content{
+    height: 800px !important;
+}
+.slick-slide .slick-active .slick-current{
+    width: 2000px;
+}
