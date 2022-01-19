@@ -11,9 +11,10 @@ function Main() {
     return (
         
        <div className="main">
-        <ImageCarousel  
-          
-        />
+           <div className="banner">
+               
+                <ImageCarousel/>
+           </div>           
        </div>
     )
 }

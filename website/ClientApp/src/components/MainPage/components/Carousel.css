@@ -1,12 +1,11 @@
 .content{
-    height:600px !important ;
+    height: calc(100vh - 270px) ;
 }
 .content .image_info {
     height: 100%;
     width: 100%;   
 }
 .content .image_info img{
-
     height: 100%;
     width: 100%;
 }

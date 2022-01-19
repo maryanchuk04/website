@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Header from "./components/Shared/Header";
 import Footer from "./components/Shared/Footer";
 import Mainpage from "./components/MainPage/Mainpage";
@@ -12,10 +12,13 @@ export default class App extends Component {
   render () {
     return (
       <div className="App"> 
-       <Header/>
-       <Mainpage/>
-       <Footer/>
-        <Route path = '/admin' component={AdminPage} />
+      <BrowserRouter>
+        <Routes>
+          <Route path = '/' exact element = {<React.Fragment><Header/><Mainpage/><Footer/></React.Fragment>} />          
+          <Route path = '/admin' exact element={<AdminPage/>} />
+        </Routes>
+      </BrowserRouter>
+       
       </div>
     );
   }
