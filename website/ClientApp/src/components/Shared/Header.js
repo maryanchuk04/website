@@ -22,15 +22,20 @@ function Header() {
                 <div class="container_all">
                   
                                 
-                               <nav>
-                                   <ul>
+                               <nav className="one">
+                                   <ul className="topmenu">
                                        <li>Новини</li>
-                                       <li>Досягнення 
-                                         
-                                       </li>
+                                       <li>Досягнення</li>
                                        <li>Студенту</li>
                                        <li>Абітурієнту</li>
-                                       <li>Спеціальності</li>
+                                       <li >Спеціальності
+                                               <ul className="submenu">
+                                                   <li>Маркетинг</li>
+                                                   <li>Харчові технології</li>
+                                                   <li>Облік і оподаткування</li>
+                                                   <li>Підприємство,торгівля та біржова діяльність</li>
+                                               </ul>  
+                                       </li>
                                        <li>Історія</li>
                                        <li>Адміністрація</li>
                                    </ul>
