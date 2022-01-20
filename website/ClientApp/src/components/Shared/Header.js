@@ -8,7 +8,9 @@ function Header() {
                      <div className="mainInfo"> 
                          <div className="About_us">
                              <div className="text">
-                               <span>Чернівецький фаховий коледж бізнесу та харчових технологій</span>
+                               <p>Чернівецький фаховий коледж  </p> 
+                               <hr className="line_header"/>
+                               <p>бізнесу  та харчових технологій</p>
                              </div>
                              <div className="image">
                                  <img src="https://i.ibb.co/3Fgrkkd/image.png"/>

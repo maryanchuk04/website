@@ -5,7 +5,17 @@
     flex-direction: column;
     
 }
-
+.line_header{
+    border:none;
+    background-color: darkblue;
+    border-radius: 5px;
+    height: 6px;
+    width: 100%;
+    margin: 0;
+}
+.text p{
+    margin:0 40px;
+}
 .container_all{
     margin:0 auto;
     height: 100%;
@@ -53,9 +63,17 @@
 
    
 }
+.About_us{
+    display: flex;
+    place-items: center;
+   justify-content: space-between;
+
+   
+}
 .text{
     font-size: 45px;
-    width: 50%;
+    width: fit-content;
+   
 }
 
 
