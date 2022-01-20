@@ -3,3 +3,120 @@
     height: 300px;
      background-color: rgb(96, 127, 133);;
 }
+
+.social_links {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+	padding-bottom: 50px;
+	align-items: center;
+}
+
+.wrapper .button {
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	margin: 0 15px;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 60px;
+	cursor: pointer;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+	transition: all 0.5s ease-out;
+}
+
+.icon a {
+	color: #333;
+}
+
+.icon .icon_btn {
+	text-decoration: none;
+}
+
+.wrapper .button:hover {
+	width: 200px;
+}
+
+.button a:hover {
+	text-decoration: none;
+}
+
+.wrapper .button .icon {
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	text-align: center;
+	border-radius: 60px;
+	box-sizing: border-box;
+	line-height: 60px;
+	transition: all 0.5s ease-out;
+}
+
+.wrapper .button:nth-child(1):hover .icon {
+	background: #4267b2;
+}
+
+.wrapper .button:nth-child(3):hover .icon {
+	background: #ffb900;
+}
+
+.wrapper .button:nth-child(2):hover .icon {
+	background: #209cea;
+}
+
+.wrapper .button:nth-child(4):hover .icon {
+	background: #38b3f1;
+}
+
+.wrapper .button:nth-child(5):hover .icon {
+	background: #ff0000;
+}
+
+.wrapper .button:nth-child(6):hover .icon {
+	background: #333;
+}
+
+.wrapper .button .icon i {
+	font-size: 25px;
+	line-height: 60px;
+	transition: all 0.3s ease-out;
+}
+
+.wrapper .button:hover .icon i {
+	color: #fff;
+}
+
+.wrapper .button span {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 60px;
+	margin-left: 10px;
+	transition: all 0.3s ease-out;
+}
+
+.wrapper .button:nth-child(1) {
+	margin-left: 0;
+}
+
+.wrapper .button:nth-child(1) span {
+	color: #4267b2;
+}
+
+.wrapper .button:nth-child(3) span {
+	color: #ffb900;
+}
+
+.wrapper .button:nth-child(2) span {
+	color: #209cea;
+}
+
+.wrapper .button:nth-child(4) span {
+	color: #38b3f1;
+}
+
+.wrapper .button:nth-child(5) span {
+	color: #ff0000;
+}
+.wrapper .button:nth-child(6) span {
+	color: #333;
+}
