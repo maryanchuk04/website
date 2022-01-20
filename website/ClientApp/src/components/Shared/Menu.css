@@ -1,0 +1,55 @@
+
+.container_all ul li{
+    padding: 0 10px;
+    list-style: none;
+    font-size:23px;
+    margin: 0;
+}
+.container_all nav{
+    display: flex;
+   height: 100%;
+    align-items: center;
+    margin:0 auto;
+}
+.container_all  ul{
+    margin: 0;
+    display: flex;
+
+}
+.topmenu > li {
+    display: block;
+   
+    position: relative;
+  }
+  
+  
+  .submenu {
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    width: 300px;
+    z-index: 3;
+   overflow: hidden;
+  }
+  .submenu  li{
+      font-size: 15px;
+  }
+  .one .submenu {
+      transition: 5s;
+    display: none;
+    border-radius: 10px;
+    background: #025677;
+  }
+  .one ul li:hover .submenu {
+    display: block;
+    transition: 2s;
+  }
+  .one  ul li:hover {
+    color: rgb(147, 225, 255);
+  
+  }
+.one .topmenu .submenu li:hover {
+    
+    background: rgb(106, 80, 255);
+}
+  
