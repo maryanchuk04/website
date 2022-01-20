@@ -1,4 +1,12 @@
+.all{
+	margin: 0 auto;
+}
 
+.vs{
+	
+	background-color: aquamarine;
+	height: 100px;
+}
 .menu {
 	width: 100%;
 	display: table;
