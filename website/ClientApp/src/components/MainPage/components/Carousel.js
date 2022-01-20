@@ -10,7 +10,7 @@ export default function Carousel() {
     arrows: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    infinite: false,
+    infinite: true,
   }
 
   const hotelCards = [
