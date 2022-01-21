@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Header.css';
 function Header() {
     return (
@@ -13,7 +14,7 @@ function Header() {
                                <p>бізнесу  та харчових технологій</p>
                              </div>
                              <div className="image">
-                                 <img src="https://i.ibb.co/3Fgrkkd/image.png"/>
+                                 <Link to ="/"><img src="https://i.ibb.co/3Fgrkkd/image.png"/></Link>
                              </div>
                          </div>
                         

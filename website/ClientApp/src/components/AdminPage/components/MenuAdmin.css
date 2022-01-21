@@ -1,36 +1,61 @@
-.all{
-	margin: 0 auto;
-}
 
-.vs{
-	
-	background-color: aquamarine;
-	height: 100px;
+.admin_menu .container_all ul li{
+    padding: 0 10px;
+    list-style: none;
+    font-size:23px;
+    margin: 0;
 }
-.menu {
+.title{
 	width: 100%;
-	display: table;
-    height: 70px;
-    text-align: center;
-}
-.menu ul {
-	display: table-row;
-}
-.menu li {
-	display: table-cell;
-	background: #bebfc0;
-}
-.menu ul li:hover, .menu a:hover {
-	background: #666;
-}
-.menu li Link {
-	display: block;
-	padding: 8px 15px;
-	color: #fff;
+	background-color: rgb(196, 230, 195);
+	align-items: center;
 	text-align: center;
+	padding: 20px 0 20px 0;
+}
+.title h1{
+	font-size: 50px;
+}
+.admin_menu .container_all nav{
+    display: flex;
+   	height: 100%;
     align-items: center;
+    margin:0 auto;
+	flex-direction: column;
+	
+}
+.admin_menu .container_all  ul{
+    margin: 0;
+    display: flex;
 
 }
-.menu li Link h1{
+
+  
+  
+  .admin_menu .one ul{
+	 display: flex;
+	 width: 100%;
+	 justify-content: space-between;
+	 padding: 0;
+	 flex-direction: column;
+	 align-items: center;
+	 margin-top: 100px;
+	 background-color: rgb(180, 195, 93);
+	 width: 500px;
+	 border-radius: 30px;
+	 padding: 20px 0 20px 0;
+
+ }
+ .admin_menu .one  ul li :hover {
+    color: rgba(0, 76, 255, 0.432);
 	text-decoration: none;
+	
+  }
+  .admin_menu .one ul li h1{
+	  color:black;
+	  font-size: 50px;
+  }
+.one .hmenu h1{
+	color: rgb(255, 0, 0);
+	font-weight: 700;
+	font-size: 60px;
 }
