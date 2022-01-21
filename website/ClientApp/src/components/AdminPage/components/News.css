@@ -1,0 +1,76 @@
+.one_news{
+    height: 500px;
+    background-color: cadetblue;
+}
+.add_news{
+    height: 480px;
+    background: radial-gradient(circle, rgba(222,98,98,1) 0%, rgba(255,184,140,1) 100%);
+    padding: 10px 10px 10px 10px ;
+    border-radius: 10px;
+    margin: 30px 0 30px 0;
+    display: grid;
+}
+.add_news h1{
+    font-size: 40px;
+    font-weight: 800;
+    color:black;
+    text-align: center;
+}
+.add_news .info{
+    display: flex;
+    justify-content: space-evenly;
+}
+.add_news .info img{
+    align-items: flex-start;
+    height: 300px;
+    width: 500px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.add_news .info .text{
+    align-items: flex-end;
+    font-size: 18px;
+    
+}
+
+.add_news .info .text input{
+    margin: 10px;
+    display: block;
+    height: 40px;
+    border-radius: 10px;
+    width: 500px;
+    background-color: #f8c6c6;
+    padding: 10px;
+    border: 1px solid rgb(0, 56, 129); 
+}
+
+.add_news .info .text textarea:nth-child(2){
+    margin: 10px;
+    display: block;
+    height: 80px;
+    border-radius: 10px;
+    width: 500px;
+    color:black;
+    padding: 10px;
+    background-color: #f8c6c6;
+    border: 1px solid rgb(0, 56, 129); 
+}
+.add_news .info .text textarea:nth-child(3){
+    margin: 10px;
+    display: block;
+    height: 150px;
+    border-radius: 10px;
+    width: 500px;
+    padding: 10px;
+    background-color: #f8c6c6;
+    border: 1px solid rgb(0, 56, 129); 
+}
+.add_news button{
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-weight: 700;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(218, 218, 246);
+}
