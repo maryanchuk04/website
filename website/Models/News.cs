@@ -14,12 +14,16 @@ namespace website
         public string id { get; set; }
         [BsonElement("title")]
         public string title { get; set; }
+
         [BsonElement("short_text")]
         public string short_text { get; set; }
+
         [BsonElement("text")]
         public string text { get; set; }
+
         [BsonElement("image")]
-        public string image { get; set; }
+        public byte[] image { get; set; }
+
         [BsonElement("date")]
         public DateTime date { get; set; }
     }

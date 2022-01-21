@@ -18,6 +18,12 @@ function Main() {
                 <Header/>
                 <Menu/>
                 <ImageCarousel/>
+                <div className="news_preview">
+                    <div className="container_all">
+                        <h1>Новини</h1>
+                    </div>
+                </div>
+
                 <Main_news/>
            </div>           
        </div>

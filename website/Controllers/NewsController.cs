@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using website.Models;
 using website.Services;
 
 namespace website.Controllers
@@ -26,6 +29,31 @@ namespace website.Controllers
 
         [HttpPost("/news/add")]
         public void InsertOneNews([FromBody] News news) => _news.Insert(news);
+
+        [HttpPost("/News/upload")]
+        public string SaveFile(FileUpload file)
+        {
+            News news = JsonConvert.DeserializeObject<News>(file.news);
+            if(file.file.Length > 0)
+            {
+                using(var ms  = new MemoryStream())
+                {
+                    file.file.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+                    news.image = fileBytes;
+                    news = _news.Save(news);
+                    if (news.id.Trim() != "")
+                    {
+                        return "Saved!";
+                    }
+
+                }
+
+            }
+            return "Failed!";
+        }
+
+        
 
     }
 }
