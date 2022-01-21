@@ -7,6 +7,7 @@ import Header from "../Shared/Header";
 import Menu from "../Shared/Menu";
 import './Mainpage.css';
 import ImageCarousel from './components/Carousel';
+import Main_news from './components/Main_news';
 function Main() {
     
     return (
@@ -17,6 +18,7 @@ function Main() {
                 <Header/>
                 <Menu/>
                 <ImageCarousel/>
+                <Main_news/>
            </div>           
        </div>
     )
