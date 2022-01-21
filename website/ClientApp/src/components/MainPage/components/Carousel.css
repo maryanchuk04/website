@@ -1,20 +1,25 @@
 .content{
     padding: 0 !important;
+    margin: 0 !important;
+
 }
 .image_info{
     height: calc(100vh - 270px) !important;
     width: 100vw !important;
-   
+    margin: 0;
+    padding: 0 !important;
 }
 .image_info img{
     width: 100%;
     height: inherit;
   object-fit: cover;
-  
+  margin: 0;
+  padding: 0 !important;
 }
 .slick-slide{
-    
+    margin: 0;
     height: 100% !important;
+    padding: 0 !important;
 }
 
 
