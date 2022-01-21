@@ -1,10 +1,17 @@
-.content{
-    height: -webkit-fill-available !important;
+
+.image_info{
+    height: calc(100vh - 270px) !important;
+    width: 100% !important;
+   
 }
 .image_info img{
-
+    width: 100%;
+    height: inherit;
+  object-fit: cover;
+}
+.slick-slide{
+    
     height: 100% !important;
-    width: 100% !important;
 }
 
 

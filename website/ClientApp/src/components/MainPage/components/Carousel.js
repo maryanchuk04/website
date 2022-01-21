@@ -10,7 +10,10 @@ export default function Carousel() {
     arrows: true,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 10000,
     infinite: true,
+    pauseOnHover:false,
   }
 
   const hotelCards = [
@@ -29,11 +32,7 @@ export default function Carousel() {
       imageSrc:  'http://molbuk.ua/uploads/posts/2013-03/1363095587_tehn.jpg',
      
     },
-    {
-      
-       imageSrc:  'https://www.google.com/url?sa=i&url=https%3A%2F%2Fweb.kpi.kharkov.ua%2Femmb%2F2018%2F08%2F28%2Fposvyachennya-v-studenti%2F&psig=AOvVaw2oLztEH4cLPeMa6vadQEVD&ust=1642623924127000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLjTyo-RvPUCFQAAAAAdAAAAABAD',
-      
-    },
+   
   ]
 
   return (
