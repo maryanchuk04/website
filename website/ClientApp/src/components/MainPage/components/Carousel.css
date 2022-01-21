@@ -1,13 +1,16 @@
-
+.content{
+    padding: 0 !important;
+}
 .image_info{
     height: calc(100vh - 270px) !important;
-    width: 100% !important;
+    width: 100vw !important;
    
 }
 .image_info img{
     width: 100%;
     height: inherit;
   object-fit: cover;
+  
 }
 .slick-slide{
     
