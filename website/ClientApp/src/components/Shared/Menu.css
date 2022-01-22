@@ -1,4 +1,6 @@
-
+Link{
+  text-decoration: none;
+}
 .container_all ul li{
     padding: 0 10px;
     list-style: none;
@@ -47,6 +49,7 @@
   }
   .one  ul li:hover {
     color: rgb(147, 225, 255);
+    text-decoration: none;
   
   }
 .one .topmenu .submenu li:hover {
