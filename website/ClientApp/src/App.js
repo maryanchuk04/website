@@ -19,6 +19,7 @@ import EntrantPage from './components/EntrantPage/EntrantPage';
 import HistoryPage from './components/HistoryPage/HistoryPage';
 import NewsPage from './components/NewsPage/NewsPage';
 import StudentPage from './components/StudentPage/StudentPage';
+import Menu from './components/Shared/Menu';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -36,7 +37,7 @@ export default class App extends Component {
 
           <Route path = '/student' exact element={<StudentPage/>} />
           <Route path = '/news' exact element={<NewsPage/>} />
-          <Route path = '/history' exact element={<HistoryPage/>} />
+          <Route path = '/history' exact element={<React.Fragment><Header/><Menu/><HistoryPage/><Footer/></React.Fragment>} />
           <Route path = '/entrant' exact element={<EntrantPage/>} />
           <Route path = '/employers' exact element={<EmployersPage/>} />
           <Route path = '/achivement' exact element={<AchivementPage/>} />
@@ -45,7 +46,7 @@ export default class App extends Component {
           <Route path = '/speciality/marketing' exact element={<MarketingPage/>} />
           <Route path = '/speciality/oblik' exact element={<OblikPage/>} />
           <Route path = '/speciality/pidpruyemstvo' exact element={<PidpruyemstvoPage/>} />
-          
+
         </Routes>
       </BrowserRouter>
        
