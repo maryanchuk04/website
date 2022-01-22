@@ -6,20 +6,34 @@
 .image_info{
     height: calc(100vh - 270px) !important;
     width: 100vw !important;
-    margin: 0;
+    margin: 0 !important;
     padding: 0 !important;
 }
 .image_info img{
     width: 100%;
-    height: inherit;
+    height: 100%;
   object-fit: cover;
-  margin: 0;
+  margin: 0 !important;
   padding: 0 !important;
 }
+.image_info img:focus{
+   border:none;
+}
+.image_info img:active{
+    border:none;
+ }
 .slick-slide{
     margin: 0;
     height: 100% !important;
     padding: 0 !important;
 }
-
-
+.slick-list{
+    height: 100% !important;
+  margin: 0 !important;
+ padding: 0 !important;
+}
+.slick-track{
+    height: 100% !important;
+    margin: 0 !important;
+   padding: 0 !important;
+  }
