@@ -15,7 +15,7 @@ function News() {
                    <form >
                      <input type="text" placeholder="Заголовок"/>
                      <textarea type="text" placeholder = "Опис" />
-                     <textarea type="text" placeholder = "Вся інформація" />
+                     <textarea type="text" placeholder = "Вся інформація"  />
                    </form>
                  </div>
                  
