@@ -1,13 +1,11 @@
 import React from 'react';
-import Header from "/Users/vovaromanyuck/Desktop/website/website/ClientApp/src/components/Shared/Header";
-import Menu from "/Users/vovaromanyuck/Desktop/website/website/ClientApp/src/components/Shared/Menu";
+
 import { Link } from 'react-router-dom';
 import './SpecialityPage.css';
 function SpecialityPage() {
   return (
   <div > 
-      <Header/>
-      <Menu/>
+     
       <div className="container_all">
         <div className="container_speciality">
                <div className="type_specilialities">

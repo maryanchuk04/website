@@ -29,10 +29,8 @@ namespace website.Services
                     client.Connect("smtp.gmail.com", 465, true);
                     client.Authenticate("college.kooperat@gmail.com", "college0123");
                     client.Send(message);
-
                     client.Disconnect(true);
                     logger.LogInformation("Done");
-
                 }               
             }
             catch (Exception e)
