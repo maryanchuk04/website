@@ -1,13 +1,11 @@
 import React from 'react';
-import Header from "/Users/vovaromanyuck/Desktop/website/website/ClientApp/src/components/Shared/Header";
-import Menu from "/Users/vovaromanyuck/Desktop/website/website/ClientApp/src/components/Shared/Menu";
+
 
 import './CookingPage.css';
 function CookingPage() {
   return (
   <div > 
-      <Header/>
-      <Menu/>
+      
       <div className="title_cooking">
         <h3>Харчові технології</h3>
       </div>
