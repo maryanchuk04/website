@@ -1,0 +1,64 @@
+.title_history{
+    margin: 0 auto;
+    height: 10vh;
+    text-align: center;
+    align-items: center;
+    display: grid;
+}
+.title_history h1{
+    font-size: 40px;
+    font-weight: 800;
+    color:rgb(0, 0, 0);
+
+}
+
+.title_history h1:hover{
+    font-size: 40px;
+    font-weight: 800;
+    color:rgb(194, 44, 44);
+    transition: 1s;
+}
+.tsutata {
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(178, 193, 204);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tsutata img{
+    height: 30%;
+    width: 30%;
+    margin: 20px;
+    
+}
+
+.tsutata >.text{
+    font-size: 20px;
+    font-style: italic;
+    margin: 20px 30px 20px 20px ;
+    text-align: right;
+    display: flex;
+}
+
+.else_text{
+    font-size: 20px;
+    margin: 20px 10px 20px 10px;
+}
+.else_text .zavdannya{
+    margin-top:20px;
+    font-size: 18px;
+    font-style: italic;
+}
+.else_text .zavdannya h1{
+    font-size: 24px;
+    font-weight: 900;
+}
+.else_text .zavdannya ol{
+    display: block;
+    
+}
+.else_text .zavdannya ol li {
+    margin-top: 15px;
+    
+}
