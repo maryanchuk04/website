@@ -18,13 +18,7 @@ function Main() {
                 <Header/>
                 <Menu/>
                 <ImageCarousel/>
-                <div className="shedule">
-                    <div className="container_all">
-                         <div className="shedul_text">
-                             
-                         </div>
-                    </div>
-                </div>
+                
                 <div className="news_preview">
                     <div className="container_all">
                         <h1>Новини</h1>
