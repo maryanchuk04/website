@@ -21,6 +21,7 @@ function News() {
                  
               </div>
               <button>Додати новину</button>
+              <button>Завантажити фото</button>
           </div>
         </div>
     </div>

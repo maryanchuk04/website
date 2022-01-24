@@ -5,7 +5,7 @@ namespace website.Models
 {
     public class FileUpload
     {
-       public IFormFile file { get; set; }
+        public IFormFile file { get; set; }
 
         public string news { get; set; }
 

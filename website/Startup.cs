@@ -22,7 +22,12 @@ namespace website
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(o =>
+            {
+                o.JsonSerializerOptions.PropertyNamingPolicy = null;
+                o.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+            });
+
 
             services.AddSingleton<EmployerServices>();
             services.AddSingleton<NewsServices>();
@@ -32,6 +37,7 @@ namespace website
                 var uri = s.GetRequiredService<IConfiguration>()["MongoUri"];
                 return new MongoClient(uri);
             });
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
