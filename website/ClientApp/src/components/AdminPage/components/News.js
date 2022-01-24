@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Header from '../../Shared/Header';
 import '../components/News.css'
 function News() {
+  const [file,setfile] = useState("")
+
+  const imgselectHendler=(e)=>{
+    document.getElementById('selectFile').click();
+    
+  }
+
   return (
     <div>
         <Header/>
@@ -10,7 +17,27 @@ function News() {
           <div className="add_news">
               <h1>Нова Новина</h1>
               <div className="info">
-                <img src="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg" alt="image" />
+                <div className="all_for_file">
+                  <div className="container_for_krasota">
+                    <div className="wrapper">                
+                      <div className="kartinka">
+
+                      </div>
+
+                        <div className="krasota">
+                          <div className="icon"><i className = "fas fa-cloud-upload-alt"></i></div>
+                          <div className="nadpus">Виберіть будь ласка файл!</div>                       
+                        </div>
+                      <div id="cancel-btn"><i className="fas fa-times"></i></div>
+                      <div className ="file-name">Ім`я файлу тут!</div>
+                    </div>
+                  </div>
+                  <input type="file"  id= "selectFile" hidden />
+                  <button id ="custom-btn" onClick={(i)=>imgselectHendler(i)}>Виберіть файл</button>
+                </div>
+
+
+
                  <div className="text"> 
                    <form >
                      <input type="text" placeholder="Заголовок"/>
@@ -21,6 +48,7 @@ function News() {
                  
               </div>
               <button>Додати новину</button>
+              <button>Завантажити фото</button>
           </div>
         </div>
     </div>

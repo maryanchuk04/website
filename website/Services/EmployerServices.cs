@@ -31,5 +31,19 @@ namespace website.Services
         {
             throw new NotImplementedException();
         }
+        public Employer Save(Employer obj)
+        {
+            var empobj = _employers.Find(x => x.id == obj.id).FirstOrDefault();
+            if(empobj == null)
+            {
+                _employers.InsertOne(obj);
+
+            }
+            else
+            {
+                _employers.ReplaceOne(x => x.id == obj.id, obj);
+            }
+            return obj;
+        }
     }
 }

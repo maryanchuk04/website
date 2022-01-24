@@ -31,5 +31,20 @@ namespace website.Services
         {
             throw new NotImplementedException();
         }
+        public News Save(News obj)
+        {
+            var newstemp = _news.Find(x => x.id == obj.id).FirstOrDefault();
+
+            if (newstemp == null)
+            {
+                _news.InsertOne(obj);
+
+            }
+            else
+            {
+                _news.ReplaceOne(x => x.id == obj.id, obj);
+            }
+            return obj;
+        }
     }
 }
