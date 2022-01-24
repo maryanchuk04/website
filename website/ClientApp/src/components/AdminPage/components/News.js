@@ -3,12 +3,21 @@ import axios from 'axios';
 import Header from '../../Shared/Header';
 import '../components/News.css'
 function News() {
-  const [file,setfile] = useState("")
-
+  const  [getFile,setFile] = useState();
+ 
+  const handleFileSelected = (e) => {
+    const files = Object(e.currentTarget.files)[0]
+    console.log(files)
+    setFile(files);
+    console.log("Файл :",getFile)
+  } 
+  
   const imgselectHendler=(e)=>{
     document.getElementById('selectFile').click();
     
   }
+  
+  
 
   return (
     <div>
@@ -21,9 +30,8 @@ function News() {
                   <div className="container_for_krasota">
                     <div className="wrapper">                
                       <div className="kartinka">
-
+                        <img src={getFile} alt={getFile} />
                       </div>
-
                         <div className="krasota">
                           <div className="icon"><i className = "fas fa-cloud-upload-alt"></i></div>
                           <div className="nadpus">Виберіть будь ласка файл!</div>                       
@@ -32,8 +40,8 @@ function News() {
                       <div className ="file-name">Ім`я файлу тут!</div>
                     </div>
                   </div>
-                  <input type="file"  id= "selectFile" hidden />
-                  <button id ="custom-btn" onClick={(i)=>imgselectHendler(i)}>Виберіть файл</button>
+                  <input type="file"  id= "selectFile" onChange={(i)=>handleFileSelected(i)}  hidden/>
+                  <button id ="custom-btn"onClick={(i)=>imgselectHendler(i)} >Виберіть файл</button>
                 </div>
 
 
@@ -48,7 +56,7 @@ function News() {
                  
               </div>
               <button>Додати новину</button>
-              <button>Завантажити фото</button>
+
           </div>
         </div>
     </div>

@@ -31,9 +31,9 @@ namespace website.Controllers
         public void InsertOneNews([FromBody] News news) => _news.Insert(news);
 
         [HttpPost("/news/upload")]
-        public string SaveFile(FileUpload file)
+        public string SaveFile([FromBody]FileUpload file)
         {
-            News news = JsonConvert.DeserializeObject<News>(file.news);
+             News news = JsonConvert.DeserializeObject<News>(file.news);
             if(file.file.Length > 0)
             {
                 using(var ms  = new MemoryStream())
@@ -60,6 +60,7 @@ namespace website.Controllers
             }
             return bytes;
         }
+       
 
         
 
