@@ -1,10 +1,54 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios'
+import '../NewsPage/NewsPage.css'
 function NewsPage() {
-  return (
-  <div>
+  const [news, setNews] = useState([]);
 
-  </div>
+  useEffect(()=>{
+      axios.get("http://localhost:5000/news").then((result)=>{
+        setNews(result.data);
+        console.log(result.data);
+      });
+  }, []);
+
+
+
+  return (
+  <div className = "container_all">
+  
+
+      <div className="news_header">
+
+      </div>
+      {news.map((n,index)=>(
+
+      
+      <div className="news_block">
+        
+        <div className="news_title">
+          { n.title}
+        </div>
+        <div className="news_info">
+        <img src="https://img.championat.com/news/big/l/o/oficialno-novyj-trejler-filma-chelovek-pauk-net-puti-domoj-pokazhut-zavtra_16369958951026142779.jpg" alt=""/>
+
+          <div className="text_and_link">
+            <h2>{n.short_text}</h2>
+           <div className="link_news">
+            <Link to = "/">Детальніше</Link>
+            </div>
+           </div>
+        </div>
+        <p>{n.date}</p>
+      </div>  
+      ))}
+
+      
+      
+      
+      
+    </div>
+  
   );
 }
 

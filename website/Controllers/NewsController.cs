@@ -41,7 +41,7 @@ namespace website.Controllers
                     file.file.CopyTo(ms);
                     var fileBytes = ms.ToArray();
                     news.image = fileBytes;
-                    news = _news.Save(news);
+                    //news = _news.Save(news);
                     if (news.id.Trim() != "")
                     {
                         return "Saved!";
