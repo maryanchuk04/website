@@ -15,7 +15,7 @@ function Menu() {
                                     <li> <Link to = '/speciality'>Спеціальності</Link>
                                         <li>
                                                 <ul className="submenu">
-                                                   <li><Link to = '/speciality/marketing'>Маркетинг</Link></li>
+                                                   
                                                    <li> <Link to ='/speciality/cooking'>Харчові технології</Link></li>
                                                    <li><Link to = '/speciality/oblik'>Облік і оподаткування</Link></li>
                                                    <li><Link to = '/speciality/pidpruyemstvo'>Підприємство,торгівля та біржова діяльність</Link></li>
