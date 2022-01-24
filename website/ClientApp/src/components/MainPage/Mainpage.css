@@ -20,3 +20,17 @@
     color: white;
     
 }
+.shedule{
+    width: 100%;
+    height: 400px;
+    background: url('https://www.incimages.com/uploaded_files/image/1920x1080/getty_481564534_65139.jpg');
+}
+.shedule_text{
+    
+    background-color: tomato;
+    height: 300px;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.33;
+    z-index: 11;
+}
