@@ -1,22 +1,62 @@
-.title_cooking{
+
+.image_cookies{
+    
+    width: 100%;
+    height: 450px;
+   
+   position: relative;
     display: grid;
     place-items: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background-color: rgb(116, 151, 197);
 }
-.title_cooking h3{
-  
-    margin: 0 auto;
-}
-.image_cookies{
-    width: 100%;
-    height: 400px;
-
+.title_h{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    
 }
 .image_cookies img{
-    border-radius: none;
-  height: 100%;
-  width: 100%;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.image_cookies h3{ 
+    font-weight: 700;
+    text-align: center;
+    margin: 30px 0;
+font-size:65px;
+  color: rgb(3, 3, 3);
+  opacity: 100%;
+  
+}
+.history_cookies{  
+}
+.history_cookies p{
+    padding: 20px;
+    font-size: 25px;
+}
+.law_cookies{
+    background-color: rgb(164, 195, 199);
+    height: fit-content;
+    border-radius:15px;
+    padding: 20px;
+}
+.law_cookies p{
+    font-size: 25px;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+.sphere_cookies{
+    margin: 50px 0 0;
+}
+
+.spheres_cookies h5{
+  font-weight: 800;
+  font-size:35px
+}
+.spheres_cookies ol {
+  font-size: 25px;
+}
+.spheres_cookies ol li span {
+    text-decoration: underline;
 }

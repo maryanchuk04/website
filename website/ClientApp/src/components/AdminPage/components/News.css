@@ -1,9 +1,9 @@
 .one_news{
-    height: 500px;
+    height: fit-content;
     background-color: cadetblue;
 }
 .add_news{
-    height: 480px;
+    height: fit-content;
     background: radial-gradient(circle, rgba(222,98,98,1) 0%, rgba(255,184,140,1) 100%);
     padding: 10px 10px 10px 10px ;
     border-radius: 10px;
@@ -76,3 +76,85 @@
     height: 40px;
     background-color: rgb(218, 218, 246);
 }
+
+.all_for_file{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+}
+.container_for_krasota{/*container*/
+    height: 350px;
+    width: 430px;
+}
+.container_for_krasota .wrapper{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    border: 2px dashed #c2cdda;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wrapper .kartinka{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper  .kartinka img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.wrapper .icon{
+    font-size: 100px;
+    color: #9658fe;
+}
+.wrapper .nadpus{
+    font-size: 20px;
+    color: #5b5b7b;
+    font-weight: 500;
+}
+
+.container_for_krasota #cancel-btn{
+    position: absolute;
+    right: 15px;
+    top:15px;
+    cursor: pointer;
+    color:#9658fe;
+    font-size: 20px;
+}
+
+.wrapper .file-name{
+    position: absolute;
+    bottom: 0px;
+    color:#fff;
+    padding: 8px 0;
+    width: 100%;
+    font-size: 18px;
+    background: linear-gradient(135deg,#3a8ffe 0%, #9658fe 100%);
+}
+
+.all_for_file #custom-btn{
+    margin-top: -20px;
+    width: 100%;
+    height: 50px;
+    display: block;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#3a8ffe 0%, #9658fe 100%);
+    border: 0;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+}
+
