@@ -11,7 +11,7 @@ namespace website
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string id { get; set; }
+        public string id { get; set; }  
         [BsonElement("title")]
         public string title { get; set; }
 

@@ -13,6 +13,6 @@ namespace website.Services
         void Insert(T obj);
         void Delete(string ID);
         void Update(T obj);
- 
+        T Save(T obj);
     }
 }

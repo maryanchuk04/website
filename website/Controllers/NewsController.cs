@@ -30,7 +30,7 @@ namespace website.Controllers
         [HttpPost("/news/add")]
         public void InsertOneNews([FromBody] News news) => _news.Insert(news);
 
-        [HttpPost("/News/upload")]
+        [HttpPost("/news/upload")]
         public string SaveFile(FileUpload file)
         {
             News news = JsonConvert.DeserializeObject<News>(file.news);
@@ -41,16 +41,24 @@ namespace website.Controllers
                     file.file.CopyTo(ms);
                     var fileBytes = ms.ToArray();
                     news.image = fileBytes;
-                    //news = _news.Save(news);
+                    news = _news.Save(news);
                     if (news.id.Trim() != "")
                     {
                         return "Saved!";
                     }
-
                 }
-
             }
             return "Failed!";
+        }
+
+        public byte[] GetImage(string sBase64String)
+        {
+            byte[] bytes = null;
+            if (!string.IsNullOrEmpty(sBase64String))
+            {
+                bytes = Convert.FromBase64String(sBase64String);
+            }
+            return bytes;
         }
 
         
