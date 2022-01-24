@@ -28,39 +28,52 @@ namespace website.Controllers
         }
 
         [HttpPost("/news/add")]
-        public void InsertOneNews([FromBody] News news) => _news.Insert(news);
-
-        [HttpPost("/news/upload")]
-        public string SaveFile(FileUpload file)
+        public ActionResult InsertOneNews([FromBody] News news, IFormFile file)
         {
-            News news = JsonConvert.DeserializeObject<News>(file.news);
-            if(file.file.Length > 0)
+            if (file != null)
             {
-                using(var ms  = new MemoryStream())
+                using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    file.file.CopyTo(ms);
-                    var fileBytes = ms.ToArray();
-                    news.image = fileBytes;
-                    news = _news.Save(news);
-                    if (news.id.Trim() != "")
-                    {
-                        return "Saved!";
-                    }
+                    file.OpenReadStream().CopyTo(memoryStream);
+                    news.image = Convert.ToBase64String(memoryStream.ToArray());
+                    
                 }
+                return Ok(news);
             }
-            return "Failed!";
-        }
-
-        public byte[] GetImage(string sBase64String)
-        {
-            byte[] bytes = null;
-            if (!string.IsNullOrEmpty(sBase64String))
+            else
             {
-                bytes = Convert.FromBase64String(sBase64String);
+                news.image = "";
+                return Ok(news);
             }
-            return bytes;
+        }
+        [HttpPost("/news/upload")]
+        public ActionResult UploadPhoto(IFormFile file)
+        {
+            News news = _news.GetByID("61df1026981ab2e50f2ecf6b");
+            /*
+            if (file != null)
+            {
+                MemoryStream memoryStream = new MemoryStream();
+                
+                    file.OpenReadStream().CopyTo(memoryStream);
+                    news.image = Convert.ToBase64String(memoryStream.ToArray());
+
+                
+                return Ok(news);
+            }
+            else
+            {
+                news.image = "";
+                return Ok(news);
+            }*/
+            return Ok();
+            
         }
 
+        
+      
+
+        
         
 
     }
