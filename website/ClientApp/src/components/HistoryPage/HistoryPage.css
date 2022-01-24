@@ -22,6 +22,7 @@
     margin: 10px;
     border-radius: 10px;
     background-color: rgb(178, 193, 204);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,12 +44,15 @@
 
 .else_text{
     font-size: 20px;
-    margin: 20px 10px 20px 10px;
+    margin: 20px 10px 70px 10px;
 }
 .else_text .zavdannya{
+    background-color:rgb(220, 244, 255);
     margin-top:20px;
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic;
+    padding: 20px 10px 20px 10px;
+    border-radius: 10px;
 }
 .else_text .zavdannya h1{
     font-size: 24px;
