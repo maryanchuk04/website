@@ -28,9 +28,19 @@ namespace website.Controllers
         }
 
         [HttpPost("/news/add")]
+<<<<<<< HEAD
         public ActionResult InsertOneNews([FromBody] News news, IFormFile file)
         {
             if (file != null)
+=======
+        public void InsertOneNews([FromBody] News news) => _news.Insert(news);
+
+        [HttpPost("/news/upload")]
+        public string SaveFile([FromBody]FileUpload file)
+        {
+             News news = JsonConvert.DeserializeObject<News>(file.news);
+            if(file.file.Length > 0)
+>>>>>>> cd477b173d00fcf17d35ce4b0be45ab13cc51a4b
             {
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
@@ -69,6 +79,7 @@ namespace website.Controllers
             return Ok();
             
         }
+       
 
         
       
