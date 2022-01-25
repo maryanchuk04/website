@@ -1,0 +1,59 @@
+.title_practice{
+    
+    width: fit-content;
+    margin:  40px  auto 0;
+    border: cornflowerblue 5px solid;
+    border-radius: 10px;
+    
+}
+
+.title_practice h4{
+    font: 800;
+    padding: 20px;
+    margin: 0 auto;
+    font-size: 50px;
+    text-align: center;
+}
+.text_practice{
+    margin:30px 0;
+    width: 100%;
+    height: 100%;
+}
+.text_practice p{
+    font-size: 25px ;
+    text-indent:2em;
+}
+
+.text_practice p span{
+    text-decoration: underline;
+}.list_practice{
+    margin: 20px 0;
+}
+.list_practice ul{
+    font-size: 25px ;
+ display: flex; 
+ flex-direction: column;
+}
+.list_practice p{
+    font-size: 30px;
+} 
+.list_practice ul li:before {
+    content:  "—";
+    position: relative;
+    left:     -5px;
+}
+.list_practice h3{
+    font-size: 30px;
+    font-weight: 800;
+}
+.poem{
+    width: 50%;
+    margin:0 auto;
+    background: rgb(126, 216, 216);
+    border-radius: 40px;
+}
+.poem p{
+    text-indent:none;
+    text-align:center;
+    padding: 30px 20px;
+}
