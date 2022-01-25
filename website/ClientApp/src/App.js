@@ -11,6 +11,7 @@ import Header from './components/Shared/Header';
 import SpecialityPage from './components/Speciality/SpecialityPage/SpecialityPage';
 import CookingPage from './components/Speciality/CookingPage/CookingPage';
 import MarketingPage from './components/Speciality/MarketingPage/MarketingPage';
+import PracticePage from './components/StudentPage/PracticePage/PracticePage';
 import OblikPage from './components/Speciality/OblikPage/OblikPage';
 import PidpruyemstvoPage from './components/Speciality/PidpruyemstvoPage/PidpruyemstvoPage';
 import AchivementPage from './components/AchivementPage/AchivementPage';
@@ -46,6 +47,10 @@ export default class App extends Component {
           <Route path = '/speciality/marketing' exact element={<MarketingPage/>} />
           <Route path = '/speciality/oblik' exact element={<React.Fragment><Header/><Menu/><OblikPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality/pidpruyemstvo' exact element={<React.Fragment><Header/><Menu/><PidpruyemstvoPage/><Footer/></React.Fragment>} />
+
+          <Route path = '/student/practice' exact element={<React.Fragment><Header/><Menu/><PracticePage/><Footer/></React.Fragment>} />
+
+
 
         </Routes>
       </BrowserRouter>

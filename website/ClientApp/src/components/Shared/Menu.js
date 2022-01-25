@@ -10,17 +10,25 @@ function Menu() {
                                    <ul className="topmenu">
                                     <li> <Link to = '/news'>Новини</Link></li>
                                     <li><Link to ='/achivement'>Досягнення</Link></li>
-                                    <li><Link to = '/student'>Студенту</Link></li>
+                                    <li>
+                                        Студенту
+                                        <ul className="submenu">
+                                                   
+                                                   <li> <Link to ='/student/practice'>Практика та працевлаштування</Link></li>
+                                                   
+                                        </ul>  
+
+                                    </li>
                                     <li><Link to = '/entrant'> Абітурієнту</Link></li>
-                                    <li> <Link to = '/speciality'>Спеціальності</Link>
-                                        <li>
+                                    <li> Спеціальності
+                                        
                                                 <ul className="submenu">
                                                    
                                                    <li> <Link to ='/speciality/cooking'>Харчові технології</Link></li>
                                                    <li><Link to = '/speciality/oblik'>Облік і оподаткування</Link></li>
                                                    <li><Link to = '/speciality/pidpruyemstvo'>Підприємство,торгівля та біржова діяльність</Link></li>
                                                </ul>  
-                                       </li>
+                                       
                                        </li>
                                        <li><Link to = '/history'>Історія</Link></li>
                                        <li><Link to = '/employers'>Адміністрація</Link></li>
