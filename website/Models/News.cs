@@ -23,9 +23,9 @@ namespace website
         public string text { get; set; }
 
         [BsonElement("image")]
-        public string image { get; set; }
+        public byte[] image { get; set; }
 
         [BsonElement("date")]
-        public DateTime date { get; set; }
+        public DateTime date { get; set; } = DateTime.Now.Date;
     }
 }

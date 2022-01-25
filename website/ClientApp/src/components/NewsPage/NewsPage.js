@@ -30,8 +30,8 @@ function NewsPage() {
           { n.title}
         </div>
         <div className="news_info">
-        <img src="https://img.championat.com/news/big/l/o/oficialno-novyj-trejler-filma-chelovek-pauk-net-puti-domoj-pokazhut-zavtra_16369958951026142779.jpg" alt=""/>
-
+        <img src={`data:image/gif;base64,${n.image}`}/>
+       
           <div className="text_and_link">
             <h2>{n.short_text}</h2>
            <div className="link_news">

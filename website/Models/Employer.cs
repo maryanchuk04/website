@@ -11,7 +11,7 @@ namespace website.Services
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string id { get; set; }
+        public string id { get; set; } = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
         [BsonElement("full_name")]
         public string full_name { get; set; }
         [BsonElement("posada")]
