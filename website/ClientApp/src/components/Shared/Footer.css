@@ -3,12 +3,22 @@
     height: 465px;
      background-color: rgb(96, 127, 133);
 }
+.element_form:focus{
+ box-shadow: 0 0 20px 10px cornsilk ;
+ border:none;
+}
 .about_footer{
     display: flex;
     justify-content: space-between;
 }
 .btn{
-    background: darkgoldenrod;
+  margin: 0 auto;
+  width: 100%;
+    background: rgb(47, 81, 155);
+    border-radius: 45px;
+}
+.btn:hover{
+color: azure;
 }
 .element_form{
     background-color: rgb(122, 187, 187);
@@ -18,6 +28,12 @@
 .form_feedback{
     display: flex;
     flex-direction: column;
+}
+.about_us p:first-child{
+  padding-top: 25px;
+}
+.about_footer h3{
+  padding-top: 25px;
 }
 .form_feedback textarea{
   resize: none;
@@ -30,14 +46,19 @@
 
 .line_footer{
     border:none;
+<<<<<<< HEAD
+    background-color: rgb(64, 99, 102);
+    height: 3px;
+=======
 
     background-color: rgb(94, 94, 121);
 
    
 
     height: 2px;
+>>>>>>> 189f471bbbd8dd96fffa9e45123e6b9955570c74
     width: 100%;
-    margin: 0;
+    margin: 20px 0;
 }
 .menu_footer{
     padding: 30px 0;

@@ -2,6 +2,7 @@ Link{
   text-decoration: none ;
 }
 .container_all ul li{
+   color: black;
     padding: 0 10px;
     list-style: none;
     font-size:23px;

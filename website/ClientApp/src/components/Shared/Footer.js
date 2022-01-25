@@ -18,25 +18,14 @@ function Footer() {
                         <div className="form_feedback">
                            <h3>Напишіть нам</h3>
                            <input type="email"  className="element_form" placeholder="Email"/>
-                           <textarea name="text"  className="element_form"  placeholder="Напишіть ваш відгук" id="" cols="30" rows="6"></textarea>
+                           <textarea name="text"  className="element_form "  placeholder="Напишіть ваш відгук" id="" cols="30" rows="6"></textarea>
                            <button className="btn"> Відправити</button>
                         </div>
                      </div>
+                     <hr className="line_footer"/>
                      <div className="social_links">
-                        <hr className="line_footer"/>
-                        <div className="menu_footer">
-                        <nav className="one">
-                                   <ul className="topmenu topmenu1">
-                                       <li>Новини</li>
-                                       <li>Досягнення</li>
-                                       <li>Студенту</li>
-                                       <li>Абітурієнту</li>
-                                       <li >Спеціальності</li>
-                                       <li>Історія</li>
-                                       <li>Адміністрація</li>
-                                   </ul>
-                               </nav>
-                        </div>
+                       
+                       
                      <div class="wrapper">
                         <div class="button">
                            <div class="icon">
