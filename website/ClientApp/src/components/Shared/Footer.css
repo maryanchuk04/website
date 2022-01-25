@@ -46,8 +46,17 @@ color: azure;
 
 .line_footer{
     border:none;
+<<<<<<< HEAD
     background-color: rgb(64, 99, 102);
     height: 3px;
+=======
+
+    background-color: rgb(94, 94, 121);
+
+   
+
+    height: 2px;
+>>>>>>> 189f471bbbd8dd96fffa9e45123e6b9955570c74
     width: 100%;
     margin: 20px 0;
 }

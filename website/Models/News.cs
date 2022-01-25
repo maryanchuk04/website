@@ -11,7 +11,8 @@ namespace website
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string id { get; set; }  
+        public string id { get; set; } = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
+
         [BsonElement("title")]
         public string title { get; set; }
 
@@ -22,7 +23,7 @@ namespace website
         public string text { get; set; }
 
         [BsonElement("image")]
-        public byte[] image { get; set; }
+        public string image { get; set; }
 
         [BsonElement("date")]
         public DateTime date { get; set; }
