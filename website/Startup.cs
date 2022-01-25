@@ -22,12 +22,8 @@ namespace website
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddJsonOptions(o =>
-            {
-                o.JsonSerializerOptions.PropertyNamingPolicy = null;
-                o.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
-            });
-
+            services.AddControllers();
+           
 
             services.AddSingleton<EmployerServices>();
             services.AddSingleton<NewsServices>();
@@ -38,14 +34,7 @@ namespace website
                 return new MongoClient(uri);
             });
 
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                    });
-            });
+            services.AddCors();
         }
 
         
@@ -62,8 +51,14 @@ namespace website
             }
 
             app.UseRouting();
-            app.UseCors();
-            
+
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
+
+
 
             app.UseEndpoints(endpoints =>
             {

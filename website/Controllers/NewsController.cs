@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -15,69 +16,83 @@ namespace website.Controllers
     [ApiController]
     public class NewsController : Controller
     {
+      
+
         public readonly NewsServices _news;
         public NewsController(NewsServices newsData)
-        {
+        {  
             _news = newsData;
         }
 
         [HttpGet("/news")]
         public ActionResult GetList()
         {
-            return Ok(_news.GetAll());
+            return Ok(_news.GetAll().Reverse());
         }
 
         [HttpPost("/news/add")]
-<<<<<<< HEAD
-        public ActionResult InsertOneNews([FromBody] News news, IFormFile file)
+        public ActionResult InsertOneNews([FromBody] News news)
         {
-            if (file != null)
-=======
-        public void InsertOneNews([FromBody] News news) => _news.Insert(news);
+            _news.Insert(news);
 
-        [HttpPost("/news/upload")]
-        public string SaveFile([FromBody]FileUpload file)
-        {
-             News news = JsonConvert.DeserializeObject<News>(file.news);
-            if(file.file.Length > 0)
->>>>>>> cd477b173d00fcf17d35ce4b0be45ab13cc51a4b
-            {
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    file.OpenReadStream().CopyTo(memoryStream);
-                    news.image = Convert.ToBase64String(memoryStream.ToArray());
-                    
-                }
-                return Ok(news);
-            }
-            else
-            {
-                news.image = "";
-                return Ok(news);
-            }
+            return Ok(news);
+            
         }
-        [HttpPost("/news/upload")]
-        public ActionResult UploadPhoto(IFormFile file)
+        [HttpPost("/news/upload/{id}")]
+        public ActionResult UploadPhoto(string id,[FromForm] IFormFile file)
         {
-            News news = _news.GetByID("61df1026981ab2e50f2ecf6b");
+            
+            News news = _news.GetByID(id);
+
+            if(file.Length > 0)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    file.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+
+                    news.image = fileBytes;
+                    _news.Save(news);
+                }
+            }
+
             /*
             if (file != null)
             {
-                MemoryStream memoryStream = new MemoryStream();
-                
-                    file.OpenReadStream().CopyTo(memoryStream);
-                    news.image = Convert.ToBase64String(memoryStream.ToArray());
-
-                
+                MemoryStream memoryStream = new MemoryStream();            
+                file.OpenReadStream().CopyTo(memoryStream);
+                news.image = Convert.ToBase64String(memoryStream.ToArray());
+                _news.Save(news);
                 return Ok(news);
             }
             else
             {
                 news.image = "";
                 return Ok(news);
-            }*/
-            return Ok();
+            }
+           */
+
+
+            return Ok(news);
             
+        }
+
+
+        public byte[] GetImage (string sBase64String)
+        {
+            byte[] bytes = null;
+            if (!string.IsNullOrEmpty(sBase64String))
+            {
+                bytes = Convert.FromBase64String(sBase64String);
+            }
+            return bytes;
+        }
+
+        [HttpPost("/news/replace/")]
+        public ActionResult SaveNews ( [FromBody]News news)
+        {
+            _news.Save(news);
+            return Ok(news);
         }
        
 
