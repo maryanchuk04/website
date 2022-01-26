@@ -1,42 +1,52 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import './Main_news.css';
+import axios from 'axios';
 function Main_news() {
+
+  const [news, setNews] = useState([]);
+
+  useEffect(()=>{
+      axios.get("http://localhost:5000/news").then((result)=>{
+        setNews(result.data);
+        console.log(result.data);
+      });
+  }, []);
+  /*
+  {news.map((n, index)=>index < 6 && (
+    <div className="grid_news">
+        <div className="info_news">
+              <h3>{n.title}</h3>
+               <div className="imagen"><img  src={`data:image/gif;base64,${n.image}`} alt={n.title} /></div>
+              <p>{n.short_text}</p>
+      </div>
+    </div>
+  ))}
+
+*/
+
     return (
+      <div className="main_news">
         
-          <div className="main_news">
               <div className="container_all">
-                  <div className="grid_news">
-                      <div className="info_news">
-                            <h3>Lorem, ipsum dolor.</h3>
-                             <div className="imagen"><img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvg66xlGVBRpexJ_5PvMgYnLFaVfp146_OQ&usqp=CAU" alt="" /></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus mollitia sed nulla iure, nihil sapiente.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus mollitia sed nulla iure, nihil sapiente.</p>
-                    </div>
-                        <div className="info_news">
-                        <h3>Lorem, ipsum dolor.</h3>
-                        <div className="imagen"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvg66xlGVBRpexJ_5PvMgYnLFaVfp146_OQ&usqp=CAU" alt="" /></div>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus mollitia sed nulla iure, nihil sapiente.</p>
-                      </div>
-                        <div className="info_news">
-                        <h3>Lorem, ipsum dolor.</h3>
-                        <div className="imagen"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvg66xlGVBRpexJ_5PvMgYnLFaVfp146_OQ&usqp=CAU" alt="" /></div>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus mollitia sed nulla iure, nihil sapiente.</p>
-                      </div>
-                      <div className="info_news">
-                      <h3>Lorem, ipsum dolor.</h3>
-                      <div className="imagen"><img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvg66xlGVBRpexJ_5PvMgYnLFaVfp146_OQ&usqp=CAU" alt="" /></div>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus mollitia sed nulla iure, nihil sapiente.</p>
-                      </div>
-                      <div className="info_news">
-                      <h3>Lorem, ipsum dolor.</h3>
-                      <div className="imagen"><img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvg66xlGVBRpexJ_5PvMgYnLFaVfp146_OQ&usqp=CAU" alt="" /></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus mollitia sed nulla iure, nihil sapiente.</p>
-                      </div>
-                      <div className="info_news">
-                      <h3>Lorem, ipsum dolor.</h3>
-                      <div className="imagen"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvg66xlGVBRpexJ_5PvMgYnLFaVfp146_OQ&usqp=CAU" alt="" /> </div>  
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus mollitia sed nulla iure, nihil sapiente.</p>  
-                      </div>
-                  </div>
+              <div className="grid_news">
+              {
+              news.map((n, index)=>index < 6 && (
+                
+                <div className="info_news">
+                      
+                        <div>
+                          <h3>{n.title}</h3>
+                          <div className="imagen">
+                            <img src={`data:image/gif;base64,${n.image}`} alt={n.title} />
+                          </div>
+                        <p>{n.short_text}</p>
+                        </div>
+                        </div>
+               
+                      ))
+                      
+              }
+                 </div>
               </div>
           </div>
         

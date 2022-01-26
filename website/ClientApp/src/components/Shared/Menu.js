@@ -8,6 +8,7 @@ function Menu() {
                 <div class="container_all">                           
                                <nav className="one">
                                    <ul className="topmenu">
+                                    <li><Link to ='/'>Головна</Link></li>
                                     <li> <Link to = '/news'>Новини</Link></li>
                                     <li><Link to ='/achivement'>Досягнення</Link></li>
                                     <li>

@@ -109,7 +109,7 @@ function News() {
               <div className="info">
                 <div className="all_for_file">
                   <div className="container_for_krasota">
-                    <div className="wrapper">                
+                    <div className="wrappers">                
                       <div className="kartinka">
                         <img src={`data:image/gif;base64,${news.image}`} alt="" />
                       </div>

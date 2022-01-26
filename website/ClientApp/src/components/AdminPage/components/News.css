@@ -84,7 +84,7 @@
     height: 350px;
     width: 430px;
 }
-.container_for_krasota .wrapper{
+.container_for_krasota .wrappers{
     position: relative;
     height: 300px;
     width: 100%;
@@ -97,7 +97,7 @@
     overflow: hidden;
 }
 
-.wrapper .kartinka{
+.wrappers .kartinka{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -106,16 +106,16 @@
     justify-content: center;
 }
 
-.wrapper  .kartinka img{
+.wrappers  .kartinka img{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-.wrapper .icon{
+.wrappers .icon{
     font-size: 100px;
     color: #9658fe;
 }
-.wrapper .nadpus{
+.wrappers .nadpus{
     font-size: 20px;
     color: #5b5b7b;
     font-weight: 500;
@@ -130,7 +130,8 @@
     font-size: 20px;
 }
 
-.wrapper .file-name{
+.wrappers .file-name{
+    display: none;
     position: absolute;
     bottom: 0px;
     color:#fff;
