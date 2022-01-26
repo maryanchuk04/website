@@ -2,22 +2,39 @@
     display: flex;
     flex-direction: column;
 }
+.posit{
+    position: relative;
+}
 .news_preview{
+    position: relative;
     width: 100%;
     height: 10vh;
-    background-color: brown;
     margin-top: -1vh;
+    place-content: center;
+    background-size: cover;
+    
+}
+.news_preview img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    object-fit: cover;
 }
 .news_preview .container_all{
-    display: flex;
+    display: grid;
     align-items: center;
-   
+    place-items: center;
 }
 .news_preview .container_all h1{
-    
-    
+    position: absolute;
+    opacity: 1;
     margin: 0 auto;
-    color: white;
+    color: rgb(0, 0, 0);
+    z-index: 100;
+    text-align: center;
+    font-weight: 900;
+    font-size: 60px;
     
 }
 .shedule{

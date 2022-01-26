@@ -1,0 +1,47 @@
+.employers{
+    padding: 20px;
+    
+    height: fit-content;
+    border-radius: 8px;
+    margin: 20px;
+    
+}
+
+.employers_title{
+    display: grid;
+    place-items: center;  
+    margin: 50px 0 0 0 ; 
+  
+}
+.employers_title h1{
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.emp{
+    display: flex;
+    margin: 40px;
+    box-shadow: 20px 20px #5d9bc7;
+    align-items: center;
+    border:  2px solid rgb(0, 0, 0);  
+}
+.emp .emp_info{
+    margin: 10px;
+
+}
+.emp_info h2{
+    color: rgb(78, 77, 77);
+    font-size: 20px;
+}
+
+.emp_info h1{
+    color:rgb(44, 43, 43);
+    font-weight: 700;
+}
+.emp .emp_image{
+    margin: 10px;
+}
+.emp_info span {
+   
+    
+}
