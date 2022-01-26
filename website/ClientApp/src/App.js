@@ -42,9 +42,9 @@ export default class App extends Component {
           <Route path = '/student' exact element={<StudentPage/>} />
           <Route path = '/news' exact element={<React.Fragment><Header/><Menu/><NewsPage/></React.Fragment>} />
           <Route path = '/history' exact element={<React.Fragment><Header/><Menu/><HistoryPage/><Footer/></React.Fragment>} />
-          <Route path = '/entrant' exact element={<EntrantPage/>} />
-          <Route path = '/employers' exact element={<EmployersPage/>} />
-          <Route path = '/achivement' exact element={<AchivementPage/>} />
+          <Route path = '/entrant' exact element={<React.Fragment><Header/><Menu/><EntrantPage/><Footer/></React.Fragment>} />
+          <Route path = '/employers' exact element={<React.Fragment><Header/><Menu/><EmployersPage/><Footer/></React.Fragment>} />
+          <Route path = '/achivement' exact element={<React.Fragment><Header/><Menu/><AchivementPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality' exact element={<React.Fragment><Header/><Menu/><SpecialityPage/></React.Fragment>} />
           <Route path = '/speciality/cooking' exact element={<React.Fragment><Header/><Menu/><CookingPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality/marketing' exact element={<MarketingPage/>} />

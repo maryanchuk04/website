@@ -12,7 +12,7 @@ namespace website.Services
         public EmployerServices(IMongoClient client)
         {
             var db = client.GetDatabase("College");
-            _employers = db.GetCollection<Employer>("Employer");
+            _employers = db.GetCollection<Employer>("Employers");
 
         }
         public void Delete(string ID) => _employers.DeleteOne(x => x.id == ID);
@@ -33,17 +33,12 @@ namespace website.Services
         }
         public Employer Save(Employer obj)
         {
-            var empobj = _employers.Find(x => x.id == obj.id).FirstOrDefault();
-            if(empobj == null)
-            {
-                _employers.InsertOne(obj);
-
-            }
-            else
+            if (obj != null)
             {
                 _employers.ReplaceOne(x => x.id == obj.id, obj);
+                return obj;
             }
-            return obj;
+            else return null;
         }
     }
 }

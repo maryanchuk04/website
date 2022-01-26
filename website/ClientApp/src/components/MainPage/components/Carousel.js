@@ -19,9 +19,15 @@ export default function Carousel() {
   const hotelCards = [
     {
       
+      imageSrc:  'https://scontent.fcwc1-1.fna.fbcdn.net/v/t1.6435-9/188588260_830940474522400_2949950336629571301_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=730e14&_nc_ohc=xgHdjLMVUC4AX__LUwZ&_nc_ht=scontent.fcwc1-1.fna&oh=00_AT-S3pT0XJ_vpllFG8U-iAux_yvZ9CPtoHY-m6MSaDBCdA&oe=6217F119',
+     
+   },
+    {
+      
        imageSrc:  'https://osvitavukraini.com/components/com_rsdirectory/files/cache/800x800/695f8088b93351123af18c9550879421.jpg',
       
     },
+
     {
       
        imageSrc:  'https://web.kpi.kharkov.ua/emmb/wp-content/uploads/sites/185/2018/08/ucheba-za-rubezom-1080x480.jpg',
