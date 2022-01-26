@@ -11,18 +11,7 @@ function Main_news() {
         console.log(result.data);
       });
   }, []);
-  /*
-  {news.map((n, index)=>index < 6 && (
-    <div className="grid_news">
-        <div className="info_news">
-              <h3>{n.title}</h3>
-               <div className="imagen"><img  src={`data:image/gif;base64,${n.image}`} alt={n.title} /></div>
-              <p>{n.short_text}</p>
-      </div>
-    </div>
-  ))}
-
-*/
+  
 
     return (
       <div className="main_news">
@@ -31,18 +20,18 @@ function Main_news() {
               <div className="grid_news">
               {
               news.map((n, index)=>index < 6 && (
-                
                 <div className="info_news">
-                      
-                        <div>
+                      <div className="one_news_main">
+                        <div className = "news_title_main" >
                           <h3>{n.title}</h3>
+                          </div>
                           <div className="imagen">
                             <img src={`data:image/gif;base64,${n.image}`} alt={n.title} />
                           </div>
                         <p>{n.short_text}</p>
+                        
                         </div>
-                        </div>
-               
+                    </div>
                       ))
                       
               }

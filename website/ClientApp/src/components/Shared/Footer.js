@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Footer.css';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 function Footer() {
    
    const [email,setEmail] = useState("")
@@ -11,24 +11,31 @@ function Footer() {
 
    const SendClick = (e)=>{
       e.preventDefault();
-      axios.post("http://localhost:5000/mail/send",{
-         name: name,
-         email : email,
-         text: text
-      }).then((result)=>{
-         if(result.status===200 )
-         {
-            alert('Ваше повідомення успішно відправлено');
-            setText("");
-            setEmail("");
-         }
-         else {
-            alert('Виникла помилка!')
-         }
+      if(name.trim()!=="" && email.trim()!==""&& text.trim()!==""){
          
-         console.log(result.data);
-
-      })
+         axios.post("http://localhost:5000/mail/send",{
+            name: name,
+            email : email,
+            text: text
+         }).then((result)=>{
+            if(result.status===200 )
+            {
+               alert('Ваше повідомення успішно відправлено');
+               setText("");
+               setEmail("");
+            }
+            else {
+               alert('Виникла помилка!')
+            }
+            
+            console.log(result.data);
+   
+         })
+      }
+      else{
+         alert('Помилка! Введіть будь ласка данні!');
+      }
+      
    }
 
 
@@ -41,13 +48,13 @@ function Footer() {
                   <div className="container_footer">
                      <div className="about_footer">
                         <div className="about_us">
-                           <p>Чернівецький фаховий коледж бізнесу та харчових технологій</p>
-                           <p>вул.Руська,194,місто Чернівці,58000</p>
-                            <p>dovira.chdkt@gmail.com</p>
-                            <p>+38(03722)61914</p>
+                           <h1>Чернівецький фаховий коледж бізнесу та харчових технологій</h1>
+                           <p><span>Розташування: </span>вул.Руська,194,місто Чернівці,58000</p>
+                            <p><span>Email: </span>dktcv@ukr.net</p>
+                            <p><span>Телефон: </span>+38(0372) 54-81-15</p>
                         </div>
                         <form className="form_feedback" onSubmit={(i)=>SendClick(i)}>
-                           <h3>Напишіть нам</h3>
+                           <h3>Напишіть нам!</h3>
                            <input type="text"  className="element_form" placeholder="Ім`я" onChange={(i)=>setName(i.target.value)} value = {name}/>
                            <input type="email"  className="element_form" placeholder="Email" onChange={(i)=>setEmail(i.target.value)} value = {email}/>
                            <textarea name="text"  className="element_form "  placeholder="Напишіть ваш відгук" id="" cols="30" rows="6" onChange={(i)=>setText(i.target.value)} value = {text}></textarea>
@@ -59,26 +66,26 @@ function Footer() {
                        
                        
                      <div class="wrapper">
-                        <div class="button">
+                        <a href ="https://www.facebook.com/profile.php?id=100028193662361" class="button">
                            <div class="icon">
                                    <i class="fab fa-facebook-f"></i>
                            </div>
                            <span>Facebook</span>
-                        </div>
+                        </a>
                       
-                        <div class="button">
+                        <a href ="https://www.facebook.com/profile.php?id=100028193662361" class="button" target ="_blank">
                           <div class="icon">
                              <i class="fab fa-instagram"></i>
                           </div>
                           <span>Instagram</span>
-                       </div>
+                       </a>
                        
-                       <div class="button">
+                       <a href ="" class="button">
                           <div class="icon">
                              <i class="fab fa-youtube"></i>
                           </div>
                           <span>YouTube</span>
-                       </div>
+                       </a>
                     </div>
                     </div>
                   </div>

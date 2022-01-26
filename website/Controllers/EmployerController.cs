@@ -5,7 +5,7 @@ using website.Services;
 namespace website.Controllers
 {
     [ApiController]
-    [Route("/emloyer")]
+    [Route("/emloyers")]
     public class EmployerController : Controller
     {
         public readonly EmployerServices _employers;
