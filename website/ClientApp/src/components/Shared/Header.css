@@ -45,7 +45,8 @@
 }
 
 .body_header{
-    background-color: #A0C8F5;
+     background: linear-gradient(90deg, rgba(31,162,255,1) 0%, rgba(18,216,250,1) 47%, rgba(166,255,203,1) 100%);
+    
 }
 .image{
     width: 200px;

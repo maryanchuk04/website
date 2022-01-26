@@ -24,7 +24,10 @@ namespace website.Controllers
             try
             {
                 mailService.SendMessage(mail.name, mail.email, mail.text);
-                return Ok(mail);
+                return Ok(new {
+                    message = "Ваше повідомлення відправлено!!!",
+                    mail = mail
+                }) ;
             }
             catch (Exception e)
             {

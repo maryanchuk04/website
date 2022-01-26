@@ -1,8 +1,8 @@
 .body_footer{
     width: 100%;
     height: 465px;
-     background-color: rgb(96, 127, 133);
-}
+    background: linear-gradient(254deg, rgba(142,158,171,1) 0%, rgba(238,242,243,1) 100%);}
+    
 .element_form:focus{
  box-shadow: 0 0 20px 10px cornsilk ;
  border:none;
@@ -21,14 +21,34 @@
 color: azure;
 }
 .element_form{
-    background-color: rgb(122, 187, 187);
+  background: linear-gradient(254deg, rgb(202, 202, 202) 0%, rgba(255, 255, 255, 0.972) 100%);
+      /*background-color: rgb(14, 63, 122);*/
     border-radius: 5px;
     margin: 5px 0;
+    color: black;
 }
 .form_feedback{
     display: flex;
     flex-direction: column;
+    color: black;
 }
+
+.form_feedback input{
+  padding: 3px;
+}
+
+.form_feedback input::placeholder{
+  color: rgb(39, 105, 131);
+  
+}
+
+.form_feedback textarea::placeholder{
+  color: rgb(39, 105, 131);
+  
+}
+
+
+
 .about_us p:first-child{
   padding-top: 25px;
 }
@@ -36,6 +56,7 @@ color: azure;
   padding-top: 25px;
 }
 .form_feedback textarea{
+  color: black;
   resize: none;
 }
 .about_footer p{
@@ -46,17 +67,9 @@ color: azure;
 
 .line_footer{
     border:none;
-<<<<<<< HEAD
+
     background-color: rgb(64, 99, 102);
     height: 3px;
-=======
-
-    background-color: rgb(94, 94, 121);
-
-   
-
-    height: 2px;
->>>>>>> 189f471bbbd8dd96fffa9e45123e6b9955570c74
     width: 100%;
     margin: 20px 0;
 }
