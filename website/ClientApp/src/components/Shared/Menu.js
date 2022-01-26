@@ -16,6 +16,9 @@ function Menu() {
                                         <ul className="submenu">
                                                    
                                                    <li> <Link to ='/student/practice'>Практика та працевлаштування</Link></li>
+                                                   <li> <Link to ='/student/callshedule'>Розклад дзвінків</Link></li>
+                                                   <li> <Link to ='/student/detailspayment'>Реквізити для оплати</Link></li>
+                                                   <li> <Link to ='/student/syllabus'>Силабуси</Link></li>
                                                    
                                         </ul>  
 

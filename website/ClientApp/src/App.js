@@ -12,6 +12,9 @@ import SpecialityPage from './components/Speciality/SpecialityPage/SpecialityPag
 import CookingPage from './components/Speciality/CookingPage/CookingPage';
 import MarketingPage from './components/Speciality/MarketingPage/MarketingPage';
 import PracticePage from './components/StudentPage/PracticePage/PracticePage';
+import CallShedulePage from './components/StudentPage/CallShedule/CallShedulePage';
+import DetailsPaymentPage from './components/StudentPage/DetailsPayment/DetailsPaymentPage';
+import SyllabusPage from './components/StudentPage/Sullabuses/SullabusesPage';
 import OblikPage from './components/Speciality/OblikPage/OblikPage';
 import PidpruyemstvoPage from './components/Speciality/PidpruyemstvoPage/PidpruyemstvoPage';
 import AchivementPage from './components/AchivementPage/AchivementPage';
@@ -47,8 +50,10 @@ export default class App extends Component {
           <Route path = '/speciality/marketing' exact element={<MarketingPage/>} />
           <Route path = '/speciality/oblik' exact element={<React.Fragment><Header/><Menu/><OblikPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality/pidpruyemstvo' exact element={<React.Fragment><Header/><Menu/><PidpruyemstvoPage/><Footer/></React.Fragment>} />
-
           <Route path = '/student/practice' exact element={<React.Fragment><Header/><Menu/><PracticePage/><Footer/></React.Fragment>} />
+          <Route path = '/student/callshedule' exact element={<React.Fragment><Header/><Menu/><CallShedulePage/><Footer/></React.Fragment>} />
+          <Route path = '/student/detailspayment' exact element={<React.Fragment><Header/><Menu/><DetailsPaymentPage/><Footer/></React.Fragment>} />
+          <Route path = '/student/syllabus' exact element={<React.Fragment><Header/><Menu/><SyllabusPage/><Footer/></React.Fragment>} />
 
 
 
