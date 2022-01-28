@@ -15,30 +15,37 @@ function CallShedulePage() {
     </tr>
   <tr>
     <td>1</td>
-    <td>20.3</td>
-    <td>30.5</td>
-    <td>23.5</td>
+    <td>8<sup>30</sup></td>
+    <td>9<sup>50</sup></td>
+    <td>25 хвилин</td>
     
     </tr>
   <tr>
-    <td>Google</td>
-    <td>50.2</td>
-    <td>40.63</td>
-    <td>45.23</td>
+    <td>2</td>
+    <td>10<sup>15</sup></td>
+    <td>11<sup>35</sup></td>
+    <td>35 хвилин</td>
     
     </tr>
   <tr>
-    <td>Apple</td>
-    <td>25.4</td>
-    <td>30.2</td>
-    <td>33.3</td>
+    <td>3</td>
+    <td>12<sup>10</sup></td>
+    <td>13<sup>30</sup></td>
+    <td>15 хвилин</td>
    
     </tr>
   <tr>
-    <td>IBM</td>
-    <td>20.4</td>
-    <td>15.6</td>
-    <td>22.3</td>
+    <td>4</td>
+    <td>13<sup>45</sup></td>
+    <td>15<sup>05</sup></td>
+    <td>10 хвилин</td>
+    
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>15<sup>15</sup></td>
+    <td>16<sup>35</sup></td>
+    <td></td>
     
     </tr>
   </table>
