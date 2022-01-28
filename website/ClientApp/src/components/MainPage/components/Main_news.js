@@ -1,11 +1,13 @@
 import React, { useEffect,useState } from 'react'
 import './Main_news.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 function Main_news() {
 
   const [news, setNews] = useState([]);
 
   useEffect(()=>{
+      
       axios.get("http://localhost:5000/news").then((result)=>{
         setNews(result.data);
         console.log(result.data);
@@ -23,13 +25,14 @@ function Main_news() {
                 <div className="info_news">
                       <div className="one_news_main">
                         <div className = "news_title_main" >
-                          <h3>{n.title}</h3>
+                          <h3><Link key ={n.id} to = {`/news/${n.id}`}>{n.title}</Link></h3>
                           </div>
                           <div className="imagen">
                             <img src={`data:image/gif;base64,${n.image}`} alt={n.title} />
                           </div>
-                        <p>{n.short_text}</p>
-                        
+                          <div className="news_short_text_main">
+                            <p>{n.short_text}</p>
+                          </div> 
                         </div>
                     </div>
                       ))

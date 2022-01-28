@@ -24,6 +24,7 @@ import HistoryPage from './components/HistoryPage/HistoryPage';
 import NewsPage from './components/NewsPage/NewsPage';
 import StudentPage from './components/StudentPage/StudentPage';
 import Menu from './components/Shared/Menu';
+import OneNewsPage from './components/NewsPage/OneNewsPage';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -40,7 +41,7 @@ export default class App extends Component {
           <Route path ='/admin/news' exact element ={<News/>}/>
 
           <Route path = '/student' exact element={<StudentPage/>} />
-          <Route path = '/news' exact element={<React.Fragment><Header/><Menu/><NewsPage/></React.Fragment>} />
+          <Route path = '/news' exact element={<React.Fragment><Header/><Menu/><NewsPage/><Footer/></React.Fragment>} />
           <Route path = '/history' exact element={<React.Fragment><Header/><Menu/><HistoryPage/><Footer/></React.Fragment>} />
           <Route path = '/entrant' exact element={<React.Fragment><Header/><Menu/><EntrantPage/><Footer/></React.Fragment>} />
           <Route path = '/employers' exact element={<React.Fragment><Header/><Menu/><EmployersPage/><Footer/></React.Fragment>} />
@@ -55,6 +56,7 @@ export default class App extends Component {
           <Route path = '/student/detailspayment' exact element={<React.Fragment><Header/><Menu/><DetailsPaymentPage/><Footer/></React.Fragment>} />
           <Route path = '/student/syllabus' exact element={<React.Fragment><Header/><Menu/><SyllabusPage/><Footer/></React.Fragment>} />
 
+          <Route path = "/news/:id" exact element ={<React.Fragment><Header/><Menu/><OneNewsPage/><Footer/></React.Fragment>}/>
 
 
         </Routes>

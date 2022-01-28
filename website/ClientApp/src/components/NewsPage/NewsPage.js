@@ -19,11 +19,9 @@ function NewsPage() {
   
 
       <div className="news_header">
-
+          Новини
       </div>
       {news.map((n,index)=>(
-
-      
       <div className="news_block">
         
         <div className="news_title">
@@ -31,15 +29,14 @@ function NewsPage() {
         </div>
         <div className="news_info">
         <img src={`data:image/gif;base64,${n.image}`}/>
-       
           <div className="text_and_link">
             <h2>{n.short_text}</h2>
            <div className="link_news">
-            <Link to = "/">Детальніше</Link>
+            <Link key = {n.id} to ={`/news/${n.id}`}>Детальніше</Link>
             </div>
            </div>
         </div>
-        <p>{n.date}</p>
+        <p>{n.date.substr(0,10)}</p>
       </div>  
       ))}
 
