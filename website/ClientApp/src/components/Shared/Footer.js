@@ -1,9 +1,20 @@
 import React, { useState } from 'react'
 import './Footer.css';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 function Footer() {
-   
+     
+
+   const sliderSettings = {
+      arrows: true,
+      slidesToShow: 1,
+      slidesToScroll: 4,
+      infinite: true,
+      pauseOnHover:false,
+    }
+
    const [email,setEmail] = useState("")
    const [name,setName] = useState("")
    const [text,setText] = useState("")
@@ -62,6 +73,23 @@ function Footer() {
                         </form>
                      </div>
                      <hr className="line_footer"/>
+
+                     <div className="about_other">
+                     
+                        <div className="image_other">
+                           <img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/MON.png" alt="" />
+                        </div>
+                        <div className="image_other">
+                           <img src=" https://designcollege.cv.ua/wp-content/uploads/2021/04/DEPARTAMENT-11.33.33.png" alt="" />
+                        </div>
+                        <div className="image_other">
+                           <img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/KONKURS.png" alt="" />
+                        </div>
+                        <div className="image_other">
+                           <img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/TSENTR-kopyya.png" alt="" />
+                        </div>
+                       
+                     </div>
                      <div className="social_links">
                        
                        
