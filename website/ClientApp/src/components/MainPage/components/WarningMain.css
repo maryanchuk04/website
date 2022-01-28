@@ -1,0 +1,40 @@
+.title_warning{
+    width: 100%;
+    height: 10vh;
+    background: rgb(146, 175, 201);
+    display: grid;
+    place-items: center;
+    margin-top:-1vh;
+}
+
+.title_warning p{
+    font-size: 40px;
+    font-weight: 900;
+    color:rgb(17, 38, 78);
+}
+.warning_block{
+    margin: 40px 0;
+    display: flex;
+    background: rgb(187, 245, 235);
+}
+.text_warning{
+    padding: 15px;
+    display: flex;
+    flex-direction:column ;
+}
+.text_warning h3{
+    padding: 20px;
+    font-weight: 800;
+    font-size: 35px;
+
+}
+.text_warning p{
+    padding: 15px;
+    font-size: 20px;  
+font-style: italic;
+}
+.image_warning {
+    padding: 15px;
+  display: grid;
+  place-items: center;
+}

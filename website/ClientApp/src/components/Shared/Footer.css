@@ -183,3 +183,25 @@ color: azure;
   .wrapper .button:nth-child(5) span{
     color: #ff0000;
   }
+
+.about_other{
+  display: flex;
+  width: 90%;
+  margin:20px auto;
+  height: fit-content;
+  background: rgb(125, 132, 172);
+}
+.image_other{
+  opacity:0.6;
+  height: 100px;
+  padding: 10px 15px;
+}
+
+.image_other img{
+width: 100%;
+height: 100%;
+}
+.image_other:hover{
+  cursor: pointer;
+  opacity:1;
+}
