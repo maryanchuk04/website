@@ -30,7 +30,7 @@ a{
 color: azure;
 }
 .element_form{
-    background-color: rgb(122, 187, 187);
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     margin: 5px 0;
 }
@@ -41,7 +41,7 @@ color: azure;
 
 
 
-.form_feedback textarea::placeholder{
+.form_feedback ::placeholder{
   color: rgb(39, 105, 131);
   
 }
@@ -80,9 +80,6 @@ color: azure;
 }
 
 .line_footer{
- 
-
-
     height: 3px;
     background-color: rgb(94, 94, 121);
     height: 2px;
