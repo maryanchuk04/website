@@ -26,6 +26,6 @@ namespace website
         public byte[] image { get; set; }
 
         [BsonElement("date")]
-        public DateTime date { get; set; } = DateTime.Now.Date;
+        public DateTime date { get; set; } 
     }
 }

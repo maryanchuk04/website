@@ -38,6 +38,10 @@ namespace website.Controllers
             return Ok(news);
             
         }
+        [HttpGet("/news/{id}")]
+        public ActionResult<News> GetNews(string id) => Ok(_news.GetByID(id));
+
+
         [HttpPost("/news/upload/{id}")]
         public ActionResult UploadPhoto(string id,[FromForm] IFormFile file)
         {
@@ -55,24 +59,6 @@ namespace website.Controllers
                     _news.Save(news);
                 }
             }
-
-            /*
-            if (file != null)
-            {
-                MemoryStream memoryStream = new MemoryStream();            
-                file.OpenReadStream().CopyTo(memoryStream);
-                news.image = Convert.ToBase64String(memoryStream.ToArray());
-                _news.Save(news);
-                return Ok(news);
-            }
-            else
-            {
-                news.image = "";
-                return Ok(news);
-            }
-           */
-
-
             return Ok(news);
             
         }

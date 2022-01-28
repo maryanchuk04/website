@@ -27,7 +27,12 @@ export default function Carousel() {
        imageSrc:  'https://osvitavukraini.com/components/com_rsdirectory/files/cache/800x800/695f8088b93351123af18c9550879421.jpg',
       
     },
-
+    {
+      
+      imageSrc:  'https://scontent.fcwc1-1.fna.fbcdn.net/v/t39.30808-6/271891638_987761205506992_5947814027223867228_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=HtvfujYovo8AX_0NXr5&_nc_ht=scontent.fcwc1-1.fna&oh=00_AT-BytFfClpvFBumXepoYPzf7WANJltLzpVCa5xTG2pidQ&oe=61F7A86D',
+     
+   },
+   
     {
       
        imageSrc:  'https://web.kpi.kharkov.ua/emmb/wp-content/uploads/sites/185/2018/08/ucheba-za-rubezom-1080x480.jpg',
