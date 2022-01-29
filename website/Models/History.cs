@@ -4,9 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using website.Models.PageTemplate;
 
 namespace website.Models
-{
+{ 
     public class History : IMenuElements
     {
         [BsonId]
@@ -15,5 +16,7 @@ namespace website.Models
 
         [BsonElement("name")]
         public string name { get; set; }
+
+        public PageElement page { get; set; }
     }
 }

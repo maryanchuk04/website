@@ -18,7 +18,8 @@ namespace website.Models
         [BsonElement("name")]
         public string name { get; set; }
 
-        public PageElement page { get; set; };
+
+        public PageElement page { get; set; }
 
 
     }

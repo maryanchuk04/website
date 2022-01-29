@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace website.Models.PageTemplate
 {
-    public abstract class PageElement
+    public  class PageElement
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
