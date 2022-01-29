@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MongoDB.Driver;
+using website.Models;
 using website.Services;
 
 namespace website
@@ -28,6 +29,8 @@ namespace website
             services.AddSingleton<EmployerServices>();
             services.AddSingleton<NewsServices>();
             services.AddSingleton<MailService>();
+            services.AddSingleton<AdvertisementServices>();
+
             services.AddSingleton<IMongoClient, MongoClient>(s =>
             {
                 var uri = s.GetRequiredService<IConfiguration>()["MongoUri"];
@@ -52,11 +55,7 @@ namespace website
 
             app.UseRouting();
 
-            app.UseCors(x => x
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .SetIsOriginAllowed(origin => true)
-                .AllowCredentials()); 
+            app.UseCors(); 
 
 
 

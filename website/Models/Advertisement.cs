@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Microsoft.AspNetCore.Http;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,6 @@ namespace website.Models
         public string short_text { get; set; }
 
         [BsonElement("image")]
-        public byte[] image { get; set; }
+        public byte[] image { get; set; } 
     }
 }

@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace website.Models.PageTemplate
 {
-    public class ImgWithText
+    public class ImgWithText : Object
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string id { get; set; } = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
+
+        [BsonElement("block_name")]
+        public string block_name { get; set; }
 
         [BsonElement("title")]
         public string title { get; set; }

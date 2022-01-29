@@ -5,7 +5,11 @@ using System.Threading.Tasks;
 
 namespace website.Models
 {
-    public class IMenuElements
+    public interface IMenuElements
     {
+        public string id { get; set; }
+
+        public string name { get; set; }
+
     }
 }

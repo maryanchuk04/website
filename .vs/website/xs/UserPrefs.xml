@@ -1,30 +1,36 @@
 ﻿<Properties StartupConfiguration="{9F1C5EE6-A934-405A-B32E-BF6CF108BF56}|Default">
   <MonoDevelop.Ide.ItemProperties.website PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="website/Models/FileUpload.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="website/Controllers/EntrantController.cs">
     <Files>
-      <File FileName="website/Services/NewsServices.cs" Line="28" Column="10" />
-      <File FileName="website/Services/IDataServices.cs" Line="15" Column="20" />
-      <File FileName="website/Services/EmployerServices.cs" Line="1" Column="1" />
-      <File FileName="website/Controllers/NewsController.cs" Line="25" Column="10" />
-      <File FileName="website/Controllers/EmployerController.cs" />
-      <File FileName="website/Models/Employer.cs" />
-      <File FileName="website/Controllers/MailController.cs" Line="1" Column="1" />
-      <File FileName="website/Services/MailService.cs" Line="5" Column="18" />
-      <File FileName="website/Models/News.cs" Line="17" Column="1" />
-      <File FileName="website/Models/FileUpload.cs" Line="6" Column="15" />
+      <File FileName="website/Services/NewsServices.cs" Line="25" Column="1" IsPinned="True" />
+      <File FileName="website/Controllers/AdvertisementController.cs" Line="33" Column="38" />
+      <File FileName="website/Controllers/NewsController.cs" />
+      <File FileName="website/Startup.cs" Line="32" Column="60" />
+      <File FileName="website/Models/PageTemplate/PageElement.cs" Line="10" Column="12" />
+      <File FileName="website/Models/Employer.cs" Line="1" Column="1" />
+      <File FileName="website/Models/History.cs" Line="20" Column="44" />
+      <File FileName="website/Models/Entrant.cs" Line="20" Column="46" />
+      <File FileName="website/Controllers/HistoryController.cs" Line="17" Column="9" />
+      <File FileName="website/Services/EntrantServices.cs" Line="45" Column="28" />
+      <File FileName="website/Services/EmployerServices.cs" Line="41" Column="30" />
+      <File FileName="website/Controllers/EntrantController.cs" Line="38" Column="17" />
+      <File FileName="website/Models/Advertisement.cs" Line="5" Column="34" NotebookId="1" />
+      <File FileName="website/Models/CollegeActivity.cs" Line="21" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="website" expanded="True">
             <Node name="website" expanded="True">
+              <Node name="Dependencies" expanded="True" />
               <Node name="ClientApp" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="FileUpload.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="EntrantController.cs" selected="True" />
               </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True" />
               <Node name="Services" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -35,7 +41,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/mac/Desktop/website/website/Controllers/EmployerController.cs" relfile="website/Controllers/EmployerController.cs" line="25" column="1" />
+      <Breakpoint file="/Users/mac/Desktop/website/website/Controllers/EmployerController.cs" relfile="website/Controllers/EmployerController.cs" line="27" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

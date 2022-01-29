@@ -39,7 +39,8 @@ namespace website.Controllers
         {
             _slider.Delete(id);
             return Ok("Фото видалене!");
-
         }
+
+
     }
 }
