@@ -16,8 +16,6 @@ namespace website.Controllers
     [ApiController]
     public class NewsController : Controller
     {
-      
-
         public readonly NewsServices _news;
         public NewsController(NewsServices newsData)
         {  
