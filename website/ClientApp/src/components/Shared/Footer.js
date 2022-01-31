@@ -5,16 +5,6 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 function Footer() {
-     
-
-   const sliderSettings = {
-      arrows: true,
-      slidesToShow: 1,
-      slidesToScroll: 4,
-      infinite: true,
-      pauseOnHover:false,
-    }
-
    const [email,setEmail] = useState("")
    const [name,setName] = useState("")
    const [text,setText] = useState("")
@@ -64,13 +54,18 @@ function Footer() {
                             <p><span>Email: </span>dktcv@ukr.net</p>
                             <p><span>Телефон: </span>+38(0372) 54-81-15</p>
                         </div>
+                        
                         <form className="form_feedback" onSubmit={(i)=>SendClick(i)}>
+                        <div className="extra_form">
                            <h3>Напишіть нам!</h3>
-                           <input type="text"  className="element_form" placeholder="Ім`я" onChange={(i)=>setName(i.target.value)} value = {name}/>
-                           <input type="email"  className="element_form" placeholder="Email" onChange={(i)=>setEmail(i.target.value)} value = {email}/>
-                           <textarea name="text"  className="element_form "  placeholder="Напишіть ваш відгук" id="" cols="30" rows="6" onChange={(i)=>setText(i.target.value)} value = {text}></textarea>
+                           
+                           <input type="text"  className="element_form input1" placeholder="Ім`я" onChange={(i)=>setName(i.target.value)} value = {name}/>
+                           <input type="email"  className="element_form input1" placeholder="Email" onChange={(i)=>setEmail(i.target.value)} value = {email}/>
+                           <textarea name="text"  className="element_form textarea1"  placeholder="Напишіть ваш відгук" id="" cols="30" rows="6" onChange={(i)=>setText(i.target.value)} value = {text}></textarea>
                            <button type = "submit" className="btn"> Відправити</button>
+                           </div>
                         </form>
+                       
                      </div>
                      <hr className="line_footer"/>
 
@@ -91,7 +86,6 @@ function Footer() {
                        
                      </div>
                      <div className="social_links">
-                       
                        
                      <div class="wrapper">
                         <a href ="https://www.facebook.com/profile.php?id=100028193662361" class="button">
