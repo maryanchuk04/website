@@ -8,7 +8,10 @@ a{
     background: linear-gradient(254deg, rgba(142,158,171,1) 0%, rgba(238,242,243,1) 100%);
 }
 
-  
+.extra_form{
+  width: 50%;
+  margin:0 0 0 auto;
+}
     
 
 .element_form:focus{
@@ -21,7 +24,7 @@ a{
     padding: 20px 0;
   }
 .btn{
-  margin: 0 auto;
+  margin: 5px 0 5px auto ;
   width: 100%;
     background: rgb(47, 81, 155);
     border-radius: 45px;
@@ -32,13 +35,17 @@ color: azure;
 .element_form{
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
-    margin: 5px 0;
+    margin: 5px 0 5px auto ;
+    width: 100%;
 }
 .form_feedback{
     display: flex;
     flex-direction: column;
 }
-
+.form_feedback h3{
+margin: 0 auto ;
+text-align: center;
+}
 
 
 .form_feedback ::placeholder{
@@ -47,7 +54,7 @@ color: azure;
 }
 
 .about_us{
-  width: 550px;
+  width: 50%;
 }
 
 .about_us h1{
@@ -94,7 +101,9 @@ color: azure;
     height: 100%;
     
 }
-
+.form_feedback{
+  width: 50%;
+}
 .topmenu1 li{
     
     
@@ -104,6 +113,7 @@ color: azure;
     display: grid;
    
     bottom:0;
+    height: fit-content;
     width: 100%;
     place-items: center;
     padding: 0 0 25px 0;
@@ -194,6 +204,9 @@ color: azure;
 .image_other{
   opacity:0.6;
   height: 100px;
+  margin:0 auto;
+
+  width: 25%;
   padding: 10px 15px;
 }
 
@@ -205,3 +218,483 @@ height: 100%;
   cursor: pointer;
   opacity:1;
 }
+@media(max-width :2561px){
+  
+  .about_us h1{
+  
+    
+    font-size: 40px;
+    
+  }
+  .about_footer p{
+   
+    font-size: 35px;
+   
+}
+.form_feedback{
+  font-size: 30px;
+  
+}
+.btn{
+  font-size: 30px;
+}
+.form_feedback textarea{
+  
+  height: 200px;
+  
+}
+.image_other{
+  
+  height: 140px;
+  
+}
+.wrapper .button{
+  
+  height: 80px;
+  width: 80px;
+  
+}
+.wrapper .button:hover{
+  width: 200px;
+}
+.wrapper .button .icon{
+  
+  height: 80px;
+  width: 80px;
+  
+  line-height: 80px;
+  
+}
+
+.wrapper .button .icon i{
+  font-size: 35px;
+  line-height: 80px;
+  
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 80px;
+ 
+}
+  
+}
+
+@media(max-width :1441px){
+  
+  .about_us h1{
+  
+    
+    font-size: 30px;
+    
+  }
+  .about_footer p{
+   
+    font-size: 25px;
+   
+}
+.form_feedback{
+  font-size: 25px;
+  
+}
+.btn{
+  font-size: 25px;
+}
+.form_feedback textarea{
+  
+  height: 130px;
+  
+}
+.image_other{
+  
+  height: 100px;
+  
+}
+.wrapper .button{
+  
+  height: 70px;
+  width: 70px;
+  
+}
+.wrapper .button:hover{
+  width: 200px;
+}
+.wrapper .button .icon{
+  
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  
+}
+
+.wrapper .button .icon i{
+  font-size: 30px;
+  line-height: 70px;
+  
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 70px;
+ 
+}
+  
+}
+
+
+
+@media(max-width :1025px){
+  
+  .about_us h1{
+  
+    
+    font-size: 20px;
+    
+  }
+  .about_footer p{
+   
+    font-size: 20px;
+   
+}
+.extra_form{
+  font-size: 15px;
+  
+}
+.btn{
+  font-size: 15px;
+}
+.extra_form textarea{
+  
+  height: 80px;
+  
+  
+}
+.image_other{
+  
+  height: 85px;
+  padding: 10px 10px;
+  
+}
+.wrapper .button{
+  
+  height: 65px;
+  width: 65px;
+  
+}
+.wrapper .button:hover{
+  width: 200px;
+}
+.wrapper .button .icon{
+  
+  height: 65px;
+  width: 65px;
+  line-height: 65px;
+  
+}
+
+.wrapper .button .icon i{
+  font-size: 27px;
+  line-height: 65px;
+  
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 65px;
+ 
+}
+
+  
+}
+
+@media(max-width :769px){
+  
+  .about_us h1{
+  
+    
+    font-size: 15px;
+    
+  }
+  .about_footer{
+    margin: 15px 0;
+  }
+  .about_footer p{
+    padding: 3px 0;
+    font-size: 15px;
+   
+}
+.extra_form h3{
+  padding: 9px 0 0;
+  font-size: 20px;
+}
+.extra_form{
+  font-size: 15px;
+  
+}
+.btn{
+  font-size: 15px;
+}
+.extra_form textarea{
+  
+  height: 80px;
+  
+  
+}
+.image_other{
+  
+  height: 60px;
+  padding: 8px 5px;
+  
+}
+.wrapper .button{
+  
+  height: 55px;
+  width: 55px;
+  
+}
+.wrapper .button:hover{
+  width: 150px;
+}
+.wrapper .button .icon{
+  
+  height: 55px;
+  width: 55px;
+  line-height: 55px;
+  
+}
+
+.wrapper .button .icon i{
+  font-size: 22px;
+  line-height: 55px;
+  
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.line_footer{
+  
+  margin: 10px 0;
+}
+.wrapper .button span{
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 55px;
+ 
+}
+
+  
+}
+
+
+@media(max-width :426px){
+  .about_footer{
+    display: flex;
+    flex-direction: column;
+  }
+  .about_us{
+    width: 100%;
+  }
+  .form_feedback{
+    width: 100%;
+  }
+  .textarea1{
+    width: 100%;
+  }
+  .extra_form{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .extra_form .input1{
+    width: 49% !important;
+    padding: 0 3px;
+  }
+  .extra_form .btn {
+    margin: 0 auto;
+    width: 70%;
+  }
+  .about_us h1{
+  
+    padding: 2px 0;
+    font-size: 12px;
+    margin: 10px 0;
+  }
+  .about_footer{
+    margin: 15px 0;
+  }
+  .about_footer p{
+    margin: 2px 0;
+    padding: 2px 0;
+    font-size: 12px;
+   
+}
+.extra_form h3{
+  width: 100%;
+  font-size: 11px;
+}
+.extra_form{
+  font-size: 11px;
+  
+}
+.btn{
+  font-size: 11px;
+}
+.extra_form textarea{
+  
+  height: 70px;
+  
+  
+}
+.image_other{
+  
+  height: 45px;
+  padding: 5px 3px;
+  
+}
+.wrapper .button{
+  
+  height: 40px;
+  width: 40px;
+  
+}
+.wrapper .button:hover{
+  width: 150px;
+}
+.wrapper .button .icon{
+  
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  
+}
+
+.wrapper .button .icon i{
+  font-size: 17px;
+  line-height: 40px;
+  
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.line_footer{
+  
+  margin: 10px 0;
+}
+.wrapper .button span{
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 40px;
+ 
+}
+.line_footer{
+  
+  height: 1px;
+ 
+ 
+}
+
+  
+}
+
+
+@media(max-width :376px){
+  
+  .about_us h1{
+  
+    padding: 2px 0;
+    font-size: 10px;
+    margin: 8px 0;
+  }
+  .about_other{
+    margin: 10px 5px;
+  }
+  .about_footer{
+    margin: 12px 0;
+  }
+  .about_footer p{
+    margin: 4px 0;
+    padding: 2px 0;
+    font-size: 10px;
+   
+}
+.extra_form h3{
+  
+  
+  font-size: 8px;
+}
+.extra_form {
+  font-size: 8px;
+  
+}
+.btn{
+  padding: 1px 0;
+  font-size: 8px;
+}
+.extra_form textarea{
+  
+  height: 40px;
+  
+  
+}
+.image_other{
+  
+  height: 35px;
+  padding: 2px 1px;
+  
+}
+.wrapper .button{
+  
+  height: 35px;
+  width: 35px;
+  
+}
+.wrapper .button:hover{
+  width: 150px;
+}
+.wrapper .button .icon{
+  
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+  
+}
+
+.wrapper .button .icon i{
+  font-size: 14px;
+  line-height: 35px;
+  
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.line_footer{
+  
+  margin: 7px 0;
+}
+.wrapper .button span{
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 35px;
+ 
+}
+.line_footer{
+  
+  height: 1px;
+ 
+ 
+}
+
+  
+}
+
+
