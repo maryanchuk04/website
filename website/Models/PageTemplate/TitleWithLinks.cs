@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace website.Models.PageTemplate
 {
-    public class TitleWithLinks : Object
+    public class TitleWithLinks : Object, IPageTemplate
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

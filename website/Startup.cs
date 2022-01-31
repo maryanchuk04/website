@@ -37,7 +37,18 @@ namespace website
                 return new MongoClient(uri);
             });
 
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                        builder =>
+                        {
+                            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                        }
+                    );
+            }
+
+                    
+                );
         }
 
         
@@ -54,7 +65,6 @@ namespace website
             }
 
             app.UseRouting();
-
             app.UseCors(); 
 
 

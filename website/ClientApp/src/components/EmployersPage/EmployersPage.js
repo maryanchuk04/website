@@ -8,7 +8,7 @@ function EmployersPage() {
     const [employers,setEmployers] = useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:5000/employers/all")
+        axios.get("http://www.chdct.somee.com/employers/all")
             .then((result)=>{
                 console.log(result.data);
                 setEmployers(result.data);
