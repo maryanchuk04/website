@@ -6,9 +6,8 @@ function Main_news() {
 
   const [news, setNews] = useState([]);
 
-  useEffect(()=>{
-      
-      axios.get("http://localhost:5000/news").then((result)=>{
+  useEffect(()=>{  
+      axios.get("http://www.chdct.somee.com/news").then((result)=>{
         setNews(result.data);
         console.log(result.data);
       });

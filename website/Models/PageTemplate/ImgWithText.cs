@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace website.Models.PageTemplate
 {
-    public class ImgWithText : Object
+    public class ImgWithText : Object,IPageTemplate
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
