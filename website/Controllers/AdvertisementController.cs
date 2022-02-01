@@ -36,12 +36,8 @@ namespace website.Controllers
         {
             try
             {
-                if(advertisement.image == null)
-                {
-                    
-                }
 
-                _advertisement.Insert(advertisement);
+              _advertisement.Insert(advertisement);
                return  Ok("Insert Done");
             }
             catch (Exception ex)
@@ -61,10 +57,7 @@ namespace website.Controllers
         [HttpPost("/advertisement/upload/{id}")]
         public ActionResult UploadPhoto(string id, [FromForm] IFormFile file)
         {
-
             Advertisement advertisement = _advertisement.GetByID(id);
-
-
             if (file.Length > 0)
             {
                 using (var ms = new MemoryStream())
