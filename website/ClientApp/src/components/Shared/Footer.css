@@ -19,9 +19,10 @@ a{
  border:none;
 }
 .about_footer{
+  height: fit-content;
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 20px 0 0;
   }
 .btn{
   margin: 5px 0 5px auto ;
@@ -54,6 +55,7 @@ text-align: center;
 }
 
 .about_us{
+  height: fit-content;
   width: 50%;
 }
 
@@ -91,7 +93,7 @@ text-align: center;
     background-color: rgb(94, 94, 121);
     height: 2px;
     width: 100%;
-    margin: 25px 0;
+    margin: 15px 0;
 }
 .menu_footer{
     padding: 30px 0;
@@ -288,24 +290,24 @@ height: 100%;
   .about_us h1{
   
     
-    font-size: 30px;
+    font-size: 25px;
     
   }
   .about_footer p{
    
-    font-size: 25px;
+    font-size: 20px;
    
 }
 .form_feedback{
-  font-size: 25px;
+  font-size: 20px;
   
 }
 .btn{
-  font-size: 25px;
+  font-size: 20px;
 }
 .form_feedback textarea{
   
-  height: 130px;
+  height: 100px;
   
 }
 .image_other{
@@ -315,8 +317,8 @@ height: 100%;
 }
 .wrapper .button{
   
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
   
 }
 .wrapper .button:hover{
@@ -324,24 +326,24 @@ height: 100%;
 }
 .wrapper .button .icon{
   
-  height: 70px;
-  width: 70px;
-  line-height: 70px;
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
   
 }
 
 .wrapper .button .icon i{
-  font-size: 30px;
-  line-height: 70px;
+  font-size: 25px;
+  line-height: 60px;
   
 }
 .wrapper .button:hover .icon i{
   color: #fff;
 }
 .wrapper .button span{
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 70px;
+  line-height: 60px;
  
 }
   
