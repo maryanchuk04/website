@@ -30,11 +30,17 @@ namespace website.Controllers
         public ActionResult Get(string id) =>
             Ok(_advertisement.GetByID(id));
 
+
         [HttpPost("/advertisement/add")]
         public ActionResult Add([FromBody] Advertisement advertisement)
         {
             try
             {
+                if(advertisement.image == null)
+                {
+                    
+                }
+
                 _advertisement.Insert(advertisement);
                return  Ok("Insert Done");
             }

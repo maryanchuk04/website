@@ -16,11 +16,13 @@
     margin: 40px 0;
     display: flex;
     background: rgb(187, 245, 235);
+    justify-content: space-between;
 }
 .text_warning{
     padding: 15px;
     display: flex;
     flex-direction:column ;
+    
 }
 .text_warning h3{
     padding: 20px;

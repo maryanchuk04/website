@@ -9,10 +9,10 @@ function WarningMain() {
     useEffect(()=>{
         axios.get('http://www.chdct.somee.com/advertisement').then((result)=>{
             console.log(result.data);
+            
             setAdv(result.data);
         })
     },[])
-
 
     return (
        <div className="div">
@@ -21,17 +21,17 @@ function WarningMain() {
            </div>
            <div className="container_all">
                {adv.map((a,index)=>(
+                
                 <div className="warning_block">
                  <div className="text_warning">
                     <h3>{a.title}</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, totam.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, totam.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, totam.
+                        {a.short_text}
                    </p>
                  </div>
                  <div className="image_warning">
-                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEOE1GLo_CmChhIjgJqAh-9fPcxJIQBnxQeQ&usqp=CAU" alt="" />
+                    {a.image == null ? <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEOE1GLo_CmChhIjgJqAh-9fPcxJIQBnxQeQ&usqp=CAU"alt="" />
+                     : <img src={`data:image/gif;base64,${a.image}`} alt={a.title} />}
                  </div>
                  </div>
                ))}

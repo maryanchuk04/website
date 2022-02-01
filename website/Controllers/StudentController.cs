@@ -39,6 +39,10 @@ namespace website.Controllers
         {
             _student.Insert(student);
         }
+
+
+
+
         [HttpDelete("/student/delete/{id}")]
         public void Delete(string id)
         {
