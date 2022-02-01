@@ -32,7 +32,6 @@ namespace website.Controllers
         public ActionResult InsertOneNews([FromBody] News news)
         {
             _news.Insert(news);
-
             return Ok(news);
             
         }
