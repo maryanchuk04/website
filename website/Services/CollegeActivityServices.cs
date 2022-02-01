@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,29 +9,41 @@ namespace website.Services
 {
     public class CollegeActivityServices : IDataServices<CollegeActivity>
     {
+        public readonly IMongoCollection<CollegeActivity> _collegeActivity;
+        public CollegeActivityServices(IMongoClient client)
+        {
+            var db = client.GetDatabase("College");
+            _collegeActivity = db.GetCollection<CollegeActivity>("CollegeActivity");
+        }
+
         public void Delete(string ID)
         {
-            throw new NotImplementedException();
+            _collegeActivity.FindOneAndDelete(x => x.id == ID);
         }
 
         public IEnumerable<CollegeActivity> GetAll()
         {
-            throw new NotImplementedException();
-        }
+           return _collegeActivity.Find(x => true).ToEnumerable();
 
+        }
         public CollegeActivity GetByID(string Id)
         {
-            throw new NotImplementedException();
+            return _collegeActivity.Find(x => x.id == Id).FirstOrDefault();
         }
 
         public void Insert(CollegeActivity obj)
         {
-            throw new NotImplementedException();
+            _collegeActivity.InsertOne(obj);
         }
 
         public CollegeActivity Save(CollegeActivity obj)
         {
-            throw new NotImplementedException();
+            if (obj != null)
+            {
+                _collegeActivity.ReplaceOne(x => x.id == obj.id, obj);
+                return obj;
+            }
+            else return null;
         }
 
         public void Update(CollegeActivity obj)
