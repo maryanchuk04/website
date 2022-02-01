@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './Menu.css';
+
 function Menu() {
+
+    const [students,setStrudents] = useState([]);
+
+    useEffect(()=>{
+        axios.get("http://localhost:5000/").then((result)=>{
+    
+        })
+    },[])
+    
+   
     return (
         
             <div className="menu_header">

@@ -31,6 +31,7 @@ namespace website
             services.AddSingleton<MailService>();
             services.AddSingleton<AdvertisementServices>();
 
+            services.AddSingleton<StudentServices>();
             services.AddSingleton<IMongoClient, MongoClient>(s =>
             {
                 var uri = s.GetRequiredService<IConfiguration>()["MongoUri"];

@@ -17,7 +17,7 @@ namespace website.Models.PageTemplate
         public string title_page { get; set; }
 
         [BsonElement("blocks")]
-        public Object[] blocks;
+        public TitleWithLinks blocks { get; set; }
 
     }
 }
