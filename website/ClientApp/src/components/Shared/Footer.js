@@ -14,7 +14,7 @@ function Footer() {
       e.preventDefault();
       if(name.trim()!=="" && email.trim()!==""&& text.trim()!==""){
          
-         axios.post("http://localhost:5000/mail/send",{
+         axios.post("http://www.chdct.somee.com/mail/send",{
             name: name,
             email : email,
             text: text
@@ -102,11 +102,11 @@ function Footer() {
                           <span>Instagram</span>
                        </a>
                        
-                       <a href ="" class="button">
+                       <a target="_blank" href =" https://www.google.com.ua/maps/place/Chernivets%CA%B9kyy+Derzhavnyy+Komertsiynyy+Tekhnikum/@48.282612,25.9305403,14z/data=!4m9!1m2!2m1!1z0YTQsNGF0L7QstC40Lkg0LrQvtC70LXQtNC2INCx0ZbQt9C90LXRgdGDINGC0LAg0YXQsNGA0YfQvtCy0LjRhSDRgtC10YXQvdC-0LvQvtCz0ZbQuSDRh9C10YDQvdGW0LLRhtGW!3m5!1s0x473408e166f3947b:0xac6b559a0adcd319!8m2!3d48.2825498!4d25.9734184!15sCmbRhNCw0YXQvtCy0LjQuSDQutC-0LvQtdC00LYg0LHRltC30L3QtdGB0YMg0YLQsCDRhdCw0YDRh9C-0LLQuNGFINGC0LXRhdC90L7Qu9C-0LPRltC5INGH0LXRgNC90ZbQstGG0ZZaaCJm0YTQsNGF0L7QstC40Lkg0LrQvtC70LXQtNC2INCx0ZbQt9C90LXRgdGDINGC0LAg0YXQsNGA0YfQvtCy0LjRhSDRgtC10YXQvdC-0LvQvtCz0ZbQuSDRh9C10YDQvdGW0LLRhtGWkgEHY29sbGVnZQ?hl=ru" class="button">
                           <div class="icon">
-                             <i class="fab fa-youtube"></i>
+                          <i class="fas fa-map-marked-alt"></i>
                           </div>
-                          <span>YouTube</span>
+                          <span>Ми на карті</span>
                        </a>
                     </div>
                     </div>
