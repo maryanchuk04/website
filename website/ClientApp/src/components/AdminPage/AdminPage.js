@@ -1,31 +1,86 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import '../AdminPage/AdminPage.css'
 function AdminPage() {
+    const [student,setStudent] = useState([])
+    const [news,setNews] = useState([])
+    const [abiturient,setAbiturient] = useState([])
+    const [speciality,setSpeciality] = useState([])
+    const [employers,setEmployers] = useState([])
+    const [activies,setActivies] = useState([])
+    const [warning,setWarnings] = useState([])
+    const [state,setState] = useState()
+
+    useEffect(async ()=>{
+        const res1 = await axios.get("http://localhost:5000/student")
+        //barabukli
+        console.log(res1.data)
+        setStudent(res1.data);
+    },[])
+
+    const StudentClick=((i)=>{
+        setState(1);
+    })
+
+    const AbiturientClick=((e)=>{
+        setState(2);
+    })
+    const SpecialityClick=((e)=>{
+        setState(3);
+    })
+    
+    const EmployersClick=((e)=>{
+        setState(4);
+    })
+    const AcriviesClick=((e)=>{
+        setState(5);
+    })
+
+    const AdministrationClick = ((e)=>{
+        setState(6);
+    })
+
+    const NewsClick = ((e)=>{
+        setState(7);
+    })   
     
 
 
 
     return (
-        <div>
+        <div className = "">
+            <div className="admin_title">
+                    <h1>Ласкаво просимо адміністраторе!</h1>
+            </div>
             <div className="all_admin">
+              
+
                 <div className="menu_admin">
+
                     <div className="main_menu">
+                        <div className="admin_menu_title">
+                            Меню
+                        </div>
                       <ul>
                           <li>Головна</li>
                           <li>Досягнення</li>
-                          <li>Студенту</li>
-                          <li>Абітурієнту</li>
-                          <li>Спеціальності</li>
-                          <li>Адміністація</li>
-                          <li>Новини</li>
+                          <li onClick={(i)=>StudentClick(i)}>Студенту</li>
+                          <li onClick={(i)=>AbiturientClick(i)}>Абітурієнту</li>
+                          <li onClick={(i)=>SpecialityClick(i)}>Спеціальності</li>
+                          <li onClick={(i)=>AdministrationClick(i)}>Адміністація</li>
+                          <li onClick={(i)=>NewsClick(i)}>Новини</li>
                       </ul>
                     </div>
                     <div className="sub_menu">
                     <ul>
-
-                          <li>Лорем іпсум</li>
-                          <li>Лорем іпсум</li>
-                          <li>Лорем іпсум</li>
+                        {state === 1 ? 
+                            student.map((s, index)=><li>{s.name}</li>
+                            ):<li></li>
+                        }
+                            
+                        
+                          
+                       
                       </ul>
                     </div>
                   

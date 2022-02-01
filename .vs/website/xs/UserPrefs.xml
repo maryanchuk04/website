@@ -1,23 +1,24 @@
 ﻿<Properties StartupConfiguration="{9F1C5EE6-A934-405A-B32E-BF6CF108BF56}|Default">
   <MonoDevelop.Ide.ItemProperties.website PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="website/Models/Student.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="website/Controllers/AdvertisementController.cs">
     <Files>
       <File FileName="website/Services/NewsServices.cs" Line="16" Column="1" IsPinned="True" />
-      <File FileName="website/Models/PageTemplate/TitleWithLinks.cs" Line="11" Column="35" IsPinned="True" />
-      <File FileName="website/Models/PageTemplate/PageElement.cs" Line="20" Column="30" />
-      <File FileName="website/Models/Employer.cs" Line="1" Column="1" />
-      <File FileName="website/Models/History.cs" Line="20" Column="44" />
+      <File FileName="website/Models/PageTemplate/TitleWithLinks.cs" IsPinned="True" />
+      <File FileName="website/Models/Employer.cs" />
+      <File FileName="website/Models/History.cs" />
       <File FileName="website/Models/Entrant.cs" />
       <File FileName="website/Controllers/HistoryController.cs" />
       <File FileName="website/Services/EntrantServices.cs" />
       <File FileName="website/Services/EmployerServices.cs" />
-      <File FileName="website/Controllers/EntrantController.cs" Line="38" Column="17" />
-      <File FileName="website/Controllers/StudentController.cs" Line="41" Column="10" />
-      <File FileName="website/Models/Student.cs" Line="20" Column="16" />
-      <File FileName="website/Startup.cs" Line="51" Column="21" />
-      <File FileName="website/Models/PageTemplate/ImgWithText.cs" Line="26" Column="41" />
+      <File FileName="website/Controllers/EntrantController.cs" />
+      <File FileName="website/Controllers/StudentController.cs" Line="17" Column="44" />
+      <File FileName="website/Models/Student.cs" />
+      <File FileName="website/Startup.cs" />
+      <File FileName="website/Models/PageTemplate/ImgWithText.cs" />
       <File FileName="website/Services/StudentServices.cs" Line="33" Column="10" />
-      <File FileName="website/Models/PageTemplate/IPageTemplate.cs" Line="1" Column="1" />
+      <File FileName="website/Models/PageTemplate/IPageTemplate.cs" />
+      <File FileName="website/Controllers/EmployerController.cs" Line="1" Column="1" />
+      <File FileName="website/Controllers/AdvertisementController.cs" Line="22" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,11 +27,10 @@
             <Node name="website" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="ClientApp" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="PageTemplate" expanded="True" />
-                <Node name="Student.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="AdvertisementController.cs" selected="True" />
               </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True" />
               <Node name="Services" expanded="True" />
               <Node name="appsettings.json" expanded="True" />
