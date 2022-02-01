@@ -8,7 +8,7 @@ using website.Models.PageTemplate;
 
 namespace website.Models
 {
-    public class Student : IMenuElements
+    public class Student  
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -18,6 +18,6 @@ namespace website.Models
         public string name { get; set; }
 
         [BsonElement("page")]
-        public TitleWithLinks page { get; set; }
+        public Page page { get; set; }
     }
 }

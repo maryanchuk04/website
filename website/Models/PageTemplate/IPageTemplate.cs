@@ -1,10 +1,13 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+using System;
 namespace website.Models.PageTemplate
 {
     public interface IPageTemplate
     {
-      
-        public string id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string id { get; set; }  
 
         public string block_name { get; set; }
 

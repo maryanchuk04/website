@@ -30,7 +30,6 @@ namespace website
             services.AddSingleton<NewsServices>();
             services.AddSingleton<MailService>();
             services.AddSingleton<AdvertisementServices>();
-
             services.AddSingleton<StudentServices>();
             services.AddSingleton<IMongoClient, MongoClient>(s =>
             {
