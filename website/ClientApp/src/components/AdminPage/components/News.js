@@ -18,7 +18,7 @@ function News() {
 
 
   useEffect(()=>{
-    axios.get("http://localhost:5000/news").then((result)=>{
+    axios.get("https://bsite.net/IvanovIvan/news").then((result)=>{
       setallNews(result.data);
       console.log(result.data);
     });

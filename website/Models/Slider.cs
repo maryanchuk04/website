@@ -14,6 +14,6 @@ namespace website.Models
         public string id { get; set; } = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
 
         [BsonElement("image")]
-        public byte[] image { get; set; }
+        public string image { get; set; }
     }
 }

@@ -20,11 +20,11 @@ export default function Carousel() {
   const [slider,setSlider] = useState([]);
 
   useEffect(()=>{
-    axios.get("https://bsite.net/IvanovIvan/slider/all").then((result)=>{
+    axios.get("http://localhost:5000/slider/all").then((result)=>{
       console.log(result.data);
       setSlider(result.data);
     })
-  })
+  },[])
 
 
   return (
@@ -33,7 +33,7 @@ export default function Carousel() {
           
         {slider.map((s, index) => (
           <div className="image_info" key={index}>
-            <img src={`data:image/gif;base64,${s.image}`}  />
+            <img src={s.image}  />
           </div>
         ))}
       </Slider>

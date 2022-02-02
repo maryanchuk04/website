@@ -7,6 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using website.Models;
 using website.Services;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 
 namespace website.Controllers
 {
@@ -14,6 +16,7 @@ namespace website.Controllers
     [Route("/slider")]
     public class SliderController : Controller
     {
+
 
         private readonly SliderServices _slider;
 
@@ -28,27 +31,7 @@ namespace website.Controllers
 
         [HttpGet("/slider/{id}")]
         public ActionResult GetOne(string id) => Ok(_slider.GetByID(id));
-
-        [HttpPost("/slider/add")]
-        public ActionResult AddSlider([FromForm] IFormFile file)
-        {
-            Slider slider = new Slider();
-            if (file.Length > 0)
-            {
-                using (var ms = new MemoryStream())
-                {
-                    file.CopyTo(ms);
-                    var fileBytes = ms.ToArray();
-
-                    slider.image = fileBytes;
-                    _slider.Save(slider);
-                }
-            }
-            
-            _slider.Insert(slider);
-            return Ok(slider);
-        }
-
+      
         [HttpGet("/slider/delete/{id}")]
         public ActionResult DeleteImg(string id)
         {
@@ -56,27 +39,25 @@ namespace website.Controllers
             return Ok("Фото видалене!");
         }
 
-        [HttpPost("/slider/upload/{id}")]
-        public ActionResult UploadPhoto(string id, [FromForm] IFormFile file)
+        [HttpPost("/slider/upload/")]
+        public ActionResult UploadImage([FromForm] IFormFile file)
         {
-
-            Slider slider = _slider.GetByID(id);
-
-            if (file.Length > 0)
+            Cloudinary cloudinary = new Cloudinary(new Account(
+                "dslnjjc0d",
+                "467362677389699",
+                "hXddhY2l6pBUuIMk4WVLI9D5B-Q"));
+            var uploadParams = new ImageUploadParams()
             {
-                using (var ms = new MemoryStream())
-                {
-                    file.CopyTo(ms);
-                    var fileBytes = ms.ToArray();
-
-                    slider.image = fileBytes;
-                    _slider.Save(slider);
-                }
-            }
+                File = new FileDescription(file.FileName, file.OpenReadStream())
+            };
+            var uploadResult = cloudinary.Upload(uploadParams);
+            var uplPath = uploadResult.Uri;
+            Slider slider = new Slider();
+            slider.image = uplPath.ToString();
+            _slider.Insert(slider);
             return Ok(slider);
-
         }
 
-
+        
     }
 }
