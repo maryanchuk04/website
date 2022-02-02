@@ -1,8 +1,8 @@
 .mainInfo{
     width: 100%;
     height: 220px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    place-items: center;
     
 }
 .line_header{
@@ -13,8 +13,17 @@
     width: 100%;
     margin: 0;
 }
-.text p{
-    margin:0 40px;
+.About_us{
+    align-items: center;
+    display: grid;
+    place-items: center;
+}
+.text{
+    height: 200px;
+}
+.text img{
+    width: 100%;
+   height: 100%;
 }
 .container_all{
     margin:0 auto;
@@ -55,8 +64,7 @@
 .image img{
     width: 100% !important;
     height: 100% !important;
-   
-  
+   margin-left: 10px;
 }
 .About_us{
     display: flex;
