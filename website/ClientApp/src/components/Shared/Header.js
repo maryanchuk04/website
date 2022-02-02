@@ -9,12 +9,10 @@ function Header() {
                      <div className="mainInfo"> 
                          <div className="About_us">
                              <div className="text">
-                               <p>Чернівецький фаховий коледж  </p> 
-                               <hr className="line_header"/>
-                               <p>бізнесу  та харчових технологій</p>
+                               <img src="https://i.ibb.co/5Ftn6V6/Logo-2.png" alt="" />
                              </div>
                              <div className="image">
-                                 <Link to ="/"><img src="https://i.ibb.co/3Fgrkkd/image.png"/></Link>
+                                 <Link to ="/"><img src="https://i.ibb.co/MSPMDXf/Logo-1.png"/></Link>
                              </div>
                          </div>
                         
