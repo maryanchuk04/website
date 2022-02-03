@@ -21,7 +21,7 @@ namespace website.Controllers
         }
 
         [HttpGet("/collegeactivity/{id}")]
-        public ActionResult  Get(string  id )
+        public ActionResult  Get(string id)
         {
             return Ok(_collegeActivity.GetByID(id));
         }

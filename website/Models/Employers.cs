@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using website.Services;
 
 namespace website.Models
 {
@@ -16,7 +17,7 @@ namespace website.Models
         [BsonElement("name")]
         //ім'я підрозділу таблиці меню Штаб коледжу
         public string name { get; set; }
-        public List<Employers> employers { get; set; }
+        public List<Employer> employers { get; set; }
 
     }
 }
