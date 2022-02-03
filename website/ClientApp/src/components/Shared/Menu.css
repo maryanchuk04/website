@@ -40,7 +40,6 @@ Link{
 .one{
   left:0;
   position: relative;
-  width: 100%;
 }
 
 
@@ -171,11 +170,7 @@ Link{
 	stroke-dashoffset: -134;
 	stroke-width: 6;
 }
-.topmenu{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
+
 
 
 @media (max-width: 769px) {
@@ -226,7 +221,7 @@ Link{
   
   
 }
-/*
+
 @media (max-width: 2561px) {
   .container_all ul li{
     color: black;
@@ -248,7 +243,7 @@ Link{
   
    width: fit-content;
  }
-}*/
+}
 
 
 @media (max-width: 1441px) {
@@ -266,7 +261,6 @@ Link{
     height: 50px;
   }
   .container_all{
-    display: flex;
     justify-content: space-between;
   }
  .one{

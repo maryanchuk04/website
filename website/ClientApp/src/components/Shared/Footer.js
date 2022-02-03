@@ -14,7 +14,7 @@ function Footer() {
       e.preventDefault();
       if(name.trim()!=="" && email.trim()!==""&& text.trim()!==""){
          
-         axios.post("https://bsite.net/IvanovIvan/mail/send",{
+         axios.post("http://www.chdct.somee.com/mail/send",{
             name: name,
             email : email,
             text: text
