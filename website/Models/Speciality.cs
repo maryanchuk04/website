@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using website.Models.PageTemplate;
 
 namespace website.Models
 {
@@ -15,5 +16,7 @@ namespace website.Models
 
         [BsonElement("name")]
         public string name { get; set; }
+
+        public Page page { get; set; }
     }
 }
