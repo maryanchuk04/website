@@ -20,7 +20,7 @@ export default function Carousel() {
   const [slider,setSlider] = useState([]);
 
   useEffect(()=>{
-    axios.get("http://localhost:5000/slider/all").then((result)=>{
+    axios.get("https://bsite.net/IvanovIvan/slider/all").then((result)=>{
       console.log(result.data);
       setSlider(result.data);
     })

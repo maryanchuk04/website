@@ -220,6 +220,7 @@ height: 100%;
   cursor: pointer;
   opacity:1;
 }
+/*
 @media(max-width :2561px){
   
   .about_us h1{
@@ -284,6 +285,7 @@ height: 100%;
 }
   
 }
+*/
 
 @media(max-width :1441px){
   

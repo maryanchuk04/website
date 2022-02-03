@@ -14,7 +14,7 @@ function OneNewsPage() {
 
     useEffect(()=>{
         console.log(id);
-        axios.get(`http://www.chdct.somee.com/news/${id}`).then((result)=>{
+        axios.get(`https://bsite.net/IvanovIvan/news/${id}`).then((result)=>{
             console.log(result.data)
             setNews({...result.data, date : result.data.date.substr(0,10)});
             console.log((result.data.date.length))
