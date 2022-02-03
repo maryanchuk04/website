@@ -72,9 +72,5 @@ namespace website.Controllers
             return Ok(advertisement);
 
         }
-
-
-
-
     }
 }
