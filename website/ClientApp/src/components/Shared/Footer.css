@@ -242,18 +242,18 @@ height: 100%;
 }
 .form_feedback textarea{
   
-  height: 200px;
+  height: 170px;
   
 }
 .image_other{
   
-  height: 140px;
+  height: 130px;
   
 }
 .wrapper .button{
   
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   
 }
 .wrapper .button:hover{
@@ -261,16 +261,16 @@ height: 100%;
 }
 .wrapper .button .icon{
   
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   
-  line-height: 80px;
+  line-height: 70px;
   
 }
 
 .wrapper .button .icon i{
   font-size: 35px;
-  line-height: 80px;
+  line-height: 70px;
   
 }
 .wrapper .button:hover .icon i{
@@ -279,7 +279,7 @@ height: 100%;
 .wrapper .button span{
   font-size: 30px;
   font-weight: 500;
-  line-height: 80px;
+  line-height: 70px;
  
 }
   
