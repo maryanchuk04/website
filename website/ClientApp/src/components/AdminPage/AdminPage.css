@@ -31,6 +31,7 @@
     display: flex;
 }
 .other_admin{
+    position: relative;
     display: grid;
     place-items: center;
     height: 90vh;
@@ -134,14 +135,22 @@
 .background_page1{
     height:fit-content;
 }
+.background_page2{
+    height:fit-content;
+}
 .elemen_admin{
     font-size: 25px;
     width: 600px;
     margin: 10px 0;
     color: white;
-    background: rgb(187, 189, 185);
+    background: rgb(90, 141, 90);
 }
 .admin_page1_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin_page2_info{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,4 +160,10 @@
 }
 .elemen_admin_textarea{
     height: 400px;
+}
+.admin_page1{
+    position: absolute;
+}
+.admin_page2{
+    position: absolute;
 }
