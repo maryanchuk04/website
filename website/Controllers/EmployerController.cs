@@ -15,7 +15,6 @@ namespace website.Controllers
         public EmployerController(EmployerServices employers) 
         {
             _employers = employers;
-
         }
 
         [HttpGet("/employers/all")]
