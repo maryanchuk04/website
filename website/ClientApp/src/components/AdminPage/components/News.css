@@ -130,6 +130,10 @@
     font-size: 20px;
 }
 
+.container_for_krasota #cancel-btn:hover{
+    cursor: pointer;
+}
+
 .wrappers .file-name{
     display: none;
     position: absolute;

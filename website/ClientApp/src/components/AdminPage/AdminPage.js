@@ -13,7 +13,9 @@ function AdminPage() {
 
     const [showForm, setShowForm] = useState(false);
 
-    const [showPage1, setShowPage1] = useState(false);
+    const [showPage1, setShowPage1] = useState(0);
+
+   
 
 
     useEffect(async ()=>{
@@ -97,17 +99,36 @@ function AdminPage() {
                         <div
 					          class="background_page1"
 					           style={{
-					        	transform: `scale(${
-					        		showPage1 ? 1 : 0
-					        	})`,
-					        }}>
-                                <div id="cancel-btn" ><i className="fas fa-times" onClick={() => setShowPage1(false)}></i></div>
+					        	display: showPage1 == 1 ? "block" : "none"                     
+		        }}>
+                                <div id="cancel-btn" ><i className="fas fa-times" onClick={() => setShowPage1(0)}></i></div>
                             <div className="admin_page1_info">
                                 <input type="text"  className="elemen_admin  elemen_admin_input" placeholder="Заголовок"/>
                                 <textarea name="text" className="elemen_admin elemen_admin_textarea" id=""  placeholder="Текст"></textarea>
                              </div>
                              <div className="admin_page1_buttons">
                                 <input type="file" />
+                                <button>Зберегти</button>
+                            </div>
+                        </div>
+                  </div>
+                  <div className="admin_page2">
+                        <div
+					          class="background_page2"
+					           style={{
+					        	display: 
+					        		showPage1 == 2 ? "block" : "none"  
+					        	
+                                
+					        }}>
+                                <div id="cancel-btn" ><i className="fas fa-times" onClick={() => setShowPage1(0)}></i></div>
+                            <div className="admin_page2_info">
+                                <input type="text"  className="elemen_admin  elemen_admin_input" placeholder="Заголовок"/>
+                                <textarea name="text" className="elemen_admin elemen_admin_textarea" id=""  placeholder="Текст"></textarea>
+                                <input type="text"  className="elemen_admin  elemen_admin_input" placeholder="Посилання"/>
+                             </div>
+                             <div className="admin_page2_buttons">
+                                
                                 <button>Зберегти</button>
                             </div>
                         </div>
@@ -127,9 +148,9 @@ function AdminPage() {
                                   
                                   <div className="popup">
                                    <div className="sub_buttons">
-                                        <button onClick={() => setShowPage1(true)} >1</button>
-                                        <button>2</button>
-                                        <button>3</button>
+                                        <button onClick={() => setShowPage1(1)} >1</button>
+                                        <button onClick={() => setShowPage1(2)} >2</button>
+                                        <button onClick={() => setShowPage1(3)} >3</button>
                                     </div>
                                 </div>       
                             </div>
