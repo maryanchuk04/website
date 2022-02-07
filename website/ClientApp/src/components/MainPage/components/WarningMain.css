@@ -8,13 +8,15 @@
 }
 
 .title_warning p{
+    margin: 0;
     font-size: 40px;
     font-weight: 900;
     color:rgb(17, 38, 78);
 }
 .warning_block{
-    margin: 40px 0;
+    margin: 40px auto;
     display: flex;
+    align-items: center;
     background: rgb(187, 245, 235);
     justify-content: space-between;
 }
@@ -27,7 +29,7 @@
 .text_warning h3{
     padding: 20px;
     font-weight: 800;
-    font-size: 35px;
+    font-size: 40px;
 
 }
 .text_warning p{
@@ -39,4 +41,150 @@ font-style: italic;
     padding: 15px;
   display: grid;
   place-items: center;
+}
+
+@media (max-width: 1441px) {
+    
+    
+    .title_warning p{
+       
+        font-size: 40px;
+        
+    }
+    .warning_block{
+        margin: 40px 0;
+        
+    }
+    .text_warning{
+        padding: 15px;
+       
+        
+    }
+    .warning_block{
+        margin: 40px auto;
+    }
+    .text_warning h3{
+       
+        font-size: 40px;
+    
+    }
+    .text_warning p{
+      
+        font-size: 25px;  
+   
+    }
+    
+
+}
+
+@media (max-width: 1025px) {
+    
+    
+    .title_warning p{
+       
+        font-size: 35px;
+        
+    }
+    .warning_block{
+        margin: 35px 0;
+        
+    }
+    .text_warning{
+        padding: 12px;
+       
+        
+    }
+    .warning_block{
+        margin: 35px auto;
+    }
+    .text_warning h3{
+       
+        font-size: 35px;
+    
+    }
+    .text_warning p{
+      
+        font-size: 20px;  
+   
+    }
+    
+
+}
+
+@media (max-width: 769px) {
+    
+    
+    .title_warning p{
+       
+        font-size: 30px;
+        
+    }
+    .warning_block{
+        margin: 30px 0;
+        
+    }
+    .text_warning{
+        padding: 10px;
+       
+        
+    }
+    .warning_block{
+        margin: 30px auto;
+    }
+    .text_warning h3{
+       
+        font-size: 30px;
+    
+    }
+    .text_warning p{
+      
+        font-size: 18px;  
+   
+    }
+    
+    .image_warning  img{
+        width: 100%;
+        height: 100%;
+    }
+    
+
+}
+
+@media (max-width: 426px) {
+    
+    
+    .title_warning p{
+       
+        font-size: 20px;
+        
+    }
+    .warning_block{
+        margin: 20px 0;
+        
+    }
+    .text_warning{
+        padding: 10px;
+       
+        
+    }
+    .warning_block{
+        margin: 20px auto;
+    }
+    .text_warning h3{
+        padding: 5px;
+        font-size: 13px;
+    
+    }
+    .text_warning p{
+        padding: 5px;
+        font-size: 10px;  
+   
+    }
+    
+    .image_warning  img{
+        width: 100%;
+        height: 100%;
+    }
+    
+
 }

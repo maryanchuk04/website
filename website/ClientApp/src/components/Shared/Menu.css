@@ -177,78 +177,14 @@ Link{
   justify-content: space-between;
 }
 
-
-@media (max-width: 769px) {
-	
-  .container_all  ul{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-.menu_header{
-  height: fit-content;
-}
-	
 .one{
-  width: fit-content;
- height: fit-content;
- display: flex;
- flex-direction: column;
+  width: 100%;
 }
-	.topmenu {
-		display: flex;
-		flex-direction: column;
-		width: fit-content;
-		margin-left: auto;
-		height: 0;
-		transition: height 0.3s linear;
-		overflow-y: hidden;
-	}
-
-	
-
- .burger {
-		display: flex;
-		margin:0 auto;
-	}
-
-	 .burger svg {
-		width: 45px;
-		height: auto;
-	}
-
-	 .burger .line {
-		stroke: white;
-	}
-}
-
 .topmenu{
-  
-  
+  padding:  0 ;
 }
-/*
-@media (max-width: 2561px) {
-  .container_all ul li{
-    color: black;
-     padding: 0 10px;
-     list-style: none;
-     font-size:35px;
-     margin: 0;
- }
- .container_all nav{
-  margin: 0 0 auto 0;
- }
-  .menu_header{
-    height: 80px;
-  }
-  .container_all{
-    justify-content: space-between;
-  }
- .one{
-  
-   width: fit-content;
- }
-}*/
+
+
 
 
 @media (max-width: 1441px) {
@@ -270,8 +206,8 @@ Link{
     justify-content: space-between;
   }
  .one{
-  
-   width: fit-content;
+
+   width: 100%;
  }
 }
 
@@ -280,27 +216,28 @@ Link{
     color: black;
      padding: 0 10px;
      list-style: none;
-     font-size:23px;
+     font-size:18px;
      margin: 0;
  }
  .container_all nav{
   margin: 0 0 auto 0;
  }
   .menu_header{
-    height: 50px;
+    height: 40px;
   }
   .container_all{
     justify-content: space-between;
   }
  .one{
   
-   width: fit-content;
+   width: 100%;
  }
 }
 
 @media (max-width: 769px) {
 	
   .container_all  ul{
+    text-align: center;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -330,7 +267,14 @@ Link{
 		overflow-y: hidden;
 	}
 
-	
+  .one .submenu {
+    padding: 0;
+    position:inherit;
+    top: none;
+    width: 300px;
+    z-index: 3;
+   overflow: hidden;
+  }
 
  .burger {
 		display: flex;
@@ -338,7 +282,7 @@ Link{
 	}
 
 	 .burger svg {
-		width: 45px;
+		width: 40px;
 		height: auto;
 	}
 
