@@ -6,14 +6,14 @@ import axios from 'axios'
 
 function EmployersPage() {
     const [employers,setEmployers] = useState([])
-
+    
     useEffect(()=>{
         axios.get("http://www.chdct.somee.com/employers/all")
             .then((result)=>{
                 console.log(result.data);
                 setEmployers(result.data);
-            })
-    },[])
+            });
+    },[]);
 
 
 

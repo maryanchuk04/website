@@ -11,9 +11,7 @@ function Login() {
    const [login,setlogin] = useState("")
    const [pass,setpass] = useState("")
    const [res, setres] = useState(localStorage.getItem("AdminValue") == 'true' ? true : false)
-   useEffect (()=>{
-        console.log(typeof res);
-   },[res] )
+   
    const handleLogin = (e) =>{
         e.preventDefault();
         if(truelogin ===  login.trim() && truepassword === pass.trim()){

@@ -9,7 +9,7 @@ function OneNewsPage() {
 
     const [news,setNews] = useState({});
     const {id} = useParams();
-    const [date,setdate] = useState("")
+    
 
 
     useEffect(()=>{
@@ -19,7 +19,7 @@ function OneNewsPage() {
             setNews({...result.data, date : result.data.date.substr(0,10)});
             console.log((result.data.date.length))
         })
-    },{})
+    },[])
 
   return (  
   <div>
