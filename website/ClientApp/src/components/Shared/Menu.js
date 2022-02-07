@@ -11,7 +11,7 @@ function Menu() {
     const [abiturient,setAbiturient] = useState([]);
     const [speciality,setSpeciality] = useState([]);
     const [employers,setEmployers] = useState([]);
-    const [toggleBurger, setToggleBurger] = useState(true);
+    const [toggleBurger, setToggleBurger] = useState(false);
     
     useEffect(()=>{
         ( async()=>{
@@ -61,7 +61,7 @@ function Menu() {
 							/>
 						</svg>
 					</button>
-                                   <ul className={toggleBurger && 'showHeader' && 'topmenu'}>
+                                   <ul className={!toggleBurger && 'showHeader' && 'topmenu'}>
                                     <li><Link to ='/'>Головна</Link></li>
                                     <li> <Link to = '/news'>Новини</Link></li>     
                                     <li>
