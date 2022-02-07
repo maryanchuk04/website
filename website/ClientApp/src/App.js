@@ -27,10 +27,8 @@ import StudentPage from './components/StudentPage/StudentPage';
 import Menu from './components/Shared/Menu';
 import OneNewsPage from './components/NewsPage/OneNewsPage';
 
-export default class App extends Component {
-  static displayName = App.name;
+function App() {
 
-  render () {
     return (
       <div className="App"> 
       <BrowserRouter>
@@ -64,4 +62,4 @@ export default class App extends Component {
       </div>
     );
   }
-}
+export default App
