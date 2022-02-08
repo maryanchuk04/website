@@ -304,6 +304,12 @@ Link{
     display: flex;
     flex-direction: column;
 }
+
+.one ul li:active .submenu {
+  display: block;
+  transition: 2s;
+  z-index: 10;
+}
 .menu_header{
   height: fit-content;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './PidpruyemstvoPage.css';
 function PidpruyemstvoPage() {
-  return <div>
+  return <div className="pidpr_page">
      <div  className="image_speciality">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTETjz5dks5HqgKEEFxTv9UVP8uCQdGV7C1QA&usqp=CAU" alt="" />
         <div className="title_h">

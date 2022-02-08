@@ -65,7 +65,7 @@ function Menu() {
                                     <li><Link to ='/'>Головна</Link></li>
                                     <li> <Link to = '/news'>Новини</Link></li>     
                                     <li>
-                                        Студенту
+                                     Студенту
                                         
                                         <ul className="submenu">
                                                 <li> <Link to ='/student/practice'>Практика та працевлаштування</Link></li>
@@ -79,7 +79,7 @@ function Menu() {
                                     </li>
                                    
                                     <li><Link to = '/entrant'> Абітурієнту</Link></li>
-                                    <li> Спеціальності 
+                                    <li>  <Link to = '/speciality'>  Спеціальності </Link> 
                                                 <ul className="submenu">
                                                    <li> <Link to ='/speciality/cooking'>Харчові технології</Link></li>
                                                    <li><Link to = '/speciality/oblik'>Облік і оподаткування</Link></li>
