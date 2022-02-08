@@ -22,6 +22,9 @@ namespace website.Models.PageTemplate
         [BsonElement("image")]
         public byte[] image { get; set; }
 
+        [BsonElement("short_text")]
+        public string short_text { get; set; }
+
         [BsonElement("text")]
         public string text { get; set; }
     }

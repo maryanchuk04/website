@@ -24,14 +24,18 @@ namespace website
         {
 
             services.AddControllers();
-           
-
             services.AddSingleton<EmployerServices>();
             services.AddSingleton<NewsServices>();
             services.AddSingleton<MailService>();
             services.AddSingleton<AdvertisementServices>();
             services.AddSingleton<StudentServices>();
             services.AddSingleton<SliderServices>();
+            services.AddSingleton<SpecialityServices>();
+            services.AddSingleton<CollegeActivityServices>();
+            services.AddSingleton<EntrantServices>();
+            services.AddSingleton<HistoryServices>();
+            services.AddSingleton<EmployersPageServices>();
+
             services.AddSingleton<IMongoClient, MongoClient>(s =>
             {
                 var uri = s.GetRequiredService<IConfiguration>()["MongoUri"];

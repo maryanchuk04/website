@@ -12,10 +12,17 @@ function Menu() {
     const [speciality,setSpeciality] = useState([]);
     const [employers,setEmployers] = useState([]);
     const [toggleBurger, setToggleBurger] = useState(false);
+    const st = 'student';
+    const act = 'collegeactivity';
+    const his = 'history';
+    const abit = 'entrant';
+    const spec = 'speciality';
+    const emp = 'employerspage';
     
+
     useEffect(()=>{
         ( async()=>{
-            const res1 = await axios.get("https://bsite.net/IvanovIvan/student");
+            const res1 = await axios.get("http://localhost:5000/student");
             const res5 = await axios.get("https://bsite.net/IvanovIvan/collegeactivity");
             const res2 = await axios.get("https://bsite.net/IvanovIvan/speciality");
             const res3 = await axios.get("https://bsite.net/IvanovIvan/history");
@@ -35,9 +42,7 @@ function Menu() {
             setEmployers(res6.data);
         })()
     },[])
-
-    
-   
+ 
     return (
         
             <div className="menu_header">
@@ -73,7 +78,7 @@ function Menu() {
                                                    <li> <Link to ='/student/detailspayment'>Реквізити для оплати</Link></li>
                                                    <li> <Link to ='/student/syllabus'>Силабуси</Link></li>
                                                    {students.map((s,index)=>(
-                                                   <li><Link to ={`/student/${s.id}`}>{s.name}</Link></li>
+                                                   <li><a key={st,s.id} href ={`/${st}/${s.id}`}>{s.name}</a></li>
                                                    ))}  
                                         </ul>
                                     </li>
@@ -84,21 +89,38 @@ function Menu() {
                                                    <li> <Link to ='/speciality/cooking'>Харчові технології</Link></li>
                                                    <li><Link to = '/speciality/oblik'>Облік і оподаткування</Link></li>
                                                    <li><Link to = '/speciality/pidpruyemstvo'>Підприємство,торгівля та біржова діяльність</Link></li>
+                                                   {speciality.map((s,index)=>(
+                                                   <li><Link key={spec,s.id} to ={`/${spec}/${s.id}`}>{s.name}</Link></li>
+                                                   ))}  
                                                </ul>  
                                        
                                     </li>
                                     <li>Діяльність коледжу
                                         <ul>
                                             {activity.map((a,index)=>(
-                                               <li><Link to ={`/collegeactivity/${a.id}`}>{a.name}</Link></li> 
+                                               <li><Link key = {act,a.id} to ={`/${act}/${a.id}`}>{a.name}</Link></li> 
                                             ))
 
                                             }
                                         </ul>
                                     </li>
 
-                                    <li><Link to = '/history'>Історія</Link></li>
-                                    <li><Link to = '/employers'>Колектив</Link></li>
+                                    <li><Link to = '/history'>Історія</Link>
+                                    <ul>
+                                            {history.map((a,index)=>(
+                                               <li><Link key = {his,a.id} to ={`/${his}/${a.id}`}>{a.name}</Link></li> 
+                                            ))
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li>Колектив
+                                    <ul>
+                                            {employers.map((a,index)=>(
+                                               <li><Link key = {emp,a.id} to ={`/${emp}/${a.id}`}>{a.name}</Link></li> 
+                                            ))
+                                            }
+                                        </ul>
+                                    </li>
                                    </ul>
                                </nav>
                             

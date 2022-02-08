@@ -26,6 +26,7 @@ import NewsPage from './components/NewsPage/NewsPage';
 import StudentPage from './components/StudentPage/StudentPage';
 import Menu from './components/Shared/Menu';
 import OneNewsPage from './components/NewsPage/OneNewsPage';
+import Page from './components/Shared/Page';
 
 function App() {
 
@@ -54,7 +55,7 @@ function App() {
           <Route path = '/student/syllabus' exact element={<React.Fragment><Header/><Menu/><SyllabusPage/><Footer/></React.Fragment>} />
 
           <Route path = "/news/:id" exact element ={<React.Fragment><Header/><Menu/><OneNewsPage/><Footer/></React.Fragment>}/>
-
+          <Route path = "/:name/:id" exact element ={<React.Fragment><Header/><Menu/><Page/><Footer/></React.Fragment>}/>
 
         </Routes>
       </BrowserRouter>

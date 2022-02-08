@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -46,7 +47,7 @@ namespace website.Controllers
         }
 
         [HttpPost("/student/add/imgwithtext/{id}")]
-        public ActionResult AddImageWithTextBlock(string id, [FromForm]ImgWithText imgWithText)
+        public ActionResult AddImageWithTextBlock(string id, [FromBody]ImgWithText imgWithText)
         {
             try
             {
@@ -93,6 +94,30 @@ namespace website.Controllers
             }
             
         }
+
+        [HttpPost("/student/upload/imgwithtext/{id}/{block_id}")]
+        public ActionResult Upload(string id,string block_id,[FromForm] IFormFile file)
+        {
+            Student student = _student.GetByID(id);
+            ImgWithText img = student.page.imgWithTexts.Find(x => x.id == block_id);
+            if (file.Length > 0)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    file.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+
+                    img.image = fileBytes;
+
+                }
+            }
+            student.page.imgWithTexts.Remove(student.page.imgWithTexts.Find(x => x.id == block_id));
+            student.page.imgWithTexts.Add(img);
+            _student.Save(student);
+            return Ok(student);
+        }
+
+
 
         [HttpPost("/student/add/titlewithlink/{id}")]
         public ActionResult AddTitlewithlink(string id, [FromBody] TitleWithLinks titleWithLink)
@@ -179,7 +204,30 @@ namespace website.Controllers
             return Ok(NameSecMenu);
         } 
 
-      
+
+
+        [HttpPost("/student/uploud/page/{id}")]
+        public ActionResult UploadImage(string id, [FromForm] IFormFile file)
+        {
+            Page page = _student.GetByID(id).page;
+
+            if (file.Length > 0)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    file.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+
+                    page.image = fileBytes;
+                    
+                }
+            }
+            Student s = _student.GetByID(id);
+            s.page = page;
+            _student.Save(s);
+            return Ok(_student.GetByID(id));
+        }
+
         
 
 

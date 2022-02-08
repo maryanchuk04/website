@@ -5,7 +5,7 @@ import axios from 'axios'
 import '../NewsPage/NewsPage.css'
 function NewsPage() {
   const [news, setNews] = useState([]);
-
+  
   useEffect(()=>{
       axios.get("https://bsite.net/IvanovIvan/news").then((result)=>{
         setNews(result.data);

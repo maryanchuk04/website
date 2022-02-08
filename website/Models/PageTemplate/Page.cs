@@ -19,6 +19,9 @@ namespace website.Models.PageTemplate
         [BsonElement("titleWithLinks")]
         public List<TitleWithLinks> titleWithLinks { get; set; }
 
+        [BsonElement("image")]
+        public byte[] image { get; set; }
+
 
     }
 }
