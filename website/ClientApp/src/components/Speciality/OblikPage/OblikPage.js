@@ -4,7 +4,7 @@ import React from 'react';
 import './OblikPage.css';
 function OblikPage() {
   return (
-  <div > 
+  <div className="oblik_page" > 
       <div  className="image_speciality">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsaczhpIF9QWikNfOHEz3BRU3F3W4aad6zQg&usqp=CAU" alt="" />
         <div className="title_h">

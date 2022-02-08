@@ -4,7 +4,7 @@ import React from 'react';
 import './CookingPage.css';
 function CookingPage() {
   return (
-  <div > 
+  <div className="cook_page"> 
       
       
       <div  className="image_speciality">

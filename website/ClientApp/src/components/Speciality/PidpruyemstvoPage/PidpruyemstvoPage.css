@@ -1,5 +1,8 @@
 
-
+.pidpr_page .container_all{
+    display: flex;
+    flex-direction: column;
+}
 .table_pidpr{
     margin: 30px;
 }
