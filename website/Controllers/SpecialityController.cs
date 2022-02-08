@@ -36,8 +36,8 @@ namespace website.Controllers
 
         [HttpPost("/speciality/add/imgwithtext/{id}")]
         public ActionResult AddImageWithTextBlock(string id, [FromForm] ImgWithText imgWithText)
-{
-try
+        {
+            try
             {
                 Speciality speciality = _speciality.GetByID(id);
                 if (speciality.page == null)

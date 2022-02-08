@@ -23,5 +23,7 @@ namespace website.Models.PageTemplate
         [BsonElement("link")]
         public string link { get; set; }
 
+      
+
     }
 }
