@@ -17,10 +17,12 @@ namespace website.Controllers
     public class EmployersPageController : ControllerBase
     {
         private readonly EmployersPageServices _employersPage;
+        private readonly EmployerServices _employer;
 
-        public EmployersPageController(EmployersPageServices employersPage)
+        public EmployersPageController(EmployersPageServices employersPage, EmployerServices employer)
         {
             _employersPage = employersPage;
+            _employer = employer;
         }
         [HttpGet("/employerspage")]
         public ActionResult GetAll ()
@@ -115,6 +117,59 @@ namespace website.Controllers
                 return BadRequest();
             }
         }
+
+
+
+        [HttpGet("/employers/geniy/admin")]
+        public ActionResult Geniy()
+        {
+            Employers employersPage = new Employers();
+            employersPage.name = "Адміністріція";
+            employersPage.employers = new List<Employer>();
+            employersPage.employers = _employer.GetByRang("admin").ToList();
+
+            _employersPage.Insert(employersPage);
+            return Ok(employersPage);
+
+        }
+
+        [HttpGet("/employers/geniy/ped")]
+        public ActionResult Geniy2()
+        {
+            Employers employersPage = new Employers();
+            employersPage.name = "Педагогічний склад";
+            employersPage.employers = new List<Employer>();
+            employersPage.employers = _employer.GetByRang("ped").ToList();
+
+            _employersPage.Insert(employersPage);
+            return Ok(employersPage);
+
+        }
+        [HttpGet("/employers/geniy/gosp")]
+        public ActionResult Geniy3()
+        {
+            Employers employersPage = new Employers();
+            employersPage.name = "Господарська частина";
+            employersPage.employers = new List<Employer>();
+            employersPage.employers = _employer.GetByRang("gosp").ToList();
+
+            _employersPage.Insert(employersPage);
+            return Ok(employersPage);
+
+        }
+        [HttpGet("/employers/geniy/not")]
+        public ActionResult Geniy4()
+        {
+            Employers employersPage = new Employers();
+            employersPage.name = "Невикладацький персонал";
+            employersPage.employers = new List<Employer>();
+            employersPage.employers = _employer.GetByRang("not").ToList();
+
+            _employersPage.Insert(employersPage);
+            return Ok(employersPage);
+
+        }
+
     }
 
 }

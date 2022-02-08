@@ -29,5 +29,8 @@ namespace website.Models
 
         [BsonElement("image")]
         public byte[] image { get; set; }
+
+        [BsonElement("rang")]
+        public string rang { get; set; }
     }
 }

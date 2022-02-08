@@ -22,10 +22,6 @@ function Page() {
           setImage(result.data.page.imgWithTexts);
           setAll(result.data)
           console.log(result.data)
-          
-          
-
-
       })
   },[]);
 

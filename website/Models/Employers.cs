@@ -17,6 +17,8 @@ namespace website.Models
         [BsonElement("name")]
         //ім'я підрозділу таблиці меню Штаб коледжу
         public string name { get; set; }
+
+        [BsonElement("employers")]
         public List<Employer> employers { get; set; }
 
     }

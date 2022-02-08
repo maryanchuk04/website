@@ -22,6 +22,7 @@
     "rimraf": "^2.6.2",
     "slick": "^1.12.2",
     "slick-carousel": "^1.8.1",
+    "typewriter-effect": "^2.18.2",
     "use-state-if-mounted": "^1.0.4"
   },
   "devDependencies": {

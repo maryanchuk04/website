@@ -41,5 +41,11 @@ namespace website.Services
             }
             else return null;
         }
+
+        public IEnumerable<Employer> GetByRang(string rang)
+        {
+            return _employers.Find(x => x.rang == rang).ToEnumerable();
+        }
+
     }
 }

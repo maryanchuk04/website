@@ -4,32 +4,24 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import '../NewsPage/NewsPage.css'
 function NewsPage() {
+  const CONSTANTA = 1
   const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
   
-  useEffect(()=>{
-      axios.get("https://bsite.net/IvanovIvan/news").then((result)=>{
-        setNews(result.data);
-        console.log(result.data);
-      });
-  }, []);
-    
-  
-
-
-  return (
-    <div className="newspage">
-
-        <div className = "container_all">
-        
-
+  const News = ({ news, page }) => {
+    const startIndex = ( page - 1 ) * CONSTANTA;
+    const selectedUsers = news?.slice(startIndex, startIndex + CONSTANTA);
+    return  (
+      <div>
+          <div className = "container_all">
             <div className="news_header">
                 Новини
             </div>
           
-            {news.map((n,index)=>(
-            
+            {selectedUsers?.map((n,index)=>(
             <div className="news_block">
-              
               <div className="news_title">
                 { n.title}
               </div>
@@ -44,16 +36,53 @@ function NewsPage() {
              </div>
              
              <p>{n.date.substr(0,10)}</p>
-           </div> 
+             </div> 
            
            ))}
+           </div> 
+      </div>
+    )
+  }
+    const Pagination = ({ totalPages, handleClick }) => {
+        const pages = [...Array(totalPages).keys()]?.map(num => num+1);
+        return (
+          <div className ="pagination">
+            { pages?.map(num => (
+              <button className= "pagination_button"
+                key={num}
+                onClick={() => handleClick(num)}
+              >{num}</button>
+            )) }
           </div>
+        )
+    }
+        useEffect(() => {
+          axios.get("http://localhost:5000/news").then((res)=>{
+            setLoading(true);
+            setLoading(false);
+            setNews(res.data);
+            setTotalPages(Math.ceil(res.data.length / CONSTANTA));
+          })
+        }, []);
       
-      
-      
-      
-  </div>
-  
+        const handleClick = num => {
+          setPage(num);
+        }
+
+
+  return (
+    <div className="newspage">
+      <div className="container_all">
+         <div className = "pagination">
+                {loading ? <p>Loading...</p> : <>
+                  <News news={news} page={page} />
+                  <Pagination totalPages={totalPages} handleClick={handleClick} />
+                </> }
+              </div>
+          </div>
+      </div>
+        
+           
   );
 }
 
