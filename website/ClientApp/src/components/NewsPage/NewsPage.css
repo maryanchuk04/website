@@ -60,3 +60,13 @@
 display: flex;
 flex-direction: column;
 }
+
+.pagination{
+    display: flex;
+    flex-direction: column;
+}
+
+.pagination_button{
+    border-radius: 10px;
+
+}

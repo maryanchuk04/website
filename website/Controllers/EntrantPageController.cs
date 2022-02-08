@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -56,38 +58,26 @@ namespace website.Controllers
         [HttpPost("/entrantpage/upload/pdf/{id}")]
         public ActionResult AddPdf(string id, [FromForm] IFormFile file)
         {
+            
             EntrantPage entrantPage = _entrantPage.GetByID(id);
-
-            if (file.Length > 0)
+            
+            Cloudinary cloudinary = new Cloudinary(new Account(
+                "dslnjjc0d",
+                "467362677389699",
+                "hXddhY2l6pBUuIMk4WVLI9D5B-Q"));
+            var uploadParams = new RawUploadParams()
             {
-                using (var ms = new MemoryStream())
-                {
-                    file.CopyTo(ms);
-                    var fileBytes = ms.ToArray();
-
-                    entrantPage.pdf_link = fileBytes;
-                    _entrantPage.Save(entrantPage);
-                }
-            }
+                File = new FileDescription(file.FileName, file.OpenReadStream())
+            };
+            var uploadResult = cloudinary.Upload(uploadParams);
+            var uplPath = uploadResult.Uri;
+            entrantPage.pdf_link = uplPath.ToString();
+            _entrantPage.Save(entrantPage);
+            
             return Ok(entrantPage);
         }
 
-        [HttpPost("/entrantpage/upload/documents/{id}")]
-        public ActionResult AddDocuments(string id, [FromBody] Documents documents)
-        {
-            EntrantPage entrantPage = _entrantPage.GetByID(id);
-            if (entrantPage.document == null)
-            {
-                entrantPage.document = new Documents();
-                entrantPage.document.documents = documents.documents;
-                _entrantPage.Save(entrantPage);
-                return Ok(entrantPage);
-            }
-            else return BadRequest();
-           
-
-        }
-
+     
 
 
 
