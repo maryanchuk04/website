@@ -4,7 +4,6 @@
     height: fit-content;
    
 }
-
 .admin_title{
     width: 100%;
     background-color: rgb(171, 197, 128);
@@ -26,9 +25,12 @@
 }
 .menu_admin{
     height: 90vh;
-    width: 30%;
+    width: fit-content;
     display: flex;
+    padding: 0;
+    margin: 0;
 }
+
 .other_admin{
     position: relative;
    
@@ -41,18 +43,23 @@
 .button_admin{
     height: 90vh;
     width: 15%;
-   
+    
 }
 .main_menu{
-   border-right: 2px solid black;
+    border-right: 2px solid black;
     height: 100%;
-    width: 50%;
+    width: fit-content;
 }
+
 .sub_menu{
     height: 80%;
-    max-width: 50%;
-   
-    margin: auto 0 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    margin: 0;
+    align-items: center;
     
 }
 .main_menu ul{
@@ -68,12 +75,29 @@
 .main_menu ul li:hover{
     
     background: rgb(143, 171, 207);
+    cursor: pointer;
+    width: 100%;
 }
-.sub_menu ul li:hover{
+.sub_menu .pidmenu ul li:hover{
     background: rgb(143, 171, 207);
+    width: 100%;
+    cursor: pointer;
+}
+.pidmenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    height: 50%;
 }
 
-.sub_menu ul{
+.sub_menu  .pidmenu ul{
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -82,10 +106,12 @@
     margin:0;
     text-align: center;
     font-weight: 600;
+    align-items: center;
     
+
 }
 .button_admin{
-    position: relative;
+    
 }
 
 .select_img{
@@ -100,7 +126,7 @@
     border: none;
     width: 100%;
     font-size: 24px;
-    margin-bottom: 10px;
+    width: fit-content;
 }
 
 .popup{   
@@ -111,11 +137,7 @@
 }
 
 
-.buttons{
-    margin:10px 20px ;
-    position: absolute;
-    bottom:0;
-}
+
 .background{
     margin:0 auto;
     background: rgb(153, 149, 209);
@@ -194,19 +216,52 @@
     transition: 0.5s;
 }
 
-.news_admin{
-    display: flex;
-    justify-content: center;
+.other_admin .news_admin{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   width: 100%;
 }
 
-.news_admin .news{
+.other_admin .news_admin .one_admin_news {
     background-color:  lavender;
     border-radius: 10px;
     margin:20px;
     padding: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.other_admin .news_admin .one_admin_news h1 {
+    font-size: 22px;
+}
+.other_admin .news_admin .one_admin_news textarea::placeholder{
+    font-size: 16px;
+    color:grey;
+}
+.other_admin .news_admin .one_admin_news textarea{
+    height: 70px;
+
+}
+.news_admin  .one_admin_news img{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
 }
 
-.news_admin img{
-
+.news_admin i:hover{
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.5s;
 }
 
+#slideradd{
+    border-radius: 10px;
+    background-color: white;
+    font-size: 20px;
+    
+}
+#slideradd:hover{
+   background-color: violet;
+   transition: 0.7s;
+}

@@ -8,7 +8,7 @@ function EmployersPage() {
     const [employers,setEmployers] = useState([])
     const [obj,setObj] = useState({})
     useEffect(()=>{
-        axios.get("http://localhost:5000/employerspage/admin")
+        axios.get("https://bsite.net/IvanovIvan/employerspage/admin")
             .then((result)=>{
                 console.log(result.data);
                 setEmployers(result.data.employers);
