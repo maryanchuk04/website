@@ -249,7 +249,7 @@ Link{
 }
 
 @media (max-width: 1025px) {
-  .container_all ul li{
+  .menu_header .container_all ul li{
     color: black;
      padding: 0 10px;
      list-style: none;

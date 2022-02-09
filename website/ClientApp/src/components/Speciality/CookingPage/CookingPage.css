@@ -1,3 +1,6 @@
+.cook_page p{
+    text-align: justify;
+}
 
 .image_speciality{
     
@@ -32,8 +35,7 @@ font-size:65px;
   
   
 }
-.history_cookies{  
-}
+
 .history_cookies p{
     padding: 20px;
     font-size: 25px;
@@ -46,6 +48,7 @@ font-size:65px;
     padding: 20px;
 }
 .law_speciality p{
+    margin: 0;
     padding: 25px;
     font-size: 25px;
     font-style: italic;
@@ -65,4 +68,209 @@ font-size:65px;
 }
 .spheres_speciality ol li span {
     text-decoration: underline;
+}
+
+@media (max-width:1025px){
+    .image_speciality{
+    
+        width: 100%;
+        height: 390px;
+       
+    }
+   
+   
+    
+    .image_speciality h3{ 
+        font-weight: 700;
+       
+        margin: 30px 0;
+    font-size:50px;
+      
+      
+      
+    }
+    
+    .history_cookies p{
+        padding: 17px;
+        font-size: 20px;
+    }
+    .law_speciality{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: rgb(164, 195, 199);
+        height: fit-content;
+        border-radius:15px;
+        padding: 20px;
+    }
+    .law_speciality p{
+        padding: 18px;
+        font-size: 25px;
+        font-style: italic;
+        
+    }
+    .sphere_speciality{
+        margin: 40px 0 0;
+    }
+    
+    .spheres_speciality h5{
+      font-weight: 800;
+      font-size:25px
+    }
+    .spheres_speciality ol {
+      font-size: 20px;
+     font-style: italic;
+    }
+    
+}
+
+@media (max-width:769px){
+    .image_speciality{
+    
+        width: 100%;
+        height: 350px;
+       
+    }
+   
+   
+    
+    .image_speciality h3{ 
+        font-weight: 700;
+       
+        margin: 20px 0;
+         font-size:40px;
+     
+    }
+    
+    .history_cookies p{
+        padding: 14px;
+        font-size: 16px;
+    }
+    .law_speciality{
+        margin: 15px 0;
+        background-color: rgb(164, 195, 199);
+        height: fit-content;
+        border-radius:15px;
+        padding: 20px;
+    }
+    .law_speciality p{
+        padding: 15px;
+        font-size: 18px;
+        font-style: italic;
+        
+    }
+    .sphere_speciality{
+        margin: 30px 0 0;
+    }
+    
+    .spheres_speciality h5{
+      font-weight: 800;
+      font-size:20px
+    }
+    .spheres_speciality ol {
+      font-size: 17px;
+     font-style: italic;
+    }
+    
+}
+
+@media (max-width:426px){
+    .image_speciality{
+    
+        width: 100%;
+        height: 250px;
+       
+    }
+   
+   
+    
+    .image_speciality h3{ 
+        font-weight: 700;
+       
+        margin: 15px 0;
+         font-size:25px;
+     
+    }
+    
+    .history_cookies p{
+        margin: 5px 5px;
+        padding: 10px;
+        font-size: 14px;
+    }
+    .law_speciality{
+        margin: 15px 0;
+        background-color: rgb(164, 195, 199);
+        height: fit-content;
+        border-radius:15px;
+        padding: 10px;
+    }
+    .law_speciality p{
+        padding: 8px;
+        font-size: 13px;
+        font-style: italic;
+        
+    }
+    .sphere_speciality{
+        margin: 30px 0 0;
+    }
+    
+    .spheres_speciality h5{
+      font-weight: 800;
+      font-size:14px
+    }
+    .spheres_speciality ol {
+      font-size: 13px;
+     font-style: italic;
+    }
+    
+}
+
+@media (max-width:376px){
+    .image_speciality{
+    
+        width: 100%;
+        height: 220px;
+       
+    }
+   
+   
+    
+    .image_speciality h3{ 
+        font-weight: 700;
+       
+        margin: 10px 0;
+         font-size:20px;
+     
+    }
+    
+    .history_cookies p{
+        margin: 5px 5px;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .law_speciality{
+        margin: 10px 0;
+        background-color: rgb(164, 195, 199);
+        height: fit-content;
+        border-radius:15px;
+        padding: 7px;
+    }
+    .law_speciality p{
+        padding: 8px;
+        font-size: 11px;
+        font-style: italic;
+        
+    }
+    .sphere_speciality{
+        margin: 30px 0 0;
+    }
+    
+    .spheres_speciality h5{
+      font-weight: 800;
+      font-size:13px
+    }
+    .spheres_speciality ol {
+      font-size: 12px;
+     font-style: italic;
+    }
+    
 }

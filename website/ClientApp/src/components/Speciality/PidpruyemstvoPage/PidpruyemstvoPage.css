@@ -7,6 +7,7 @@
     margin: 30px;
 }
 .table_pidpr table {
+    margin: 15px 0;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 20px;
     border-collapse: collapse;
@@ -27,4 +28,51 @@
     }
     .table_pidpr th:first-child, td:first-child {
     text-align: left;
+    }
+
+    @media (max-width:1025px) {
+        .table_pidpr{
+            margin: 25px;
+        }
+        .table_pidpr table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 18px;
+            border-collapse: collapse;
+            text-align: center;
+            } 
+    }
+    @media (max-width:769px) {
+        .table_pidpr{
+            margin: 20px;
+        }
+        .table_pidpr table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 16px;
+            border-collapse: collapse;
+            text-align: center;
+            } 
+    }
+
+    @media (max-width:426px) {
+        .table_pidpr{
+            margin: 15px;
+        }
+        .table_pidpr table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 12px;
+            border-collapse: collapse;
+            text-align: center;
+            } 
+    }
+
+    @media (max-width:376px) {
+        .table_pidpr{
+            margin: 15px;
+        }
+        .table_pidpr table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 10px;
+            border-collapse: collapse;
+            text-align: center;
+            } 
     }

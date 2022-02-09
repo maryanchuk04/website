@@ -2,7 +2,7 @@ import React from 'react'
 import '../CallShedule/CallShedulePage.css';
 function CallShedulePage() {
     return (
-        <div>
+        <div className="callshedule">
             <div className="container_all">
                 <div className="table_shedule">
                 <table class="table_dark">

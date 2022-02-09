@@ -4,11 +4,12 @@ import React from 'react';
 import './PracticePage.css';
 function PracticePage() {
   return (
-  <div > 
-    <div className="title_practice">
+  <div className="practice" > 
+    
+     <div className="container_all">
+     <div className="title_practice">
       <h4>Практичне навчання та працевлаштування</h4>
     </div>
-     <div className="container_all">
        <div className="text_practice">
          <p>Практичне навчання в технікумі проводиться відповідно до вимог діючого "Положення про проведення практики студентів вищих 
            навчальних закладів" і є невід'ємною органічною складовою частиною всього 
