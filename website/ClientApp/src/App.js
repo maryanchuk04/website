@@ -27,6 +27,10 @@ import StudentPage from './components/StudentPage/StudentPage';
 import Menu from './components/Shared/Menu';
 import OneNewsPage from './components/NewsPage/OneNewsPage';
 import Page from './components/Shared/Page';
+import NotEmployers from './components/EmployersPage/NotEmployers';
+import PedEmployers from './components/EmployersPage/PedEmployers';
+import GospEmployers from './components/EmployersPage/GospEmployers';
+import Chudo from './components/AdminPage/Chudo';
 
 function App() {
 
@@ -53,10 +57,19 @@ function App() {
           <Route path = '/student/callshedule' exact element={<React.Fragment><Header/><Menu/><CallShedulePage/><Footer/></React.Fragment>} />
           <Route path = '/student/detailspayment' exact element={<React.Fragment><Header/><Menu/><DetailsPaymentPage/><Footer/></React.Fragment>} />
           <Route path = '/student/syllabus' exact element={<React.Fragment><Header/><Menu/><SyllabusPage/><Footer/></React.Fragment>} />
+          <Route path = '/employers/admin' exact element = {<React.Fragment><Header/><Menu/><EmployersPage/><Footer/></React.Fragment>}/>
+
+          <Route path = '/employers/not' exact element = {<React.Fragment><Header/><Menu/><NotEmployers/><Footer/></React.Fragment>}/>
+          <Route path = '/employers/ped' exact element = {<React.Fragment><Header/><Menu/><PedEmployers/><Footer/></React.Fragment>}/>
+          <Route path = '/employers/gosp' exact element = {<React.Fragment><Header/><Menu/><GospEmployers/><Footer/></React.Fragment>}/>
+
+
 
           <Route path = "/news/:id" exact element ={<React.Fragment><Header/><Menu/><OneNewsPage/><Footer/></React.Fragment>}/>
           <Route path = "/:name/:id" exact element ={<React.Fragment><Header/><Menu/><Page/><Footer/></React.Fragment>}/>
 
+
+          <Route path = "/chudo" exact element = {<React.Fragment><Chudo/></React.Fragment>}/>
         </Routes>
       </BrowserRouter>
        

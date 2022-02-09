@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import Header from "../Shared/Header";
-import Menu from "../Shared/Menu";
-import './EmployersPage.css';
-import axios from 'axios'
-
-function EmployersPage() {
+import React from 'react';
+import axios from 'axios';
+import { useEffect,useState } from 'react';
+function GospEmployers() {
     const [employers,setEmployers] = useState([])
     const [obj,setObj] = useState({})
     useEffect(()=>{
-        axios.get("http://localhost:5000/employerspage/admin")
+        axios.get("http://localhost:5000/employerspage/gosp")
             .then((result)=>{
                 console.log(result.data);
                 setEmployers(result.data.employers);
@@ -50,4 +47,4 @@ function EmployersPage() {
     )
 }
 
-export default EmployersPage
+export default GospEmployers;

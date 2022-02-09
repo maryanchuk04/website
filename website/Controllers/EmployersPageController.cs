@@ -92,9 +92,7 @@ namespace website.Controllers
         public ActionResult UploadImage(string id, string employerId,[FromForm] IFormFile file)
         {
             Employer employer = _employersPage.GetByID(id).employers.Find(x => x.id == employerId);
-            if (employer.image !=null)
-            {
-                if (file.Length > 0)
+             if (file.Length > 0)
                 {
                     using (var ms = new MemoryStream())
                     {
@@ -111,64 +109,53 @@ namespace website.Controllers
                 {
                     return BadRequest();
                 }
-            }
-            else
-            {
-                return BadRequest();
-            }
+            
+           
+           
         }
 
 
 
-        [HttpGet("/employers/geniy/admin")]
+        [HttpGet("/employerspage/admin")]
         public ActionResult Geniy()
         {
-            Employers employersPage = new Employers();
-            employersPage.name = "Адміністріція";
-            employersPage.employers = new List<Employer>();
-            employersPage.employers = _employer.GetByRang("admin").ToList();
-
-            _employersPage.Insert(employersPage);
-            return Ok(employersPage);
+        
+            return Ok(_employersPage.GetByID("620299ddcd09eef769827bec"));
 
         }
 
-        [HttpGet("/employers/geniy/ped")]
+        [HttpGet("/employerspage/ped")]
         public ActionResult Geniy2()
         {
-            Employers employersPage = new Employers();
-            employersPage.name = "Педагогічний склад";
-            employersPage.employers = new List<Employer>();
-            employersPage.employers = _employer.GetByRang("ped").ToList();
-
-            _employersPage.Insert(employersPage);
-            return Ok(employersPage);
+           
+            return Ok(_employersPage.GetByID("62029a09cd09eef769827c01"));
 
         }
-        [HttpGet("/employers/geniy/gosp")]
+        [HttpGet("/employerspage/gosp")]
         public ActionResult Geniy3()
         {
-            Employers employersPage = new Employers();
-            employersPage.name = "Господарська частина";
-            employersPage.employers = new List<Employer>();
-            employersPage.employers = _employer.GetByRang("gosp").ToList();
-
-            _employersPage.Insert(employersPage);
-            return Ok(employersPage);
+            return Ok(_employersPage.GetByID("620299f7cd09eef769827bfc"));
 
         }
-        [HttpGet("/employers/geniy/not")]
+        [HttpGet("/employerspage/not")]
         public ActionResult Geniy4()
-        {
-            Employers employersPage = new Employers();
-            employersPage.name = "Невикладацький персонал";
-            employersPage.employers = new List<Employer>();
-            employersPage.employers = _employer.GetByRang("not").ToList();
-
-            _employersPage.Insert(employersPage);
-            return Ok(employersPage);
+        { 
+            return Ok(_employersPage.GetByID("620299e3cd09eef769827bf3"));
 
         }
+
+
+       /*
+        [HttpPost("/employers/upload/{id}/{id_e}")]
+        public ActionResult Upload(string id, string id_e,[FromForm] IFormFile file)
+        {
+            Employers emp = _employersPage.GetByID(id);
+
+
+            emp.employers.Find(x=>x.id == id_e).image = 
+            return Ok();
+
+        }*/
 
     }
 

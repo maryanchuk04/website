@@ -10,7 +10,7 @@ function EntrantPage() {
 
 
   useEffect(()=>{
-    axios.get('http://localhost:5000/entrantpage').then((result)=>{
+    axios.get('https://bsite.net/IvanovIvan/entrantpage').then((result)=>{
       console.log(result.data);
       setres(result.data);
       console.log(result.data[0].documents)
