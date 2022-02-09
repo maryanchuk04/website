@@ -5,7 +5,7 @@
     background-color: rgb(189, 203, 219);
     height: fit-content;
     font-size: 18px;
-    margin: 20px;
+     margin: 30px 0;
     border-radius: 10px;
 }
 .news_header{
@@ -63,10 +63,274 @@ flex-direction: column;
 
 .pagination{
     display: flex;
-    flex-direction: column;
+  margin: 10px auto;
+  
 }
 
 .pagination_button{
-    border-radius: 10px;
+      font-weight: 700;
+        width:42px;
+        background:rgb(161, 224, 253) ;
+        height: 42px;
+        border-radius: 50%;
+        font-size: 24px;
+        color:rgb(21, 55, 78);
+        margin: 0  5px;
 
 }
+
+.pagination_button:hover{
+    
+    border: 5px solid rgb(165, 202, 226);
+    
+}
+
+@media(max-width:1025px){
+    .news_block{
+        width: 100%;
+        padding: 20px;
+        margin: 20px 0;
+        font-size: 17px;
+        
+        
+    }
+    .news_info{
+        display: flex;
+        flex-direction: column;
+    }
+    .news_header{
+        
+        font-size: 45px;
+       
+        margin: 15px;
+        
+    }
+    .news_block .news_title{
+       
+        font-size: 30px;
+        
+    }
+    
+    .news_block .news_info h2{
+        font-size: 22px;
+    }
+    .news_block .news_info img{
+        object-fit: contain;
+        width: 350px;
+        height: 270px;
+        margin: 10px;
+         
+    }
+    .news_block p{
+        margin-right: 25px;
+    }
+    .text_and_link{
+        margin-left: 25px;
+       
+    } 
+    
+    
+    .pagination{
+       
+      margin: 10px auto;
+      
+    }
+    
+    .pagination_button{
+          
+            width:37px;          
+            height: 37px;
+            font-size: 22px;
+          
+    
+    }
+}
+
+
+@media(max-width:769px){
+    .news_block{
+        width: 100%;
+        
+        margin: 15px 0;
+        font-size: 14px;
+        
+        
+    }
+    .news_info{
+        display: flex;
+        flex-direction: column;
+    }
+    .news_header{
+        
+        font-size: 38px;
+       
+        margin: 10px;
+        
+    }
+    .news_block .news_title{
+       
+        font-size: 22px;
+        
+    }
+    
+    .news_block .news_info h2{
+        font-size: 20px;
+    }
+    .news_block .news_info img{
+        object-fit: contain;
+        width: 300px;
+        height: 250px;
+        margin: 10px;
+         
+    }
+    .news_block p{
+        margin-right: 25px;
+    }
+    .text_and_link{
+        margin-left: 25px;
+       
+    } 
+    
+    
+    .pagination{
+       
+      margin: 10px auto;
+      
+    }
+    
+    .pagination_button{
+          
+            width:37px;          
+            height: 37px;
+            font-size: 22px;
+          
+    
+    }
+}
+
+
+@media(max-width:426px){
+    .news_block{
+        width: 100%;
+        
+        margin: 15px 0;
+        font-size: 12px;
+        
+        
+    }
+    .news_info{
+        display: flex;
+        flex-direction: column;
+    }
+    .news_header{
+        
+        font-size: 30px;
+       
+        margin: 10px;
+        
+    }
+    .news_block .news_title{
+       
+        font-size: 18px;
+        
+    }
+    
+    .news_block .news_info h2{
+        font-size: 17px;
+    }
+    .news_block .news_info img{
+        object-fit: contain;
+        width: 200px;
+        height: 150px;
+        margin: 10px;
+         
+    }
+    .news_block p{
+        margin-right: 25px;
+    }
+    .text_and_link{
+        margin-left: 25px;
+       
+    } 
+    
+    
+    .pagination{
+       
+      margin: 10px auto;
+      
+    }
+    
+    .pagination_button{
+          
+            width:30px;          
+            height: 30px;
+            font-size: 16px;
+          
+    
+    }
+}
+
+
+@media(max-width:376px){
+    .news_block{
+        width: 100%;
+        
+        margin: 15px 0;
+        font-size: 12px;
+        
+        
+    }
+    .news_info{
+        display: flex;
+        flex-direction: column;
+    }
+    .news_header{
+        
+        font-size: 25px;
+       
+        margin: 10px;
+        
+    }
+    .news_block .news_title{
+       
+        font-size: 16px;
+        
+    }
+    
+    .news_block .news_info h2{
+        font-size: 14px;
+    }
+    .news_block .news_info img{
+        object-fit: contain;
+        width: 200px;
+        height: 150px;
+        margin: 10px;
+         
+    }
+    .news_block p{
+        margin-right: 25px;
+    }
+    .text_and_link{
+        margin-left: 25px;
+       
+    } 
+    
+    
+    .pagination{
+       
+      margin: 10px auto;
+      
+    }
+    
+    .pagination_button{
+          
+            width:27px;          
+            height: 27px;
+            font-size: 14px;
+          
+    
+    }
+}
+
+
+

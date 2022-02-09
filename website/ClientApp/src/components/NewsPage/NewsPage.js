@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import '../NewsPage/NewsPage.css'
 function NewsPage() {
-  const CONSTANTA = 1
+  const CONSTANTA = 3
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -15,7 +15,7 @@ function NewsPage() {
     const selectedUsers = news?.slice(startIndex, startIndex + CONSTANTA);
     return  (
       <div>
-          <div className = "container_all">
+        
             <div className="news_header">
                 Новини
             </div>
@@ -40,20 +40,24 @@ function NewsPage() {
            
            ))}
            </div> 
-      </div>
+     
     )
   }
     const Pagination = ({ totalPages, handleClick }) => {
         const pages = [...Array(totalPages).keys()]?.map(num => num+1);
         return (
-          <div className ="pagination">
-            { pages?.map(num => (
-              <button className= "pagination_button"
-                key={num}
-                onClick={() => handleClick(num)}
-              >{num}</button>
-            )) }
-          </div>
+          <div className="container_all">
+              
+                   <div className ="pagination">
+                     { pages?.map(num => (
+                       <button className= "pagination_button"
+                        key={num}
+                                  onClick={() => handleClick(num)}
+                        >{num}</button>
+                      )) }
+                    </div>
+                    </div>
+                          
         )
     }
         useEffect(() => {
@@ -73,12 +77,15 @@ function NewsPage() {
   return (
     <div className="newspage">
       <div className="container_all">
-         <div className = "pagination">
+
+        
                 {loading ? <p>Loading...</p> : <>
                   <News news={news} page={page} />
+                  <div className = "pagination">
                   <Pagination totalPages={totalPages} handleClick={handleClick} />
+                  </div>
                 </> }
-              </div>
+            
           </div>
       </div>
         
