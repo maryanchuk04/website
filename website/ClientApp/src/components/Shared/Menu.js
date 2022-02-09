@@ -105,14 +105,7 @@ function Menu() {
                                         </ul>
                                     </li>
 
-                                    <li><Link to = '/history'>Історія</Link>
-                                    <ul>
-                                            {history.map((a,index)=>(
-                                               <li><Link key = {his,a.id} to ={`/${his}/${a.id}`}>{a.name}</Link></li> 
-                                            ))
-                                            }
-                                        </ul>
-                                    </li>
+                                   
                                     
                                     <li>Колектив
                                             <ul className="submenu">
@@ -122,6 +115,15 @@ function Menu() {
                                                    <li><Link to = '/employers/not'>Невикладацький склад</Link></li>        
                                             </ul> 
                                     
+                                    </li>
+
+                                    <li><Link to = '/history'>Історія</Link>
+                                    <ul>
+                                            {history.map((a,index)=>(
+                                               <li><Link key = {his,a.id} to ={`/${his}/${a.id}`}>{a.name}</Link></li> 
+                                            ))
+                                            }
+                                        </ul>
                                     </li>
                                    </ul>
                                </nav>

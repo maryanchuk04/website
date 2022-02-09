@@ -9,6 +9,7 @@
     margin: 20px;
 }
 .pages_blocks{
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,4 +75,53 @@
     font-size: 18px;
     display: flex;
     
+}
+
+
+@media (max-width:1025px){
+    .title_page h1{
+      font-size: 32px;
+    }
+
+    .other_block_info ul li{
+        list-style: number;
+        font-size: 20px;
+        margin: 10px;
+    }
+}
+
+@media (max-width:769px){
+    .title_page h1{
+      font-size: 27px;
+    }
+
+    .other_block_info ul li{
+        list-style: number;
+        font-size: 17px;
+        margin: 10px;
+    }
+}
+
+@media (max-width:426px){
+    .title_page h1{
+      font-size: 23px;
+    }
+
+    .other_block_info ul li{
+        list-style: number;
+        font-size: 14px;
+        margin: 10px;
+    }
+}
+
+@media (max-width:376px){
+    .title_page h1{
+      font-size: 20px;
+    }
+
+    .other_block_info ul li{
+        list-style: number;
+        font-size: 13px;
+        margin: 10px;
+    }
 }

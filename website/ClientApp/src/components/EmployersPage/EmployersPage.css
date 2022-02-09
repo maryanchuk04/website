@@ -45,3 +45,47 @@
    
     
 }
+@media(max-width:1025px){
+    .employers{
+        padding: 15px;
+        
+        
+        margin: 15px;
+        
+    }
+    
+    .employers_title{
+        display: grid;
+        place-items: center;  
+        margin: 40px 0 0 0 ; 
+      
+    }
+    .employers_title h1{
+        font-weight: 800;
+        font-size: 40px;
+    }
+    
+    .emp{
+        display: flex;
+        margin: 40px;
+        box-shadow: 20px 20px #5d9bc7;
+        align-items: center;
+        border:  2px solid rgb(0, 0, 0);  
+    }
+    .emp .emp_info{
+        margin: 10px;
+    
+    }
+    .emp_info h2{
+        color: rgb(78, 77, 77);
+        font-size: 18px;
+    }
+    
+    .emp_info h1{
+        color:rgb(44, 43, 43);
+        font-weight: 700;
+    }
+    .emp .emp_image{
+        margin: 10px;
+    }
+}
