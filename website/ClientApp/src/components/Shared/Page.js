@@ -13,7 +13,7 @@ function Page() {
   const [value,setValue] = useState(false);
 
   useEffect(()=>{
-      axios.get(`http://localhost:5000/${name}/${id}`).then((result)=>{
+      axios.get(`https://bsite.net/IvanovIvan/${name}/${id}`).then((result)=>{
           console.log(result.data);
           console.log(id, name)
           console.log(result.data.page);

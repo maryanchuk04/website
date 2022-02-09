@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import Header from "../Shared/Header";
-import Menu from "../Shared/Menu";
-import './EmployersPage.css';
-import axios from 'axios'
+import React from 'react';
+import axios from 'axios';
+import { useEffect,useState } from 'react';
+import '../EmployersPage/EmployersPage.css'
 
-function EmployersPage() {
+function NotEmployers() {
+    
     const [employers,setEmployers] = useState([])
     const [obj,setObj] = useState({})
     useEffect(()=>{
-        axios.get("http://localhost:5000/employerspage/admin")
+        axios.get("http://localhost:5000/employerspage/not")
             .then((result)=>{
                 console.log(result.data);
                 setEmployers(result.data.employers);
@@ -50,4 +50,4 @@ function EmployersPage() {
     )
 }
 
-export default EmployersPage
+export default NotEmployers;

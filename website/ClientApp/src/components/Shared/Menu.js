@@ -22,7 +22,7 @@ function Menu() {
 
     useEffect(()=>{
         ( async()=>{
-            const res1 = await axios.get("http://localhost:5000/student");
+            const res1 = await axios.get("https://bsite.net/IvanovIvan/student");
             const res5 = await axios.get("https://bsite.net/IvanovIvan/collegeactivity");
             const res2 = await axios.get("https://bsite.net/IvanovIvan/speciality");
             const res3 = await axios.get("https://bsite.net/IvanovIvan/history");
@@ -113,13 +113,15 @@ function Menu() {
                                             }
                                         </ul>
                                     </li>
+                                    
                                     <li>Колектив
-                                    <ul>
-                                            {employers.map((a,index)=>(
-                                               <li><Link key = {emp,a.id} to ={`/${emp}/${a.id}`}>{a.name}</Link></li> 
-                                            ))
-                                            }
-                                        </ul>
+                                            <ul className="submenu">
+                                                   <li><Link to ='/employers/admin'>Адміністрація</Link></li>
+                                                   <li><Link to = '/employers/ped'>Педагогічний склад</Link></li>
+                                                   <li><Link to = '/employers/gosp'>Господарська частина</Link></li>
+                                                   <li><Link to = '/employers/not'>Невикладацький склад</Link></li>        
+                                            </ul> 
+                                    
                                     </li>
                                    </ul>
                                </nav>
