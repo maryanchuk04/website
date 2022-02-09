@@ -1,12 +1,18 @@
+ .practice p{
+    text-align: justify;
+}
 .title_practice{
     
-    width: fit-content;
+    width: 100%;
     margin:  40px  auto 0;
     border: cornflowerblue 5px solid;
     border-radius: 10px;
     
 }
-
+.practice .container_all{
+    display: flex;
+    flex-direction: column;
+}
 .title_practice h4{
     font: 800;
     padding: 20px;
@@ -56,4 +62,294 @@
     text-indent:none;
     text-align:center;
     padding: 30px 20px;
+}
+
+@media(max-width:1441px){
+    .title_practice{
+    
+       text-align: center !important;
+        margin:  40px  auto 0;
+
+        
+    }
+    
+    .title_practice h4{
+       
+        padding: 20px;  
+        font-size: 50px;
+        
+    }
+    .text_practice{
+        margin:30px 0;
+    }
+    .text_practice p{
+        font-size: 25px ;
+        
+    }
+    
+    .list_practice{
+        margin: 20px 0;
+    }
+    .list_practice ul{
+        font-size: 25px ;
+     
+    }
+    .list_practice p{
+        font-size: 30px;
+    } 
+    .list_practice ul li:before {
+        content:  "—";
+       
+        left:     -5px;
+    }
+    .list_practice h3{
+        font-size: 30px;
+        
+    }
+    .poem{
+        width: 50%;
+        
+        border-radius: 40px;
+    }
+    .poem p{
+        padding: 30px 20px;
+    }
+    
+}
+
+@media(max-width:1025px){
+    .title_practice{
+    
+        text-align: center !important;
+        margin:  30px  auto 0;
+
+        
+    }
+    
+    .title_practice h4{
+       
+        padding: 17px;  
+        font-size: 35px;
+        
+    }
+    .text_practice{
+        margin:20px 0;
+    }
+    .text_practice p{
+        font-size: 20px ;
+        
+    }
+    
+    .list_practice{
+        margin: 15px 0;
+    }
+    .list_practice ul{
+        font-size: 20px ;
+     
+    }
+    .list_practice p{
+        font-size: 22px;
+    } 
+    .list_practice ul li:before {
+        content:  "—";
+       
+        left:     -5px;
+    }
+    .list_practice h3{
+        font-size: 25px;
+        
+    }
+    .poem{
+        width: 50%;
+        
+        border-radius: 40px;
+    }
+    .poem p{
+        padding: 30px 20px;
+    }
+   .text_practice .list_practice ul li {
+       font-size: 20px !important;
+    }
+}
+
+@media(max-width:769px){
+    p{
+        text-align: justify !important;
+    }
+    .title_practice{
+    
+        
+        margin:  20px  auto 0;
+
+        
+    }
+    
+    .title_practice h4{
+        text-align: center !important;
+        padding: 10px;  
+        font-size: 24px;
+        
+    }
+    .text_practice{
+        margin:10px 0;
+    }
+    .text_practice p{
+        font-size: 15px ;
+        
+    }
+    
+    .list_practice{
+        margin: 8px 0;
+    }
+    .list_practice ul{
+        font-size: 15px ;
+     text-align: left !important;
+    }
+    .list_practice ul li{
+       display: inline-block;
+    }
+    .list_practice p{
+        font-size: 17px;
+    } 
+    .list_practice ul li:before {
+        content:  "—";
+       display: inline-block;
+        left:     -5px;
+    }
+    .list_practice h3{
+        font-size: 19px;
+        
+    }
+    .poem{
+        width: 50%;
+        
+        border-radius: 40px;
+    }
+    .poem p{
+        text-align: center !important;
+        margin: 0;
+        padding: 10px 5px;
+    }
+   .text_practice .list_practice ul li {
+       font-size: 15px !important;
+    }
+}
+
+@media(max-width:426px){
+    p{
+        text-align: justify !important;
+    }
+    .title_practice{  
+        
+        margin:  10px  auto 0;  
+    }
+    
+    .title_practice h4{
+        text-align: center !important;  
+        padding: 10px;  
+        font-size: 15px;
+        
+    }
+    .text_practice{
+        margin:7px 0;
+    }
+    .text_practice p{
+        font-size: 12px ;
+        
+    }
+    
+    .list_practice{
+        margin: 8px 0;
+    }
+    .list_practice ul{
+        font-size: 12px ;
+     text-align: left !important;
+    }
+    .list_practice ul li{
+       display: inline-block;
+    }
+    .list_practice p{
+        font-size: 14px;
+    } 
+    .list_practice ul li:before {
+        content:  "—";
+       display: inline-block;
+        left:     -5px;
+    }
+    .list_practice h3{
+        font-size: 15px;
+        
+    }
+    .poem{
+        width: 70%;
+        
+        border-radius: 40px;
+    }
+    .poem p{
+        text-align: center !important;
+        margin: 0;
+        padding: 10px 5px;
+    }
+   .text_practice .list_practice ul li {
+       font-size: 12px !important;
+    }
+}
+
+
+@media(max-width:376px){
+    p{
+        
+        text-align: justify !important;
+    }
+    .title_practice{    
+        margin:  10px  auto 0;  
+    }
+    
+    .title_practice h4{
+        text-align: center !important;
+        padding: 10px;  
+        font-size: 13px;
+        
+    }
+    .text_practice{
+        margin:7px 0;
+    }
+    .text_practice p{
+        font-size: 12px ;
+        
+    }
+    
+    .list_practice{
+        margin: 8px 0;
+    }
+    .list_practice ul{
+        font-size: 12px ;
+     text-align: left !important;
+    }
+    
+    .list_practice p{
+        font-size: 12px;
+    } 
+    .list_practice ul li:before {
+        content:  "—";
+       display: inline-block;
+        left:     -5px;
+    }
+    .list_practice h3{
+        font-size: 12px;
+        
+    }
+    .poem{
+        width: 80%;
+        
+        border-radius: 40px;
+    }
+    .poem p{
+        text-align: center !important;
+        margin: 0;
+        padding: 10px 5px;
+    }
+   .text_practice .list_practice ul li {
+       font-size: 11px !important;
+    }
 }

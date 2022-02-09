@@ -57,7 +57,7 @@ function NewsPage() {
         )
     }
         useEffect(() => {
-          axios.get("http://localhost:5000/news").then((res)=>{
+          axios.get("https://bsite.net/IvanovIvan/news").then((res)=>{
             setLoading(true);
             setLoading(false);
             setNews(res.data);
