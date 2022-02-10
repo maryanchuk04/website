@@ -7,7 +7,7 @@ function PedEmployers() {
     const [employers,setEmployers] = useState([])
     const [obj,setObj] = useState({})
     useEffect(()=>{
-        axios.get("http://localhost:5000/employerspage/ped")
+        axios.get("https://bsite.net/IvanovIvan/employerspage/ped")
             .then((result)=>{
                 console.log(result.data);
                 setEmployers(result.data.employers);

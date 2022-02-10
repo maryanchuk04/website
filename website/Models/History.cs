@@ -17,6 +17,7 @@ namespace website.Models
         [BsonElement("name")]
         public string name { get; set; }
 
-        public Page page { get; set; }
+        [BsonElement("page")]
+        public string page { get; set; }
     }
 }

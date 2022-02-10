@@ -31,6 +31,7 @@ import NotEmployers from './components/EmployersPage/NotEmployers';
 import PedEmployers from './components/EmployersPage/PedEmployers';
 import GospEmployers from './components/EmployersPage/GospEmployers';
 import Chudo from './components/AdminPage/Chudo';
+import Galery from './components/GaleryPage/Galery';
 
 function App() {
 
@@ -68,7 +69,7 @@ function App() {
           <Route path = "/news/:id" exact element ={<React.Fragment><Header/><Menu/><OneNewsPage/><Footer/></React.Fragment>}/>
           <Route path = "/:name/:id" exact element ={<React.Fragment><Header/><Menu/><Page/><Footer/></React.Fragment>}/>
 
-
+          <Route path = "/history/galery" exact element = {<React.Fragment><Header/><Menu/><Galery/><Footer/></React.Fragment>}/>
           <Route path = "/chudo" exact element = {<React.Fragment><Chudo/></React.Fragment>}/>
         </Routes>
       </BrowserRouter>
