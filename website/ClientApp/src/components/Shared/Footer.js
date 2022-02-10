@@ -50,7 +50,7 @@ function Footer() {
                      <div className="about_footer">
                         <div className="about_us">
                            <h1>Чернівецький фаховий коледж бізнесу та харчових технологій</h1>
-                           <p><span>Розташування: </span>вул.Руська,194,місто Чернівці,58000</p>
+                           <p><span>Розташування: </span>вул.Руська, 194 "З", місто Чернівці, 58009</p>
                             <p><span>Email: </span>dktcv@ukr.net</p>
                             <p><span>Телефон: </span>+38(0372) 54-81-15</p>
                         </div>
@@ -72,16 +72,16 @@ function Footer() {
                      <div className="about_other">
                      
                         <div className="image_other">
-                           <img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/MON.png" alt="" />
+                           <a href="https://mon.gov.ua/ua"> <img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/MON.png" alt="" /></a>
                         </div>
                         <div className="image_other">
-                           <img src=" https://designcollege.cv.ua/wp-content/uploads/2021/04/DEPARTAMENT-11.33.33.png" alt="" />
+                        <a href="http://doncv.gov.ua/"><img src=" https://designcollege.cv.ua/wp-content/uploads/2021/04/DEPARTAMENT-11.33.33.png" alt="" /></a>
                         </div>
                         <div className="image_other">
-                           <img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/KONKURS.png" alt="" />
+                        <a href="https://vstup.osvita.ua/"><img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/KONKURS.png" alt="" /></a>
                         </div>
                         <div className="image_other">
-                           <img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/TSENTR-kopyya.png" alt="" />
+                        <a href="https://nmc-vfpo.com/"><img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/TSENTR-kopyya.png" alt="" /></a>
                         </div>
                        
                      </div>
