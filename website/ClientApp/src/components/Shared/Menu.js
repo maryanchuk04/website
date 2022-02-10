@@ -96,7 +96,7 @@ function Menu() {
                                        
                                     </li>
                                     <li>Діяльність коледжу
-                                        <ul>
+                                    <ul className="submenu">
                                             {activity.map((a,index)=>(
                                                <li><Link key = {act,a.id} to ={`/${act}/${a.id}`}>{a.name}</Link></li> 
                                             ))
@@ -118,7 +118,8 @@ function Menu() {
                                     </li>
 
                                     <li><Link to = '/history'>Історія</Link>
-                                    <ul>
+                                    <ul className="submenu">
+                                            <li><Link to = "/history/galery">Галерея</Link></li>
                                             {history.map((a,index)=>(
                                                <li><Link key = {his,a.id} to ={`/${his}/${a.id}`}>{a.name}</Link></li> 
                                             ))

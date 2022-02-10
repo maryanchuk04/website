@@ -92,24 +92,28 @@ namespace website.Controllers
         public ActionResult UploadImage(string id, string employerId,[FromForm] IFormFile file)
         {
             Employer employer = _employersPage.GetByID(id).employers.Find(x => x.id == employerId);
-             if (file.Length > 0)
+            Employers employerspage = _employersPage.GetByID(id);
+            if (file.Length > 0)
+            {
+                using (var ms = new MemoryStream())
                 {
-                    using (var ms = new MemoryStream())
-                    {
-                        file.CopyTo(ms);
-                        var fileBytes = ms.ToArray();
-                        employer.image = fileBytes;
-                        _employersPage.GetByID(id).employers.Remove(_employersPage.GetByID(id).employers.Find(x => x.id == employerId));
-                        _employersPage.GetByID(id).employers.Add(employer);
-                        _employersPage.Save(_employersPage.GetByID(id));
-                    }
-                    return Ok(employer);
+                   
+                    file.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+                    employer.image = fileBytes;
+                    employerspage.employers.Remove(employerspage.employers.Find(x => x.id == employer.id));
+                    
+                    employerspage.employers.Add(employer);
+                    _employersPage.Save(employerspage);
+
+                    return Ok(employerspage);
+
                 }
-                else
-                {
-                    return BadRequest();
-                }
-            
+               
+                
+            }
+            else return BadRequest();
+             
            
            
         }

@@ -46,18 +46,21 @@ Link{
 
 .one .submenu {
   padding: 0;
+  
   position: absolute;
   top: 100%;
-  width: 300px;
+  width: fit-content;
   z-index: 3;
  overflow: hidden;
 }
 .submenu  li{
+    padding: 20px;
     font-size: 15px;
 }
 .one .submenu {
     transition: 5s;
   display: none;
+  
   border-radius: 10px;
   background: #025677;
 }

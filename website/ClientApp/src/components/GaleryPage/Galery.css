@@ -1,0 +1,11 @@
+.gallery{
+    display: flex;
+    flex-direction: column;
+}
+.gallery .title_gallery{
+    text-align: center;
+    margin-top: 20px;
+}
+.gallery h1{
+    color: rgb(255, 0, 0);
+}
