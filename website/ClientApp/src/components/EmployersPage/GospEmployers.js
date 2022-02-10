@@ -5,7 +5,7 @@ function GospEmployers() {
     const [employers,setEmployers] = useState([])
     const [obj,setObj] = useState({})
     useEffect(()=>{
-        axios.get("http://localhost:5000/employerspage/gosp")
+        axios.get("https://bsite.net/IvanovIvan/employerspage/gosp")
             .then((result)=>{
                 console.log(result.data);
                 setEmployers(result.data.employers);

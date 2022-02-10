@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import '../AdminPage/AdminPage.css'
+import Chudo from './Chudo'
 
 function AdminPage() {
 
@@ -16,6 +17,12 @@ function AdminPage() {
     const [showForm, setShowForm] = useState(false);
     const  [getFile,setFile] = useState();
     const [showPage1, setShowPage1] = useState(0);
+    const [titlepage,setTitlepage] = useState("");
+
+
+    const [showChudo,setShowChudo] = useState(false);
+
+
     var bodyFormData = new FormData();
 
     useEffect(()=>{
@@ -59,45 +66,94 @@ function AdminPage() {
 
     const StudentClick=((i)=>{
         setState(1);
+        var x = document.getElementById("add");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+         }
     })
 
     const AbiturientClick=((e)=>{
         setState(2);
+        var x = document.getElementById("add");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+         }
     })
     const SpecialityClick=((e)=>{
         setState(3);
+        var x = document.getElementById("add");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+         }
     })
     
     const EmployersClick=((e)=>{
         setState(4);
+        var x = document.getElementById("add");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+         }
     })
     const ActiviesClick=((e)=>{
         setState(5);
+        var x = document.getElementById("add");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+         }
     })
 
     const AdministrationClick = ((e)=>{
         setState(6);
+        var x = document.getElementById("add");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+         }
     })
 
     const NewsClick = ((e)=>{
         setState(7);
+        var x = document.getElementById("add");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+         }
     })   
 
     const SliderClick = ((e)=>{
         setState(8);
+        var x = document.getElementById("add");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
     })
 
     const AttentionClick = ((e)=>{
         setState(9);
+        var x = document.getElementById("add");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+         }
     })
 
     const AddClick = ((e)=>{
-        if(state === 8 ) {
-            
-        }else{
-            setShowForm(true)
-        }
-        
+        setShowChudo(true);
     })
     
     
@@ -123,7 +179,10 @@ function AdminPage() {
         console.log("Файл :",getFile)
       } 
       
-    
+    const SaveButton = ()=>{
+
+    }
+
     return (
         <div className = "">
             <div className="admin_title">
@@ -151,8 +210,16 @@ function AdminPage() {
                         <div className="pidmenu">
                             <ul>
                                     {state === 1 ? 
-                                    student.map((s, index)=><li>{s.name}</li>
-                                    ):<li></li>
+                                    student.map((s, index)=>(
+                                    
+                                    <div>
+                                    <li>{s.name}</li>
+                                    
+                                    
+                                    </div>
+                                    )):<li></li>
+                                
+                                    
                                 }
                                     {state === 2 ? 
                                     speciality.map((s, index)=><li>{s.name}</li>
@@ -166,35 +233,51 @@ function AdminPage() {
                                     state ===5 ? 
                                     activies.map((i,index)=><li>{i.name}</li>) : <li></li>                         
                                 }
+                               
                             </ul>
+                           
                         </div>
-                        <div className="buttons">
-                            <div className="button_admin">
-                                    <div
-                                    class="background"
-                                    style={{
-                                        transform: `scale(${
-                                            showForm ? 1 : 0
-                                        })`,
-                                    }}>    
-                                  <div id="cancel-btn" ><i className="fas fa-times" onClick={() => setShowForm(false)}></i></div>
-                                  <div className="popup">
-                                   <div className="sub_buttons">
-                                        <button onClick={() => setShowPage1(1)} >1</button>
-                                        <button onClick={() => setShowPage1(2)} >2</button>
-                                        <button onClick={() => setShowPage1(3)} >3</button>
-                                    </div>
-                                </div>       
-                            </div>
-                             <button className="butn" onClick={(i) => AddClick(i)}> Додати</button>
-
-                         </div>
-                        </div>
+                        <button id = "add" style ={{display : "none"}} onClick = {(i)=>AddClick(i)}>Додати</button>
 
                     </div>
                   
                 </div>
                 <div className="other_admin">
+                {
+                 showChudo === true ?
+                (
+                <div>
+                    <div className="input_block">
+                        <form>
+                            <input placeholder = "Назва сторінки" required></input>
+                            <button onSubmit={(i)=>SaveButton(i)} >Зберегти</button>
+                            <button onClick={(i) =>setShowChudo(false)}>Закрити </button>
+                        </form>
+                     </div>
+                    <Chudo/>
+                        
+                    </div> 
+
+                 ): <div></div>
+                 }
+
+                  <div className="news_admin">
+                        {
+                            state === 7 ? 
+                                news.map((n,index)=>(
+                                    <div className = "one_admin_news">
+                                        <h1>{n.title}</h1>
+                                        <div className="area_with_text">
+                                            <img src={`data:image/gif;base64,${n.image}`}/>
+                                            <p>{n.short_text}</p>
+                                        </div>
+                                        <i class="fas fa-minus-circle" onClick = {(i)=>DeleteNewsClick(i,n.id)}></i>
+                                    </div>     
+                                )): <h1></h1>                
+                        }
+
+                    </div>
+
                     <div className = "slider_all">
                     <div className = "slider_image">
                         {   
@@ -211,7 +294,7 @@ function AdminPage() {
                             }
                             <div className = 'upload'>
                                 <input type="file"  id= "selectFile" onChange={(i)=>handleFileSelected(i)} />
-                            <button    id = "slideradd" onClick={(i)=>SliderAddClick(i) }>Додати</button>
+                                <button    id = "slideradd" onClick={(i)=>SliderAddClick(i) }>Додати</button>
                             </div>
                            
                             </div>
@@ -219,65 +302,14 @@ function AdminPage() {
                                   
                         }                   
                         </div>
-                       
-                    </div>        
-                  <div className="admin_page1">
-                        <div
-					          class="background_page1"
-					           style={{
-					        	display: showPage1 == 1 ? "block" : "none"                     
-		                        }}>
-                                <div id="cancel-btn" ><i className="fas fa-times" onClick={() => setShowPage1(0)}></i></div>
-                            <div className="admin_page1_info">
-                                <input type="text"  className="elemen_admin  elemen_admin_input" placeholder="Заголовок"/>
-                                <textarea name="text" className="elemen_admin elemen_admin_textarea" id=""  placeholder="Текст"></textarea>
-                             </div>
-                             <div className="admin_page1_buttons">
-                                <input type="file" />
-                                <button>Зберегти</button>
-                            </div>
-                        </div>
-                  </div>
-                  <div className="admin_page2">
-                        <div
-					          class="background_page2"
-					           style={{
-					        	display: 
-					        		showPage1 == 2 ? "block" : "none"        
-					        }}>
-                                <div id="cancel-btn" ><i className="fas fa-times" onClick={() => setShowPage1(0)}></i></div>
-                            <div className="admin_page2_info">
-                                <input type="text"  className="elemen_admin  elemen_admin_input" placeholder="Заголовок"/>
-                                <textarea name="text" className="elemen_admin elemen_admin_textarea" id=""  placeholder="Текст"></textarea>
-                                <input type="text"  className="elemen_admin  elemen_admin_input" placeholder="Посилання"/>
-                             </div>
-                             <div className="admin_page2_buttons">
-                                
-                                <button>Зберегти</button>
-                            </div>
-                        </div>
-                  </div>
-                  <div className="news_admin">
-                        {
-                            state === 7 ? 
-                                news.map((n,index)=>(
-                                    <div className = "one_admin_news">
-                                        <h1>{n.title}</h1>
-                                        <div className="area_with_text">
-                                            <img src={`data:image/gif;base64,${n.image}`}/>
-                                            <p>{n.short_text}</p>
-                                        </div>
-                                        <i class="fas fa-minus-circle" onClick = {(i)=>DeleteNewsClick(i,n.id)}></i>
-                                    </div>     
-                                )): <h1></h1>                
-                        }
-                    </div>
-
+                    </div> 
 
                 </div>
                 
                           
-            </div>
+            
+             </div>
+            
         </div>
             
         

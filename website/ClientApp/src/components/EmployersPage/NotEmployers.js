@@ -8,7 +8,7 @@ function NotEmployers() {
     const [employers,setEmployers] = useState([])
     const [obj,setObj] = useState({})
     useEffect(()=>{
-        axios.get("http://localhost:5000/employerspage/not")
+        axios.get("https://bsite.net/IvanovIvan/employerspage/not")
             .then((result)=>{
                 console.log(result.data);
                 setEmployers(result.data.employers);

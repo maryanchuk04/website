@@ -19,7 +19,7 @@ namespace website.Models
         public string name { get; set; }
 
         [BsonElement("page")]
-        public Page page { get; set; }
+        public string page { get; set; }
 
 
     }

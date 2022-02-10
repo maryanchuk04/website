@@ -13,15 +13,11 @@ namespace website.Models.PageTemplate
         [BsonRepresentation(BsonType.ObjectId)]
         public string id { get; set; } = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
 
-        [BsonElement("imgWithTexts")]
-        public List<ImgWithText> imgWithTexts { get; set; }
+        [BsonElement("title")]
+        public string title { get; set; }
 
-        [BsonElement("titleWithLinks")]
-        public List<TitleWithLinks> titleWithLinks { get; set; }
-
-        [BsonElement("image")]
-        public byte[] image { get; set; }
-
+        [BsonElement("page_element")]
+        public string page_element { get; set; }
 
     }
 }
