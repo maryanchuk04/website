@@ -68,7 +68,17 @@ function Menu() {
 					</button>
                                    <ul className={!toggleBurger && 'showHeader' && 'topmenu'}>
                                     <li><Link to ='/'>Головна</Link></li>
-                                    <li> <Link to = '/news'>Новини</Link></li>     
+                                    <li> <Link to = '/news'>Новини</Link></li> 
+                                    <li>Діяльність коледжу
+                                    <ul className="submenu">
+                                            {activity.map((a,index)=>(
+                                               <li><Link key = {act,a.id} to ={`/${act}/${a.id}`}>{a.name}</Link></li> 
+                                            ))
+
+                                            }
+                                        </ul>
+                                    </li>
+    
                                     <li>
                                      Студенту
                                         
@@ -95,16 +105,7 @@ function Menu() {
                                                </ul>  
                                        
                                     </li>
-                                    <li>Діяльність коледжу
-                                    <ul className="submenu">
-                                            {activity.map((a,index)=>(
-                                               <li><Link key = {act,a.id} to ={`/${act}/${a.id}`}>{a.name}</Link></li> 
-                                            ))
-
-                                            }
-                                        </ul>
-                                    </li>
-
+                                    
                                    
                                     
                                     <li>Колектив
