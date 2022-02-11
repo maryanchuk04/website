@@ -46,6 +46,24 @@
     margin-left: 40px;
 }
 
+.rules{
+    display: flex;
+    justify-content: center;
+}
+.rules a{
+    font-size: 28px;
+    
+}
+
+.vuprobuvannya{
+    display: flex;
+    flex-direction: column;
+    
+}
+.vuprobuvannya h2{
+    margin: 20px;
+}
+
 
 @media (max-width:1025px){
     
