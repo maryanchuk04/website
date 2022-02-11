@@ -101,7 +101,7 @@ Link{
     position: absolute;
     top: 100%;
     width: 300px;
-   z-index: 3;
+    z-index: 3;
    overflow: hidden;
   }
   .submenu  li{
@@ -186,7 +186,9 @@ Link{
 .topmenu{
   padding:  0 ;
 }
-
+.submenu li a{
+  color: rgb(255, 255, 255) !important;
+}
 
 
 

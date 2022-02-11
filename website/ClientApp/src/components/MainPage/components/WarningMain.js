@@ -16,9 +16,7 @@ function WarningMain() {
 
     return (
        <div className="div">
-           <div className="title_warning">
-               <p>Увага, важлива інформація</p>
-           </div>
+           
            <div className="container_all">
                {adv.map((a,index)=>(
                 
