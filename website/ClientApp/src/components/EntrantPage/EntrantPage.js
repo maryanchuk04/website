@@ -38,6 +38,10 @@ function EntrantPage() {
           <div className="rules"> 
               <a href = {info.pdf_link} target="_blank">Правила прийому 2022</a>
           </div>
+          <div className="vuprobuvannya">
+            <h2>Вступні випробування!</h2>
+            <p>{info.vuprobuvannya}</p>
+          </div>
         </div>
     </div>
   </div>

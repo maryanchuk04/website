@@ -26,15 +26,10 @@ function Page() {
   },[]);
 
 
-
-
   return (
-    
-
         <div className = "page">
             <h1 style={{textAlign:"center" ,margin : "20px"}}>{all.name}</h1>
             <div className="container_all">
-            
             <div className="view ql-editor" dangerouslySetInnerHTML={{ __html: pageinfo }}></div>
             </div>
             
