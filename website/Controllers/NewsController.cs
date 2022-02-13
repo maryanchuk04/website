@@ -25,7 +25,9 @@ namespace website.Controllers
         [HttpGet("/news")]
         public ActionResult GetList()
         {
-            return Ok(_news.GetAll().Reverse());
+            var a = _news.GetAll().ToList();
+             a.Sort((x, y) => y.date.CompareTo(x.date));
+            return Ok(a);
         }
 
         [HttpPost("/news/add")]
