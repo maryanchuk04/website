@@ -4,24 +4,47 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import '../NewsPage/NewsPage.css'
 function NewsPage() {
-  const CONSTANTA = 3
+  
   const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(false);
+  
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(3);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = news.slice(indexOfFirstPost, indexOfLastPost);
+
+
+  useEffect(() => {
+    axios.get("https://bsite.net/IvanovIvan/news").then((res)=>{
+      setLoading(true);
+      setLoading(false);
+      setNews(res.data);
+      setTotalPages(Math.ceil(res.data.length / postsPerPage));
+    })
+  }, []);
+
+  const handleClick = num => {
+    setPage(num);
+  }
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+
   const News = ({ news, page }) => {
-    const startIndex = ( page - 1 ) * CONSTANTA;
-    const selectedUsers = news?.slice(startIndex, startIndex + CONSTANTA);
+    const startIndex = ( page - 1 ) * postsPerPage;
+    const selectedUsers = news?.slice(startIndex, startIndex + postsPerPage);
     return  (
-      <div>
-        
+      <div>   
             <div className="news_header">
                 Новини
             </div>
           
             {selectedUsers?.map((n,index)=>(
-            <div className="news_block">
+              currentPage == 1 ? ( index < 3 * currentPage && 
+            (<div className="news_block">
               <div className="news_title">
                 { n.title}
               </div>
@@ -36,45 +59,60 @@ function NewsPage() {
              </div>
              
              <p>{n.date.substr(0,10)}</p>
-             </div> 
+             </div> ) ):(
+               index >= 3 * (currentPage - 1) && index < 3 *currentPage && (
+                <div className="news_block">
+                <div className="news_title">
+                  { n.title}
+                </div>
+                <div className="news_info">
+               <img src={`data:image/gif;base64,${n.image}`}/>
+                 <div className="text_and_link">
+                   <h2>{n.short_text}</h2>
+                  <div className="link_news">
+                   <Link key = {n.id} to ={`/news/${n.id}`}>Детальніше</Link>
+                    </div>
+                  </div>
+               </div>
+               
+               <p>{n.date.substr(0,10)}</p>
+               </div>
+               )
+             )
            
            ))}
            </div> 
      
     )
   }
-    const Pagination = ({ totalPages, handleClick }) => {
-        const pages = [...Array(totalPages).keys()]?.map(num => num+1);
-        return (
-          <div className="container_all">
-              
-                   <div className ="pagination">
-                     { pages?.map(num => (
-                       <button className= "pagination_button"
-                        key={num}
-                                  onClick={() => handleClick(num)}
-                        >{num}</button>
-                      )) }
-                    </div>
-                    </div>
-                          
-        )
+
+
+
+
+  const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+    const pageNumbers = [];
+  
+    for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+      pageNumbers.push(i);
     }
+  
+    return (
+      <nav>
+        <ul className='pagination'>
+          {pageNumbers.map(number => (
+            <li key={number} className='page-item'>
+              <a onClick={() => paginate(number)}  className='page-link'>
+                {number}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    );
+  };
     //
-        useEffect(() => {
-          axios.get("https://bsite.net/IvanovIvan/news").then((res)=>{
-            setLoading(true);
-            setLoading(false);
-            setNews(res.data);
-            setTotalPages(Math.ceil(res.data.length / CONSTANTA));
-          })
-        }, []);
-      
-        const handleClick = num => {
-          setPage(num);
-        }
-
-
+       
+       
   return (
     <div className="newspage">
       <div className="container_all">
@@ -84,24 +122,9 @@ function NewsPage() {
                   <News news={news} page={page} />
                   <div className = "pagination">
                   <Pagination totalPages={totalPages} handleClick={handleClick} 
-                  nextLabel="next >"
-              
-                  pageRangeDisplayed={3}
-                  marginPagesDisplayed={2}
-                 
-                  previousLabel="< previous"
-                  pageClassName="page-item"
-                  pageLinkClassName="page-link"
-                  previousClassName="page-item"
-                  previousLinkClassName="page-link"
-                  nextClassName="page-item"
-                  nextLinkClassName="page-link"
-                  breakLabel="..."
-                  breakClassName="page-item"
-                  breakLinkClassName="page-link"
-                  containerClassName="pagination"
-                  activeClassName="active"
-                  renderOnZeroPageCount={null}
+                  postsPerPage={postsPerPage}
+                  totalPosts={news.length}
+                  paginate={paginate}
                   />
                   </div>
                 </> }

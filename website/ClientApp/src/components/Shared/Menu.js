@@ -72,7 +72,7 @@ function Menu() {
                                     <li>Діяльність коледжу
                                     <ul className="submenu">
                                             {activity.map((a,index)=>(
-                                               <li><Link key = {act,a.id} to ={`/${act}/${a.id}`}>{a.name}</Link></li> 
+                                               <li><a key = {act,a.id} href ={`/${act}/${a.id}`}>{a.name}</a></li> 
                                             ))
 
                                             }
@@ -85,8 +85,7 @@ function Menu() {
                                         <ul className="submenu">
                                                 <li> <Link to ='/student/practice'>Практика та працевлаштування</Link></li>
                                                    <li> <Link to ='/student/callshedule'>Розклад дзвінків</Link></li>
-                                                   <li> <Link to ='/student/detailspayment'>Реквізити для оплати</Link></li>
-                                                   <li> <Link to ='/student/syllabus'>Силабуси</Link></li>
+                                                                    
                                                    {students.map((s,index)=>(
                                                    <li><a key={st,s.id} href ={`/${st}/${s.id}`}>{s.name}</a></li>
                                                    ))}  
@@ -100,7 +99,7 @@ function Menu() {
                                                    <li><Link to = '/speciality/oblik'>Облік і оподаткування</Link></li>
                                                    <li><Link to = '/speciality/pidpruyemstvo'>Підприємство,торгівля та біржова діяльність</Link></li>
                                                    {speciality.map((s,index)=>(
-                                                   <li><Link key={spec,s.id} to ={`/${spec}/${s.id}`}>{s.name}</Link></li>
+                                                   <li><a key={spec,s.id} href ={`/${spec}/${s.id}`}>{s.name}</a></li>
                                                    ))}  
                                                </ul>  
                                        
@@ -122,7 +121,7 @@ function Menu() {
                                     <ul className="submenu">
                                             <li><Link to = "/history/galery">Галерея</Link></li>
                                             {history.map((a,index)=>(
-                                               <li><Link key = {his,a.id} to ={`/${his}/${a.id}`}>{a.name}</Link></li> 
+                                               <li><a key = {his,a.id} href ={`/${his}/${a.id}`}>{a.name}</a></li> 
                                             ))
                                             }
                                         </ul>

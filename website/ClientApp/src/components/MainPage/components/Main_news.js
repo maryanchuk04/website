@@ -20,7 +20,7 @@ function Main_news() {
               <div className="container_all">
               <div className="grid_news">
               {
-              news.map((n, index)=>index < 6 && (
+              news.map((n, index)=>index < 4 && (
                 <div className="info_news">
                       <div className="one_news_main">
                         <div className = "news_title_main" >
