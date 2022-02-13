@@ -13,9 +13,10 @@ using CloudinaryDotNet.Actions;
 
 namespace website.Controllers
 {
+
     [ApiController]
     [Route("/opp")]
-    public class OppController
+    public class OppController : Controller
     {
 
         private readonly OppServices _opp;
@@ -25,8 +26,12 @@ namespace website.Controllers
         }
 
         [HttpGet("/opp")]
-        public ActionResult GetAll() => Ok();
+        public ActionResult GetAll() => Ok(_opp.GetAll());
 
-        
+
+       
+
+
+
     }
 }

@@ -9,6 +9,7 @@ using website.Models;
 using website.Services;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
+using System.Net;
 
 namespace website.Controllers
 {
@@ -42,20 +43,26 @@ namespace website.Controllers
         [HttpPost("/slider/upload/")]
         public ActionResult UploadImage([FromForm] IFormFile file)
         {
-            Cloudinary cloudinary = new Cloudinary(new Account(
-                "dslnjjc0d",
-                "467362677389699",
-                "hXddhY2l6pBUuIMk4WVLI9D5B-Q"));
-            var uploadParams = new ImageUploadParams()
+            try
             {
-                File = new FileDescription(file.FileName, file.OpenReadStream())
-            };
-            var uploadResult = cloudinary.Upload(uploadParams);
-            var uplPath = uploadResult.Uri;
-            Slider slider = new Slider();
-            slider.image = uplPath.ToString();
-            _slider.Insert(slider);
-            return Ok(slider);
+                FtpWebRequest request =
+                (FtpWebRequest)WebRequest.Create("ftp://chdkt.connect.cv.ua/image/sliderimages/" + file.FileName);
+                request.Credentials = new NetworkCredential("ftp_chdkt", "1qA2wS3eD");
+                request.Method = WebRequestMethods.Ftp.UploadFile;
+
+                using (Stream ftpStream = request.GetRequestStream())
+                {
+                    file.CopyTo(ftpStream);
+                }
+                Slider slider = new Slider();
+                slider.image = "http://chdkt.connect.cv.ua/image/sliderimages/" + file.FileName;
+                _slider.Insert(slider);
+                return Ok(slider);
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
         }
 
         

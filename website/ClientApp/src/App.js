@@ -49,7 +49,7 @@ function App() {
           <Route path = '/entrant' exact element={<React.Fragment><Header/><Menu/><EntrantPage/><Footer/></React.Fragment>} />
           <Route path = '/employers' exact element={<React.Fragment><Header/><Menu/><EmployersPage/><Footer/></React.Fragment>} />
           <Route path = '/achivement' exact element={<React.Fragment><Header/><Menu/><AchivementPage/><Footer/></React.Fragment>} />
-          <Route path = '/speciality' exact element={<React.Fragment><Header/><Menu/><SpecialityPage/></React.Fragment>} />
+          <Route path = '/speciality' exact element={<React.Fragment><Header/><Menu/><SpecialityPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality/cooking' exact element={<React.Fragment><Header/><Menu/><CookingPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality/marketing' exact element={<MarketingPage/>} />
           <Route path = '/speciality/oblik' exact element={<React.Fragment><Header/><Menu/><OblikPage/><Footer/></React.Fragment>} />

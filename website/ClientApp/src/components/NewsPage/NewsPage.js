@@ -60,6 +60,7 @@ function NewsPage() {
                           
         )
     }
+    //
         useEffect(() => {
           axios.get("https://bsite.net/IvanovIvan/news").then((res)=>{
             setLoading(true);

@@ -26,7 +26,6 @@ function AdminPage() {
     var bodyFormData = new FormData();
 
     useEffect(()=>{
-
         (async ()=>{
             const res1 = await axios.get("https://bsite.net/IvanovIvan/student")
             const res2 = await axios.get("https://bsite.net/IvanovIvan/speciality")
@@ -182,7 +181,6 @@ function AdminPage() {
     const SaveButton = ()=>{
 
     }
-
     return (
         <div className = "">
             <div className="admin_title">
@@ -252,6 +250,8 @@ function AdminPage() {
                             <input placeholder = "Назва сторінки" required></input>
                             <button onSubmit={(i)=>SaveButton(i)} >Зберегти</button>
                             <button onClick={(i) =>setShowChudo(false)}>Закрити </button>
+
+                            <input type ="file" > ./userfile/</input>
                         </form>
                      </div>
                     <Chudo/>

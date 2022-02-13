@@ -75,6 +75,23 @@
 .text_history p{
    
 }
+.pidgotovka ul {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0 ;
+}
+.pidgotovka h2{
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.kursuv{
+    font-style: italic;
+    font-weight: 600;
+}
+.pidgotovka ul li{
+    list-style:inside;
+}
 
 @media (max-width:1025px) {
 

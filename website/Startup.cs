@@ -36,6 +36,7 @@ namespace website
             services.AddSingleton<HistoryServices>();
             services.AddSingleton<EmployersPageServices>();
             services.AddSingleton<EntrantPageServices>();
+            services.AddSingleton<OppServices>();
             services.AddSingleton<IMongoClient, MongoClient>(s =>
             {
                 var uri = s.GetRequiredService<IConfiguration>()["MongoUri"];
