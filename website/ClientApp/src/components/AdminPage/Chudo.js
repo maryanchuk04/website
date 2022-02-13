@@ -8,6 +8,7 @@ function Chudo() {
   return (
     <div className="App">
       <h1>Редактор</h1>
+      
       <Editor />
     </div>
   );
