@@ -16,7 +16,9 @@ function WarningMain() {
 
     return (
        <div className="div">
-           
+           <div className="title_warning">
+               
+           </div>
            <div className="container_all">
                {adv.map((a,index)=>(
                 

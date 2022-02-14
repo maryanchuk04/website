@@ -1,11 +1,13 @@
+
+
 .page img{
-    height: 70vh;
+
     width: 100%;
     object-fit: contain;
-    margin: 20px;
+    margin: 0 auto ;
 }
 .page{
-    margin: 40px;
+    width: 100%;
 }
 
 .title_page{
@@ -100,7 +102,12 @@
     .title_page h1{
       font-size: 27px;
     }
+    .page img{
 
+        width: 100%;
+        object-fit: contain;
+        margin: 0 auto;
+    }
     .other_block_info ul li{
         list-style: number;
         font-size: 17px;
@@ -112,7 +119,10 @@
     .title_page h1{
       font-size: 23px;
     }
-
+    .page .container_all{
+        width: 85% !important;
+        margin: 0 auto;
+    }
     .other_block_info ul li{
         list-style: number;
         font-size: 14px;
