@@ -10,8 +10,8 @@ namespace website.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string id { get; set; } = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
 
-      
-
+        
+            
         [BsonElement("image")]
         public string image { get; set; }
      }
