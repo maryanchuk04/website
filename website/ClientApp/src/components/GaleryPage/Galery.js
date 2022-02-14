@@ -55,7 +55,7 @@ function Galery(){
   const [gallery, setGallery] = useState([])
   
    useEffect(()=>{
-       axios.get("http://localhost:5000/gallery").then((result)=>{
+       axios.get("https://bsite.net/IvanovIvan/gallery").then((result)=>{
           setGallery(result.data);
           console.log(result.data)
           data.image = gallery;

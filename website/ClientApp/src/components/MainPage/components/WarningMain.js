@@ -7,7 +7,7 @@ function WarningMain() {
     const [adv,setAdv] = useState([])
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/advertisement').then((result)=>{
+        axios.get('https://bsite.net/IvanovIvan/advertisement').then((result)=>{
             console.log(result.data);
             
             setAdv(result.data);
