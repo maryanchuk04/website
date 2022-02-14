@@ -52,8 +52,13 @@ function Footer() {
                            <h1>Чернівецький фаховий коледж бізнесу та харчових технологій</h1>
                            <p><span>Розташування: </span>вул.Руська, 194 "З", місто Чернівці, 58009</p>
                             <p><span>Email: </span>dktcv@ukr.net</p>
-                            <p><span>Телефон: </span>+38(0372) 54-81-15</p>
-                            <p><span>Телефон: </span>+38(0372) 54-19-01</p>
+                            <p><span>Телефон: </span>
+                            <ul>
+                               <li><p>+38(0372) 54-81-15</p></li>
+                               <li><p>+38(0372) 54-19-01</p></li>
+                            </ul>
+                            </p>
+                                  
                         </div>
                         
                         <form className="form_feedback" onSubmit={(i)=>SendClick(i)}>

@@ -122,9 +122,13 @@ function NewsPage() {
                   <News news={news} page={page} />
                   <div className = "pagination">
                   <Pagination totalPages={totalPages} handleClick={handleClick} 
+
+            
+
                   postsPerPage={postsPerPage}
                   totalPosts={news.length}
                   paginate={paginate}
+
                   />
                   </div>
                 </> }
