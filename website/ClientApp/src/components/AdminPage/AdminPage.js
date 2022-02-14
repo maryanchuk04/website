@@ -2,9 +2,9 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import '../AdminPage/AdminPage.css'
 import Chudo from './Chudo'
-
+import SpecialEditor from './components/SpecialEditor'
 function AdminPage() {
-
+    const [history,setHistory] = useState([])
     const [student,setStudent] = useState([])
     const [news,setNews] = useState([])
     const [abiturient,setAbiturient] = useState([])
@@ -15,15 +15,20 @@ function AdminPage() {
     const [state,setState] = useState()
     const [slider,setSlider] = useState([])
     const [showForm, setShowForm] = useState(false);
-    const  [getFile,setFile] = useState();
+    const [getFile,setFile] = useState();
     const [showPage1, setShowPage1] = useState(0);
     const [titlepage,setTitlepage] = useState("");
-
-
     const [showChudo,setShowChudo] = useState(false);
 
-
+    const [numberfield, setNumberfield] = useState("");
+    const [number,setNumber] = useState(0);
+    const [element,setElement] = useState(false);
+    const [linkres,setLinkres] = useState("")
+    const [titlePage,setTitlePage] = useState("")
+    var setBarabulya = ""
     var bodyFormData = new FormData();
+
+    const [res,setRes] = useState({});
 
     useEffect(()=>{
         (async ()=>{
@@ -33,19 +38,23 @@ function AdminPage() {
             const res5 = await axios.get('https://bsite.net/IvanovIvan/advertisement')
             const res8 = await axios.get("https://bsite.net/IvanovIvan/slider/all")
             const res4 = await axios.get("https://bsite.net/IvanovIvan/employerspage")
-            
+            const res10 = await axios.get("https://bsite.net/IvanovIvan/collegeactivity")
+            const res11 =await axios.get("https://bsite.net/IvanovIvan/history")
             console.log(res1.data)
             console.log(res2.data)
             console.log(res8.data)
             console.log(res7.data)
             console.log(res5.data)
-            
+            console.log(res10.data)
+            console.log(res11.data)
             setEmployers(res4.data);
             setStudent(res1.data);
             setSpeciality(res2.data);
             setSlider(res8.data);
             setNews(res7.data);
             setWarnings(res5.data);
+            setActivies(res10.data)
+            setHistory(res11.data)
         })()
     },[])
 
@@ -65,6 +74,8 @@ function AdminPage() {
 
     const StudentClick=((i)=>{
         setState(1);
+        setShowChudo(false);
+        setElement(false);
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -75,6 +86,8 @@ function AdminPage() {
 
     const AbiturientClick=((e)=>{
         setState(2);
+        setShowChudo(false);
+        setElement(false);
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -84,6 +97,9 @@ function AdminPage() {
     })
     const SpecialityClick=((e)=>{
         setState(3);
+        setShowChudo(false);
+        setElement(false);
+        
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -94,6 +110,8 @@ function AdminPage() {
     
     const EmployersClick=((e)=>{
         setState(4);
+        setShowChudo(false);
+        setElement(false);
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -103,6 +121,8 @@ function AdminPage() {
     })
     const ActiviesClick=((e)=>{
         setState(5);
+        setShowChudo(false);
+        setElement(false);
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -112,7 +132,9 @@ function AdminPage() {
     })
 
     const AdministrationClick = ((e)=>{
-        setState(6);
+        setState(11);
+        setShowChudo(false);
+        setElement(false);
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -123,6 +145,8 @@ function AdminPage() {
 
     const NewsClick = ((e)=>{
         setState(7);
+        setShowChudo(false);
+        setElement(false);
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -132,17 +156,26 @@ function AdminPage() {
     })   
 
     const SliderClick = ((e)=>{
+        setShowChudo(false);
         setState(8);
+        setElement(false);
+        
+    })
+
+    const AttentionClick = ((e)=>{
+        setState(9);
+        setShowChudo(false);
+        setElement(false);
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
             x.style.display = "none";
-        }
+         }
     })
 
-    const AttentionClick = ((e)=>{
-        setState(9);
+    const HistoryClick = ((e)=>{
+        setState(6);
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -152,15 +185,23 @@ function AdminPage() {
     })
 
     const AddClick = ((e)=>{
+        setElement(false);
         setShowChudo(true);
+        setLinkres("");
+        console.log(state)
     })
     
-    
+    const seterForHTML=(i)=>{
+        setBarabulya = i;
+        console.log(setBarabulya);
+    }
+
+
     const SliderAddClick=((e)=>{
         bodyFormData.append('file',getFile);
         axios({
             method: 'POST',
-            url : "http://localhost:5000/slider/upload",
+            url : "https://bsite.net/IvanovIvan/slider/upload",
             data: bodyFormData,
             headers: {'Content-Type': 'multipart/form-data' }
           }
@@ -177,10 +218,100 @@ function AdminPage() {
         setFile(files);
         console.log("Файл :",getFile)
       } 
-      
-    const SaveButton = ()=>{
-
+     
+     const SaveSliderClick = (i,id,number) =>{
+        axios.post(`https://bsite.net/IvanovIvan/slider/save/${id}`,{
+            number : number
+        }).then((result)=>{
+           
+        })
+     }
+    const SaveButton = (i)=>{
+        i.preventDefault()
+        if(state === 1){
+            axios.post(`https://bsite.net/IvanovIvan/student/add`,{
+                name : titlePage,
+                page : setBarabulya
+            }).then((result)=>{
+                console.log(result.data)  
+                window.location.reload();               
+            })
+        }
+        
+        if(state === 2){
+            axios.post(`https://bsite.net/IvanovIvan/entrant/add`,{
+            name : titlePage,
+            page : setBarabulya
+        }).then((result)=>{
+            window.location.reload();   
+        })
+        }
+        if(state ===3){
+            axios.post(`https://bsite.net/IvanovIvan/speciality/add`,{
+            name : titlePage,
+            page : setBarabulya
+        }).then((result)=>{
+            window.location.reload();   
+        })
+        }
+        if(state ==5){
+            axios.post(`https://bsite.net/IvanovIvan/collegeactivity/add`,{
+            name : titlePage,
+            page : setBarabulya
+        }).then((result)=>{
+            window.location.reload();   
+        })
+        }
     }
+
+    const clickElement  = (i,value,id) =>{
+        setRes({})
+        if(value == "student") {
+            axios.get(`https://bsite.net/IvanovIvan/student/${id}`).then((result)=>{
+                setElement(false);
+                setRes(result.data);
+                console.log(result.data);
+                setElement(true);
+            })
+        }
+        if(value == "collegeactivity") {
+            axios.get(`https://bsite.net/IvanovIvan/collegeactivity/${id}`).then((result)=>{
+                setElement(false);
+                setRes(result.data);
+                console.log(result.data);
+                setElement(true);
+            })
+        }
+        if(value == "speciality") {
+            axios.get(`https://bsite.net/IvanovIvan/speciality/${id}`).then((result)=>{
+                setElement(false);
+                setRes(result.data);
+                console.log(result.data);
+                setElement(true);
+            })
+        }
+        
+    }
+
+    const file = (e)=>{
+        const files = Object(e.currentTarget.files)[0]
+        console.log(files)
+        setFile(files);
+        console.log("Файл :",getFile)
+        bodyFormData.append('file',files);
+        axios({
+            method: 'POST',
+            url : "http://localhost:5000/upload",
+            data: bodyFormData,
+            headers: {'Content-Type': 'multipart/form-data' }
+          }
+          ).then((res)=>{
+            console.log();
+            console.log(res.data);
+            setLinkres(res.data)
+    })
+}
+
     return (
         <div className = "">
             <div className="admin_title">
@@ -194,14 +325,17 @@ function AdminPage() {
                         </div>
                       <ul>
                           <li onClick={(i)=>StudentClick(i)}>Студенту</li>
+                          <li onClick={(i)=>ActiviesClick(i)}>Діяльність</li>
                           <li onClick={(i)=>AbiturientClick(i)}>Абітурієнту</li>
                           <li onClick={(i)=>SpecialityClick(i)}>Спеціальності</li>
-                          <li onClick={(i)=>AdministrationClick(i)}>Адміністація</li>
+                          
                           <li onClick={(i)=>NewsClick(i)}>Новини</li>
                           <li onClick={(i)=>AttentionClick(i)}>Розділ Увага</li>
                           <li onClick={(i)=>SliderClick(i)}>Слайдер</li>
                           <li onClick={(i)=>EmployersClick(i)}>Колектив</li>
-                          <li onClick={(i)=>EmployersClick(i)}>Діяльність</li>
+                          <li onClick={(i)=>HistoryClick(i)}>Історія</li>
+                          <li onClick={(i)=>HistoryClick(i)}>Галерея</li>
+
                       </ul>
                     </div>
                     <div className="sub_menu">
@@ -209,27 +343,43 @@ function AdminPage() {
                             <ul>
                                     {state === 1 ? 
                                     student.map((s, index)=>(
-                                    
                                     <div>
-                                    <li>{s.name}</li>
-                                    
-                                    
+                                        <li onClick = {(i)=>clickElement(i,"student",s.id)}>{s.name}</li>
                                     </div>
                                     )):<li></li>
                                 
                                     
                                 }
                                     {state === 2 ? 
-                                    speciality.map((s, index)=><li>{s.name}</li>
+                                    speciality.map((s, index)=>(
+                                    <div>
+                                        <li onClick = {(i)=>clickElement(i,"speciality",s.id)}>{s.name}</li>
+                                    </div>
+                                    )
                                     ):<li></li>
                                 }
                                 {
                                     state ===4 ?
-                                    employers.map((s,index)=><li>{s.name}</li> ): <li></li>
+                                    employers.map((s,index)=>(<div>
+
+                                        <li  >{s.name}</li>
+                                        </div> )): <li></li>
                                 }
                                 {
-                                    state ===5 ? 
-                                    activies.map((i,index)=><li>{i.name}</li>) : <li></li>                         
+                                    state === 5 ? 
+                                    activies.map((a,index)=>(
+                                    <div>
+                                        <li onClick = {(i)=>clickElement(i,"collegeactivity",a.id)}>{a.name}</li>
+                                    </div>
+                                    
+                                    )) : <li></li>                         
+                                }
+                                {
+                                    state === 6 ? 
+                                    history.map((h,index)=>(
+                                    <div>
+                                        <li onClick = {(i)=>clickElement(i,"history",h.id)}>{h.name}</li>
+                                    </div>)) : <></>
                                 }
                                
                             </ul>
@@ -246,16 +396,20 @@ function AdminPage() {
                 (
                 <div>
                     <div className="input_block">
-                        <form>
-                            <input placeholder = "Назва сторінки" required></input>
-                            <button onSubmit={(i)=>SaveButton(i)} >Зберегти</button>
-                            <button onClick={(i) =>setShowChudo(false)}>Закрити </button>
-
-                            <input type ="file" > ./userfile/</input>
+                        
+                        <form onSubmit={(i)=>SaveButton(i)}>
+                            <input placeholder = "Назва сторінки" onChange={(i)=>setTitlePage(i.target.value)} required></input>
+                            <p>{linkres}</p>
+                            <input id = "fileinput" type ="file" onChange = {(i)=>file(i)} ></input>
+                            <div className="but">
+                                <button type ="submit">Зберегти</button>
+                                <button onClick={(i) =>setShowChudo(false)}>Закрити </button>
+                            </div>
+                            
+                            
                         </form>
                      </div>
-                    <Chudo/>
-                        
+                    <Chudo  seterForHTML = {seterForHTML}/>          
                     </div> 
 
                  ): <div></div>
@@ -268,10 +422,10 @@ function AdminPage() {
                                     <div className = "one_admin_news">
                                         <h1>{n.title}</h1>
                                         <div className="area_with_text">
-                                            <img src={`data:image/gif;base64,${n.image}`}/>
+                                            <img src={n.image}/>
                                             <p>{n.short_text}</p>
                                         </div>
-                                        <i class="fas fa-minus-circle" onClick = {(i)=>DeleteNewsClick(i,n.id)}></i>
+                                        <i class="fas fa-minus-circle" onClick = {(i)=>DeleteNewsClick(i,n.id)}></i>   
                                     </div>     
                                 )): <h1></h1>                
                         }
@@ -281,29 +435,38 @@ function AdminPage() {
                     <div className = "slider_all">
                     <div className = "slider_image">
                         {   
+                        //СЛАЙДЕР
                         state === 8 ? (
+                            <div>
                            <div className = "slider_image">
-                            
                             {slider.map((s,index)=> (
                                 <div className = "image_with_delete">
-                                <img src={s.image}></img>
-                                <i class="fas fa-minus-circle" onClick = {(i)=>DeleteClick(i,s.id)}></i>
-                            
-                            </div>
+                                    
+                                    <img src={s.image}></img>
+                                    <div className="knopku">
+                                        <input type="number" placeholder ={s.number} onChange = {(i)=>setNumber(i.target.value)}/>
+                                        <button onClick = {(i)=>SaveSliderClick(i,s.id,number)}>Зберегти</button>
+                                        <button onClick = {(i)=>DeleteClick(i,s.id)}>Видалити</button>
+                                    </div>
+                                </div>
                             ))
                             }
+                            
+                           
+                            </div>
                             <div className = 'upload'>
                                 <input type="file"  id= "selectFile" onChange={(i)=>handleFileSelected(i)} />
-                                <button    id = "slideradd" onClick={(i)=>SliderAddClick(i) }>Додати</button>
-                            </div>
-                           
+                                <button  id = "slideradd" onClick={(i)=>SliderAddClick(i) }>Додати</button>
+                                </div>
                             </div>
                             ) : <h1></h1>    
                                   
                         }                   
                         </div>
                     </div> 
-
+                    {
+                        element  ? <SpecialEditor text={res.page}/> : <p></p>
+                    }
                 </div>
                 
                           
