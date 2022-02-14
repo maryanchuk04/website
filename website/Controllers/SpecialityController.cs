@@ -39,6 +39,15 @@ namespace website.Controllers
             return Ok("Об'єкт видалено!");
         }
 
+        [HttpPost("/speciality/update/{id}")]
+        public ActionResult Update(string id, [FromBody] Speciality student)
+        {
+            Speciality st = _speciality.GetByID(id);
+            st.number = student.number;
+            st.page = student.page;
+            _speciality.Save(st);
+            return Ok(st);
+        }
 
     } 
 }

@@ -56,5 +56,16 @@ namespace website.Controllers
         }
 
 
+        [HttpPost("/history/update/{id}")]
+        public ActionResult Update(string id, [FromBody] History history)
+        {
+            History st = _history.GetByID(id);
+            st.number = history.number;
+            st.page = history.page;
+            _history.Save(st);
+            return Ok(st);
+        }
+
+
     }
 }
