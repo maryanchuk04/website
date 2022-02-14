@@ -292,7 +292,14 @@ function AdminPage() {
         }
         
     }
+    const SavePage = (i,id)=>{
+        
+    }
 
+
+
+
+    
     const file = (e)=>{
         const files = Object(e.currentTarget.files)[0]
         console.log(files)
@@ -465,7 +472,13 @@ function AdminPage() {
                         </div>
                     </div> 
                     {
-                        element  ? <SpecialEditor text={res.page}/> : <p></p>
+                        element  ? (
+                        <div>
+                            <button onClick={(i)=>SavePage(i,res.id)}></button>
+                            <SpecialEditor text={res.page}/>)
+                        </div>
+                        )
+                         : <p></p>
                     }
                 </div>
                 

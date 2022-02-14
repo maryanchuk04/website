@@ -16,7 +16,6 @@
     "oidc-client": "^1.9.0",
     "prettier": "^2.5.1",
     "quill-image-uploader": "^1.2.2",
-    
     "react-carousel-minimal": "^1.4.1",
     "react-dom": "^16.14.0",
     "react-draft-wysiwyg": "^1.14.7",
