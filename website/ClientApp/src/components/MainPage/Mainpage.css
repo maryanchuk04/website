@@ -37,11 +37,16 @@
     font-size: 60px;
     
 }
+.main .news_preview .container_all{
+    display: grid;
+    place-items: center;
+}
 .shedule{
     width: 100%;
     height: 400px;
     background: url('https://www.incimages.com/uploaded_files/image/1920x1080/getty_481564534_65139.jpg');
 }
+
 @media (max-width: 1441px) {
     .news_preview .container_all h1{
         
