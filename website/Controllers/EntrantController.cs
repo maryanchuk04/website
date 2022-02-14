@@ -45,7 +45,17 @@ namespace website.Controllers
             return Ok(entrant );
         }
 
-       
+        [HttpPost("/entrant/update/{id}")]
+        public ActionResult Save(string id, [FromBody] Entrant entrant)
+        {
+            Entrant st = _entrants.GetByID(id);
+            st.number = entrant.number;
+            st.page = entrant.page;
+            _entrants.Save(st);
+            return Ok(st);
+        }
+
+
 
 
 

@@ -48,9 +48,10 @@ namespace website.Controllers
             
         }
 
-        [HttpPost("/advertisement/update")]
+        [HttpPost("/advertisement/update/")]
         public ActionResult Update([FromBody] Advertisement advertisement)
         {
+   
             _advertisement.Save(advertisement);
             return Ok(advertisement);
         }

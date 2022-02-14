@@ -55,5 +55,16 @@ namespace website.Controllers
             _collegeActivity.Delete(id);
         }
 
+        [HttpPost("/collegeactivity/update/{id}")]
+        public ActionResult Update(string id,[FromBody] CollegeActivity college)
+        {
+            var c = _collegeActivity.GetByID(id);
+            c.number = college.number;
+            c.page = college.page;
+            _collegeActivity.Save(c);
+            return Ok(c);
+        }
+
+
     }
 }
