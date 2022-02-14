@@ -7,17 +7,16 @@ import "react-quill/dist/quill.core.css";
 
 // #2 register module
 Quill.register("modules/imageUploader", ImageUploader);
+var htmltext = ""
 
-var htmltext =  ""
-
-class Editor extends Component {
+class SpecialEditor extends Component {
   constructor(props) {
     super(props);
     this.state = {
       text: ""
     };
-    
-
+    htmltext = this.props?.text ? this.props.text : ""
+    console.log(htmltext)
   }
   
   modules = {
@@ -36,7 +35,7 @@ class Editor extends Component {
             ["link"],
            
     ],
-    // # 4 Add module and upload function
+    
     imageUploader: {
       upload: file => {
         return new Promise((resolve, reject) => {
@@ -65,7 +64,6 @@ class Editor extends Component {
   };
   
   textfunc(i){
-     this.props.seterForHTML(i)
       htmltext = i
       console.log(htmltext)
   }
@@ -75,7 +73,7 @@ class Editor extends Component {
         theme="snow"
         modules={this.modules}
         formats={this.formats}
-        value={this.state.text}
+        value = {htmltext}
         onChange={(i)=>this.textfunc(i)} 
       >
         <div className="my-editing-area" />
@@ -85,4 +83,4 @@ class Editor extends Component {
   }
 }
 
-export default Editor;
+export default SpecialEditor;

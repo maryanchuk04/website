@@ -36,15 +36,22 @@
     overflow:scroll;
     place-items: center;
     height: 90vh;
-    width: 55%;
+    width: 100%;
     border-left: 2px solid black;
     
 }
-.other_admin .input_block{
+.other_admin .input_block form{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+.other_admin .input_block form #fileinput{
+    font-size: 18px;
+    width: 300px;
+
+}
+
+
 .input_block form input
 {
     width: 400px;
@@ -54,9 +61,21 @@
     border-radius: 10px;
     font-size: 30px;
 }
-.input_block form button{
+
+.but{
+  display: flex;
+ justify-content: center;
+ text-align: center;
+}
+
+.input_block form .but button{
     width: 100px;
-    margin: 0 auto;
+    
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+
 }
 .input_block input::placeholder{
     color: black;
@@ -212,29 +231,52 @@
 
 .slider_image{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
 }
 .slider_all  .image_with_delete{
-    position: relative;
+    
     
 }
 .slider_all img{
-    position: relative;
-    height: 200px;
+    
+    height: 300px;
     margin: 10px;
-    width: 300px;
+    width: 520px;
 }
-.image_with_delete i{
-    position: absolute;
-    color: blue;
-    left: 25px;
-    top:20px;
+.image_with_delete .knopku input{
+    width: 50px; 
+    font-size: 20px;
+    border-radius: 4px;
+    align-items: center;
+    text-align: center;
+    margin: 0 20px;
+}
+.knopku{
+    display: flex;
+    margin: 10px;
+    padding: 10px 0;
+    align-items: center;
+    background-color: green;
+    
+}
+
+.knopku button{
+    margin: 0 10px;
+}
+.image_with_delete .knopku input::placeholder{
+    color:rgb(70, 69, 69);
+
+}
+.image_with_delete .knopku i{
+    
+    color: rgb(0, 0, 0);
     font-size: 20px;
     overflow: auto;
+    margin-right: 20px;
 }   
-.image_with_delete i:hover{
+.image_with_delete .knopku i:hover{
     cursor: pointer;
-    font-size: 25px;
+   
     transition: 0.5s;
 }
 
@@ -243,7 +285,11 @@
    grid-template-columns: 1fr 1fr;
    width: 100%;
 }
-
+.upload{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
 .other_admin .news_admin .one_admin_news {
     background-color:  lavender;
     border-radius: 10px;
