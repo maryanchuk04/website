@@ -48,7 +48,17 @@ namespace website.Controllers
             _student.Delete(id);
         }
 
-        
+        [HttpPost("/student/update/{id}")]
+        public ActionResult Update(string id, [FromBody] Student student)
+        { 
+            Student st =  _student.GetByID(id);
+            st.number = student.number;
+            st.page = student.page;
+            _student.Save(st);
+            return Ok(st);
+        }
+       
+
 
 
     }
