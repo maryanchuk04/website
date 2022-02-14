@@ -6,7 +6,10 @@
     place-items: center;
     margin-top:-1vh;
 }
-
+.warning .container_all{
+    display: flex;
+    flex-direction: column;
+}
 .title_warning p{
     margin: 0;
     font-size: 40px;

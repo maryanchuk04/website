@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Carousel from 'react-gallery-carousel';
-
+import useMedia from 'use-media';
 import 'react-gallery-carousel/dist/index.css';
 
 
@@ -9,7 +9,7 @@ import 'react-gallery-carousel/dist/index.css';
 import '../GaleryPage/Galery.css'
 function Galery(){
 
-  
+  const isWide = useMedia({maxWidth: 800});
   const [data,setData] = useState([])
    useEffect(()=>{
       async function  fetchdate(){
@@ -23,7 +23,7 @@ function Galery(){
     },[])
     const a = [];
   
-    
+   
   
     
     return (
@@ -35,7 +35,10 @@ function Galery(){
         <h1>Галерея</h1>
         </div>
         <div className="carusel">
-        <Carousel images={data} style={{ height: "80vh", width: "100%" , margin : "40px 0", }} canAutoPlay ={true} hasMediaButton={false} />
+        <Carousel  className="carousel" images={data} hasThumbnails={isWide ? false : true} style={{ height: "80vh", width: "100%" , margin : "40px 0", }} 
+
+        canAutoPlay ={true} 
+        hasMediaButton={false} />
         </div>
         </div>
       </div>

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import Slider from "react-slick"
 import axios from 'axios'
 import '../NewsPage/NewsPage.css'
+
+import Pagination from '@mui/material/Pagination';
 function NewsPage() {
   
   const [news, setNews] = useState([]);
-  
+  const [pagincount,setPagincount]= useState();
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -15,6 +17,12 @@ function NewsPage() {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = news.slice(indexOfFirstPost, indexOfLastPost);
+ 
+  const handleChange = (event, value) => {
+    setPagincount(value);
+  };
+  
+
 
 
   useEffect(() => {
@@ -23,6 +31,7 @@ function NewsPage() {
       setLoading(false);
       setNews(res.data);
       setTotalPages(Math.ceil(res.data.length / postsPerPage));
+      setPagincount(1);
     })
   }, []);
 
@@ -33,40 +42,31 @@ function NewsPage() {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
 
-  const News = ({ news, page }) => {
-    const startIndex = ( page - 1 ) * postsPerPage;
-    const selectedUsers = news?.slice(startIndex, startIndex + postsPerPage);
-    return  (
-      <div>   
-            <div className="news_header">
+  
+
+
+
+  
+    //
+       
+       
+  return (
+    <div className="newspage">
+      <div className="container_all">
+      <div className="news_header">
                 Новини
             </div>
-          
-            {selectedUsers?.map((n,index)=>(
-              currentPage == 1 ? ( index < 3 * currentPage && 
-            (<div className="news_block">
-              <div className="news_title">
-                { n.title}
-              </div>
-              <div className="news_info">
-             <img src={n.image}/>
-               <div className="text_and_link">
-                 <h2>{n.short_text}</h2>
-                <div className="link_news">
-                 <Link key = {n.id} to ={`/news/${n.id}`}>Детальніше</Link>
-                  </div>
-                </div>
-             </div>
+           
              
-             <p>{n.date.substr(0,10)}</p>
-             </div> ) ):(
-               index >= 3 * (currentPage - 1) && index < 3 *currentPage && (
+             {
+               news?.map ((n,index)=>(
+                 index>=(pagincount-1)*3 && index<(pagincount)*3 &&
                 <div className="news_block">
                 <div className="news_title">
                   { n.title}
                 </div>
                 <div className="news_info">
-               <img src={`data:image/gif;base64,${n.image}`}/>
+               <img src={n.image}/>
                  <div className="text_and_link">
                    <h2>{n.short_text}</h2>
                   <div className="link_news">
@@ -77,62 +77,11 @@ function NewsPage() {
                
                <p>{n.date.substr(0,10)}</p>
                </div>
-               )
-             )
-           
-           ))}
-           </div> 
-     
-    )
-  }
-
-
-
-
-  const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
-    const pageNumbers = [];
-  
-    for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-      pageNumbers.push(i);
-    }
-  
-    return (
-      <nav>
-        <ul className='pagination'>
-          {pageNumbers.map(number => (
-            <li key={number} className='page-item'>
-              <a onClick={() => paginate(number)}  className='page-link'>
-                {number}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
-  };
-    //
-       
-       
-  return (
-    <div className="newspage">
-      <div className="container_all">
-
-        
-                {loading ? <p>Loading...</p> : <>
-                  <News news={news} page={page} />
-                  <div className = "pagination">
-                  <Pagination totalPages={totalPages} handleClick={handleClick} 
-
-            
-
-                  postsPerPage={postsPerPage}
-                  totalPosts={news.length}
-                  paginate={paginate}
-
-                  />
-                  </div>
-                </> }
-            
+               ))
+             }
+             
+               
+             <Pagination count={Math.ceil(news.length/3)} value={pagincount}  onChange={handleChange} />
           </div>
       </div>
         
