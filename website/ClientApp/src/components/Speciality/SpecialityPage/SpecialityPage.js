@@ -6,7 +6,7 @@ import './SpecialityPage.css';
 function SpecialityPage() {
   const [opp,setOpp] =  useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:5000/opp").then((result)=>{
+    axios.get("https://bsite.net/IvanovIvan/opp").then((result)=>{
       console.log(result.data)
       setOpp(result.data)
     })

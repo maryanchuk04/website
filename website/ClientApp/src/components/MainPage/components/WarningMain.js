@@ -15,7 +15,7 @@ function WarningMain() {
     },[])
 
     return (
-       <div className="div">
+       <div className="warning">
            <div className="title_warning">
                
            </div>

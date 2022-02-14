@@ -1,25 +1,24 @@
 
- .speciality .title{
-    width: 100%;
-    
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-}
+ 
 
  .speciality  .title{
-     text-align: center;
+     margin: 10px auto;
+     text-align: center !important;
     width: 100%;
     height: 100%;
     font-size: 40px;
     font-weight: 800;
+    margin-top: 30px;
 }
 
-
+.speciality .container_all{
+    display: flex;
+    flex-direction: column;
+}
 
 .speciality .container_all .about_opp{
     width: 100%;
-    height: 250px;
+    height: fit-content;
 }
 
 .speciality .name_speciality{
@@ -50,4 +49,136 @@
 .about_opp ul li{
     list-style: inside;
     margin-top: 10px;
+}
+
+@media (max-width:1441px){
+    .speciality  .title{
+        text-align: center;
+       width: 100%;
+       height: 100%;
+       font-size: 35px;
+       font-weight: 800;
+   }
+
+   .speciality .name_speciality{
+    font-size:30px ;
+    font-weight: 600;
+}
+
+.speciality .opp_speciality{
+    font-size:25px ;
+}
+}
+
+@media (max-width:1025px){
+    .speciality  .title{
+        text-align: center;
+       width: 100%;
+       height: 100%;
+       font-size: 32px;
+       font-weight: 800;
+   }
+
+   .speciality .name_speciality{
+    font-size:27px ;
+    font-weight: 600;
+}
+
+.speciality .opp_speciality{
+    font-size:22px ;
+}
+
+.about_opp{
+
+    margin: 25px 0;
+}
+}
+
+@media (max-width:769px){
+    .about_opp{
+        text-align: left !important;
+    }
+    .speciality  .title{
+        text-align: center;
+       width: 100%;
+       height: 100%;
+       font-size: 27px;
+       font-weight: 800;
+   }
+
+   .speciality  .title p{
+    text-align: center !important;
+   }
+   .opp_speciality {
+       text-align: left;
+   }
+   .speciality .name_speciality{
+    font-size:22px ;
+    font-weight: 600;
+}
+
+.speciality .opp_speciality{
+    font-size:18px ;
+}
+
+.about_opp{
+
+    margin: 20px 0;
+}
+}
+
+@media (max-width:425px){
+
+    .speciality p{
+     text-align: center !important;
+    }
+    .speciality  .title{
+        text-align: left !important;
+       width: 100%;
+       height: 100%;
+       font-size: 20px;
+       font-weight: 800;
+   }
+
+   .speciality .name_speciality{
+    font-size:18px ;
+    font-weight: 600;
+}
+
+.speciality .opp_speciality{
+    font-size:16px ;
+}
+
+.about_opp{
+
+    margin: 18px 0;
+}
+}
+
+@media (max-width:425px){
+
+    .speciality p{
+     text-align: center !important;
+    }
+    .speciality  .title{
+        text-align: left !important;
+       width: 100%;
+       height: 100%;
+       font-size: 16px;
+       font-weight: 800;
+   }
+
+   .speciality .name_speciality{
+    font-size:15px ;
+    font-weight: 600;
+}
+
+.speciality .opp_speciality{
+    font-size:14px ;
+}
+
+.about_opp{
+
+    margin: 14px 0;
+}
 }

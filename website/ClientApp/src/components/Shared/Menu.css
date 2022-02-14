@@ -302,7 +302,7 @@ Link{
 
 @media (max-width: 769px) {
 	
-  .container_all  ul{
+  .menu_header .container_all  ul{
     padding: 0;
     text-align: center;
     margin: 0;
