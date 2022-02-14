@@ -21,6 +21,9 @@ namespace website.Models
         public string short_text { get; set; }
 
         [BsonElement("image")]
-        public byte[] image { get; set; } 
+        public string image { get; set; }
+
+        [BsonElement("link")]
+        public string link { get; set; }
     }
 }

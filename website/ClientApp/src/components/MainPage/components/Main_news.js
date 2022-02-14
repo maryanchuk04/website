@@ -7,7 +7,7 @@ function Main_news() {
   const [news, setNews] = useState([]);
 
   useEffect(()=>{  
-      axios.get("https://bsite.net/IvanovIvan/news").then((result)=>{
+      axios.get("http://localhost:5000/news").then((result)=>{
         setNews(result.data);
         console.log(result.data);
       });
@@ -27,7 +27,7 @@ function Main_news() {
                           <h3><Link key ={n.id} to = {`/news/${n.id}`}>{n.title}</Link></h3>
                           </div>
                           <div className="imagen">
-                            <img src={`data:image/gif;base64,${n.image}`} alt={n.title} />
+                            <img src={n.image} alt={n.title} />
                           </div>
                           <div className="news_short_text_main">
                             <p>{n.short_text}</p>

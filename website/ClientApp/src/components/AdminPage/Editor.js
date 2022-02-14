@@ -32,7 +32,8 @@ class Editor extends Component {
             [{ header: [1, 2, 3, 4, 5, 6, false] }],
             ["image"],
             ["clean"],
-            ["link"]
+            ["link"],
+           
     ],
     // # 4 Add module and upload function
     imageUploader: {

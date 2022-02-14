@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -58,18 +59,25 @@ namespace website.Controllers
         public ActionResult UploadPhoto(string id, [FromForm] IFormFile file)
         {
             Advertisement advertisement = _advertisement.GetByID(id);
-            if (file.Length > 0)
+            try
             {
-                using (var ms = new MemoryStream())
-                {
-                    file.CopyTo(ms);
-                    var fileBytes = ms.ToArray();
+                FtpWebRequest request =
+                (FtpWebRequest)WebRequest.Create("ftp://chdkt.connect.cv.ua/image/uvaha/" + file.FileName);
+                request.Credentials = new NetworkCredential("ftp_chdkt", "1qA2wS3eD");
+                request.Method = WebRequestMethods.Ftp.UploadFile;
 
-                    advertisement.image = fileBytes;
-                    _advertisement.Save(advertisement);
+                using (Stream ftpStream = request.GetRequestStream())
+                {
+                    file.CopyTo(ftpStream);
                 }
+                advertisement.image = "http://chdkt.connect.cv.ua/image/uvaha/" + file.FileName;
+                _advertisement.Save(advertisement);
+                return Ok(advertisement);
             }
-            return Ok(advertisement);
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
 
         }
     }

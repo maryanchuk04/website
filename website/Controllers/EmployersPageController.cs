@@ -27,7 +27,10 @@ namespace website.Controllers
         [HttpGet("/employerspage")]
         public ActionResult GetAll ()
         {
-            return Ok(_employersPage.GetAll());
+
+            var a = _employersPage.GetAll().ToList();
+            a.Sort((x, y) => x.number.CompareTo(y.number));
+            return Ok(a);
         }
 
        

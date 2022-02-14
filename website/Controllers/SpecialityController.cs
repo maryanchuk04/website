@@ -21,7 +21,13 @@ namespace website.Controllers
         }
 
         [HttpGet("/speciality")]
-        public ActionResult GetAll() => Ok(_speciality.GetAll());
+        public ActionResult GetAll()
+        {
+            var a = _speciality.GetAll().ToList();
+            a.Sort((x, y) => x.number.CompareTo(y.number));
+            return Ok(a);
+        }
+
 
         [HttpGet("/speciality/{id}")]
         public ActionResult Get(string id) => Ok(_speciality.GetByID(id));

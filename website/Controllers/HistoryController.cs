@@ -23,7 +23,9 @@ namespace website.Controllers
         [HttpGet("/history")]
         public ActionResult GetAll()
         {
-            return Ok(_history.GetAll());
+            var a = _history.GetAll().ToList();
+            a.Sort((x, y) => x.number.CompareTo(y.number));
+            return Ok(a);
         }
 
         [HttpGet("/history/{id}")]

@@ -15,5 +15,8 @@ namespace website.Models
 
         [BsonElement("image")]
         public string image { get; set; }
+
+        [BsonElement("number")]
+        public int number { get; set; }
     }
 }

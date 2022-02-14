@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using website.Models;
 using website.Services;
@@ -46,19 +47,32 @@ namespace website.Controllers
         {
             
             News news = _news.GetByID(id);
-
-            if(file.Length > 0)
+          
+          
+          try
+          {
+              FtpWebRequest request =
+              (FtpWebRequest)WebRequest.Create("ftp://chdkt.connect.cv.ua/image/news/" + file.FileName);
+              request.Credentials = new NetworkCredential("ftp_chdkt", "1qA2wS3eD");
+              request.Method = WebRequestMethods.Ftp.UploadFile;
+          
+              using (Stream ftpStream = request.GetRequestStream())
+              {
+                  file.CopyTo(ftpStream);
+              }
+              news.image = "http://chdkt.connect.cv.ua/image/news/" + file.FileName;
+              _news.Save(news);
+              return Ok(news);
+          }
+            catch(Exception)
             {
-                using (var ms = new MemoryStream())
-                {
-                    file.CopyTo(ms);
-                    var fileBytes = ms.ToArray();
-
-                    news.image = fileBytes;
-                    _news.Save(news);
-                }
+                return BadRequest();
             }
-            return Ok(news);
+
+          
+
+            
+           
             
         }
 
