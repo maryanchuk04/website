@@ -49,15 +49,13 @@ function App() {
           <Route path = '/entrant' exact element={<React.Fragment><Header/><Menu/><EntrantPage/><Footer/></React.Fragment>} />
           <Route path = '/employers' exact element={<React.Fragment><Header/><Menu/><EmployersPage/><Footer/></React.Fragment>} />
           <Route path = '/achivement' exact element={<React.Fragment><Header/><Menu/><AchivementPage/><Footer/></React.Fragment>} />
-          <Route path = '/speciality' exact element={<React.Fragment><Header/><Menu/><SpecialityPage/></React.Fragment>} />
+          <Route path = '/speciality' exact element={<React.Fragment><Header/><Menu/><SpecialityPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality/cooking' exact element={<React.Fragment><Header/><Menu/><CookingPage/><Footer/></React.Fragment>} />
-          <Route path = '/speciality/marketing' exact element={<MarketingPage/>} />
+          
           <Route path = '/speciality/oblik' exact element={<React.Fragment><Header/><Menu/><OblikPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality/pidpruyemstvo' exact element={<React.Fragment><Header/><Menu/><PidpruyemstvoPage/><Footer/></React.Fragment>} />
           <Route path = '/student/practice' exact element={<React.Fragment><Header/><Menu/><PracticePage/><Footer/></React.Fragment>} />
           <Route path = '/student/callshedule' exact element={<React.Fragment><Header/><Menu/><CallShedulePage/><Footer/></React.Fragment>} />
-          <Route path = '/student/detailspayment' exact element={<React.Fragment><Header/><Menu/><DetailsPaymentPage/><Footer/></React.Fragment>} />
-          <Route path = '/student/syllabus' exact element={<React.Fragment><Header/><Menu/><SyllabusPage/><Footer/></React.Fragment>} />
           <Route path = '/employers/admin' exact element = {<React.Fragment><Header/><Menu/><EmployersPage/><Footer/></React.Fragment>}/>
 
           <Route path = '/employers/not' exact element = {<React.Fragment><Header/><Menu/><NotEmployers/><Footer/></React.Fragment>}/>

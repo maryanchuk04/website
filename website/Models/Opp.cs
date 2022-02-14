@@ -13,7 +13,13 @@ namespace website.Models
 
         [BsonElement("name")]
         public string name { get; set; }
+
+        [BsonElement("link")]
+        public string link { get; set; }
+
         [BsonElement("opp")]
         public List<string> opp { get; set; }
     }
+
+    
 }
