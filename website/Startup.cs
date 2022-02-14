@@ -37,6 +37,9 @@ namespace website
             services.AddSingleton<EmployersPageServices>();
             services.AddSingleton<EntrantPageServices>();
             services.AddSingleton<OppServices>();
+            services.AddSingleton<GalleryServices>();
+
+
             services.AddSingleton<IMongoClient, MongoClient>(s =>
             {
                 var uri = s.GetRequiredService<IConfiguration>()["MongoUri"];
@@ -91,6 +94,8 @@ namespace website
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+            
+
         }
     }
 }

@@ -14,7 +14,7 @@ namespace website.Controllers
     public class UploudFile : Controller
     {
         [HttpPost("/upload")]
-        public async Task<ActionResult> Upload([FromForm] IFormFile file)
+        public  ActionResult Upload([FromForm] IFormFile file)
         {
             try
             {

@@ -51,10 +51,17 @@ function Galery(){
     }
   ];
 
-  const captionStyle = {
-    fontSize: '2em',
-    fontWeight: 'bold',
-  }
+
+  const [gallery, setGallery] = useState([])
+  
+   useEffect(()=>{
+       axios.get("http://localhost:5000/gallery").then((result)=>{
+          setGallery(result.data);
+          console.log(result.data)
+          data.image = gallery;
+      })
+    },[])
+
   const slideNumberStyle = {
     fontSize: '20px',
     fontWeight: 'bold',
@@ -72,15 +79,14 @@ function Galery(){
           padding: "0 20px"
         }}>
           <Carousel
-            data={data}
+            data={gallery}
             time={2000}
             width="100%"
             height="600px"
-            captionStyle={captionStyle}
+            
             radius="10px"
-            //slideNumber={true}
+            slideNumber={true}
             slideNumberStyle={slideNumberStyle}
-            captionPosition="top"
             automatic={true}
             dots={true}
             pauseIconColor="white"

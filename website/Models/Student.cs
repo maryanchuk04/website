@@ -19,5 +19,8 @@ namespace website.Models
 
         [BsonElement("page")]
         public string page { get; set; }
+
+        [BsonElement("number")]
+        public int number { get; set; }
     }
 }

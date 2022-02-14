@@ -21,6 +21,9 @@ namespace website.Models
         [BsonElement("employers")]
         public List<Employer> employers { get; set; }
 
+        [BsonElement("number")]
+        public int number { get; set; }
+
     }
 }
  

@@ -29,7 +29,9 @@ namespace website.Controllers
         [HttpGet("/collegeactivity")]
         public ActionResult Get()
         {
-            return Ok(_collegeActivity.GetAll());
+            var a = _collegeActivity.GetAll().ToList();
+           a.Sort((x, y) => x.number.CompareTo(y.number));
+            return Ok(a);
         }
 
         [HttpPost("/collegeactivity/add")]

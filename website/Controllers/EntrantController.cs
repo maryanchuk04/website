@@ -25,7 +25,9 @@ namespace website.Controllers
         [HttpGet("/entrant/")]
         public ActionResult GetAll()
         {
-            return Ok(_entrants.GetAll());
+            var a = _entrants.GetAll().ToList();
+            a.Sort((x, y) => x.number.CompareTo(y.number));
+            return Ok(a);
         }
 
        

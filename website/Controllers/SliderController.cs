@@ -27,7 +27,13 @@ namespace website.Controllers
         }
 
         [HttpGet("/slider/all")]
-        public ActionResult GetAll() => Ok(_slider.GetAll());
+        public ActionResult GetAll()
+        {
+            var a = _slider.GetAll().ToList();
+            a.Sort((x, y) => x.number.CompareTo(y.number));
+            return Ok(a);
+        }
+
 
 
         [HttpGet("/slider/{id}")]
@@ -37,7 +43,8 @@ namespace website.Controllers
         public ActionResult DeleteImg(string id)
         {
             _slider.Delete(id);
-            return Ok("Фото видалене!");
+            return Ok(_slider);
+           
         }
 
         [HttpPost("/slider/upload/")]

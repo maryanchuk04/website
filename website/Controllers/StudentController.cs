@@ -22,10 +22,12 @@ namespace website.Controllers
             _student = student;
         }
 
-        [HttpGet("/student/")]
-        public IEnumerable<Student> Get()
+        [HttpGet("/student")]
+        public ActionResult Get()
         {
-            return _student.GetAll();
+            var a = _student.GetAll().ToList();
+            a.Sort((x, y) => x.number.CompareTo(y.number));
+            return Ok(a);
         }
 
         [HttpGet("/student/{id}")]
