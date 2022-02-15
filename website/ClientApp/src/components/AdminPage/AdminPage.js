@@ -33,10 +33,10 @@ function AdminPage() {
     const [obj,setObj] = useState({});
     //для форми колектив
     const [fullname,setFullname] = useState("");
-    const [,] = useState("");
-    const [,] = useState("");
-    const [,] = useState("");
-    const [,] = useState("");
+    const [posada,setPosada] = useState("");
+    const [phone,setPhone] = useState("");
+    const [kval,setKval] = useState("");
+    const [pred,setPred] = useState("");
 
 
 
@@ -58,14 +58,6 @@ function AdminPage() {
             const res11 =await axios.get("https://bsite.net/IvanovIvan/history")
             const res12 = await axios.get("https://bsite.net/IvanovIvan/gallery")
             const res13 = await axios.get("https://bsite.net/IvanovIvan/opp")
-            console.log(res1.data)
-            console.log(res2.data)
-            console.log(res8.data)
-            console.log(res7.data)
-            console.log(res5.data)
-            console.log(res10.data)
-            console.log(res11.data)
-            console.log(res13.data)
             setEmployers(res4.data);
             setStudent(res1.data);
             setSpeciality(res2.data);
@@ -501,8 +493,8 @@ function AdminPage() {
                 window.location.reload();
         })
     }
-    const SubmitFormEmp = (i)=>{
-
+    const SubmitFormEmp = (i,id,fullname,posada,kval,number,pred)=>{
+        axios.post(`https://bsite.net/IvanovIvan//employerspage/add`)
     }
     return (
         <div className = "">
@@ -735,12 +727,12 @@ function AdminPage() {
                         state === 15  ? (
                             <div className = "admin_employers"> 
                                 <div className="forma_add_emp">
-                                    <form onSubmit={(i)=>SubmitFormEmp(i)}>
-                                        <input type="text" placeholder = "Повне ім`я" required/>
-                                        <input type="text" placeholder = "Посада" required/>
-                                        <input type="text" placeholder = "Кваліфікація"/>
-                                        <input type="text" placeholder = "Номер телефону"/>
-                                        <input type="text" placeholder = "Предмети"/>
+                                    <form onSubmit={(i)=>SubmitFormEmp(i,obj.id,fullname,posada,kval,number,pred)}>
+                                        <input type="text" placeholder = "Повне ім`я" required onChange ={(i)=>setFullname(i.target.value)} value ={fullname}/>
+                                        <input type="text" placeholder = "Посада" required onChange ={(i)=>setPosada(i.target.value)} value ={posada}/>
+                                        <input type="text" placeholder = "Кваліфікація" onChange ={(i)=>setKval(i.target.value)} value ={kval}/>
+                                        <input type="text" placeholder = "Номер телефону" onChange ={(i)=>setNumber(i.target.value)} value ={number}/>
+                                        <input type="text" placeholder = "Предмети" onChange ={(i)=>setPred(i.target.value)} value ={pred}/>
                                         <input type="file" />
                                         <button type="submit">Додати</button>
                                     </form>
@@ -752,7 +744,6 @@ function AdminPage() {
                                 <button onClick={(i)=>DeleteEmployer(i,obj.id,e.id)}>Видалити</button>
                                 </div>
                             ))
-                               
                             }
                            </div>
                         ) : <></>

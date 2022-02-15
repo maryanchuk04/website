@@ -98,10 +98,7 @@ function Uvaha() {
                  </div>
                     <button onClick={(i)=>DeleteWarning(i,u.id)}>Видалити</button>
                 </div>
-            ))
-               
-           
-
+            ))    
         }
     </div>
   )
