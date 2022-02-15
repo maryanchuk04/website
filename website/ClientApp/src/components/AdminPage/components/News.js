@@ -107,8 +107,6 @@ function News() {
           <div className="add_news">
               <h1>Нова Новина</h1>
               <div className="info">
-               
-
                  <div className="text"> 
                    <form >
                      <input type="text" placeholder="Заголовок"  onChange={(i)=>settitlefield(i.target.value)} value ={titlefield} />

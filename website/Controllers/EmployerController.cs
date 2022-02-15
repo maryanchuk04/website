@@ -40,26 +40,6 @@ namespace website.Controllers
             return Ok(employer);
 
         }
-        [HttpPost("/employers/upload/{id}")]
-        public ActionResult UploadPhoto(string id, [FromForm] IFormFile file)
-        {
-
-            Employer employer = _employers.GetByID(id);
-
-
-            if (file.Length > 0)
-            {
-                using (var ms = new MemoryStream())
-                {
-                    file.CopyTo(ms);
-                    var fileBytes = ms.ToArray();
-
-                    employer.image = fileBytes;
-                    _employers.Save(employer);
-                }
-            }
-            return Ok(employer);
-
-        }
+        
     }
 }

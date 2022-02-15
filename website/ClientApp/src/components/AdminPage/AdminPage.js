@@ -31,6 +31,8 @@ function AdminPage() {
     const [opp,setOpp] = useState([])
     const [suboppfield,setSubOppField] = useState("");
     const [obj,setObj] = useState({});
+    const [imagelinkemp,setImagelinkemp] = useState("");
+
     //для форми колектив
     const [fullname,setFullname] = useState("");
     const [posada,setPosada] = useState("");
@@ -444,6 +446,7 @@ function AdminPage() {
             console.log();
             console.log(res.data);
             setLinkres(res.data)
+            setImagelinkemp(res.data);
           })
     }
 
@@ -493,8 +496,31 @@ function AdminPage() {
                 window.location.reload();
         })
     }
+
+
     const SubmitFormEmp = (i,id,fullname,posada,kval,number,pred)=>{
-        axios.post(`https://bsite.net/IvanovIvan//employerspage/add`)
+        i.preventDefault()
+        bodyFormData.append('file',getFile);
+        file(i);
+
+        axios.post(`https://bsite.net/IvanovIvan/employerspage/addemployer/${id}`,{
+            full_name : fullname,
+            posada : posada,
+            status : kval,
+            number : number,
+            lesson : pred,
+            image : imagelinkemp
+        }).then((result)=>{
+
+            console.log(result.data)
+            
+            /*
+            if(result.status ==200)
+               // window.location.reload();
+            
+            else 
+             alert("Помилка")*/
+        })
     }
     return (
         <div className = "">
@@ -525,7 +551,8 @@ function AdminPage() {
                     <div className="sub_menu">
                         <div className="pidmenu">
                             <ul>
-                                    {state === 1 ? 
+                                    {
+                                    state === 1 ? 
                                     student.map((s, index)=>(
                                     <div>
                                         <li onClick = {(i)=>clickElement(i,"student",s.id)}>{s.name}</li>
@@ -733,15 +760,16 @@ function AdminPage() {
                                         <input type="text" placeholder = "Кваліфікація" onChange ={(i)=>setKval(i.target.value)} value ={kval}/>
                                         <input type="text" placeholder = "Номер телефону" onChange ={(i)=>setNumber(i.target.value)} value ={number}/>
                                         <input type="text" placeholder = "Предмети" onChange ={(i)=>setPred(i.target.value)} value ={pred}/>
-                                        <input type="file" />
+                                        <input type="file" onChange = {(i)=>handleFileSelected(i)} />
                                         <button type="submit">Додати</button>
                                     </form>
                                 </div>
-                            { obj.employers?.map((e,index)=>(
+                            { 
+                                obj.employers?.map((e,index)=>(
                                 <div className="one_admin_emp">
-                                <h2>{e.full_name}</h2>
-                                <p>{e.posada}</p>
-                                <button onClick={(i)=>DeleteEmployer(i,obj.id,e.id)}>Видалити</button>
+                                    <h2>{e.full_name}</h2>
+                                    <p>{e.posada}</p>
+                                    <button onClick={(i)=>DeleteEmployer(i,obj.id,e.id)}>Видалити</button>
                                 </div>
                             ))
                             }

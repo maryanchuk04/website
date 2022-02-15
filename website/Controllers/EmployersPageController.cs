@@ -57,21 +57,24 @@ namespace website.Controllers
         
 
         [HttpPost("/employerspage/addemployer/{id}")]
-        public ActionResult AddEmployer(string id, [FromForm] Employer employer)
+        public ActionResult AddEmployer(string id, [FromBody] Employer employer)
         {
+            var k =  _employersPage.GetByID(id);
             try
             {
 
-                if (_employersPage.GetByID(id).employers != null)
+                if (k.employers != null)
                 {
-                    _employersPage.GetByID(id).employers.Add(employer);
+                    k.employers.Add(employer);
+                    _employersPage.Save(k);
                     return Ok(employer);
                 }
                 else
                 {
-                    _employersPage.GetByID(id).employers = new List<Employer>();
-                    _employersPage.GetByID(id).employers.Add(employer);
-                    return Ok(employer);
+                    k.employers = new List<Employer>();
+                    k.employers.Add(employer);
+                    _employersPage.Save(k);
+                    return Ok(k);
                 }
 
             }
@@ -90,80 +93,14 @@ namespace website.Controllers
             return Ok(_employersPage.GetByID(id));
         }
 
-
-        [HttpPost("/employerspage/employer/upload/{id}/{employerId}")]
-        public ActionResult UploadImage(string id, string employerId,[FromForm] IFormFile file)
-        {
-            Employer employer = _employersPage.GetByID(id).employers.Find(x => x.id == employerId);
-            Employers employerspage = _employersPage.GetByID(id);
-            if (file.Length > 0)
-            {
-                using (var ms = new MemoryStream())
-                {
-                   
-                    file.CopyTo(ms);
-                    var fileBytes = ms.ToArray();
-                    employer.image = fileBytes;
-                    employerspage.employers.Remove(employerspage.employers.Find(x => x.id == employer.id));
-                    
-                    employerspage.employers.Add(employer);
-                    _employersPage.Save(employerspage);
-
-                    return Ok(employerspage);
-
-                }
-               
-                
-            }
-            else return BadRequest();
+        
              
            
            
-        }
-
-
-
-        [HttpGet("/employerspage/admin")]
-        public ActionResult Geniy()
-        {
         
-            return Ok(_employersPage.GetByID("620299ddcd09eef769827bec"));
-
-        }
-
-        [HttpGet("/employerspage/ped")]
-        public ActionResult Geniy2()
-        {
-           
-            return Ok(_employersPage.GetByID("62029a09cd09eef769827c01"));
-
-        }
-        [HttpGet("/employerspage/gosp")]
-        public ActionResult Geniy3()
-        {
-            return Ok(_employersPage.GetByID("620299f7cd09eef769827bfc"));
-
-        }
-        [HttpGet("/employerspage/not")]
-        public ActionResult Geniy4()
-        { 
-            return Ok(_employersPage.GetByID("620299e3cd09eef769827bf3"));
-
-        }
 
 
-       /*
-        [HttpPost("/employers/upload/{id}/{id_e}")]
-        public ActionResult Upload(string id, string id_e,[FromForm] IFormFile file)
-        {
-            Employers emp = _employersPage.GetByID(id);
-
-
-            emp.employers.Find(x=>x.id == id_e).image = 
-            return Ok();
-
-        }*/
-
+        
     }
 
 }
