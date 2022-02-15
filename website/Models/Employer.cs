@@ -28,7 +28,7 @@ namespace website.Models
         public string lesson { get; set; }
 
         [BsonElement("image")]
-        public byte[] image { get; set; }
+        public string image { get; set; }
 
         [BsonElement("rang")]
         public string rang { get; set; }

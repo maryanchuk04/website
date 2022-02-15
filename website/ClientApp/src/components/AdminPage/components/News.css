@@ -1,17 +1,19 @@
 
 .add_news{
-    
+
     width: fit-content;
     height: fit-content !important;
     background: radial-gradient(circle, rgba(222,98,98,1) 0%, rgba(255,184,140,1) 100%);
     padding: 10px 10px 10px 10px ;
     border-radius: 10px;
-    margin: 150px auto;
-    display: grid;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .news_admin .container_all{
-    display: grid;
-    place-items: center;
+    display: flex;
+    margin: 0 auto;
 }
 .add_news h1{
     font-size: 40px;
