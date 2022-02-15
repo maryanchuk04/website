@@ -52,9 +52,23 @@ namespace website.Controllers
            
         }
 
+        [HttpPost("/opp/sub/{id}")]
+        public ActionResult Sub(string id, [FromBody] Sub sub)
+        {
+            Opp s = _opp.GetByID(id);
+            
+            s.opp.Add(sub.text);
+            _opp.Save(s);
+            return Ok(sub.text);
+        }
 
 
 
 
+
+    }
+    public class Sub
+    {
+        public string text { get; set; }
     }
 }

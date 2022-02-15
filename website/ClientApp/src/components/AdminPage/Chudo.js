@@ -4,11 +4,11 @@ import Editor from "./Editor.js";
 import "react-quill/dist/quill.core.css";
 
 
-function Chudo({seterForHTML}) {
+function Chudo({html,seterForHTML}) {
   
   return (
     <div className="App">
-      <Editor seterForHTML = {seterForHTML} />
+      <Editor html={html} seterForHTML = {seterForHTML} />
     </div>
   );
 }

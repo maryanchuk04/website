@@ -31,7 +31,7 @@ function OneNewsPage() {
                 <div className="newspage_info">
                     <div className="short">
                         <div className="im">
-                            <img src={`data:image/gif;base64,${news.image}`} alt={news.title} />
+                            <img src={news.image} alt={news.title} />
                         </div>
                         <div className="txt">
                             <div className = "short_txt">

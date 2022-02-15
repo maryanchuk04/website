@@ -19,15 +19,20 @@ function AdminPage() {
     const [showPage1, setShowPage1] = useState(0);
     const [titlepage,setTitlepage] = useState("");
     const [showChudo,setShowChudo] = useState(false);
-
+    const [temp,setTemp] = useState("")
     const [numberfield, setNumberfield] = useState("");
     const [number,setNumber] = useState(0);
     const [element,setElement] = useState(false);
     const [linkres,setLinkres] = useState("")
     const [titlePage,setTitlePage] = useState("")
+    const [gallery,setGallery] = useState([]);
+    const [opp,setOpp] = useState([])
+    const [suboppfield,setSubOppField] = useState("");
+    
     var setBarabulya = ""
     var bodyFormData = new FormData();
 
+    var barabulya2 = ""
     const [res,setRes] = useState({});
 
     useEffect(()=>{
@@ -40,6 +45,8 @@ function AdminPage() {
             const res4 = await axios.get("https://bsite.net/IvanovIvan/employerspage")
             const res10 = await axios.get("https://bsite.net/IvanovIvan/collegeactivity")
             const res11 =await axios.get("https://bsite.net/IvanovIvan/history")
+            const res12 = await axios.get("https://bsite.net/IvanovIvan/gallery")
+            const res13 = await axios.get("https://bsite.net/IvanovIvan/opp")
             console.log(res1.data)
             console.log(res2.data)
             console.log(res8.data)
@@ -47,6 +54,7 @@ function AdminPage() {
             console.log(res5.data)
             console.log(res10.data)
             console.log(res11.data)
+            console.log(res13.data)
             setEmployers(res4.data);
             setStudent(res1.data);
             setSpeciality(res2.data);
@@ -55,6 +63,8 @@ function AdminPage() {
             setWarnings(res5.data);
             setActivies(res10.data)
             setHistory(res11.data)
+            setGallery(res12.data)
+            setOpp(res13.data)
         })()
     },[])
 
@@ -71,7 +81,7 @@ function AdminPage() {
                 : alert("Сталась помилка, повторіть будь ласка пізніше");  
         })
     })
-
+    
     const StudentClick=((i)=>{
         setState(1);
         setShowChudo(false);
@@ -183,7 +193,11 @@ function AdminPage() {
             x.style.display = "none";
          }
     })
+    
+    const GalleryClick = (e) =>{
+        setState(12);
 
+    }
     const AddClick = ((e)=>{
         setElement(false);
         setShowChudo(true);
@@ -196,7 +210,14 @@ function AdminPage() {
         console.log(setBarabulya);
     }
 
+    const setBarabulya2=(i)=>{
+        barabulya2 = i;
+        console.log(barabulya2)
+    }   
 
+    const OppClick = (i)=>{
+        setState(13);
+    }
     const SliderAddClick=((e)=>{
         bodyFormData.append('file',getFile);
         axios({
@@ -265,7 +286,7 @@ function AdminPage() {
     }
 
     const clickElement  = (i,value,id) =>{
-        setRes({})
+        
         if(value == "student") {
             axios.get(`https://bsite.net/IvanovIvan/student/${id}`).then((result)=>{
                 setElement(false);
@@ -292,13 +313,111 @@ function AdminPage() {
         }
         
     }
-    const SavePage = (i,id)=>{
-        
+    const SavePage = (i,id,text)=>{
+        console.log(state);
+        console.log(temp)
+        console.log(res)
+        console.log("Barabulya " +  text);
+        switch(state){
+            case 1: {
+                axios.post(`https://bsite.net/IvanovIvan/student/update/${id}`,{
+                   name : res.name,
+                   page : text,
+                   number : res.number
+                }).then((result)=>{
+                    console.log(result.data);
+                })
+                break;
+            }
+            case 2:{
+                axios.post(`https://bsite.net/IvanovIvan/entrant/update/${id}`,{
+                    name : res.name,
+                    page : text,
+                    number : res.number
+                }).then((result)=>{
+                    console.log(result.data);
+                })
+                break;
+            }
+            case 3:{
+                axios.post(`https://bsite.net/IvanovIvan/speciality/update/${id}`,{
+                    name : res.name,
+                    page : text,
+                    number : res.number
+            }).then((result)=>{
+                    console.log(result.data);
+                })
+                break;
+            }
+            case 5:{
+                axios.post(`https://bsite.net/IvanovIvan/collegeactivity/update/${id}`,{
+                    name : res.name,
+                    page : text,
+                    number : res.number
+                }).then((result)=>{
+                    console.log(result.data);
+                })
+                break;
+            }
+            case 6:{
+                axios.post(`https://bsite.net/IvanovIvan/history/update/${id}`,{
+                    name : res.name,
+                    page : text,
+                    number : res.number
+                }).then((result)=>{
+                    console.log(result.data);
+                })
+                break;
+            }
+        }   
     }
 
+    const DeletePage = (i,id)=>{
+        switch(state){
+            case 1: {
+                axios.delete(`https://bsite.net/IvanovIvan/student/delete/${id}`).then((result)=>{
+                    console.log(result.data);
+                    window.location.reload();
+                })
+                break;
+            }
+            case 2:{
+                axios.delete(`https://bsite.net/IvanovIvan//entrant/delete/${id}`).then((result)=>{
+                    console.log(result.data);
+                    window.location.reload();
+                })
+                break;
+            }
+            case 3:{
+                axios.delete(`https://bsite.net/IvanovIvan/speciality/delelte/${id}`).then((result)=>{
+                    console.log(result.data);
+                    window.location.reload();
+                })
+                break;
+            }
+            case 5:{
+                axios.delete(`https://bsite.net/IvanovIvan/collegeactivity/delete/${id}`).then((result)=>{
+                    console.log(result.data);
+                    window.location.reload();
+                })
+                break;
+            }
+            case 6:{
+                axios.delete(`https://bsite.net/IvanovIvan/history/delete/${id}`).then((result)=>{
+                    console.log(result.data);
+                    window.location.reload();
+                })
+                break;
+            }
+        }   
+    }
 
-
-
+    const DeleteGallery =(i,id)=>{
+        axios.get(`https://bsite.net/IvanovIvan/gallery/delete/${id}`).then((result)=>{
+            
+            window.location.reload();
+        })
+    }
     
     const file = (e)=>{
         const files = Object(e.currentTarget.files)[0]
@@ -308,7 +427,7 @@ function AdminPage() {
         bodyFormData.append('file',files);
         axios({
             method: 'POST',
-            url : "http://localhost:5000/upload",
+            url : "https://bsite.net/IvanovIvan/upload",
             data: bodyFormData,
             headers: {'Content-Type': 'multipart/form-data' }
           }
@@ -316,9 +435,46 @@ function AdminPage() {
             console.log();
             console.log(res.data);
             setLinkres(res.data)
+          })
+    }
+    //1 - СТудент 
+    //2 - abiturient
+    //3 - speciality
+    //4 - employerspage
+    //5 - activity
+    //6 - history
+    //7- news
+    //8 - slider
+    //9 - Attention
+   
+    const AddGalleryFile = (i) =>{
+        bodyFormData.append('file',getFile);
+        axios({
+            method: 'POST',
+            url : "https://bsite.net/IvanovIvan/gallery/add",
+            data: bodyFormData,
+            headers: {'Content-Type': 'multipart/form-data' }
+          }
+          ).then((res)=>{
+            console.log(getFile);
+            console.log(res.data);
+            window.location.reload();
+            
     })
-}
+    }
 
+    const AddSubOpp = (i,id,text)=>{
+        i.preventDefault()
+        console.log(text)
+        axios.post(`http://localhost:5000/opp/sub/${id}`,{
+            sub : text
+        }).then((result)=>{
+            console.log(result.data);
+            
+              //  window.location.reload()
+            
+        })
+    }
     return (
         <div className = "">
             <div className="admin_title">
@@ -341,8 +497,8 @@ function AdminPage() {
                           <li onClick={(i)=>SliderClick(i)}>Слайдер</li>
                           <li onClick={(i)=>EmployersClick(i)}>Колектив</li>
                           <li onClick={(i)=>HistoryClick(i)}>Історія</li>
-                          <li onClick={(i)=>HistoryClick(i)}>Галерея</li>
-
+                          <li onClick={(i)=>GalleryClick(i)}>Галерея</li>
+                          <li onClick={(i)=>OppClick(i)}>ОПП</li>
                       </ul>
                     </div>
                     <div className="sub_menu">
@@ -405,18 +561,16 @@ function AdminPage() {
                     <div className="input_block">
                         
                         <form onSubmit={(i)=>SaveButton(i)}>
-                            <input placeholder = "Назва сторінки" onChange={(i)=>setTitlePage(i.target.value)} required></input>
+                            <input placeholder = "Назва сторінки" onChange={(i)=>setTitlePage(i.target.value)} value = {titlePage} required></input>
                             <p>{linkres}</p>
                             <input id = "fileinput" type ="file" onChange = {(i)=>file(i)} ></input>
                             <div className="but">
                                 <button type ="submit">Зберегти</button>
                                 <button onClick={(i) =>setShowChudo(false)}>Закрити </button>
-                            </div>
-                            
-                            
+                            </div>                            
                         </form>
                      </div>
-                    <Chudo  seterForHTML = {seterForHTML}/>          
+                    <Chudo html ={setBarabulya}  seterForHTML = {seterForHTML}/>          
                     </div> 
 
                  ): <div></div>
@@ -474,12 +628,68 @@ function AdminPage() {
                     {
                         element  ? (
                         <div>
-                            <button onClick={(i)=>SavePage(i,res.id)}></button>
-                            <SpecialEditor text={res.page}/>)
+                            <div className="special_editor_buttons">
+                                <button onClick={(i)=>SavePage(i,res.id,barabulya2)}>Зберегти</button>
+                                <button onClick={(i)=>DeletePage(i,res.id)}>Видалити</button>
+                            </div>
+                            <SpecialEditor text={res.page} setBarabulya2 = {setBarabulya2}/>)
                         </div>
                         )
                          : <p></p>
                     }
+                    {
+                        state === 12 ? ( 
+                        <div>
+
+                        
+                        <div className = "title_galery">
+                            <input type="file" onChange ={(i)=>handleFileSelected(i)} />
+                            <button onClick = {(i)=>AddGalleryFile(i)}>Додати</button>
+                        </div>
+                            <div className = "admin_gallery">
+                            {
+                            gallery.map((g,index)=>(
+                            <div className = "gallery_item">
+                                <img src={g.image}/>
+                                <div className="knopku_gallery">
+                                    <button onClick={((i)=>DeleteGallery(i,g.id))}>Видалити</button>
+                                </div>
+                            </div>
+                            )) 
+                            }
+                            </div> 
+                        </div>
+                        ):<></>
+                        
+                    }
+                    {
+                        state ===13 ? (
+                            <div className = "opp_admin">
+                                
+                                {
+                                    opp?.map((o,index)=>(
+                                        <div className="one_opp_admin">
+                                            <h2>{o.name}</h2>
+                                            <ul>
+                                                
+                                                <div className = "input_for_opp">
+                                                {o?.opp?.map((i,index)=><li>{i}</li>)}
+                                                    <form onSubmit = {(i)=>AddSubOpp(i,o.id,suboppfield)}>
+                                                        <input type = "text" onChange ={(i)=>setSubOppField(i.target.value)} required/>
+                                                        <button type="submit">Додати Опп</button>
+                                                    </form>
+                                                </div>
+                                                
+                                                
+                                            </ul>
+                                        </div>
+                                    ))
+                                
+                                }
+                            </div>
+                        ) : <></>
+                    }
+                    
                 </div>
                 
                           
