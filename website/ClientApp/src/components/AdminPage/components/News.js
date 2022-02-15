@@ -8,7 +8,7 @@ function News() {
   const [areashort_text,setAreashort_text] = useState("")
   const [titlearea,settitlearea] = useState("")
 
-
+  const [data, setData] = useState("");
   const [news,setnews] = useState({})
   const [titlefield,settitlefield] = useState("")
   const [short_textfield,setshort_textfield] = useState("")
@@ -33,17 +33,18 @@ function News() {
       alert("Помилка введіть данні які хочете додати");
     }
     else{
-    axios.post("http://localhost:5000/news/add",{
+    axios.post("https://bsite.net/IvanovIvan/news/add",{
       title: titlefield,
       short_text: short_textfield,
-      text: textfield    
+      text: textfield,
+      date:   data
     }).then((result)=>{
       console.log(result);
       console.log(result.data);
       bodyFormData.append('file',getFile);
       axios({
         method: 'POST',
-        url : `http://localhost:5000/news/upload/${result.data.id}`,
+        url : `https://bsite.net/IvanovIvan/news/upload/${result.data.id}`,
         data: bodyFormData,
         headers: {'Content-Type': 'multipart/form-data' }
       }
@@ -63,7 +64,7 @@ function News() {
     e.persist();
     if(e.target[0].value.trim()!=="" &&  e.target[1].value.trim()!=="" &&  e.target[2].value.trim()!=="")
     {
-    axios.post(`http://localhost:5000/news/replace/`,{
+    axios.post(`https://bsite.net/IvanovIvan/news/replace/`,{
       id:id,
       title: e.target[0].value,
       short_text: e.target[1].value,
@@ -102,12 +103,12 @@ function News() {
 
   return (
     <div>
-        <Header/>
         <div className="container_all">
           <div className="add_news">
               <h1>Нова Новина</h1>
               <div className="info">
                 <div className="all_for_file">
+                  /*
                   <div className="container_for_krasota">
                     <div className="wrappers">                
                       <div className="kartinka">
@@ -121,6 +122,7 @@ function News() {
                       <div className ="file-name" placeholder=">Ім`я файлу тут!">{news.title}</div>
                     </div>
                   </div>
+                  */
                   <input type="file"  id= "selectFile" onChange={(i)=>handleFileSelected(i)}  hidden/>
                   <button id ="custom-btn"onClick={(i)=>imgselectHendler(i)} >Виберіть файл</button>
                 </div>
@@ -130,6 +132,7 @@ function News() {
                      <input type="text" placeholder="Заголовок"  onChange={(i)=>settitlefield(i.target.value)} value ={titlefield} />
                      <textarea type="text" placeholder = "Опис" onChange={(i)=>setshort_textfield(i.target.value)} value ={short_textfield} />
                      <textarea type="text" placeholder = "Вся інформація" onChange={(i)=>settextfield(i.target.value)} value ={textfield}  />
+                     <input type="date" placeholder = "Дата" onChange={(i)=>setData(i.target.value)} value ={data} />
                    </form>
                  </div>
                  
@@ -137,32 +140,7 @@ function News() {
               <button onClick={(i)=>HandleClick(i)}>Додати новину</button>
 
           </div>
-          <div className="admin_all_news">
-            <div className="header_admin_news">
-              Всі новини
-            </div>
-            {allnews.map((n,index)=>(
-          <form className="one_news" onSubmit = {(i)=>SaveClick(i,n.id,n.image)}>
-              <div className="title_news">
-                <input type="text"  placeholder={n.title}  />
-              </div>
-
-              <div className="shos_with_news">
-                  <div className="image_in_news">
-                    <img src={`data:image/gif;base64,${n.image}`}/>
-                  </div>
-                    <div className="text">                     
-                        <textarea type="text" placeholder ={n.short_text}  />
-                        <textarea type="text" placeholder = {n.text} />        
-                    </div>
-                  </div> 
-                  <div className="button_done">
-                      <button id ="done">Видалити</button>
-                      <button type = "submit" id = "done">Зберегти</button>
-                  </div>                 
-          </form>
-          ))}
-        </div>
+          
         </div>
         
     </div>
