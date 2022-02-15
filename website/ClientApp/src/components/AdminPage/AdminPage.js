@@ -4,6 +4,7 @@ import '../AdminPage/AdminPage.css'
 import Chudo from './Chudo'
 import News from './components/News'
 import SpecialEditor from './components/SpecialEditor'
+import Uvaha from './components/Uvaha'
 function AdminPage() {
     const [history,setHistory] = useState([])
     const [student,setStudent] = useState([])
@@ -697,6 +698,11 @@ function AdminPage() {
                                 }
                             </div>
                         ) : <></>
+                    }
+                    {
+                        state === 9 ? (
+                           <Uvaha/>
+                        ):<></>
                     }
                     
                 </div>
