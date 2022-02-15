@@ -55,33 +55,27 @@ namespace website.Controllers
         {
             
             News news = _news.GetByID(id);
-          
-          
-          try
-          {
-              FtpWebRequest request =
-              (FtpWebRequest)WebRequest.Create("ftp://chdkt.connect.cv.ua/image/news/" + file.FileName);
-              request.Credentials = new NetworkCredential("ftp_chdkt", "1qA2wS3eD");
-              request.Method = WebRequestMethods.Ftp.UploadFile;
-          
-              using (Stream ftpStream = request.GetRequestStream())
-              {
-                  file.CopyTo(ftpStream);
-              }
-              news.image = "http://chdkt.connect.cv.ua/image/news/" + file.FileName;
-              _news.Save(news);
-              return Ok(news);
-          }
-            catch(Exception)
+
+
+            try
+            {
+                FtpWebRequest request =
+                (FtpWebRequest)WebRequest.Create("ftp://chdkt.connect.cv.ua/image/news/" + file.FileName);
+                request.Credentials = new NetworkCredential("ftp_chdkt", "1qA2wS3eD");
+                request.Method = WebRequestMethods.Ftp.UploadFile;
+
+                using (Stream ftpStream = request.GetRequestStream())
+                {
+                    file.CopyTo(ftpStream);
+                }
+                news.image = "http://chdkt.connect.cv.ua/image/news/" + file.FileName;
+                _news.Save(news);
+                return Ok(news);
+            }
+            catch (Exception)
             {
                 return BadRequest();
-            }
-
-          
-
-            
-           
-            
+            }           
         }
 
 

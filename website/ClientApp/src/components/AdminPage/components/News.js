@@ -73,7 +73,7 @@ function News() {
 
     }).then((result2)=>{
       console.log(result2.data);
-      //window.location.reload();
+      window.location.reload();
       console.log(e);
     })   
     }

@@ -52,12 +52,21 @@ namespace website.Controllers
         public ActionResult Update(string id, [FromBody] Student student)
         { 
             Student st =  _student.GetByID(id);
-            st.number = student.number;
             st.page = student.page;
             _student.Save(st);
             return Ok(st);
         }
-       
+
+        [HttpPost("/student/update/number/{id}")]
+        public ActionResult UpdateNumber(string id, [FromBody] Student student)
+        {
+            Student st = _student.GetByID(id);
+            
+            st.number = student.number;
+            _student.Save(st);
+            return Ok(st);
+        }
+
 
 
 

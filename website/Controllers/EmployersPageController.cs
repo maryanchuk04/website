@@ -27,7 +27,6 @@ namespace website.Controllers
         [HttpGet("/employerspage")]
         public ActionResult GetAll ()
         {
-
             var a = _employersPage.GetAll().ToList();
             a.Sort((x, y) => x.number.CompareTo(y.number));
             return Ok(a);
@@ -88,19 +87,29 @@ namespace website.Controllers
         [HttpDelete("/employerspage/deleteemployer/{id}/{employerId}")]
         public ActionResult DeleteEmployer(string id,string employerId)
         {
-            _employersPage.GetByID(id).employers.Remove(_employersPage.GetByID(id).employers.Find(x => x.id == employerId));
-            _employersPage.Save(_employersPage.GetByID(id));
-            return Ok(_employersPage.GetByID(id));
+           var k = _employersPage.GetByID(id);
+
+            k.employers.Remove(k.employers.Find(x => x.id == employerId));
+            _employersPage.Save(k);
+            return Ok(k);
+        }
+        [HttpPost("/employerspage/update/number/{id}")]
+        public ActionResult UpdateNumber(string id, [FromBody] Employers student)
+        {
+            var st = _employersPage.GetByID(id);
+
+            st.number = student.number;
+            _employersPage.Save(st);
+            return Ok(st);
         }
 
-        
-             
-           
-           
-        
 
 
-        
+
+
+
+
+
     }
 
 }
