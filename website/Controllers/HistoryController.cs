@@ -60,8 +60,18 @@ namespace website.Controllers
         public ActionResult Update(string id, [FromBody] History history)
         {
             History st = _history.GetByID(id);
-            st.number = history.number;
+            
             st.page = history.page;
+            _history.Save(st);
+            return Ok(st);
+        }
+
+        [HttpPost("/history/update/number/{id}")]
+        public ActionResult UpdateNumber(string id, [FromBody] History student)
+        {
+            var st = _history.GetByID(id);
+
+            st.number = student.number;
             _history.Save(st);
             return Ok(st);
         }

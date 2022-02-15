@@ -43,11 +43,19 @@ namespace website.Controllers
         public ActionResult Update(string id, [FromBody] Speciality student)
         {
             Speciality st = _speciality.GetByID(id);
-            st.number = student.number;
+            
             st.page = student.page;
             _speciality.Save(st);
             return Ok(st);
         }
+        [HttpPost("/speciality/update/number/{id}")]
+        public ActionResult UpdateNumber(string id, [FromBody] Speciality student)
+        {
+            var st = _speciality.GetByID(id);
 
+            st.number = student.number;
+            _speciality.Save(st);
+            return Ok(st);
+        }
     } 
 }

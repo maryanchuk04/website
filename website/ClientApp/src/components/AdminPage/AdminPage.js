@@ -40,6 +40,12 @@ function AdminPage() {
     const [kval,setKval] = useState("");
     const [pred,setPred] = useState("");
 
+    //для сабменю
+    const [one,setOne] = useState("")
+    const [two,setTwo] = useState("")
+    const [three,setThree] = useState("")
+    const [four,setFour] = useState("")
+    const [five,setFive] = useState("")
 
 
     var setBarabulya = ""
@@ -490,10 +496,10 @@ function AdminPage() {
     }
 
     const DeleteEmployer = (i,id,empid)=>{
-        axios.delete(`https://bsite.net/IvanovIvan//employerspage/deleteemployer/${id}/${empid}`).then((result)=>{
+        axios.delete(`http://localhost:5000/employerspage/deleteemployer/${id}/${empid}`).then((result)=>{
+            console.log(`http://localhost:5000/employerspage/deleteemployer/${id}/${empid}`)
             console.log(result.data);
-            if (result.status == 200)
-                window.location.reload();
+            
         })
     }
 
@@ -521,6 +527,51 @@ function AdminPage() {
             else 
              alert("Помилка")*/
         })
+    }
+
+    const doneNumeration = (i,one,id)=>{
+        switch(state){
+            case 1: {
+                axios.post(`https://bsite.net/IvanovIvan/student/update/number/${id}`,{
+                    number : parseInt(one)
+                }).then((result)=>{
+                    console.log(result.data)
+                })
+                break;
+            }
+            case 2: {
+                axios.post(`https://bsite.net/IvanovIvan/speciality/update/number/${id}`,{
+                    number : parseInt(one)
+                }).then((result)=>{
+                    console.log(result.data)
+                })
+                break;
+            }
+            case 4: {
+                axios.post(`https://bsite.net/IvanovIvan/employerspage/update/number/${id}`,{
+                    number : parseInt(one)
+                }).then((result)=>{
+                    console.log(result.data)
+                })
+                break;
+            }
+            case 5: {
+                axios.post(`https://bsite.net/IvanovIvan/collegeactivity/update/number/${id}`,{
+                    number : parseInt(one)
+                }).then((result)=>{
+                    console.log(result.data)
+                })
+                break;
+            }
+            case 6: {
+                axios.post(`https://bsite.net/IvanovIvan/history/update/number/${id}`,{
+                    number : parseInt(one)
+                }).then((result)=>{
+                    console.log(result.data)
+                })
+                break;
+            }
+        }
     }
     return (
         <div className = "">
@@ -554,8 +605,10 @@ function AdminPage() {
                                     {
                                     state === 1 ? 
                                     student.map((s, index)=>(
-                                    <div>
+                                    <div className = "qwert">
                                         <li onClick = {(i)=>clickElement(i,"student",s.id)}>{s.name}</li>
+                                        <input type="number" placeholder = {s.number} onChange={(i)=>setOne(i.target.value)}/>
+                                        <button onClick = {(i)=>doneNumeration(i,one,s.id)}>Зберегти нумерацію</button>
                                     </div>
                                     )):<li></li>
                                 
@@ -563,23 +616,30 @@ function AdminPage() {
                                 }
                                     {state === 2 ? 
                                     speciality.map((s, index)=>(
-                                    <div>
+                                    <div className = "qwert">
                                         <li onClick = {(i)=>clickElement(i,"speciality",s.id)}>{s.name}</li>
+                                        <input type="number" placeholder = {s.number} onChange={(i)=>setTwo(i.target.value)}/>
+                                        <button onClick = {(i)=>doneNumeration(i,two,s.id)}>Зберегти нумерацію</button>
+                                        
                                     </div>
                                     )
                                     ):<li></li>
                                 }
                                 {
                                     state ===4 ?
-                                    employers.map((s,index)=>(<div>
+                                    employers.map((s,index)=>(<div className = "qwert">
                                         <li onClick={(i)=>EmpSubClick(i,s.id)}>{s.name}</li>
+                                        <input type="number" placeholder = {s.number} onChange={(i)=>setThree(i.target.value)}/>
+                                        <button onClick = {(i)=>doneNumeration(i,three,s.id)}>Зберегти</button>
                                         </div> )): <li></li>
                                 }
                                 {
                                     state === 5 ? 
                                     activies.map((a,index)=>(
-                                    <div>
+                                    <div className = "qwert">
                                         <li onClick = {(i)=>clickElement(i,"collegeactivity",a.id)}>{a.name}</li>
+                                        <input type="number" placeholder = {a.number} onChange={(i)=>setFour(i.target.value)} />
+                                        <button onClick = {(i)=>doneNumeration(i,four,a.id)}>Зберегти нумерацію</button>
                                     </div>
                                     
                                     )) : <li></li>                         
@@ -589,14 +649,18 @@ function AdminPage() {
                                     history.map((h,index)=>(
                                     <div>
                                         <li onClick = {(i)=>clickElement(i,"history",h.id)}>{h.name}</li>
+                                        <input type="number" placeholder = {h.number} onChange={(i)=>setFive(i.target.value)}/>
+                                       
+                                       
+                                        <button onClick = {(i)=>doneNumeration(i,five,h.id)}>Зберегти нумерацію</button>
                                     </div>)) : <></>
                                 }
                                
                             </ul>
-                           
+                            
                         </div>
                         <button id = "add" style ={{display : "none"}} onClick = {(i)=>AddClick(i)}>Додати</button>
-
+                        
                     </div>
                   
                 </div>
@@ -688,7 +752,7 @@ function AdminPage() {
                                 <button onClick={(i)=>SavePage(i,res.id,barabulya2)}>Зберегти</button>
                                 <button onClick={(i)=>DeletePage(i,res.id)}>Видалити</button>
                             </div>
-                            <SpecialEditor text={res.page} setBarabulya2 = {setBarabulya2}/>)
+                            <SpecialEditor text={res.page} setBarabulya2 = {setBarabulya2}/>
                         </div>
                         )
                          : <p></p>

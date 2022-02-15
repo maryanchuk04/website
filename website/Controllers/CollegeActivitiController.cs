@@ -64,7 +64,15 @@ namespace website.Controllers
             _collegeActivity.Save(c);
             return Ok(c);
         }
+        [HttpPost("/collegeactivity/update/number/{id}")]
+        public ActionResult UpdateNumber(string id, [FromBody] CollegeActivity student)
+        {
+            var st = _collegeActivity.GetByID(id);
 
+            st.number = student.number;
+            _collegeActivity.Save(st);
+            return Ok(st);
+        }
 
     }
 }
