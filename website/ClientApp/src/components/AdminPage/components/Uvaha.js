@@ -66,18 +66,18 @@ function Uvaha() {
        
     }
 
-    const WarningChangeFile = (i) =>{
 
-    } 
   return (
     <div>
         <div className="add_warning">
             <form onSubmit = {(i)=> SubmitAdd(i,title,short,link,ImageLink)}>
+
             <input className="input_uvaha elem_warn" type = "text" onChange ={(i)=>{setTitle(i.target.value)} } value={title} placeholder = "Заголовок" required />
             <input className="input_uvaha elem_warn"  type = "text" onChange ={(i)=>{setLink(i.target.value)} } value={link}  placeholder = "Посилання"/>
             <textarea  className="elem_warn"onChange={(i)=>setShort(i.target.value)} value = {short}  placeholder = "Текст"  required ></textarea>
             <input className="elem_warn" type="file" onChange = {(i)=>handleFileSelected(i)}/>
             <button className="butn_warn" type = "submit">Додати</button>
+
             </form>
         </div>
         {
@@ -98,10 +98,7 @@ function Uvaha() {
                  </div>
                     <button onClick={(i)=>DeleteWarning(i,u.id)}>Видалити</button>
                 </div>
-            ))
-               
-           
-
+            ))    
         }
     </div>
   )

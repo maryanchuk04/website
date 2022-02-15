@@ -30,7 +30,18 @@ function AdminPage() {
     const [gallery,setGallery] = useState([]);
     const [opp,setOpp] = useState([])
     const [suboppfield,setSubOppField] = useState("");
-    
+    const [obj,setObj] = useState({});
+    const [imagelinkemp,setImagelinkemp] = useState("");
+
+    //для форми колектив
+    const [fullname,setFullname] = useState("");
+    const [posada,setPosada] = useState("");
+    const [phone,setPhone] = useState("");
+    const [kval,setKval] = useState("");
+    const [pred,setPred] = useState("");
+
+
+
     var setBarabulya = ""
     var bodyFormData = new FormData();
 
@@ -49,14 +60,6 @@ function AdminPage() {
             const res11 =await axios.get("https://bsite.net/IvanovIvan/history")
             const res12 = await axios.get("https://bsite.net/IvanovIvan/gallery")
             const res13 = await axios.get("https://bsite.net/IvanovIvan/opp")
-            console.log(res1.data)
-            console.log(res2.data)
-            console.log(res8.data)
-            console.log(res7.data)
-            console.log(res5.data)
-            console.log(res10.data)
-            console.log(res11.data)
-            console.log(res13.data)
             setEmployers(res4.data);
             setStudent(res1.data);
             setSpeciality(res2.data);
@@ -373,7 +376,13 @@ function AdminPage() {
             }
         }   
     }
-
+    const EmpSubClick=(i,id)=>{
+        axios.get(`https://bsite.net/IvanovIvan/employerspage/${id}`).then((result)=>{
+            console.log(result.data);
+            setObj(result.data);
+        })
+        setState(15);  
+    }
     const DeletePage = (i,id)=>{
         switch(state){
             case 1: {
@@ -437,8 +446,11 @@ function AdminPage() {
             console.log();
             console.log(res.data);
             setLinkres(res.data)
+            setImagelinkemp(res.data);
           })
     }
+
+
     //1 - СТудент 
     //2 - abiturient
     //3 - speciality
@@ -476,6 +488,40 @@ function AdminPage() {
             
         })
     }
+
+    const DeleteEmployer = (i,id,empid)=>{
+        axios.delete(`https://bsite.net/IvanovIvan//employerspage/deleteemployer/${id}/${empid}`).then((result)=>{
+            console.log(result.data);
+            if (result.status == 200)
+                window.location.reload();
+        })
+    }
+
+
+    const SubmitFormEmp = (i,id,fullname,posada,kval,number,pred)=>{
+        i.preventDefault()
+        bodyFormData.append('file',getFile);
+        file(i);
+
+        axios.post(`https://bsite.net/IvanovIvan/employerspage/addemployer/${id}`,{
+            full_name : fullname,
+            posada : posada,
+            status : kval,
+            number : number,
+            lesson : pred,
+            image : imagelinkemp
+        }).then((result)=>{
+
+            console.log(result.data)
+            
+            /*
+            if(result.status ==200)
+               // window.location.reload();
+            
+            else 
+             alert("Помилка")*/
+        })
+    }
     return (
         <div className = "">
             <div className="admin_title">
@@ -505,7 +551,8 @@ function AdminPage() {
                     <div className="sub_menu">
                         <div className="pidmenu">
                             <ul>
-                                    {state === 1 ? 
+                                    {
+                                    state === 1 ? 
                                     student.map((s, index)=>(
                                     <div>
                                         <li onClick = {(i)=>clickElement(i,"student",s.id)}>{s.name}</li>
@@ -525,8 +572,7 @@ function AdminPage() {
                                 {
                                     state ===4 ?
                                     employers.map((s,index)=>(<div>
-
-                                        <li  >{s.name}</li>
+                                        <li onClick={(i)=>EmpSubClick(i,s.id)}>{s.name}</li>
                                         </div> )): <li></li>
                                 }
                                 {
@@ -703,6 +749,32 @@ function AdminPage() {
                         state === 9 ? (
                            <Uvaha/>
                         ):<></>
+                    }
+                    {
+                        state === 15  ? (
+                            <div className = "admin_employers"> 
+                                <div className="forma_add_emp">
+                                    <form onSubmit={(i)=>SubmitFormEmp(i,obj.id,fullname,posada,kval,number,pred)}>
+                                        <input type="text" placeholder = "Повне ім`я" required onChange ={(i)=>setFullname(i.target.value)} value ={fullname}/>
+                                        <input type="text" placeholder = "Посада" required onChange ={(i)=>setPosada(i.target.value)} value ={posada}/>
+                                        <input type="text" placeholder = "Кваліфікація" onChange ={(i)=>setKval(i.target.value)} value ={kval}/>
+                                        <input type="text" placeholder = "Номер телефону" onChange ={(i)=>setNumber(i.target.value)} value ={number}/>
+                                        <input type="text" placeholder = "Предмети" onChange ={(i)=>setPred(i.target.value)} value ={pred}/>
+                                        <input type="file" onChange = {(i)=>handleFileSelected(i)} />
+                                        <button type="submit">Додати</button>
+                                    </form>
+                                </div>
+                            { 
+                                obj.employers?.map((e,index)=>(
+                                <div className="one_admin_emp">
+                                    <h2>{e.full_name}</h2>
+                                    <p>{e.posada}</p>
+                                    <button onClick={(i)=>DeleteEmployer(i,obj.id,e.id)}>Видалити</button>
+                                </div>
+                            ))
+                            }
+                           </div>
+                        ) : <></>
                     }
                     
                 </div>
