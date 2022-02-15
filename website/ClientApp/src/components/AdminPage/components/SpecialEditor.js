@@ -16,6 +16,7 @@ class SpecialEditor extends Component {
       text: ""
     };
     htmltext = this.props?.text ? this.props.text : ""
+    
     console.log(htmltext)
   }
   
@@ -64,9 +65,12 @@ class SpecialEditor extends Component {
   };
   
   textfunc(i){
+      this.props.setBarabulya2(i);
       htmltext = i
-      console.log(htmltext)
+      console.log(htmltext)   
   }
+
+
   render() {
     return (
       <ReactQuill

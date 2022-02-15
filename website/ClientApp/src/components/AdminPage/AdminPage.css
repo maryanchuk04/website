@@ -290,6 +290,73 @@
     justify-content: center;
     margin: 40px;
 }
+
+
+.special_editor_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.special_editor_buttons button{  
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.title_galery{
+    display: flex;
+    justify-content: center;
+}
+.title_galery button{
+    border-radius:10px;
+}
+.admin_gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+.admin_gallery .gallery_item{
+   display: flex;
+   flex-direction: column;
+   margin: 20px;
+   place-items: center;
+   
+   background-color: rgb(212, 212, 212);
+
+}
+.admin_gallery .gallery_item img {
+    width: 80%;
+    height: 100% ;
+    max-height: 300px;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.gallery_item .knopku_gallery{
+    display: flex;
+    margin: 10px;
+    
+}
+.knopku_gallery button{
+    border-radius: 10px;
+}
+
+.opp_admin{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ margin: 0 auto;
+}
+
+.opp_admin .one_opp_admin{
+
+}
+
+.one_opp_admin .input_for_opp input{
+    width: 200px;
+    border:1px solid black;
+}
 .other_admin .news_admin .one_admin_news {
     background-color:  lavender;
     border-radius: 10px;

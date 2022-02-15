@@ -14,12 +14,17 @@ class Editor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ""
+      text:this.props.html
+    
     };
     
 
+  
   }
   
+  componentDidMount(){
+    console.log("updated")
+  }
   modules = {
     toolbar: [
         ["bold", "italic", "underline", "strike"],
