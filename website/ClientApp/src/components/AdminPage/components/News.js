@@ -102,30 +102,12 @@ function News() {
   }
 
   return (
-    <div>
+    <div className="news_admin">
         <div className="container_all">
           <div className="add_news">
               <h1>Нова Новина</h1>
               <div className="info">
-                <div className="all_for_file">
-                  /*
-                  <div className="container_for_krasota">
-                    <div className="wrappers">                
-                      <div className="kartinka">
-                        <img src={`data:image/gif;base64,${news.image}`} alt="" />
-                      </div>
-                        <div className="krasota">
-                          <div className="icon"><i className = "fas fa-cloud-upload-alt"></i></div>
-                          <div className="nadpus">Виберіть будь ласка файл!</div>                       
-                        </div>
-                      <div id="cancel-btn" ><i className="fas fa-times" onClick={(i)=>CancelClick(i)}></i></div>
-                      <div className ="file-name" placeholder=">Ім`я файлу тут!">{news.title}</div>
-                    </div>
-                  </div>
-                  */
-                  <input type="file"  id= "selectFile" onChange={(i)=>handleFileSelected(i)}  hidden/>
-                  <button id ="custom-btn"onClick={(i)=>imgselectHendler(i)} >Виберіть файл</button>
-                </div>
+               
 
                  <div className="text"> 
                    <form >
@@ -137,8 +119,9 @@ function News() {
                  </div>
                  
               </div>
-              <button onClick={(i)=>HandleClick(i)}>Додати новину</button>
-
+              <button  onClick={(i)=>HandleClick(i)}>Додати новину</button>
+              <input type="file"  id= "selectFile" onChange={(i)=>handleFileSelected(i)}  hidden/>
+                  <button onClick={(i)=>imgselectHendler(i)} >Виберіть файл</button>
           </div>
           
         </div>
