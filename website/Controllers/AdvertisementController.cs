@@ -31,6 +31,13 @@ namespace website.Controllers
         public ActionResult Get(string id) =>
             Ok(_advertisement.GetByID(id));
 
+        [HttpDelete("/advertisement/delete/{id}")]
+        public ActionResult Delete(string id)
+        {
+            _advertisement.Delete(id);
+            return Ok();
+        }
+
 
         [HttpPost("/advertisement/add")]
         public ActionResult Add([FromBody] Advertisement advertisement)
@@ -56,10 +63,11 @@ namespace website.Controllers
             return Ok(advertisement);
         }
 
-        [HttpPost("/advertisement/upload/{id}")]
-        public ActionResult UploadPhoto(string id, [FromForm] IFormFile file)
+        /*
+        [HttpPost("/advertisement/upload/")]
+        public ActionResult UploadPhoto([FromForm] IFormFile file)
         {
-            Advertisement advertisement = _advertisement.GetByID(id);
+            
             try
             {
                 FtpWebRequest request =
@@ -80,6 +88,6 @@ namespace website.Controllers
                 return BadRequest();
             }
 
-        }
+        }*/
     }
 }
