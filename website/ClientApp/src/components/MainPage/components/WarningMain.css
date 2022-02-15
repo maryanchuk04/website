@@ -17,6 +17,7 @@
     color:rgb(17, 38, 78);
 }
 .warning_block{
+    width: 100%;
     margin: 40px auto;
     display: flex;
     align-items: center;
@@ -48,6 +49,12 @@ font-style: italic;
     padding: 15px;
   display: grid;
   place-items: center;
+}
+
+.image_warning  img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 @media (max-width: 1441px) {

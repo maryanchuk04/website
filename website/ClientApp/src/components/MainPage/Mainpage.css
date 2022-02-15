@@ -27,12 +27,12 @@
     place-items: center;
 }
 .news_preview .container_all h1{
-    position: absolute;
+    position: absolute ;
     opacity: 1;
-    margin: 0 auto;
+    margin: 0 auto  !important;
     color: rgb(0, 0, 0);
     z-index: 100;
-    text-align: center;
+    text-align: center !important;
     font-weight: 900;
     font-size: 60px;
     
