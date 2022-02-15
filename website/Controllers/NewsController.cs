@@ -42,6 +42,14 @@ namespace website.Controllers
         public ActionResult<News> GetNews(string id) => Ok(_news.GetByID(id));
 
 
+        [HttpGet("/news/delete/{id}")]
+        public ActionResult Delete (string id)
+        {
+            _news.Delete(id);
+            return Ok();
+        }
+
+
         [HttpPost("/news/upload/{id}")]
         public ActionResult UploadPhoto(string id,[FromForm] IFormFile file)
         {
@@ -77,15 +85,7 @@ namespace website.Controllers
         }
 
 
-        public byte[] GetImage (string sBase64String)
-        {
-            byte[] bytes = null;
-            if (!string.IsNullOrEmpty(sBase64String))
-            {
-                bytes = Convert.FromBase64String(sBase64String);
-            }
-            return bytes;
-        }
+        
 
         [HttpPost("/news/replace/")]
         public ActionResult SaveNews ( [FromBody]News news)

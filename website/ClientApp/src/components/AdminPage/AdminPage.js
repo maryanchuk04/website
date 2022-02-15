@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import '../AdminPage/AdminPage.css'
 import Chudo from './Chudo'
+import News from './components/News'
 import SpecialEditor from './components/SpecialEditor'
 function AdminPage() {
     const [history,setHistory] = useState([])
@@ -76,7 +77,7 @@ function AdminPage() {
     })
 
     const DeleteNewsClick=((i,id)=>{
-        axios.get(`https://bsite.net/IvanovIvan/news/delete/${id}`).then((result)=>{
+        axios.get(`http://localhost:5000/news/delete/${id}`).then((result)=>{
             result.status==200 ? window.location.reload()
                 : alert("Сталась помилка, повторіть будь ласка пізніше");  
         })
@@ -466,12 +467,11 @@ function AdminPage() {
     const AddSubOpp = (i,id,text)=>{
         i.preventDefault()
         console.log(text)
-        axios.post(`http://localhost:5000/opp/sub/${id}`,{
-            sub : text
+        axios.post(`https://bsite.net/IvanovIvan/opp/sub/${id}`,{
+           text : text
         }).then((result)=>{
-            console.log(result.data);
-            
-              //  window.location.reload()
+        
+             window.location.reload()
             
         })
     }
@@ -575,10 +575,15 @@ function AdminPage() {
 
                  ): <div></div>
                  }
+                {
+                state === 7 ? ( 
+                <div>
+                 <div className = "news_add_block">
+                    <News/>
 
+                 </div>     
                   <div className="news_admin">
-                        {
-                            state === 7 ? 
+                                {
                                 news.map((n,index)=>(
                                     <div className = "one_admin_news">
                                         <h1>{n.title}</h1>
@@ -588,11 +593,15 @@ function AdminPage() {
                                         </div>
                                         <i class="fas fa-minus-circle" onClick = {(i)=>DeleteNewsClick(i,n.id)}></i>   
                                     </div>     
-                                )): <h1></h1>                
-                        }
+                                ) 
+                                )}             
+                        
 
                     </div>
+                    </div> 
+                    ) : <></>   
 
+                    }
                     <div className = "slider_all">
                     <div className = "slider_image">
                         {   
