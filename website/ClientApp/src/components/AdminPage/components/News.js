@@ -102,8 +102,8 @@ function News() {
   }
 
   return (
-    <div className="news_admin">
-        <div className="container_all">
+    
+        
           <div className="add_news">
               <h1>Нова Новина</h1>
               <div className="info">
@@ -122,9 +122,9 @@ function News() {
                   <button onClick={(i)=>imgselectHendler(i)} >Виберіть файл</button>
           </div>
           
-        </div>
         
-    </div>
+        
+    
   );
 }
 

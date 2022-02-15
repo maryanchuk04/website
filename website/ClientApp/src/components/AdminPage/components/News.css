@@ -6,10 +6,10 @@
     background: radial-gradient(circle, rgba(222,98,98,1) 0%, rgba(255,184,140,1) 100%);
     padding: 10px 10px 10px 10px ;
     border-radius: 10px;
-    margin: 10px auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+
+    margin: 20px auto;
+    display: grid;
+
 }
 .news_admin .container_all{
     display: flex;
@@ -251,4 +251,9 @@
 .info .text{
     width: fit-content !important ;
      height: fit-content !important;
+}
+
+.news_add_block{
+display: grid;
+place-items: center;
 }
