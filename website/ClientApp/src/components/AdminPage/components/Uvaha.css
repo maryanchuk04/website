@@ -2,8 +2,11 @@
    height: fit-content;
    display: flex;
    flex-direction: column;
-   background-color: rgb(122, 175, 245); 
+   background-color: rgb(182, 209, 243); 
    border-radius: 10px;
+   width: 800px;
+   padding: 20px;
+   margin: 20px auto;
 }
 .one_uvaha button{
     margin: 0 auto;
@@ -17,6 +20,7 @@
     margin: 20px auto;
     width: 500px;
 }
+
 .add_warning input {
     
     margin:20px 0;
@@ -43,4 +47,5 @@
     margin:0 auto;
     width: 70%;
     border-radius:10px;
+
 }

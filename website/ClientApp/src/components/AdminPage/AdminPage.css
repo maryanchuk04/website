@@ -402,62 +402,54 @@
    background-color: violet;
    transition: 0.7s;
 }
-/*                 <div className="admin_page1">
-                        <div
-					          class="background_page1"
-					           style={{
-					        	display: showPage1 == 1 ? "block" : "none"                     
-		                        }}>
-                                <div id="cancel-btn" ><i className="fas fa-times" onClick={() => setShowPage1(0)}></i></div>
-                            <div className="admin_page1_info">
-                                <input type="text"  className="elemen_admin  elemen_admin_input" placeholder="Заголовок"/>
-                                <textarea name="text" className="elemen_admin elemen_admin_textarea" id=""  placeholder="Текст"></textarea>
-                             </div>
-                             <div className="admin_page1_buttons">
-                                <input type="file" />
-                                <button>Зберегти</button>
-                            </div>
-                        </div>
-                  </div>
-                  <div className="admin_page2">
-                        <div
-					          class="background_page2"
-					           style={{
-					        	display: 
-					        		showPage1 == 2 ? "block" : "none"        
-					        }}>
-                                <div id="cancel-btn" ><i className="fas fa-times" onClick={() => setShowPage1(0)}></i></div>
-                            <div className="admin_page2_info">
-                                <input type="text"  className="elemen_admin  elemen_admin_input" placeholder="Заголовок"/>
-                                <textarea name="text" className="elemen_admin elemen_admin_textarea" id=""  placeholder="Текст"></textarea>
-                                <input type="text"  className="elemen_admin  elemen_admin_input" placeholder="Посилання"/>
-                             </div>
-                             <div className="admin_page2_buttons">
-                                
-                                <button>Зберегти</button>
-                            </div>
-                        </div>
-                  </div>
-                 */
 
-                 /* <div className="buttons">
-                            <div className="button_admin">
-                                    <div
-                                    class="background"
-                                    style={{
-                                        transform: `scale(${
-                                            showForm ? 1 : 0
-                                        })`,
-                                    }}>    
-                                  <div id="cancel-btn" ><i className="fas fa-times" onClick={() => setShowForm(false)}></i></div>
-                                  <div className="popup">
-                                   <div className="sub_buttons">
-                                        <button onClick={() => setShowPage1(1)} >1</button>
-                                        <button onClick={() => setShowPage1(2)} >2</button>
-                                        <button onClick={() => setShowPage1(3)} >3</button>
-                                    </div>
-                                </div>       
-                            </div>
-                             <button className="butn" onClick={(i) => AddClick(i)}> Додати</button>
 
-                         </div>*/
+.admin_employers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.admin_employers .one_admin_emp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(46, 170, 170);
+    width: 500px;
+    margin: 20px;
+    align-items: center;
+}
+
+.admin_employers .one_admin_emp button{
+    border-radius:5px ;
+}
+.forma_add_emp{
+    display: flex;
+    justify-content: center;
+}
+.forma_add_emp form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px auto;
+    width: 500px;
+}
+.forma_add_emp form input {
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 5px;
+    
+}
+.forma_add_emp form input::placeholder{
+    color:grey;
+}
+
+.forma_add_emp form button{
+    width: 200px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+

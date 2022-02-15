@@ -30,7 +30,16 @@ function AdminPage() {
     const [gallery,setGallery] = useState([]);
     const [opp,setOpp] = useState([])
     const [suboppfield,setSubOppField] = useState("");
-    
+    const [obj,setObj] = useState({});
+    //для форми колектив
+    const [fullname,setFullname] = useState("");
+    const [,] = useState("");
+    const [,] = useState("");
+    const [,] = useState("");
+    const [,] = useState("");
+
+
+
     var setBarabulya = ""
     var bodyFormData = new FormData();
 
@@ -373,7 +382,13 @@ function AdminPage() {
             }
         }   
     }
-
+    const EmpSubClick=(i,id)=>{
+        axios.get(`https://bsite.net/IvanovIvan/employerspage/${id}`).then((result)=>{
+            console.log(result.data);
+            setObj(result.data);
+        })
+        setState(15);  
+    }
     const DeletePage = (i,id)=>{
         switch(state){
             case 1: {
@@ -439,6 +454,8 @@ function AdminPage() {
             setLinkres(res.data)
           })
     }
+
+
     //1 - СТудент 
     //2 - abiturient
     //3 - speciality
@@ -475,6 +492,17 @@ function AdminPage() {
              window.location.reload()
             
         })
+    }
+
+    const DeleteEmployer = (i,id,empid)=>{
+        axios.delete(`https://bsite.net/IvanovIvan//employerspage/deleteemployer/${id}/${empid}`).then((result)=>{
+            console.log(result.data);
+            if (result.status == 200)
+                window.location.reload();
+        })
+    }
+    const SubmitFormEmp = (i)=>{
+
     }
     return (
         <div className = "">
@@ -525,8 +553,7 @@ function AdminPage() {
                                 {
                                     state ===4 ?
                                     employers.map((s,index)=>(<div>
-
-                                        <li  >{s.name}</li>
+                                        <li onClick={(i)=>EmpSubClick(i,s.id)}>{s.name}</li>
                                         </div> )): <li></li>
                                 }
                                 {
@@ -703,6 +730,32 @@ function AdminPage() {
                         state === 9 ? (
                            <Uvaha/>
                         ):<></>
+                    }
+                    {
+                        state === 15  ? (
+                            <div className = "admin_employers"> 
+                                <div className="forma_add_emp">
+                                    <form onSubmit={(i)=>SubmitFormEmp(i)}>
+                                        <input type="text" placeholder = "Повне ім`я" required/>
+                                        <input type="text" placeholder = "Посада" required/>
+                                        <input type="text" placeholder = "Кваліфікація"/>
+                                        <input type="text" placeholder = "Номер телефону"/>
+                                        <input type="text" placeholder = "Предмети"/>
+                                        <input type="file" />
+                                        <button type="submit">Додати</button>
+                                    </form>
+                                </div>
+                            { obj.employers?.map((e,index)=>(
+                                <div className="one_admin_emp">
+                                <h2>{e.full_name}</h2>
+                                <p>{e.posada}</p>
+                                <button onClick={(i)=>DeleteEmployer(i,obj.id,e.id)}>Видалити</button>
+                                </div>
+                            ))
+                               
+                            }
+                           </div>
+                        ) : <></>
                     }
                     
                 </div>
