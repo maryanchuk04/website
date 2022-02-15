@@ -66,16 +66,14 @@ function Uvaha() {
        
     }
 
-    const WarningChangeFile = (i) =>{
 
-    } 
   return (
     <div>
         <div className="add_warning">
             <form onSubmit = {(i)=> SubmitAdd(i,title,short,link,ImageLink)}>
-            <input type = "text" onChange ={(i)=>{setTitle(i.target.value)} } value={title} placeholder = "Заголовок"/>
-            <input type = "text" onChange ={(i)=>{setLink(i.target.value)} } value={link}  placeholder = "Посилання"/>
-            <textarea onChange={(i)=>setShort(i.target.value)} value = {short}  placeholder = "Текст"></textarea>
+            <input type = "text" onChange ={(i)=>{setTitle(i.target.value)} } value={title} placeholder = "Заголовок" required/>
+            <input type = "text" onChange ={(i)=>{setLink(i.target.value)} } value={link}  placeholder = "Посилання" />
+            <textarea onChange={(i)=>setShort(i.target.value)} value = {short}  placeholder = "Текст" required></textarea>
             <input type="file" onChange = {(i)=>handleFileSelected(i)}/>
             <button type = "submit">Додати</button>
             </form>
