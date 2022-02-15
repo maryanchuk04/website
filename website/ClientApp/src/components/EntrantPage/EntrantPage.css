@@ -17,12 +17,14 @@
     margin: 0 auto;
 }
 
-.entrant_info img{
+.entrant .entrant_image{
+    padding: 0;
  width: 90%;
- height: 70vh;
+ 
  object-fit: contain;
- margin: 20px;
+ margin: 20px auto;
  display: block;
+ border-bottom:2px solid #424245;
 }
 
 .entrant_text_info{
@@ -63,7 +65,20 @@
 .vuprobuvannya h2{
     margin: 20px;
 }
-
+.konkurs_link{
+   
+    opacity:0.6;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.konkurs_link img{
+    height: 120px;
+    object-fit: contain;
+}
+.konkurs_link:hover{
+    opacity:1;
+}
 
 @media (max-width:1025px){
     
@@ -81,11 +96,11 @@
         margin: 0 auto;
     }
     
-    .entrant_info img{
+    .entrant_image{
      width: 90%;
-     height: 60vh;
+     
      object-fit: contain;
-     margin: 20px;
+     margin: 20px auto;
      display: block;
     }
     
@@ -106,7 +121,10 @@
         font-style: italic;
         margin-left: 40px;
     }
-    
+    .konkurs_link img{
+        height: 100px;
+        object-fit: contain;
+    }
 }
 
 @media (max-width:769px){
@@ -125,11 +143,11 @@
         margin: 0 auto;
     }
     
-    .entrant_info img{
+    .entrant_image{
      width: 90%;
-     height: 60vh;
+    
      object-fit: contain;
-     margin: 20px;
+     margin: 20px auto;
      display: block;
     }
     
@@ -151,7 +169,20 @@
         font-style: italic;
         margin-left: 25px;
     }
-    
+    .entrant .entrant_image{
+        padding: 0;
+     width: 90%;
+     
+     object-fit: contain;
+     margin: 20px;
+     display: block;
+     border-bottom:2px solid #424245;
+    }
+
+    .konkurs_link img{
+        height: 80px;
+        object-fit: contain;
+    }
 }
 
 @media (max-width:426px){
@@ -167,15 +198,20 @@
     }
     
     
-    .entrant_info img{
+    .entrant_image{
      width: 90%;
-     height: 60vh;
+    
      object-fit: contain;
-     margin: 10px;
+     margin: 10px auto;
      display: block;
     }
     
-  
+    .konkurs_link{
+        height: 70px;
+       
+        display: grid;
+        place-items: center;
+    }
     .entrant_text_info ul {
         display: flex;
         flex-direction: column;
@@ -193,10 +229,24 @@
         font-style: italic;
         margin-left: 10px;
     }
+    .entrant .entrant_image{
+        padding: 0;
+     width: 90%;
+     
+     object-fit: contain;
+     margin: 20px;
+     display: block;
+     border-bottom:1px solid #424245;
+    }
+
+    .konkurs_link img{
+        height: 70px;
+        object-fit: contain;
+    }
     
 }
 
-@media (max-width:426px){
+@media (max-width:376px){
     
     
     .entrant_title{
@@ -209,11 +259,11 @@
     }
     
     
-    .entrant_info img{
+    .entrant_image{
      width: 90%;
-     height: 60vh;
+     
      object-fit: contain;
-     margin: 10px;
+     margin: 10px auto;
      display: block;
     }
     
@@ -235,5 +285,8 @@
         font-style: italic;
         margin-left: 0;
     }
-    
+    .konkurs_link img{
+        height: 65px;
+        object-fit: contain;
+    }
 }

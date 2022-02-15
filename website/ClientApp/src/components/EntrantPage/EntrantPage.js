@@ -22,26 +22,14 @@ function EntrantPage() {
   return (
   <div className = 'entrant'>
     <div className="entrant_title">
-      <h1>{info.title}</h1>
+      <h1>Абітурієнту</h1>
     </div>
     <div className="container_all">
+      
+          <img className="entrant_image" src="https://i.ibb.co/D1ScHfN/image.png"/> 
        
-          <img src={`data:image/gif;base64,${info.image}`}/> 
-        
-        <div className="entrant_text_info">
-        <ul> 
-          <h1>Документи для вступу</h1>
-            {info?.documents?.map((i,index)=>(
-              <li>{i}</li>
-            ))}
-        </ul>
-          <div className="rules"> 
-              <a href = {info.pdf_link} target="_blank">Правила прийому 2022</a>
-          </div>
-          <div className="vuprobuvannya">
-            <h2>Вступні випробування!</h2>
-            <p>{info.vuprobuvannya}</p>
-          </div>
+        <div className="konkurs_link">
+          <a href="https://vstup.osvita.ua/" target="_blank"><img src="https://designcollege.cv.ua/wp-content/uploads/2021/04/KONKURS.png" alt="" /></a>
         </div>
     </div>
   </div>

@@ -65,7 +65,7 @@ Link{
   background: #025677;
 }
 .one ul li:hover .submenu {
-  display: block;
+  display: block !important;
   transition: 2s;
 }
 .one  ul li:hover {
@@ -110,7 +110,7 @@ Link{
   }
   .one .submenu {
       transition: 5s;
-    display: none;
+    display: none !important;
     border-radius: 10px;
     background: #025677;
   }
@@ -276,7 +276,7 @@ Link{
  }
 }
 @media (max-width: 990px) {
-  .container_all ul li{
+  .menu_header .container_all ul li{
     color: black;
      padding: 0 10px;
      list-style: none;
@@ -287,12 +287,12 @@ Link{
   width: 90%;
 }
 }
-@media (max-width: 990px) {
-  .container_all ul li{
+@media (max-width: 892px) {
+  .menu_header .container_all ul li{
     color: black;
-     padding: 0 5px;
+     padding: 0 7px;
      list-style: none;
-     font-size:15px;
+     font-size:14px;
      margin: 0;
  }
  .menu_header .container_all{
