@@ -102,6 +102,29 @@ namespace website.Controllers
             _employersPage.Save(st);
             return Ok(st);
         }
+        [HttpGet("/employerspage/admin")]
+        public ActionResult GetAdmin()
+        {
+           return Ok(_employersPage.GetByID("620299ddcd09eef769827bec"));
+        }
+        [HttpGet("/employerspage/not")]
+        public ActionResult GetAdmin2()
+        {
+            return Ok(_employersPage.GetByID("620299e3cd09eef769827bf3"));
+        }
+
+        [HttpGet("/employerspage/gosp")]
+        public ActionResult GetAdmin3()
+        {
+            return Ok(_employersPage.GetByID("620299f7cd09eef769827bfc"));
+        }
+        [HttpGet("/employerspage/ped")]
+        public ActionResult GetAdmin4()
+        {
+            return Ok(_employersPage.GetByID("62029a09cd09eef769827c01"));
+        }
+
+
 
 
 

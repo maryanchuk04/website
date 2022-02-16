@@ -11,6 +11,7 @@
 .entrant_title h1{
     font-size: 46px;
     color:red;
+    text-shadow: 3px 3px 0px rgba(72, 189, 183, 0.835);
 
 }
 .entrant_info{
@@ -36,10 +37,29 @@
     flex-direction: column;
     margin: 20px;
 }
+.entrant_page_text{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 ;
+}
+
+.entrant_page_text h1{
+    text-align: center;
+    text-shadow: 3px 3px 0px rgba(72, 189, 183, 0.835);
+    font-size: 50px ;
+}
+.entrant_page_text .picture{
+    display: flex;
+    justify-content: space-between;
+}
+.entrant_page_text .picture img{
+    margin: 20px 0 ;
+    width: 600px;
+    height: 800px;
+}
 
 .entrant_text_info ul h1{
-    text-shadow: 3px 3px 0px rgba(136, 178, 218, 0.835);
-    font-size: 50px ;
+  
 }
 .entrant_text_info ul li{
     list-style: circle;
@@ -66,19 +86,43 @@
     margin: 20px;
 }
 .konkurs_link{
-   
-    opacity:0.6;
+    align-items: center;  
     width: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: space-evenly;
 }
 .konkurs_link img{
     height: 120px;
-    object-fit: contain;
+    object-fit: contain; 
+    opacity:0.6;
 }
-.konkurs_link:hover{
+.konkurs_link img:hover{
     opacity:1;
 }
+.entrant h3{
+    text-align: center;
+    margin: 40px 0;
+
+}
+
+.konkurs_link .ulli ul{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    
+}
+.konkurs_link .ulli ul p{
+    
+    font-size: 30px;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+
+.konkurs_link .ulli ul li{
+    opacity:1;
+    font-size: 20px;
+    list-style: circle;
+}
+
 
 @media (max-width:1025px){
     

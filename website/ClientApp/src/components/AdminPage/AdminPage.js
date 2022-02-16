@@ -87,7 +87,7 @@ function AdminPage() {
     })
 
     const DeleteNewsClick=((i,id)=>{
-        axios.get(`http://localhost:5000/news/delete/${id}`).then((result)=>{
+        axios.get(`https://bsite.net/IvanovIvan/news/delete/${id}`).then((result)=>{
             result.status==200 ? window.location.reload()
                 : alert("Сталась помилка, повторіть будь ласка пізніше");  
         })
@@ -169,11 +169,9 @@ function AdminPage() {
         setShowChudo(false);
         setElement(false);
         var x = document.getElementById("add");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
+        
             x.style.display = "none";
-         }
+        
     })   
 
     const SliderClick = ((e)=>{
@@ -188,11 +186,9 @@ function AdminPage() {
         setShowChudo(false);
         setElement(false);
         var x = document.getElementById("add");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
+       
             x.style.display = "none";
-         }
+        
     })
 
     const HistoryClick = ((e)=>{
@@ -496,8 +492,8 @@ function AdminPage() {
     }
 
     const DeleteEmployer = (i,id,empid)=>{
-        axios.delete(`http://localhost:5000/employerspage/deleteemployer/${id}/${empid}`).then((result)=>{
-            console.log(`http://localhost:5000/employerspage/deleteemployer/${id}/${empid}`)
+        axios.delete(`https://bsite.net/IvanovIvan/employerspage/deleteemployer/${id}/${empid}`).then((result)=>{
+            console.log(`https://bsite.net/IvanovIvan/employerspage/deleteemployer/${id}/${empid}`)
             console.log(result.data);
             
         })
@@ -608,7 +604,7 @@ function AdminPage() {
                                     <div className = "qwert">
                                         <li onClick = {(i)=>clickElement(i,"student",s.id)}>{s.name}</li>
                                         <input type="number" placeholder = {s.number} onChange={(i)=>setOne(i.target.value)}/>
-                                        <button onClick = {(i)=>doneNumeration(i,one,s.id)}>Зберегти нумерацію</button>
+                                        <button onClick = {(i)=>doneNumeration(i,one,s.id)}>Зберегти</button>
                                     </div>
                                     )):<li></li>
                                 
@@ -619,7 +615,7 @@ function AdminPage() {
                                     <div className = "qwert">
                                         <li onClick = {(i)=>clickElement(i,"speciality",s.id)}>{s.name}</li>
                                         <input type="number" placeholder = {s.number} onChange={(i)=>setTwo(i.target.value)}/>
-                                        <button onClick = {(i)=>doneNumeration(i,two,s.id)}>Зберегти нумерацію</button>
+                                        <button onClick = {(i)=>doneNumeration(i,two,s.id)}>Зберегти</button>
                                         
                                     </div>
                                     )
@@ -639,7 +635,7 @@ function AdminPage() {
                                     <div className = "qwert">
                                         <li onClick = {(i)=>clickElement(i,"collegeactivity",a.id)}>{a.name}</li>
                                         <input type="number" placeholder = {a.number} onChange={(i)=>setFour(i.target.value)} />
-                                        <button onClick = {(i)=>doneNumeration(i,four,a.id)}>Зберегти нумерацію</button>
+                                        <button onClick = {(i)=>doneNumeration(i,four,a.id)}>Зберегти</button>
                                     </div>
                                     
                                     )) : <li></li>                         
@@ -651,8 +647,7 @@ function AdminPage() {
                                         <li onClick = {(i)=>clickElement(i,"history",h.id)}>{h.name}</li>
                                         <input type="number" placeholder = {h.number} onChange={(i)=>setFive(i.target.value)}/>
                                        
-                                       
-                                        <button onClick = {(i)=>doneNumeration(i,five,h.id)}>Зберегти нумерацію</button>
+                                        <button onClick = {(i)=>doneNumeration(i,five,h.id)}>Зберегти</button>
                                     </div>)) : <></>
                                 }
                                
