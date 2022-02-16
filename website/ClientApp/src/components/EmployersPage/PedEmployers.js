@@ -28,7 +28,7 @@ function PedEmployers() {
                     {employers?.map((e,index)=>
                     <div className="emp">
                         <div className="emp_image">
-                            <img src={`data:image/gif;base64,${e.image}`}  alt="" />
+                            <img src={e.image}  alt="" />
                         </div>
                         <div className="emp_info">
                           <h1>{e.full_name}</h1>
