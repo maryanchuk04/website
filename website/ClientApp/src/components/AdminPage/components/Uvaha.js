@@ -22,7 +22,7 @@ function Uvaha() {
         bodyFormData.append('file',files);
         axios({
             method: 'POST',
-            url : "http://localhost:5000/upload",
+            url : "https://bsite.net/IvanovIvan/upload",
             data: bodyFormData,
             headers: {'Content-Type': 'multipart/form-data' }
           }
@@ -35,7 +35,7 @@ function Uvaha() {
 
 
     const DeleteWarning = (i,id)=>{
-        axios.delete(`http://localhost:5000/advertisement/delete/${id}`).then((result)=>{
+        axios.delete(`https://bsite.net/IvanovIvan/advertisement/delete/${id}`).then((result)=>{
             console.log(result.data);
             if(result.status == 200 )
                 window.location.reload();
@@ -51,7 +51,7 @@ function Uvaha() {
         console.log(link);
         console.log(image);
 
-        axios.post("http://localhost:5000/advertisement/add",{
+        axios.post("https://bsite.net/IvanovIvan/advertisement/add",{
             title : title,
             short_text : short,
             link : link,
