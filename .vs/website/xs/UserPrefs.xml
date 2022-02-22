@@ -1,14 +1,17 @@
 ﻿<Properties StartupConfiguration="{9F1C5EE6-A934-405A-B32E-BF6CF108BF56}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mac/Desktop/website/website/Controllers/EmployerController.cs" relfile="website/Controllers/EmployerController.cs" line="26" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.website PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="website/Controllers/AdvertisementController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="website/Controllers/UploudFile.cs">
     <Files>
       <File FileName="website/Controllers/EmployerController.cs" Line="43" Column="9" IsPinned="True" />
       <File FileName="website/appsettings.json" Line="1" Column="1" IsPinned="True" />
-      <File FileName="website/Controllers/UploudFile.cs" Line="26" Column="70" IsPinned="True" />
-      <File FileName="website/Controllers/SliderController.cs" Line="1" Column="1" IsPinned="True" />
+      <File FileName="website/Controllers/UploudFile.cs" Line="30" Column="36" IsPinned="True" />
+      <File FileName="website/Controllers/SliderController.cs" Line="56" Column="89" IsPinned="True" />
       <File FileName="website/Models/Opp.cs" Line="1" Column="1" IsPinned="True" />
       <File FileName="website/Controllers/OppController.cs" Line="1" Column="1" />
       <File FileName="website/Startup.cs" Line="1" Column="1" />
@@ -17,8 +20,8 @@
       <File FileName="website/Models/Speciality.cs" Line="1" Column="1" />
       <File FileName="website/Models/Number.cs" Line="1" Column="1" />
       <File FileName="website/Controllers/StudentController.cs" Line="1" Column="1" />
-      <File FileName="website/Controllers/GalleryСontroller.cs" Line="1" Column="1" />
-      <File FileName="website/Controllers/NewsController.cs" Line="1" Column="1" />
+      <File FileName="website/Controllers/GalleryСontroller.cs" Line="46" Column="53" />
+      <File FileName="website/Controllers/NewsController.cs" Line="71" Column="50" />
       <File FileName="website/Controllers/AdvertisementController.cs" Line="1" Column="1" />
       <File FileName="website/Controllers/EmployersPageController.cs" Line="122" Column="38" />
       <File FileName="website/Models/CollegeActivity.cs" Line="1" Column="1" />
@@ -39,9 +42,7 @@
             <Node name="website" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="ClientApp" expanded="True" />
-              <Node name="Controllers" expanded="True">
-                <Node name="AdvertisementController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True" />
               <Node name="Properties" expanded="True" />
@@ -55,9 +56,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/mac/Desktop/website/website/Controllers/EmployerController.cs" relfile="website/Controllers/EmployerController.cs" line="26" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

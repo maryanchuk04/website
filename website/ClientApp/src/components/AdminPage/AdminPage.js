@@ -213,6 +213,7 @@ function AdminPage() {
         setShowChudo(true);
         setLinkres("");
         console.log(state)
+
     })
     
     const seterForHTML=(i)=>{
@@ -382,6 +383,7 @@ function AdminPage() {
         }   
     }
     const EmpSubClick=(i,id)=>{
+        setShowChudo(false)
         axios.get(`https://bsite.net/IvanovIvan/employerspage/${id}`).then((result)=>{
             console.log(result.data);
             setObj(result.data);
@@ -450,7 +452,8 @@ function AdminPage() {
                 console.log();
                 console.log(result.data);
                 setLinkres(result.data)
-                imagelinkemp = res.data;     
+                imagelinkemp = result.data;  
+                   
               })
     }
 
@@ -519,11 +522,10 @@ function AdminPage() {
         }).then((result)=>{
             console.log(result.data)
             
-           // if(result.status ==200)
-             //   window.location.reload();
-            
-           // else 
-             //alert("Помилка")
+            if(result.status ==200)
+               window.location.reload();
+            else 
+             alert("Помилка")
         })
     }
 
@@ -608,10 +610,8 @@ function AdminPage() {
                                         <input type="number" placeholder = {s.number} onChange={(i)=>setOne(i.target.value)}/>
                                         <button onClick = {(i)=>doneNumeration(i,one,s.id)}>Зберегти</button>
                                     </div>
-                                    )):<li></li>
-                                
-                                    
-                                }
+                                    )):<li></li>    
+                                    }
                                     {state === 2 ? 
                                     speciality.map((s, index)=>(
                                     <div className = "qwert">
@@ -737,7 +737,7 @@ function AdminPage() {
                                 <button  id = "slideradd" onClick={(i)=>SliderAddClick(i) }>Додати</button>
                                 </div>
                             </div>
-                            ) : <h1></h1>    
+                            ) : <></>    
                                   
                         }                   
                         </div>
@@ -752,7 +752,7 @@ function AdminPage() {
                             <SpecialEditor text={res.page} setBarabulya2 = {setBarabulya2}/>
                         </div>
                         )
-                         : <p></p>
+                         : <></>
                     }
                     {
                         state === 12 ? ( 
@@ -813,6 +813,7 @@ function AdminPage() {
                     }
                     {
                         state === 15  ? (
+                            
                             <div className = "admin_employers"> 
                                 <div className="forma_add_emp">
                                     <form onSubmit={(i)=>SubmitFormEmp(i,obj.id,fullname,posada,kval,number,pred)}>
@@ -821,12 +822,13 @@ function AdminPage() {
                                         <input type="text" placeholder = "Кваліфікація" onChange ={(i)=>setKval(i.target.value)} value ={kval}/>
                                         <input type="text" placeholder = "Номер телефону" onChange ={(i)=>setNumber(i.target.value)} />
                                         <input type="text" placeholder = "Предмети" onChange ={(i)=>setPred(i.target.value)} value ={pred}/>
-                                        <input type="file" onChange = {(i)=>handleFileSelected(i)} />
-                                        <button onClick ={(i)=>file(i)}>Додати фото</button>
+                                        <input type="file" onChange = {(i)=>file(i)} />
+                    
                                         <button type="submit">Додати</button>
                                     </form>
                                 </div>
                             { 
+                            
                                 obj.employers?.map((e,index)=>(
                                 <div className="one_admin_emp">
                                     <h2>{e.full_name}</h2>
