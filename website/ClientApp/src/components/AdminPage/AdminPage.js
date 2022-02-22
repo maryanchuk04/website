@@ -5,7 +5,10 @@ import Chudo from './Chudo'
 import News from './components/News'
 import SpecialEditor from './components/SpecialEditor'
 import Uvaha from './components/Uvaha'
+var imagelinkemp=""
+
 function AdminPage() {
+    
     const [history,setHistory] = useState([])
     const [student,setStudent] = useState([])
     const [news,setNews] = useState([])
@@ -31,7 +34,7 @@ function AdminPage() {
     const [opp,setOpp] = useState([])
     const [suboppfield,setSubOppField] = useState("");
     const [obj,setObj] = useState({});
-    const [imagelinkemp,setImagelinkemp] = useState("");
+    //const [imagelinkemp,setImagelinkemp] = useState("");
 
     //для форми колектив
     const [fullname,setFullname] = useState("");
@@ -438,18 +441,17 @@ function AdminPage() {
         setFile(files);
         console.log("Файл :",getFile)
         bodyFormData.append('file',files);
-        axios({
-            method: 'POST',
-            url : "https://bsite.net/IvanovIvan/upload",
-            data: bodyFormData,
-            headers: {'Content-Type': 'multipart/form-data' }
-          }
-          ).then((res)=>{
-            console.log();
-            console.log(res.data);
-            setLinkres(res.data)
-            setImagelinkemp(res.data);
-          })
+          axios({
+                method: 'POST',
+                url : "https://bsite.net/IvanovIvan/upload",
+                data: bodyFormData,
+                headers: {'Content-Type': 'multipart/form-data' }
+              }).then((result)=>{
+                console.log();
+                console.log(result.data);
+                setLinkres(result.data)
+                imagelinkemp = res.data;     
+              })
     }
 
 
@@ -495,7 +497,10 @@ function AdminPage() {
         axios.delete(`https://bsite.net/IvanovIvan/employerspage/deleteemployer/${id}/${empid}`).then((result)=>{
             console.log(`https://bsite.net/IvanovIvan/employerspage/deleteemployer/${id}/${empid}`)
             console.log(result.data);
-            
+            if(result.status ==200){
+                window.location.reload();
+            }
+            else alert("Помилка")
         })
     }
 
@@ -503,8 +508,7 @@ function AdminPage() {
     const SubmitFormEmp = (i,id,fullname,posada,kval,number,pred)=>{
         i.preventDefault()
         bodyFormData.append('file',getFile);
-        file(i);
-
+        
         axios.post(`https://bsite.net/IvanovIvan/employerspage/addemployer/${id}`,{
             full_name : fullname,
             posada : posada,
@@ -513,15 +517,13 @@ function AdminPage() {
             lesson : pred,
             image : imagelinkemp
         }).then((result)=>{
-
             console.log(result.data)
             
-            /*
-            if(result.status ==200)
-               // window.location.reload();
+           // if(result.status ==200)
+             //   window.location.reload();
             
-            else 
-             alert("Помилка")*/
+           // else 
+             //alert("Помилка")
         })
     }
 
@@ -817,9 +819,10 @@ function AdminPage() {
                                         <input type="text" placeholder = "Повне ім`я" required onChange ={(i)=>setFullname(i.target.value)} value ={fullname}/>
                                         <input type="text" placeholder = "Посада" required onChange ={(i)=>setPosada(i.target.value)} value ={posada}/>
                                         <input type="text" placeholder = "Кваліфікація" onChange ={(i)=>setKval(i.target.value)} value ={kval}/>
-                                        <input type="text" placeholder = "Номер телефону" onChange ={(i)=>setNumber(i.target.value)} value ={number}/>
+                                        <input type="text" placeholder = "Номер телефону" onChange ={(i)=>setNumber(i.target.value)} />
                                         <input type="text" placeholder = "Предмети" onChange ={(i)=>setPred(i.target.value)} value ={pred}/>
                                         <input type="file" onChange = {(i)=>handleFileSelected(i)} />
+                                        <button onClick ={(i)=>file(i)}>Додати фото</button>
                                         <button type="submit">Додати</button>
                                     </form>
                                 </div>

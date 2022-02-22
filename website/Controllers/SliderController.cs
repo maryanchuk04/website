@@ -53,7 +53,7 @@ namespace website.Controllers
             try
             {
                 FtpWebRequest request =
-                (FtpWebRequest)WebRequest.Create("ftp://chdkt.connect.cv.ua/image/sliderimage/" + file.FileName);
+                (FtpWebRequest)WebRequest.Create("ftp://chdkt.connect.cv.ua/image/slider/" + file.FileName);
                 request.Credentials = new NetworkCredential("ftp_chdkt", "1qA2wS3eD");
                 request.Method = WebRequestMethods.Ftp.UploadFile;
 
@@ -62,7 +62,7 @@ namespace website.Controllers
                     file.CopyTo(ftpStream);
                 }
                 Slider slider = new Slider();
-                slider.image = "http://chdkt.connect.cv.ua/image/sliderimage/" + file.FileName;
+                slider.image = "http://chkbht.cv.ua/image/slider/" + file.FileName;
                 _slider.Insert(slider);
                 return Ok(slider);
             }

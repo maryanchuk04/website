@@ -51,22 +51,16 @@ function App() {
           <Route path = '/achivement' exact element={<React.Fragment><Header/><Menu/><AchivementPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality' exact element={<React.Fragment><Header/><Menu/><SpecialityPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality/cooking' exact element={<React.Fragment><Header/><Menu/><CookingPage/><Footer/></React.Fragment>} />
-          
           <Route path = '/speciality/oblik' exact element={<React.Fragment><Header/><Menu/><OblikPage/><Footer/></React.Fragment>} />
           <Route path = '/speciality/pidpruyemstvo' exact element={<React.Fragment><Header/><Menu/><PidpruyemstvoPage/><Footer/></React.Fragment>} />
           <Route path = '/student/practice' exact element={<React.Fragment><Header/><Menu/><PracticePage/><Footer/></React.Fragment>} />
           <Route path = '/student/callshedule' exact element={<React.Fragment><Header/><Menu/><CallShedulePage/><Footer/></React.Fragment>} />
           <Route path = '/employers/admin' exact element = {<React.Fragment><Header/><Menu/><EmployersPage/><Footer/></React.Fragment>}/>
-
           <Route path = '/employers/not' exact element = {<React.Fragment><Header/><Menu/><NotEmployers/><Footer/></React.Fragment>}/>
           <Route path = '/employers/ped' exact element = {<React.Fragment><Header/><Menu/><PedEmployers/><Footer/></React.Fragment>}/>
           <Route path = '/employers/gosp' exact element = {<React.Fragment><Header/><Menu/><GospEmployers/><Footer/></React.Fragment>}/>
-
-
-
           <Route path = "/news/:id" exact element ={<React.Fragment><Header/><Menu/><OneNewsPage/><Footer/></React.Fragment>}/>
           <Route path = "/:name/:id" exact element ={<React.Fragment><Header/><Menu/><Page/><Footer/></React.Fragment>}/>
-         
           <Route path = "/history/galery" exact element = {<React.Fragment><Header/><Menu/><Galery/><Footer/></React.Fragment>}/>
           <Route path = "/chudo" exact element = {<React.Fragment><Chudo/></React.Fragment>}/>
         </Routes>

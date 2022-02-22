@@ -43,7 +43,7 @@ namespace website.Controllers
                 {
                     file.CopyTo(ftpStream);
                 }
-                gallery.image = "http://chdkt.connect.cv.ua/image/gallery/" + file.FileName;
+                gallery.image = "http://chkbht.cv.ua/image/gallery/" + file.FileName;
                 _gallery.Insert(gallery);
                 return Ok(gallery);
             }
