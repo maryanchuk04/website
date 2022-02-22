@@ -53,12 +53,19 @@ function News() {
         console.log(res.data);
         setnews(res.data);
         console.log("news",news)
+        if(res.status ==200){
+          window.location.reload();
+        }
+        else{
+          alert("Виникла помилка!")
+        }
     }).catch(function (response) {
       console.log(response);
   });
     })
   }   
   }
+  /*
   const SaveClick = (e,id,image)=>{
     e.preventDefault();
     e.persist();
@@ -77,7 +84,7 @@ function News() {
       console.log(e);
     })   
     }
-  }
+  }*/
 
 
 

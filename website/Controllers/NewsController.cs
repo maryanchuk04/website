@@ -68,7 +68,7 @@ namespace website.Controllers
                 {
                     file.CopyTo(ftpStream);
                 }
-                news.image = "http://chdkt.connect.cv.ua/image/news/" + file.FileName;
+                news.image = "http://chkbht.cv.ua/image/news/" + file.FileName;
                 _news.Save(news);
                 return Ok(news);
             }

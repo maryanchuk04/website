@@ -27,7 +27,7 @@ namespace website.Controllers
                 {
                     file.CopyTo(ftpStream);
                 }
-                return Ok("http://chdkt.connect.cv.ua/userfiles/"+file.FileName);
+                return Ok("http://chkbht.cv.ua/userfiles/" + file.FileName);
             }
             catch(Exception e)
             {
