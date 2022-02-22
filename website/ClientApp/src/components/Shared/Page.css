@@ -96,11 +96,15 @@
 @media (max-width:2561px){
     
 
-   .page{
-       font-size: 25px;
+   .page ,.page ul,ol{
+       font-size: 25px !important;
    }
 
-   .page h1{
+   .page ul li ,ol li{
+    font-size: 25px !important;
+}
+  
+   .page h1,h4,h3,h2,h5,h6{
     font-size: 40px;
   }
 }
@@ -108,10 +112,13 @@
 @media (max-width:1441px){
    
 
-   .page{
-       font-size: 20px;
+   .page {
+       font-size: 20px  !important;
    }
-   .page h1{
+   .page ul li ,ol li{
+    font-size: 20px !important;
+}
+   .page h1,h4,h3,h2,h5,h6{
     font-size: 40px;
   }
 }
@@ -119,11 +126,13 @@
 @media (max-width:1025px){
     
 
-    .page{
-        font-size: 18px;
+    .page  {
+        font-size: 18px !important;
     }
-
-    .page h1{
+    .page ul li ,ol li{
+        font-size: 18px !important;
+    }
+    .page h1,h4,h3,h2,h5,h6{
         font-size: 30px;
       }
 }
@@ -136,11 +145,13 @@
         object-fit: contain;
         margin: 0 auto;
     }
-    .page{
-        font-size: 16px;
+    .page  {
+        font-size: 16px !important;
     }
-
-    .page h1{
+    .page .container_all  ul li ,ol li{
+        font-size: 16px !important;
+    }
+    .page h1,h4,h3,h2,h5,h6{
         font-size: 25px;
       }
 }
@@ -151,10 +162,15 @@
         width: 85% !important;
         margin: 0 auto;
     }
-    .page{
-        font-size: 13px;
+    .page {
+        font-size: 13px !important;
     }
-    .page h1{
+
+    .page ul li ,ol li{
+        font-size: 13px !important;
+    }
+    
+    .page h1,h4,h3,h2,h5,h6{
         font-size: 23px;
       }
 }
@@ -162,10 +178,13 @@
 @media (max-width:376px){
     
 
-    .page{
-        font-size: 12px;
+    .page {
+        font-size: 12px !important;
     }
-    .page h1{
+    .page ul li ,ol li{
+        font-size: 12px !important;
+    }
+    .page h1,h4,h3,h2,h5,h6{
         font-size: 20px;
       }
 }

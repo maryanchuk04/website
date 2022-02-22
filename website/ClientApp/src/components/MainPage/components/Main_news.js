@@ -24,13 +24,24 @@ function Main_news() {
                 <div className="info_news">
                       <div className="one_news_main">
                         <div className = "news_title_main" >
-                          <h3><Link key ={n.id} to = {`/news/${n.id}`}>{n.title}</Link></h3>
+                          <h3><Link key ={n.id} to = {`/news/${n.id}`}>
+                          {n.title.length >
+													40
+														? n.title.substr(
+																0,
+																40
+														  ) + "..."
+														: n.title}
+                          </Link></h3>
                           </div>
                           <div className="imagen">
                             <img src={n.image} alt={n.title} />
                           </div>
                           <div className="news_short_text_main">
-                            <p>{n.short_text}</p>
+                            <p>{n.short_text}
+                            
+                           
+                            </p>
                           </div> 
                         </div>
                     </div>
