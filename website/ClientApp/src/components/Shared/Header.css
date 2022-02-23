@@ -32,12 +32,7 @@
     height: 100%;
     width: 75%;
 }
-.container_all ul li{
-    padding: 0 10px;
-    list-style: none;
-    font-size:23px;
-    margin: 0;
-}
+
 .container_all nav{
     display: flex;
    height: 100%;
