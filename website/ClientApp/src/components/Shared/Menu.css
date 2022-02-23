@@ -9,7 +9,7 @@ Link{
   display: flex;
   justify-content: left;
 }
-.container_all ul li{
+.menu_header .container_all ul li{
    color: black;
     padding: 0 10px;
     list-style: none;
@@ -198,7 +198,7 @@ Link{
     padding: 0;
     
 }
-  .container_all ul li{
+.menu_header .container_all ul li{
     color: black;
      padding: 0 10px;
      list-style: none;
@@ -226,7 +226,7 @@ Link{
 }
 
 @media (max-width: 1216px) {
-  .container_all ul li{
+  .menu_header .container_all ul li{
     color: black;
      padding: 0 7px;
      list-style: none;
@@ -367,7 +367,7 @@ Link{
 @media (max-width: 426px) {
 	
   
-	.container_all ul li{
+	.menu_header .container_all ul li{
     color: black;
      padding: 0 10px;
      list-style: none;
@@ -400,7 +400,7 @@ Link{
 @media (max-width: 376px) {
 	
   
-	.container_all ul li{
+  .menu_header	.container_all ul li{
     color: black;
      padding: 0 10px;
      list-style: none;
