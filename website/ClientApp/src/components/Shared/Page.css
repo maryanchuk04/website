@@ -105,7 +105,7 @@
    .page h1{
     font-size: 40px;
   }
-<<<<<<< HEAD
+
   .page h2{
       font-size: 30px;
   }
@@ -115,7 +115,7 @@
   .page h4{
       font-size: 25px;
   }
-=======
+
 
   .page h2{
     font-size: 35px;
@@ -125,12 +125,10 @@
   }
 
   
->>>>>>> f6674833e385f4a6970ccde7d1b8dd5eebd6dc9d
+
 }
 
 @media (max-width:1441px){
-   
-
    .page {
        font-size: 20px  !important;
    }
@@ -168,14 +166,6 @@
         font-size: 18px
         
     }
-    .page h2{
-        font-size: 25px;
-      }
-      .page h3,h4,h5,h6{
-        font-size: 18px;
-      }
-
-
       }
 
       
@@ -195,7 +185,7 @@
         font-size: 16px !important;
     }
     .page h1{
-<<<<<<< HEAD
+
         font-size: 20px ;
       }
     .page h2,h3,h4{
@@ -204,20 +194,10 @@
     .page ul h1{
         font-size: 16px;
     }
-   
-=======
-        font-size: 25px;
-      }
-
       .page h2{
         font-size: 22px;
       }
-      .page h3,h4,h5,h6{
-        font-size: 16px;
-      }
-
-
->>>>>>> f6674833e385f4a6970ccde7d1b8dd5eebd6dc9d
+   
 }
 
 @media (max-width:426px){
@@ -236,14 +216,14 @@
     
     .page h1{
         font-size: 20px;
-      }
+    }
 
-      .page h2{
+    .page h2{
         font-size: 17px;
-      }
-      .page h3,h4,h5,h6{
+    }
+    .page h3,h4,h5,h6{
         font-size: 13px;
-      }
+    }
 }
 
 @media (max-width:376px){
