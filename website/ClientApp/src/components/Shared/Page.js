@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 import '../Shared/Page.css'
 import { Link } from 'react-router-dom';
 import "react-quill/dist/quill.core.css";
-//https://bsite.net/IvanovIvan/${name}/${id}
+
 function Page() {
   const [pageinfo, setPageinfo] = useState({});
   const [link,setLink] = useState([]);
@@ -20,7 +20,7 @@ function Page() {
           console.log(result.data.page);
           setPageinfo(result.data.page)
           
-          setAll(result.data)
+           setAll(result.data)
           console.log(result.data)
       })
   },[]);
@@ -28,9 +28,9 @@ function Page() {
 
   return (
         <div className = "page">
-            <h1 style={{textAlign:"center" ,margin : "20px"}}>{all.name}</h1>
+            <h1 style={{textAlign:"center" ,margin : "20px"}}>{all?.name}</h1>
             <div className="container_all">
-            <div className="view ql-editor" dangerouslySetInnerHTML={{ __html: pageinfo }}></div>
+            <div className="view ql-editor" dangerouslySetInnerHTML={{ __html: pageinfo }} ></div>
             </div>
             
         </div> 

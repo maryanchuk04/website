@@ -94,9 +94,7 @@
     
 }
 @media (max-width:2561px){
-    
-
-   .page ,.page ul,ol{
+   .page , .page ul,ol{
        font-size: 25px !important;
    }
 
@@ -109,6 +107,17 @@
   }
 
   .page h2{
+      font-size: 30px;
+  }
+  .page h3{
+      font-size: 20px;
+  }
+  .page h4{
+      font-size: 25px;
+  }
+
+
+  .page h2{
     font-size: 35px;
   }
   .page h3,h4,h5,h6{
@@ -116,11 +125,10 @@
   }
 
   
+
 }
 
 @media (max-width:1441px){
-   
-
    .page {
        font-size: 20px  !important;
    }
@@ -141,8 +149,6 @@
 }
 
 @media (max-width:1025px){
-    
-
     .page  {
         font-size: 18px !important;
     }
@@ -151,20 +157,23 @@
     }
     .page h1{
         font-size: 30px;
+
+    }
+    .page h2{
+        font-size: 25px;
+    }
+    .page h3,h4{
+        font-size: 18px
+        
+    }
       }
 
-      .page h2{
-        font-size: 25px;
-      }
-      .page h3,h4,h5,h6{
-        font-size: 18px;
-      }
-}
+      
+
 
 @media (max-width:769px){
     
     .page img{
-
         width: 100%;
         object-fit: contain;
         margin: 0 auto;
@@ -176,17 +185,19 @@
         font-size: 16px !important;
     }
     .page h1{
-        font-size: 25px;
-      }
 
+        font-size: 20px ;
+      }
+    .page h2,h3,h4{
+        font-size: 16px;
+    }
+    .page ul h1{
+        font-size: 16px;
+    }
       .page h2{
         font-size: 22px;
       }
-      .page h3,h4,h5,h6{
-        font-size: 16px;
-      }
-
-
+   
 }
 
 @media (max-width:426px){
@@ -205,14 +216,14 @@
     
     .page h1{
         font-size: 20px;
-      }
+    }
 
-      .page h2{
+    .page h2{
         font-size: 17px;
-      }
-      .page h3,h4,h5,h6{
+    }
+    .page h3,h4,h5,h6{
         font-size: 13px;
-      }
+    }
 }
 
 @media (max-width:376px){
