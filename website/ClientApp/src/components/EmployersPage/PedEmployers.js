@@ -35,7 +35,7 @@ function PedEmployers() {
                           <h2>{e.posada}</h2>
                           <h2>{e.status}</h2>
                           <h2>{e.lessons}</h2>
-                          <h2><span>Телефон: </span>{e.number}</h2>
+                          
                         </div>
                     </div>
                     
