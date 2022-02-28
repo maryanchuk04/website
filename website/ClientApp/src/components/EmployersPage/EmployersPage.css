@@ -19,6 +19,7 @@
 }
 
 .emp{
+    height: 100%;
     display: flex;
     margin: 40px;
     box-shadow: 20px 20px #5d9bc7;
@@ -26,6 +27,7 @@
     border:  2px solid rgb(0, 0, 0);  
 }
 .emp .emp_info{
+    width: 40%;
     margin: 10px;
 
 }
@@ -39,12 +41,15 @@
     font-weight: 700;
 }
 .emp .emp_image{
+    width: 60%;
     margin: 10px;
 }
-.emp_info span {
-   
-    
+
+.emp_image img{
+    width:100%;
+    height:100%;
 }
+
 @media(max-width:1025px){
     .employers{
         padding: 0px;  
