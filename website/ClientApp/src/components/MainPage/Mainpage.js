@@ -11,7 +11,6 @@ function Main() {
         
        <div className="main">
            <div className="banner">
-              
                 <Header/>
                 <Menu/>
                 <ImageCarousel/>

@@ -21,31 +21,27 @@
     opacity: 0.6;
     object-fit: cover;
 }
-.news_preview .container_all{
-    display: grid;
-    align-items: center;
-    place-items: center;
-}
+
 .news_preview .container_all h1{
-    position: absolute ;
+    position: absolute ; 
     opacity: 1;
-    margin: 0 auto  !important;
+    left:50%;
+    transform: translate(-50%,-50%);
+    top: 50%;
     color: rgb(0, 0, 0);
     z-index: 100;
-    text-align: center !important;
+   
     font-weight: 900;
     font-size: 60px;
     
 }
-.main .news_preview .container_all{
-    display: grid;
-    place-items: center;
-}
+
 .shedule{
     width: 100%;
     height: 400px;
     background: url('https://www.incimages.com/uploaded_files/image/1920x1080/getty_481564534_65139.jpg');
 }
+
 
 @media (max-width: 1441px) {
     .news_preview .container_all h1{
@@ -64,14 +60,14 @@
 @media (max-width: 769px) {
     .news_preview .container_all h1{
         
-        font-size: 38px;
+        font-size: 45px;
         
     }
 }
 @media (max-width: 426px) {
     .news_preview .container_all h1{
         
-        font-size: 30px;
+        font-size:40px;
         
     }
 }
