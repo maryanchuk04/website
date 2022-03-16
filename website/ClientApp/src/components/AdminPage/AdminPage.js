@@ -66,7 +66,7 @@ function AdminPage() {
             const res8 = await axios.get("https://bsite.net/IvanovIvan/slider/all")
             const res4 = await axios.get("https://bsite.net/IvanovIvan/employerspage")
             const res10 = await axios.get("https://bsite.net/IvanovIvan/collegeactivity")
-            const res11 =await axios.get("https://bsite.net/IvanovIvan/history")
+            const res11 = await axios.get("https://bsite.net/IvanovIvan/history")
             const res12 = await axios.get("https://bsite.net/IvanovIvan/gallery")
             const res13 = await axios.get("https://bsite.net/IvanovIvan/opp")
             setEmployers(res4.data);
