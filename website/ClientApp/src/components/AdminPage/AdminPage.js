@@ -325,10 +325,6 @@ function AdminPage() {
         
     }
     const SavePage = (i,id,text)=>{
-        console.log(state);
-        console.log(temp)
-        console.log(res)
-        console.log("Barabulya " +  text);
         switch(state){
             case 1: {
                 axios.post(`https://bsite.net/IvanovIvan/student/update/${id}`,{
@@ -746,6 +742,8 @@ function AdminPage() {
                         element  ? (
                         <div>
                             <div className="special_editor_buttons">
+                                <p>{linkres}</p>
+                                <input id = "fileinput" type ="file" onChange = {(i)=>file(i)} ></input>
                                 <button onClick={(i)=>SavePage(i,res.id,barabulya2)}>Зберегти</button>
                                 <button onClick={(i)=>DeletePage(i,res.id)}>Видалити</button>
                             </div>
