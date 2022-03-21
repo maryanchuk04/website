@@ -31,6 +31,7 @@ function Menu() {
             console.log(res1.data)
             console.log(res2.data)
             console.log(res3.data)
+            console.log("MAAAAKS")
             console.log(res4.data)
             console.log(res5.data)
             console.log(res6.data)
@@ -91,7 +92,14 @@ function Menu() {
                                         </ul>
                                     </li>
                                    
-                                    <li><Link to = '/entrant'> Абітурієнту</Link></li>
+                                    <li><Link to = '/entrant'>Абітурієнту</Link>
+                                        <ul className="submenu">
+                                                    {
+                                                    abiturient.map((a,index)=>(
+                                                    <li><a key={abit,a.id} href ={`/${abit}/${a.id}`}>{a.name}</a></li>
+                                                    ))}  
+                                        </ul> 
+                                    </li> 
                                     <li>  <Link to = '/speciality'>  Спеціальності </Link> 
                                                 <ul className="submenu">
                                                    <li> <Link to ='/speciality/cooking'>Харчові технології</Link></li>

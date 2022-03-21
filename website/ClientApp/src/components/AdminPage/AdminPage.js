@@ -49,7 +49,7 @@ function AdminPage() {
     const [three,setThree] = useState("")
     const [four,setFour] = useState("")
     const [five,setFive] = useState("")
-
+    const [six,setSix] = useState("")
 
     var setBarabulya = ""
     var bodyFormData = new FormData();
@@ -69,6 +69,7 @@ function AdminPage() {
             const res11 = await axios.get("https://bsite.net/IvanovIvan/history")
             const res12 = await axios.get("https://bsite.net/IvanovIvan/gallery")
             const res13 = await axios.get("https://bsite.net/IvanovIvan/opp")
+            const res14 = await axios.get("https://bsite.net/IvanovIvan/entrant")
             setEmployers(res4.data);
             setStudent(res1.data);
             setSpeciality(res2.data);
@@ -79,6 +80,8 @@ function AdminPage() {
             setHistory(res11.data)
             setGallery(res12.data)
             setOpp(res13.data)
+            setAbiturient(res14.data)
+            console.log(res14.data)
         })()
     },[])
 
@@ -112,12 +115,14 @@ function AdminPage() {
         setState(2);
         setShowChudo(false);
         setElement(false);
+        
         var x = document.getElementById("add");
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
             x.style.display = "none";
          }
+         console.log(state);
     })
     const SpecialityClick=((e)=>{
         setState(3);
@@ -172,7 +177,6 @@ function AdminPage() {
         setShowChudo(false);
         setElement(false);
         var x = document.getElementById("add");
-        
             x.style.display = "none";
         
     })   
@@ -316,6 +320,14 @@ function AdminPage() {
         }
         if(value == "speciality") {
             axios.get(`https://bsite.net/IvanovIvan/speciality/${id}`).then((result)=>{
+                setElement(false);
+                setRes(result.data);
+                console.log(result.data);
+                setElement(true);
+            })
+        }
+        if(value == "entrant"){
+            axios.get(`https://bsite.net/IvanovIvan/entrant/${id}`).then((result)=>{
                 setElement(false);
                 setRes(result.data);
                 console.log(result.data);
@@ -535,7 +547,15 @@ function AdminPage() {
                 })
                 break;
             }
-            case 2: {
+            case 2:{
+                axios.post(`https://bsite.net/IvanovIvan/entrant/update/number/${id}`,{
+                    number : parseInt(one)
+                }).then((result)=>{
+                    console.log(result.data)
+                })
+                break;
+            }
+            case 3: {
                 axios.post(`https://bsite.net/IvanovIvan/speciality/update/number/${id}`,{
                     number : parseInt(one)
                 }).then((result)=>{
@@ -563,6 +583,14 @@ function AdminPage() {
                 axios.post(`https://bsite.net/IvanovIvan/history/update/number/${id}`,{
                     number : parseInt(one)
                 }).then((result)=>{
+                    console.log(result.data)
+                })
+               
+            }
+            case 7: {
+                axios.post(`https://bsite.net/IvanovIvan/entrant/update/number/${id}`,{
+                    number : parseInt(one)
+                }).then((result) =>{
                     console.log(result.data)
                 })
                 break;
@@ -608,7 +636,7 @@ function AdminPage() {
                                     </div>
                                     )):<li></li>    
                                     }
-                                    {state === 2 ? 
+                                    {state === 3 ? 
                                     speciality.map((s, index)=>(
                                     <div className = "qwert">
                                         <li onClick = {(i)=>clickElement(i,"speciality",s.id)}>{s.name}</li>
@@ -618,6 +646,16 @@ function AdminPage() {
                                     </div>
                                     )
                                     ):<li></li>
+                                }
+                                {
+                                    state === 2 ? 
+                                    abiturient.map((a,index) => (
+                                        <div className = "qwert">
+                                        <li onClick = {(i)=>clickElement(i,"entrant",a.id)}>{a.name}</li>
+                                        <input type="number" placeholder = {a.number} onChange={(i)=>setSix(i.target.value)}/>
+                                        <button onClick = {(i)=>doneNumeration(i,six,a.id)}>Зберегти</button>
+                                    </div>
+                                    )) : <></>
                                 }
                                 {
                                     state ===4 ?
