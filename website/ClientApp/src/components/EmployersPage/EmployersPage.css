@@ -27,7 +27,7 @@
     border:  2px solid rgb(0, 0, 0);  
 }
 .emp .emp_info{
-    width: 40%;
+    width: 55%;
     margin: 10px;
 
 }
@@ -41,11 +41,13 @@
     font-weight: 700;
 }
 .emp .emp_image{
-    width: 60%;
+    height: 35vh;
+    width: 45%;
     margin: 10px;
 }
 
 .emp_image img{
+    object-fit: contain;
     width:100%;
     height:100%;
 }
@@ -140,11 +142,7 @@
         color:rgb(44, 43, 43);
         font-weight: 700;
     }
-    .emp .emp_image{
-        width: 60%;
-         height: 100%;
-        margin: 10px;
-    }
+   
 
     .emp .emp_image img{  
  width: 100%;
@@ -199,7 +197,7 @@
     }
     .emp .emp_image{
         width:75%;
-         height: 100%;
+         height: 20vh;
         margin: 10px;
     }
 
