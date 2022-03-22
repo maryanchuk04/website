@@ -30,14 +30,14 @@ namespace website.Controllers
             return Ok(a);
         }
 
-       
+
         [HttpGet("/entrant/{id}")]
         public ActionResult Get(string id)
         {
             return Ok(_entrants.GetByID(id));
         }
 
-        
+
         [HttpPost("/entrant/add")]
         public ActionResult Add([FromBody] Entrant entrant)
         {
@@ -49,7 +49,7 @@ namespace website.Controllers
         public ActionResult Save(string id, [FromBody] Entrant entrant)
         {
             Entrant st = _entrants.GetByID(id);
-            
+
             st.page = entrant.page;
             _entrants.Save(st);
             return Ok(st);
@@ -65,9 +65,11 @@ namespace website.Controllers
             return Ok(st);
         }
 
-
-
-
-
+        [HttpDelete("/entrant/delete/{id}")]
+        public ActionResult Delete(string id)
+        {
+            _entrants.Delete(id);
+            return Ok();
+        }
     }
 }

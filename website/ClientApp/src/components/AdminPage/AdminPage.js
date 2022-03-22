@@ -408,7 +408,7 @@ function AdminPage() {
                 break;
             }
             case 2:{
-                axios.delete(`https://bsite.net/IvanovIvan//entrant/delete/${id}`).then((result)=>{
+                axios.delete(`https://bsite.net/IvanovIvan/entrant/delete/${id}`).then((result)=>{
                     console.log(result.data);
                     window.location.reload();
                 })
