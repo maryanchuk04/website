@@ -1,0 +1,11 @@
+.null_state{
+	height: 100%;
+	width: 80%;
+	display: grid;
+	place-items: center;
+}
+
+.admin_wrapper{
+	width: 100%;
+	height: 100%;
+}
