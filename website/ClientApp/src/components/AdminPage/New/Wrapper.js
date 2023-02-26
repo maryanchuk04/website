@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CommonStateItem from "./components/CommonStateItem";
 import "./Wrapper.css";
 
@@ -7,6 +7,18 @@ const Wrapper = ({ menuState }) => {
 		switch (menuState) {
 			case 0: {
 				return <CommonStateItem name={"student"} />;
+			}
+			case 1: {
+				return <CommonStateItem name={"collegeactivity"} />;
+			}
+			case 2: {
+				return <CommonStateItem name={"entrant"} />;
+			}
+			case 3: {
+				return <CommonStateItem name={"speciality"} />;
+			}
+			case 4: {
+				return <CommonStateItem name={"history"} />;
 			}
 			default:
 				return <></>;
