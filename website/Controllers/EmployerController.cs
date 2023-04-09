@@ -33,12 +33,11 @@ namespace website.Controllers
         }
 
         [HttpPost("/employers/add")]
-        public ActionResult InsertOneNews([FromBody] Employer employer)
+        public ActionResult InsertOne([FromBody] Employer employer)
         {
             _employers.Insert(employer);
 
             return Ok(employer);
-
         }
         
     }

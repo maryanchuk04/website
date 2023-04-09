@@ -40,14 +40,24 @@ namespace website.Controllers
         }
 
         [HttpPost("/speciality/update/{id}")]
-        public ActionResult Update(string id, [FromBody] Speciality student)
+        public ActionResult Update(string id, [FromBody] Speciality speciality)
         {
             Speciality st = _speciality.GetByID(id);
             
-            st.page = student.page;
+            st.page = speciality.page;
+            st.name = speciality.name;
             _speciality.Save(st);
             return Ok(st);
         }
+
+        [HttpPost("/speciality/add")]
+        public ActionResult Create([FromBody] Speciality speciality)
+        {
+            _speciality.Insert(speciality);
+            return Ok(speciality);
+        }
+
+
         [HttpPost("/speciality/update/number/{id}")]
         public ActionResult UpdateNumber(string id, [FromBody] Speciality student)
         {

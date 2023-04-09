@@ -1,25 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const QuillEditor = ({ value, quillRef }) => {
-	useEffect(() => {}, [quillRef]);
-
-	const handleImageUpload = (e) => {
-		const file = e.target.files[0];
-
-		if (file && file.type.startsWith("image/")) {
-			const reader = new FileReader();
-			reader.onload = () => {
-				const range = quillRef.current.getEditor().getSelection();
-				const imageUrl = reader.result;
-				quillRef.current
-					.getEditor()
-					.insertEmbed(range.index, "image", imageUrl);
-			};
-			reader.readAsDataURL(file);
-		}
-	};
+const QuillEditor = ({ value, quillRef, options = null }) => {
+	useEffect(() => { }, [quillRef]);
 
 	const modules = {
 		toolbar: [
@@ -62,7 +46,7 @@ const QuillEditor = ({ value, quillRef }) => {
 		},
 	};
 
-	return <ReactQuill ref={quillRef} defaultValue={value} modules={modules} />;
+	return <ReactQuill ref={quillRef} defaultValue={value} modules={options || modules} />;
 };
 
 export default QuillEditor;

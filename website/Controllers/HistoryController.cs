@@ -62,6 +62,7 @@ namespace website.Controllers
             History st = _history.GetByID(id);
             
             st.page = history.page;
+            st.name = history.name;
             _history.Save(st);
             return Ok(st);
         }

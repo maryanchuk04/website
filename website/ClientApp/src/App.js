@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from "./components/Shared/Footer";
 import Mainpage from "./components/MainPage/Mainpage";
 import AdminPage from './components/AdminPage/AdminPage';
@@ -36,39 +36,39 @@ import NewAdmin from './components/AdminPage/New/NewAdmin';
 
 function App() {
 
-    return (
-      <div className="App"> 
-      <BrowserRouter>
-        <Routes>
-          <Route path = '/' exact element = {<React.Fragment><Mainpage/><Footer/></React.Fragment>} />         
-          <Route path = '/admin' exact element={<Login/>} />
-          <Route path = '/admin/employers' exact element={<Employers/>} />
-          <Route path ='/admin/news' exact element ={<News/>}/>
-          <Route path = '/student' exact element={<StudentPage/>} />
-          <Route path = '/news' exact element={<React.Fragment><Header/><Menu/><NewsPage/><Footer/></React.Fragment>} />
-          <Route path = '/history' exact element={<React.Fragment><Header/><Menu/><HistoryPage/><Footer/></React.Fragment>} />
-          <Route path = '/entrant' exact element={<React.Fragment><Header/><Menu/><EntrantPage/><Footer/></React.Fragment>} />
-          <Route path = '/employers' exact element={<React.Fragment><Header/><Menu/><EmployersPage/><Footer/></React.Fragment>} />
-          <Route path = '/achivement' exact element={<React.Fragment><Header/><Menu/><AchivementPage/><Footer/></React.Fragment>} />
-          <Route path = '/speciality' exact element={<React.Fragment><Header/><Menu/><SpecialityPage/><Footer/></React.Fragment>} />
-          <Route path = '/speciality/cooking' exact element={<React.Fragment><Header/><Menu/><CookingPage/><Footer/></React.Fragment>} />
-          <Route path = '/speciality/oblik' exact element={<React.Fragment><Header/><Menu/><OblikPage/><Footer/></React.Fragment>} />
-          <Route path = '/speciality/pidpruyemstvo' exact element={<React.Fragment><Header/><Menu/><PidpruyemstvoPage/><Footer/></React.Fragment>} />
-          <Route path = '/student/practice' exact element={<React.Fragment><Header/><Menu/><PracticePage/><Footer/></React.Fragment>} />
-          <Route path = '/student/callshedule' exact element={<React.Fragment><Header/><Menu/><CallShedulePage/><Footer/></React.Fragment>} />
-          <Route path = '/employers/admin' exact element = {<React.Fragment><Header/><Menu/><EmployersPage/><Footer/></React.Fragment>}/>
-          <Route path = '/employers/not' exact element = {<React.Fragment><Header/><Menu/><NotEmployers/><Footer/></React.Fragment>}/>
-          <Route path = '/employers/ped' exact element = {<React.Fragment><Header/><Menu/><PedEmployers/><Footer/></React.Fragment>}/>
-          <Route path = '/employers/gosp' exact element = {<React.Fragment><Header/><Menu/><GospEmployers/><Footer/></React.Fragment>}/>
-          <Route path = "/news/:id" exact element ={<React.Fragment><Header/><Menu/><OneNewsPage/><Footer/></React.Fragment>}/>
-          <Route path = "/:name/:id" exact element ={<React.Fragment><Header/><Menu/><Page/><Footer/></React.Fragment>}/>
-          <Route path = "/history/galery" exact element = {<React.Fragment><Header/><Menu/><Galery/><Footer/></React.Fragment>}/>
-          <Route path = "/chudo" exact element = {<React.Fragment><Chudo/></React.Fragment>}/>
-		  <Route path = "/newadmin" exact element = {<NewAdmin/>} />
-        </Routes>
-      </BrowserRouter>
-       
-      </div>
-    );
-  }
+	return (
+		<div className="App">
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' exact element={<React.Fragment><Mainpage /><Footer /></React.Fragment>} />
+					<Route path='/admin' exact element={<Login />} />
+					<Route path='/admin/employers' exact element={<Employers />} />
+					<Route path='/admin/news' exact element={<News />} />
+					<Route path='/student' exact element={<StudentPage />} />
+					<Route path='/news' exact element={<React.Fragment><Header /><Menu /><NewsPage /><Footer /></React.Fragment>} />
+					<Route path='/history' exact element={<React.Fragment><Header /><Menu /><HistoryPage /><Footer /></React.Fragment>} />
+					<Route path='/entrant' exact element={<React.Fragment><Header /><Menu /><EntrantPage /><Footer /></React.Fragment>} />
+					<Route path='/employers' exact element={<React.Fragment><Header /><Menu /><EmployersPage /><Footer /></React.Fragment>} />
+					<Route path='/achivement' exact element={<React.Fragment><Header /><Menu /><AchivementPage /><Footer /></React.Fragment>} />
+					<Route path='/speciality' exact element={<React.Fragment><Header /><Menu /><SpecialityPage /><Footer /></React.Fragment>} />
+					{/*<Route path='/speciality/cooking' exact element={<React.Fragment><Header /><Menu /><CookingPage /><Footer /></React.Fragment>} />
+					<Route path='/speciality/oblik' exact element={<React.Fragment><Header /><Menu /><OblikPage /><Footer /></React.Fragment>} />
+					<Route path='/speciality/pidpruyemstvo' exact element={<React.Fragment><Header /><Menu /><PidpruyemstvoPage /><Footer /></React.Fragment>} />*/}
+					<Route path='/student/practice' exact element={<React.Fragment><Header /><Menu /><PracticePage /><Footer /></React.Fragment>} />
+					<Route path='/student/callshedule' exact element={<React.Fragment><Header /><Menu /><CallShedulePage /><Footer /></React.Fragment>} />
+					<Route path='/employers/admin' exact element={<React.Fragment><Header /><Menu /><EmployersPage /><Footer /></React.Fragment>} />
+					<Route path='/employers/not' exact element={<React.Fragment><Header /><Menu /><NotEmployers /><Footer /></React.Fragment>} />
+					<Route path='/employers/ped' exact element={<React.Fragment><Header /><Menu /><PedEmployers /><Footer /></React.Fragment>} />
+					<Route path='/employers/gosp' exact element={<React.Fragment><Header /><Menu /><GospEmployers /><Footer /></React.Fragment>} />
+					<Route path="/news/:id" exact element={<React.Fragment><Header /><Menu /><OneNewsPage /><Footer /></React.Fragment>} />
+					<Route path="/:name/:id" exact element={<React.Fragment><Header /><Menu /><Page /><Footer /></React.Fragment>} />
+					<Route path="/history/galery" exact element={<React.Fragment><Header /><Menu /><Galery /><Footer /></React.Fragment>} />
+					<Route path="/chudo" exact element={<React.Fragment><Chudo /></React.Fragment>} />
+					<Route path="/newadmin" exact element={<NewAdmin />} />
+				</Routes>
+			</BrowserRouter>
+
+		</div>
+	);
+}
 export default App

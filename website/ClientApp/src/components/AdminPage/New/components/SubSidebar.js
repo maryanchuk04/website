@@ -11,9 +11,8 @@ const SubSidebar = ({ activeItem, elements, handleClick }) => {
 				{elements.map((item) => (
 					<li
 						key={item.id}
-						className={`${
-							activeItem === item.name ? "active " : ""
-						}`}
+						className={`${activeItem === item.name ? "active " : ""
+							}`}
 						onClick={() => handleClick(item)}
 					>
 						<h6>{item.name}</h6>

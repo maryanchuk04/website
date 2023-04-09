@@ -17,8 +17,6 @@ namespace website.Controllers
     [Route("/slider")]
     public class SliderController : Controller
     {
-
-
         private readonly SliderServices _slider;
 
         public SliderController(SliderServices services)
@@ -34,12 +32,10 @@ namespace website.Controllers
             return Ok(a);
         }
 
-
-
         [HttpGet("/slider/{id}")]
         public ActionResult GetOne(string id) => Ok(_slider.GetByID(id));
       
-        [HttpGet("/slider/delete/{id}")]
+        [HttpDelete("/slider/delete/{id}")]
         public ActionResult DeleteImg(string id)
         {
             _slider.Delete(id);

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactQuill, { Quill } from "react-quill";
-import 'react-quill/dist/quill.snow.css'; 
+import 'react-quill/dist/quill.snow.css';
 // #1 import quill-image-uploader
 import ImageUploader from "quill-image-uploader";
 import "react-quill/dist/quill.core.css";
@@ -10,81 +10,78 @@ Quill.register("modules/imageUploader", ImageUploader);
 var htmltext = ""
 
 class SpecialEditor extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: ""
-    };
-    htmltext = this.props?.text ? this.props.text : ""
-    
-    console.log(htmltext)
-  }
-  
-  modules = {
-    toolbar: [
-        ["bold", "italic", "underline", "strike"],
-            [{ font: [] }],
-            [{ align: [] }],
-            [{ color: [] }, { background: [] }],
-            ["blockquote", "code-block"],
-            [{ list: "ordered" }, { list: "bullet" }],
-            [{ script: "sub" }, { script: "super" }],
-            [{ indent: "-1" }, { indent: "+1" }],
-            [{ header: [1, 2, 3, 4, 5, 6, false] }],
-            ["image"],
-            ["clean"],
-            ["link"],
-           
-    ],
-    
-    imageUploader: {
-      upload: file => {
-        return new Promise((resolve, reject) => {
-          const formData = new FormData();
-          formData.append("image", file);
+	constructor(props) {
+		super(props);
+		this.state = {
+			text: ""
+		};
+		htmltext = this.props?.text ? this.props.text : ""
+	}
 
-          fetch(
-            "https://api.imgbb.com/1/upload?key=4b76823349508cfe6987b62ea7b72eb8",
-            {
-              method: "POST",
-              body: formData
-            }
-          )
-            .then(response => response.json())
-            .then(result => {
-              console.log(result);
-              resolve(result.data.url);
-            })
-            .catch(error => {
-              reject("Upload failed");
-              console.error("Error:", error);
-            });
-        });
-      }
-    }
-  };
-  
-  textfunc(i){
-      this.props.setBarabulya2(i);
-      htmltext = i
-      console.log(htmltext)   
-  }
+	modules = {
+		toolbar: [
+			["bold", "italic", "underline", "strike"],
+			[{ font: [] }],
+			[{ align: [] }],
+			[{ color: [] }, { background: [] }],
+			["blockquote", "code-block"],
+			[{ list: "ordered" }, { list: "bullet" }],
+			[{ script: "sub" }, { script: "super" }],
+			[{ indent: "-1" }, { indent: "+1" }],
+			[{ header: [1, 2, 3, 4, 5, 6, false] }],
+			["image"],
+			["clean"],
+			["link"],
+
+		],
+
+		imageUploader: {
+			upload: file => {
+				return new Promise((resolve, reject) => {
+					const formData = new FormData();
+					formData.append("image", file);
+
+					fetch(
+						"https://api.imgbb.com/1/upload?key=4b76823349508cfe6987b62ea7b72eb8",
+						{
+							method: "POST",
+							body: formData
+						}
+					)
+						.then(response => response.json())
+						.then(result => {
+							console.log(result);
+							resolve(result.data.url);
+						})
+						.catch(error => {
+							reject("Upload failed");
+							console.error("Error:", error);
+						});
+				});
+			}
+		}
+	};
+
+	textfunc(i) {
+		this.props.setBarabulya2(i);
+		htmltext = i
+	}
 
 
-  render() {
-    return (
-      <ReactQuill
-        theme="snow"
-        modules={this.modules}
-        formats={this.formats}
-        value = {htmltext}
-        onChange={(i)=>this.textfunc(i)} 
-      >
-        <div className="my-editing-area" />
-      </ReactQuill>
+	render() {
+		return (
+			<ReactQuill
+				theme="snow"
+				modules={this.modules}
+				formats={this.formats}
+				value={htmltext}
+				onChange={(i) => this.textfunc(i)}
+			>
+				<div className="my-editing-area" />
+			</ReactQuill>
 
-    );
-  }
+		);
+	}
 }
 
 export default SpecialEditor;

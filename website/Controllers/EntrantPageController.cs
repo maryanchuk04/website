@@ -55,6 +55,7 @@ namespace website.Controllers
             }
             return Ok(entrantPage);
         }
+
         [HttpPost("/entrantpage/upload/pdf/{id}")]
         public ActionResult AddPdf(string id, [FromForm] IFormFile file)
         {
@@ -76,10 +77,5 @@ namespace website.Controllers
             
             return Ok(entrantPage);
         }
-
-     
-
-
-
     }
 }

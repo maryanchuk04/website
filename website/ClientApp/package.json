@@ -16,6 +16,7 @@
     "jodit-react": "^1.1.21",
     "jquery": "^3.4.1",
     "merge": "^1.2.1",
+    "notyf": "^3.10.0",
     "oidc-client": "^1.9.0",
     "prettier": "^2.5.1",
     "quill-image-uploader": "^1.2.2",

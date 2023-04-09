@@ -61,6 +61,7 @@ namespace website.Controllers
             var c = _collegeActivity.GetByID(id);
             c.number = college.number;
             c.page = college.page;
+            c.name = college.name;
             _collegeActivity.Save(c);
             return Ok(c);
         }

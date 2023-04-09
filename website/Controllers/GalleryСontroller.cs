@@ -55,7 +55,7 @@ namespace website.Controllers
             
         }
 
-        [HttpGet("/gallery/delete/{id}")]
+        [HttpDelete("/gallery/delete/{id}")]
         public ActionResult Delete(string id)
         {
             _gallery.Delete(id);

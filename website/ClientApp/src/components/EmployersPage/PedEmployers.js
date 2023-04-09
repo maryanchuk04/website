@@ -9,7 +9,6 @@ function PedEmployers() {
     useEffect(()=>{
         axios.get("https://bsite.net/IvanovIvan/employerspage/ped")
             .then((result)=>{
-                console.log(result.data);
                 setEmployers(result.data.employers);
                 setObj(result.data)
             });

@@ -1,51 +1,60 @@
-.one_uvaha{
-   height: fit-content;
-   display: flex;
-   flex-direction: column;
-   background-color: rgb(182, 209, 243); 
-   border-radius: 10px;
-   width: 800px;
-   padding: 20px;
-   margin: 20px auto;
+.one_uvaha {
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	width: 800px;
+	padding: 20px;
+	margin: 20px auto;
 }
-.one_uvaha button{
-    margin: 0 auto;
-    border-radius: 20px;
-    width: 200px;
+
+.one_uvaha .warning_block {
+	border-radius: 10px;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.add_warning form{
-    
-    display: flex;
-    flex-direction: column;
-    margin: 20px auto;
-    width: 500px;
+
+.one_uvaha button {
+	margin: 0 auto;
+	border-radius: 20px;
+	width: 200px;
+}
+
+.add_warning form {
+	display: flex;
+	flex-direction: column;
+	margin: 20px auto;
+	width: 500px;
 }
 
 .add_warning input {
-    
-    margin:20px 0;
-    color:rgb(139, 134, 134);
-}.add_warning input::placeholder{
-    color: rgb(173, 173, 173);
+	margin-bottom: 10px;
 }
-.add_warning textarea::placeholder{
-    color: rgb(173, 173, 173);
-}
-.add_warning textarea{
-    height: 70px;
-}
-.add_warning  form .input_uvaha{
-    border:1px solid black !important;  
-}
-.elem_warn{ 
-    padding:5px;
-    border-radius:10px;
-    width: 500px;
-}
-.butn_warn{
-    padding: 4px;
-    margin:0 auto;
-    width: 70%;
-    border-radius:10px;
 
+.add_warning input::placeholder {
+	color: rgb(173, 173, 173);
+}
+
+.add_warning textarea::placeholder {
+	color: rgb(173, 173, 173);
+}
+
+.add_warning textarea {
+	height: 70px;
+}
+
+.add_warning form .input_uvaha {
+	border: 1px solid black !important;
+}
+
+.elem_warn {
+	padding: 5px;
+	border-radius: 10px;
+	width: 500px;
+}
+
+.butn_warn {
+	padding: 4px;
+	margin: 0 auto;
+	width: 70%;
+	border-radius: 10px;
 }

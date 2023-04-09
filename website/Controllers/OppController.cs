@@ -61,12 +61,8 @@ namespace website.Controllers
             _opp.Save(s);
             return Ok(sub.text);
         }
-
-
-
-
-
     }
+
     public class Sub
     {
         public string text { get; set; }

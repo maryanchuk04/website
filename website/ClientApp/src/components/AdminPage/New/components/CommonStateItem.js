@@ -5,13 +5,15 @@ import Chudo from "../../Chudo";
 import SubSidebar from "./SubSidebar";
 import "./CommonStateItem.css";
 import QuillEditor from "./Editor/QuillEditor";
+import { showAlert } from "../../../Shared/Alert";
 
-const CommonStateItem = ({ name }) => {
+const CommonStateItem = ({ name, toDefault }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [items, setItems] = useState(null);
 	const [editor, setEditor] = useState(null);
 	const [title, setTitle] = useState(null);
 	const [uploadLink, setUploadLink] = useState("");
+	const [currentPageId, setCurrentPageId] = useState(null);
 
 	const editorRef = useRef(null);
 
@@ -39,7 +41,6 @@ const CommonStateItem = ({ name }) => {
 			data: bodyFormData,
 			headers: { "Content-Type": "multipart/form-data" },
 		}).then((result) => {
-			console.log(result);
 			setUploadLink(result.data);
 		});
 	};
@@ -48,23 +49,53 @@ const CommonStateItem = ({ name }) => {
 		setIsOpen(false);
 		setEditor(item.page);
 		setTitle(item.name);
+
+		setCurrentPageId(item.id);
 	};
+
+	const deletePage = () => {
+		if (currentPageId) {
+			axios.delete(`https://bsite.net/IvanovIvan/${name}/delete/${currentPageId}`)
+				.then(() => {
+					showAlert("Сторінку було успішно видалено", "info");
+					toDefault();
+				})
+				.catch(() => showAlert("Щось пішло не так!", "error"));
+		}
+	}
 
 	const submitEditor = (e) => {
 		e.preventDefault();
-
-		console.log(editorRef.current.value);
 		setEditor(editorRef.current.value);
-		//save
-		// TODO add ability update page
-		axios
-			.post(`https://bsite.net/IvanovIvan/${name}/add`, {
-				name: title,
-				page: editorRef.current.value,
+
+		//create
+		if (!currentPageId) {
+			axios
+				.post(`https://bsite.net/IvanovIvan/${name}/add`, {
+					name: title,
+					page: editorRef.current.value,
+				})
+				.then((result) => {
+					showAlert("Нова сторінка успішно створена!", "success");
+					toDefault();
+				})
+				.catch(() => showAlert("Щось пішло не так!", "error"));
+			return;
+		}
+
+		// update
+		axios.post(`https://bsite.net/IvanovIvan/${name}/update/${currentPageId}`, {
+			name: title,
+			page: editorRef.current.value,
+			number: 0,
+			// TODO Number update
+		})
+			.then(() => {
+				showAlert("Данні було збережено!", "info");
+				toDefault();
 			})
-			.then((result) => {
-				console.log(result.data);
-			});
+			.catch(() => showAlert("Щось пішло не так!", "error"))
+
 	};
 
 	return items === null ? (
@@ -91,7 +122,7 @@ const CommonStateItem = ({ name }) => {
 							></input>
 							<div className="btns">
 								<button>Зберегти</button>
-								<button>Видалити</button>
+								<button type="button" onClick={deletePage}>Видалити</button>
 							</div>
 						</form>
 						<div>

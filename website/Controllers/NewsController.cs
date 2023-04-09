@@ -42,7 +42,7 @@ namespace website.Controllers
         public ActionResult<News> GetNews(string id) => Ok(_news.GetByID(id));
 
 
-        [HttpGet("/news/delete/{id}")]
+        [HttpDelete("/news/delete/{id}")]
         public ActionResult Delete (string id)
         {
             _news.Delete(id);
@@ -53,10 +53,7 @@ namespace website.Controllers
         [HttpPost("/news/upload/{id}")]
         public ActionResult UploadPhoto(string id,[FromForm] IFormFile file)
         {
-            
             News news = _news.GetByID(id);
-
-
             try
             {
                 FtpWebRequest request =

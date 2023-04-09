@@ -1,0 +1,78 @@
+.employers_wrapper {
+	display: flex;
+	height: 100%;
+}
+
+.employers_container {
+	width: 90%;
+	height: 100%;
+	padding: 10px 20px;
+	margin: 0 auto;
+	margin-bottom: 0;
+	overflow-y: auto;
+}
+
+.employers_container .emp_item {
+	display: flex;
+	margin: 10px 0;
+	flex-direction: column;
+	padding: 10px;
+	border-radius: 10px;
+	position: relative;
+	background-color: cornsilk;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+}
+
+.emp_item button {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	border: 0;
+	border-radius: 50%;
+	background-color: transparent;
+	transition: 0.2s;
+	height: 40px;
+	width: 40px;
+}
+
+.emp_item button:hover {
+	background: rgb(0 0 0 / 0.3);
+}
+
+.emp_create_model {
+	height: 500px;
+	width: 600px;
+	text-align: center;
+}
+
+.emp_create_model .fields {
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0;
+}
+
+.emp_create_model .fields input {
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	padding: 5px 10px;
+}
+
+.fields input::placeholder {
+	color: rgb(0 0 0 / 0.5)
+}
+
+
+.create_emp {
+	background: transparent;
+	border-radius: 10px;
+	border: 1px solid black;
+	font-size: 22px;
+	transition: 0.2s;
+	padding: 5px 10px;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+}
+
+.create_emp:hover {
+	background: rgba(88, 215, 90, 0.3);
+}

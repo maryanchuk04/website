@@ -51,6 +51,7 @@ namespace website.Controllers
             Entrant st = _entrants.GetByID(id);
             
             st.page = entrant.page;
+            st.name = entrant.name;
             _entrants.Save(st);
             return Ok(st);
         }

@@ -1,25 +1,31 @@
-.admin{
+.admin {
 	width: 100%;
 	height: 100vh;
 }
 
-.header {
+.admin .header-admin {
 	width: 100%;
-	height: 8%;
+	height: 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 	background-color: burlywood;
-	
+
 }
 
-.header h1 {
+.header-admin h1 {
 	text-align: center;
 	margin: 0;
 }
 
 .admin_content {
 	display: flex;
-	height: 92%;
+	height: calc(100vh - 4rem);
+}
+
+.wrapper_content {
+	height: 100%;
+	overflow-y: auto;
+	width: 100%;
 }

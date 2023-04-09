@@ -1,0 +1,39 @@
+.slider_admin_container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 20px;
+	width: 95%;
+	margin: 10px auto;
+}
+
+.slider_admin_container .slider_item {}
+
+.slider_admin_container .slider_item .picture {
+	width: 100%;
+	height: 300px;
+}
+
+.slider_item .picture img {
+	width: 100%;
+	height: 100%;
+}
+
+.slider_item .knopku {
+	background: bisque;
+	width: 100%;
+	margin: 0;
+	padding: 5px 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.knopku input {
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+.knopku button {
+	border-radius: 10px;
+	border: 1px solid black;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}

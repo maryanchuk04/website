@@ -8,12 +8,14 @@ const NewAdmin = () => {
 
 	return (
 		<div className="admin">
-			<header className="header">
+			<header className="header-admin">
 				<h1>Ласкаво просимо адміністраторе!</h1>
 			</header>
 			<div className="admin_content">
 				<AdminSidebar menuState={menuState} menuChange={setMenuState} />
-				<Wrapper menuState={menuState} />
+				<div className="wrapper_content">
+					<Wrapper menuState={menuState} setMenuState={setMenuState} />
+				</div>
 			</div>
 		</div>
 	);
