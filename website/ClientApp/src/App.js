@@ -5,8 +5,6 @@ import Mainpage from "./components/MainPage/Mainpage";
 import AdminPage from './components/AdminPage/AdminPage';
 import News from './components/AdminPage/components/News.js'
 import './custom.css'
-
-import Employers from './components/AdminPage/components/Employers';
 import Login from './components/Shared/Login';
 import Header from './components/Shared/Header';
 import SpecialityPage from './components/Speciality/SpecialityPage/SpecialityPage';
@@ -42,8 +40,8 @@ function App() {
 				<Routes>
 					<Route path='/' exact element={<React.Fragment><Mainpage /><Footer /></React.Fragment>} />
 					<Route path='/admin' exact element={<Login />} />
-					<Route path='/admin/employers' exact element={<Employers />} />
-					<Route path='/admin/news' exact element={<News />} />
+					{/* <Route path='/admin/employers' exact element={<Employers />} /> */}
+					{/* <Route path='/admin/news' exact element={<News />} /> */}
 					<Route path='/student' exact element={<StudentPage />} />
 					<Route path='/news' exact element={<React.Fragment><Header /><Menu /><NewsPage /><Footer /></React.Fragment>} />
 					<Route path='/history' exact element={<React.Fragment><Header /><Menu /><HistoryPage /><Footer /></React.Fragment>} />
@@ -64,7 +62,7 @@ function App() {
 					<Route path="/:name/:id" exact element={<React.Fragment><Header /><Menu /><Page /><Footer /></React.Fragment>} />
 					<Route path="/history/galery" exact element={<React.Fragment><Header /><Menu /><Galery /><Footer /></React.Fragment>} />
 					<Route path="/chudo" exact element={<React.Fragment><Chudo /></React.Fragment>} />
-					<Route path="/newadmin" exact element={<NewAdmin />} />
+					{/* <Route path="/admin" exact element={<NewAdmin />} /> */}
 				</Routes>
 			</BrowserRouter>
 

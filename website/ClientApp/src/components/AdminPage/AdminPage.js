@@ -1,11 +1,11 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import "../AdminPage/AdminPage.css";
-import Chudo from "./Chudo";
-import News from "./components/News";
-import SpecialEditor from "./components/SpecialEditor";
-import Uvaha from "./components/Uvaha";
-var imagelinkemp = "";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import '../AdminPage/AdminPage.css';
+import Chudo from './Chudo';
+import News from './components/News';
+import SpecialEditor from './components/SpecialEditor';
+import Uvaha from './components/Uvaha';
+var imagelinkemp = '';
 
 function AdminPage() {
 	const [history, setHistory] = useState([]);
@@ -21,59 +21,53 @@ function AdminPage() {
 	const [showForm, setShowForm] = useState(false);
 	const [getFile, setFile] = useState();
 	const [showPage1, setShowPage1] = useState(0);
-	const [titlepage, setTitlepage] = useState("");
+	const [titlepage, setTitlepage] = useState('');
 	const [showChudo, setShowChudo] = useState(false);
-	const [temp, setTemp] = useState("");
-	const [numberfield, setNumberfield] = useState("");
+	const [temp, setTemp] = useState('');
+	const [numberfield, setNumberfield] = useState('');
 	const [number, setNumber] = useState(0);
 	const [element, setElement] = useState(false);
-	const [linkres, setLinkres] = useState("");
-	const [titlePage, setTitlePage] = useState("");
+	const [linkres, setLinkres] = useState('');
+	const [titlePage, setTitlePage] = useState('');
 	const [gallery, setGallery] = useState([]);
 	const [opp, setOpp] = useState([]);
-	const [suboppfield, setSubOppField] = useState("");
+	const [suboppfield, setSubOppField] = useState('');
 	const [obj, setObj] = useState({});
 	//const [imagelinkemp,setImagelinkemp] = useState("");
 
 	//для форми колектив
-	const [fullname, setFullname] = useState("");
-	const [posada, setPosada] = useState("");
-	const [phone, setPhone] = useState("");
-	const [kval, setKval] = useState("");
-	const [pred, setPred] = useState("");
+	const [fullname, setFullname] = useState('');
+	const [posada, setPosada] = useState('');
+	const [phone, setPhone] = useState('');
+	const [kval, setKval] = useState('');
+	const [pred, setPred] = useState('');
 
 	//для сабменю
-	const [one, setOne] = useState("");
-	const [two, setTwo] = useState("");
-	const [three, setThree] = useState("");
-	const [four, setFour] = useState("");
-	const [five, setFive] = useState("");
+	const [one, setOne] = useState('');
+	const [two, setTwo] = useState('');
+	const [three, setThree] = useState('');
+	const [four, setFour] = useState('');
+	const [five, setFive] = useState('');
 
-	var setBarabulya = "";
+	var setBarabulya = '';
 	var bodyFormData = new FormData();
 
-	var barabulya2 = "";
+	var barabulya2 = '';
 	const [res, setRes] = useState({});
 
 	useEffect(() => {
 		(async () => {
-			const entrantResult = await axios.get("https://bsite.net/IvanovIvan/entrant");
-			const res1 = await axios.get("https://bsite.net/IvanovIvan/student");
-			const res2 = await axios.get("https://bsite.net/IvanovIvan/speciality");
-			const res7 = await axios.get("https://bsite.net/IvanovIvan/news");
-			const res5 = await axios.get(
-				"https://bsite.net/IvanovIvan/advertisement",
-			);
-			const res8 = await axios.get("https://bsite.net/IvanovIvan/slider/all");
-			const res4 = await axios.get(
-				"https://bsite.net/IvanovIvan/employerspage",
-			);
-			const res10 = await axios.get(
-				"https://bsite.net/IvanovIvan/collegeactivity",
-			);
-			const res11 = await axios.get("https://bsite.net/IvanovIvan/history");
-			const res12 = await axios.get("https://bsite.net/IvanovIvan/gallery");
-			const res13 = await axios.get("https://bsite.net/IvanovIvan/opp");
+			const entrantResult = await axios.get('http://college-backend.somee.com/entrant');
+			const res1 = await axios.get('http://college-backend.somee.com/student');
+			const res2 = await axios.get('http://college-backend.somee.com/speciality');
+			const res7 = await axios.get('http://college-backend.somee.com/news');
+			const res5 = await axios.get('http://college-backend.somee.com/advertisement');
+			const res8 = await axios.get('http://college-backend.somee.com/slider/all');
+			const res4 = await axios.get('http://college-backend.somee.com/employerspage');
+			const res10 = await axios.get('http://college-backend.somee.com/collegeactivity');
+			const res11 = await axios.get('http://college-backend.somee.com/history');
+			const res12 = await axios.get('http://college-backend.somee.com/gallery');
+			const res13 = await axios.get('http://college-backend.somee.com/opp');
 			setEmployers(res4.data);
 			setStudent(res1.data);
 			setSpeciality(res2.data);
@@ -89,34 +83,30 @@ function AdminPage() {
 	}, []);
 
 	const DeleteClick = (i, id) => {
-		axios
-			.get(`https://bsite.net/IvanovIvan/slider/delete/${id}`)
-			.then((result) => {
-				result.status == 200
-					? window.location.reload()
-					: alert("Сталась помилка, повторіть будь ласка пізніше");
-			});
+		axios.get(`http://college-backend.somee.com/slider/delete/${id}`).then((result) => {
+			result.status == 200
+				? window.location.reload()
+				: alert('Сталась помилка, повторіть будь ласка пізніше');
+		});
 	};
 
 	const DeleteNewsClick = (i, id) => {
-		axios
-			.get(`https://bsite.net/IvanovIvan/news/delete/${id}`)
-			.then((result) => {
-				result.status == 200
-					? window.location.reload()
-					: alert("Сталась помилка, повторіть будь ласка пізніше");
-			});
+		axios.get(`http://college-backend.somee.com/news/delete/${id}`).then((result) => {
+			result.status == 200
+				? window.location.reload()
+				: alert('Сталась помилка, повторіть будь ласка пізніше');
+		});
 	};
 
 	const StudentClick = (i) => {
 		setState(1);
 		setShowChudo(false);
 		setElement(false);
-		var x = document.getElementById("add");
-		if (x.style.display === "none") {
-			x.style.display = "block";
+		var x = document.getElementById('add');
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
 		} else {
-			x.style.display = "none";
+			x.style.display = 'none';
 		}
 	};
 
@@ -124,11 +114,11 @@ function AdminPage() {
 		setState(2);
 		setShowChudo(false);
 		setElement(false);
-		var x = document.getElementById("add");
-		if (x.style.display === "none") {
-			x.style.display = "block";
+		var x = document.getElementById('add');
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
 		} else {
-			x.style.display = "none";
+			x.style.display = 'none';
 		}
 	};
 
@@ -137,11 +127,11 @@ function AdminPage() {
 		setShowChudo(false);
 		setElement(false);
 
-		var x = document.getElementById("add");
-		if (x.style.display === "none") {
-			x.style.display = "block";
+		var x = document.getElementById('add');
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
 		} else {
-			x.style.display = "none";
+			x.style.display = 'none';
 		}
 	};
 
@@ -149,22 +139,22 @@ function AdminPage() {
 		setState(4);
 		setShowChudo(false);
 		setElement(false);
-		var x = document.getElementById("add");
-		if (x.style.display === "none") {
-			x.style.display = "block";
+		var x = document.getElementById('add');
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
 		} else {
-			x.style.display = "none";
+			x.style.display = 'none';
 		}
 	};
 	const ActiviesClick = (e) => {
 		setState(5);
 		setShowChudo(false);
 		setElement(false);
-		var x = document.getElementById("add");
-		if (x.style.display === "none") {
-			x.style.display = "block";
+		var x = document.getElementById('add');
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
 		} else {
-			x.style.display = "none";
+			x.style.display = 'none';
 		}
 	};
 
@@ -172,11 +162,11 @@ function AdminPage() {
 		setState(11);
 		setShowChudo(false);
 		setElement(false);
-		var x = document.getElementById("add");
-		if (x.style.display === "none") {
-			x.style.display = "block";
+		var x = document.getElementById('add');
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
 		} else {
-			x.style.display = "none";
+			x.style.display = 'none';
 		}
 	};
 
@@ -184,9 +174,9 @@ function AdminPage() {
 		setState(7);
 		setShowChudo(false);
 		setElement(false);
-		var x = document.getElementById("add");
+		var x = document.getElementById('add');
 
-		x.style.display = "none";
+		x.style.display = 'none';
 	};
 
 	const SliderClick = (e) => {
@@ -199,18 +189,18 @@ function AdminPage() {
 		setState(9);
 		setShowChudo(false);
 		setElement(false);
-		var x = document.getElementById("add");
+		var x = document.getElementById('add');
 
-		x.style.display = "none";
+		x.style.display = 'none';
 	};
 
 	const HistoryClick = (e) => {
 		setState(6);
-		var x = document.getElementById("add");
-		if (x.style.display === "none") {
-			x.style.display = "block";
+		var x = document.getElementById('add');
+		if (x.style.display === 'none') {
+			x.style.display = 'block';
 		} else {
-			x.style.display = "none";
+			x.style.display = 'none';
 		}
 	};
 
@@ -220,7 +210,7 @@ function AdminPage() {
 	const AddClick = (e) => {
 		setElement(false);
 		setShowChudo(true);
-		setLinkres("");
+		setLinkres('');
 		console.log(state);
 	};
 
@@ -238,12 +228,12 @@ function AdminPage() {
 		setState(13);
 	};
 	const SliderAddClick = (e) => {
-		bodyFormData.append("file", getFile);
+		bodyFormData.append('file', getFile);
 		axios({
-			method: "POST",
-			url: "https://bsite.net/IvanovIvan/slider/upload",
+			method: 'POST',
+			url: 'http://college-backend.somee.com/slider/upload',
 			data: bodyFormData,
-			headers: { "Content-Type": "multipart/form-data" },
+			headers: { 'Content-Type': 'multipart/form-data' },
 		}).then((res) => {
 			console.log(getFile);
 			console.log(res.data);
@@ -255,22 +245,22 @@ function AdminPage() {
 		const files = Object(e.currentTarget.files)[0];
 		console.log(files);
 		setFile(files);
-		console.log("Файл :", getFile);
+		console.log('Файл :', getFile);
 	};
 
 	const SaveSliderClick = (i, id, number) => {
 		axios
-			.post(`https://bsite.net/IvanovIvan/slider/save/${id}`, {
+			.post(`http://college-backend.somee.com/slider/save/${id}`, {
 				number: number,
 			})
-			.then((result) => { });
+			.then((result) => {});
 	};
 
 	const SaveButton = (i) => {
 		i.preventDefault();
 		if (state === 1) {
 			axios
-				.post(`https://bsite.net/IvanovIvan/student/add`, {
+				.post(`http://college-backend.somee.com/student/add`, {
 					name: titlePage,
 					page: setBarabulya,
 				})
@@ -282,7 +272,7 @@ function AdminPage() {
 
 		if (state === 2) {
 			axios
-				.post(`https://bsite.net/IvanovIvan/entrant/add`, {
+				.post(`http://college-backend.somee.com/entrant/add`, {
 					name: titlePage,
 					page: setBarabulya,
 				})
@@ -293,7 +283,7 @@ function AdminPage() {
 		}
 		if (state === 3) {
 			axios
-				.post(`https://bsite.net/IvanovIvan/speciality/add`, {
+				.post(`http://college-backend.somee.com/speciality/add`, {
 					name: titlePage,
 					page: setBarabulya,
 				})
@@ -303,7 +293,7 @@ function AdminPage() {
 		}
 		if (state == 5) {
 			axios
-				.post(`https://bsite.net/IvanovIvan/collegeactivity/add`, {
+				.post(`http://college-backend.somee.com/collegeactivity/add`, {
 					name: titlePage,
 					page: setBarabulya,
 				})
@@ -312,60 +302,56 @@ function AdminPage() {
 				});
 		}
 		if (state == 6) {
-			axios.post(`https://bsite.net/IvanovIvan/history/add`, {
-				name: titlePage,
-				page: setBarabulya
-			}).then(() => {
-				window.location.reload();
-			});
+			axios
+				.post(`http://college-backend.somee.com/history/add`, {
+					name: titlePage,
+					page: setBarabulya,
+				})
+				.then(() => {
+					window.location.reload();
+				});
 		}
 	};
 
 	const clickElement = (i, value, id) => {
-		if (value == "student") {
-			axios.get(`https://bsite.net/IvanovIvan/student/${id}`).then((result) => {
+		if (value == 'student') {
+			axios.get(`http://college-backend.somee.com/student/${id}`).then((result) => {
 				setElement(false);
 				setRes(result.data);
 				console.log(result.data);
 				setElement(true);
 			});
 		}
-		if (value == "collegeactivity") {
-			axios
-				.get(`https://bsite.net/IvanovIvan/collegeactivity/${id}`)
-				.then((result) => {
-					setElement(false);
-					setRes(result.data);
-					console.log(result.data);
-					setElement(true);
-				});
+		if (value == 'collegeactivity') {
+			axios.get(`http://college-backend.somee.com/collegeactivity/${id}`).then((result) => {
+				setElement(false);
+				setRes(result.data);
+				console.log(result.data);
+				setElement(true);
+			});
 		}
-		if (value == "speciality") {
-			axios
-				.get(`https://bsite.net/IvanovIvan/speciality/${id}`)
-				.then((result) => {
-					setElement(false);
-					setRes(result.data);
-					console.log(result.data);
-					setElement(true);
-				});
+		if (value == 'speciality') {
+			axios.get(`http://college-backend.somee.com/speciality/${id}`).then((result) => {
+				setElement(false);
+				setRes(result.data);
+				console.log(result.data);
+				setElement(true);
+			});
 		}
-		if (value == "history") {
-			axios
-				.get(`https://bsite.net/IvanovIvan/history/${id}`)
-				.then((result) => {
-					setElement(false);
-					setRes(result.data);
-					console.log(result.data);
-					setElement(true);
-				});
+		if (value == 'history') {
+			axios.get(`http://college-backend.somee.com/history/${id}`).then((result) => {
+				setElement(false);
+				setRes(result.data);
+				console.log(result.data);
+				setElement(true);
+			});
 		}
 	};
 	const SavePage = (i, id, text) => {
 		switch (state) {
 			case 1: {
 				axios
-					.post(`https://bsite.net/IvanovIvan/student/update/${id}`, {
+					.post(`http://college-backend.somee.com/student/update/${id}`, {
 						name: res.name,
 						page: text,
 						number: res.number,
@@ -377,7 +363,7 @@ function AdminPage() {
 			}
 			case 2: {
 				axios
-					.post(`https://bsite.net/IvanovIvan/entrant/update/${id}`, {
+					.post(`http://college-backend.somee.com/entrant/update/${id}`, {
 						name: res.name,
 						page: text,
 						number: res.number,
@@ -389,7 +375,7 @@ function AdminPage() {
 			}
 			case 3: {
 				axios
-					.post(`https://bsite.net/IvanovIvan/speciality/update/${id}`, {
+					.post(`http://college-backend.somee.com/speciality/update/${id}`, {
 						name: res.name,
 						page: text,
 						number: res.number,
@@ -401,7 +387,7 @@ function AdminPage() {
 			}
 			case 5: {
 				axios
-					.post(`https://bsite.net/IvanovIvan/collegeactivity/update/${id}`, {
+					.post(`http://college-backend.somee.com/collegeactivity/update/${id}`, {
 						name: res.name,
 						page: text,
 						number: res.number,
@@ -413,7 +399,7 @@ function AdminPage() {
 			}
 			case 6: {
 				axios
-					.post(`https://bsite.net/IvanovIvan/history/update/${id}`, {
+					.post(`http://college-backend.somee.com/history/update/${id}`, {
 						name: res.name,
 						page: text,
 						number: res.number,
@@ -427,19 +413,17 @@ function AdminPage() {
 	};
 	const EmpSubClick = (i, id) => {
 		setShowChudo(false);
-		axios
-			.get(`https://bsite.net/IvanovIvan/employerspage/${id}`)
-			.then((result) => {
-				console.log(result.data);
-				setObj(result.data);
-			});
+		axios.get(`http://college-backend.somee.com/employerspage/${id}`).then((result) => {
+			console.log(result.data);
+			setObj(result.data);
+		});
 		setState(15);
 	};
 	const DeletePage = (i, id) => {
 		switch (state) {
 			case 1: {
 				axios
-					.delete(`https://bsite.net/IvanovIvan/student/delete/${id}`)
+					.delete(`http://college-backend.somee.com/student/delete/${id}`)
 					.then((result) => {
 						console.log(result.data);
 						window.location.reload();
@@ -448,7 +432,7 @@ function AdminPage() {
 			}
 			case 2: {
 				axios
-					.delete(`https://bsite.net/IvanovIvan//entrant/delete/${id}`)
+					.delete(`http://college-backend.somee.com//entrant/delete/${id}`)
 					.then((result) => {
 						console.log(result.data);
 						window.location.reload();
@@ -457,7 +441,7 @@ function AdminPage() {
 			}
 			case 3: {
 				axios
-					.delete(`https://bsite.net/IvanovIvan/speciality/delelte/${id}`)
+					.delete(`http://college-backend.somee.com/speciality/delelte/${id}`)
 					.then((result) => {
 						console.log(result.data);
 						window.location.reload();
@@ -466,7 +450,7 @@ function AdminPage() {
 			}
 			case 5: {
 				axios
-					.delete(`https://bsite.net/IvanovIvan/collegeactivity/delete/${id}`)
+					.delete(`http://college-backend.somee.com/collegeactivity/delete/${id}`)
 					.then((result) => {
 						console.log(result.data);
 						window.location.reload();
@@ -475,7 +459,7 @@ function AdminPage() {
 			}
 			case 6: {
 				axios
-					.delete(`https://bsite.net/IvanovIvan/history/delete/${id}`)
+					.delete(`http://college-backend.somee.com/history/delete/${id}`)
 					.then((result) => {
 						console.log(result.data);
 						window.location.reload();
@@ -486,24 +470,22 @@ function AdminPage() {
 	};
 
 	const DeleteGallery = (i, id) => {
-		axios
-			.get(`https://bsite.net/IvanovIvan/gallery/delete/${id}`)
-			.then((result) => {
-				window.location.reload();
-			});
+		axios.get(`http://college-backend.somee.com/gallery/delete/${id}`).then((result) => {
+			window.location.reload();
+		});
 	};
 
 	const file = (e) => {
 		const files = Object(e.currentTarget.files)[0];
 		console.log(files);
 		setFile(files);
-		console.log("Файл :", getFile);
-		bodyFormData.append("file", files);
+		console.log('Файл :', getFile);
+		bodyFormData.append('file', files);
 		axios({
-			method: "POST",
-			url: "https://bsite.net/IvanovIvan/upload",
+			method: 'POST',
+			url: 'http://college-backend.somee.com/upload',
 			data: bodyFormData,
-			headers: { "Content-Type": "multipart/form-data" },
+			headers: { 'Content-Type': 'multipart/form-data' },
 		}).then((result) => {
 			console.log();
 			console.log(result.data);
@@ -523,12 +505,12 @@ function AdminPage() {
 	//9 - Attention
 
 	const AddGalleryFile = (i) => {
-		bodyFormData.append("file", getFile);
+		bodyFormData.append('file', getFile);
 		axios({
-			method: "POST",
-			url: "https://bsite.net/IvanovIvan/gallery/add",
+			method: 'POST',
+			url: 'http://college-backend.somee.com/gallery/add',
 			data: bodyFormData,
-			headers: { "Content-Type": "multipart/form-data" },
+			headers: { 'Content-Type': 'multipart/form-data' },
 		}).then((res) => {
 			console.log(getFile);
 			console.log(res.data);
@@ -540,7 +522,7 @@ function AdminPage() {
 		i.preventDefault();
 		console.log(text);
 		axios
-			.post(`https://bsite.net/IvanovIvan/opp/sub/${id}`, {
+			.post(`http://college-backend.somee.com/opp/sub/${id}`, {
 				text: text,
 			})
 			.then((result) => {
@@ -550,26 +532,24 @@ function AdminPage() {
 
 	const DeleteEmployer = (i, id, empid) => {
 		axios
-			.delete(
-				`https://bsite.net/IvanovIvan/employerspage/deleteemployer/${id}/${empid}`,
-			)
+			.delete(`http://college-backend.somee.com/employerspage/deleteemployer/${id}/${empid}`)
 			.then((result) => {
 				console.log(
-					`https://bsite.net/IvanovIvan/employerspage/deleteemployer/${id}/${empid}`,
+					`http://college-backend.somee.com/employerspage/deleteemployer/${id}/${empid}`
 				);
 				console.log(result.data);
 				if (result.status == 200) {
 					window.location.reload();
-				} else alert("Помилка");
+				} else alert('Помилка');
 			});
 	};
 
 	const SubmitFormEmp = (i, id, fullname, posada, kval, number, pred) => {
 		i.preventDefault();
-		bodyFormData.append("file", getFile);
+		bodyFormData.append('file', getFile);
 
 		axios
-			.post(`https://bsite.net/IvanovIvan/employerspage/addemployer/${id}`, {
+			.post(`http://college-backend.somee.com/employerspage/addemployer/${id}`, {
 				full_name: fullname,
 				posada: posada,
 				status: kval,
@@ -581,7 +561,7 @@ function AdminPage() {
 				console.log(result.data);
 
 				if (result.status == 200) window.location.reload();
-				else alert("Помилка");
+				else alert('Помилка');
 			});
 	};
 
@@ -589,7 +569,7 @@ function AdminPage() {
 		switch (state) {
 			case 1: {
 				axios
-					.post(`https://bsite.net/IvanovIvan/student/update/number/${id}`, {
+					.post(`http://college-backend.somee.com/student/update/number/${id}`, {
 						number: parseInt(one),
 					})
 					.then((result) => {
@@ -599,7 +579,7 @@ function AdminPage() {
 			}
 			case 2: {
 				axios
-					.post(`https://bsite.net/IvanovIvan/speciality/update/number/${id}`, {
+					.post(`http://college-backend.somee.com/speciality/update/number/${id}`, {
 						number: parseInt(one),
 					})
 					.then((result) => {
@@ -609,12 +589,9 @@ function AdminPage() {
 			}
 			case 4: {
 				axios
-					.post(
-						`https://bsite.net/IvanovIvan/employerspage/update/number/${id}`,
-						{
-							number: parseInt(one),
-						},
-					)
+					.post(`http://college-backend.somee.com/employerspage/update/number/${id}`, {
+						number: parseInt(one),
+					})
 					.then((result) => {
 						console.log(result.data);
 					});
@@ -622,12 +599,9 @@ function AdminPage() {
 			}
 			case 5: {
 				axios
-					.post(
-						`https://bsite.net/IvanovIvan/collegeactivity/update/number/${id}`,
-						{
-							number: parseInt(one),
-						},
-					)
+					.post(`http://college-backend.somee.com/collegeactivity/update/number/${id}`, {
+						number: parseInt(one),
+					})
 					.then((result) => {
 						console.log(result.data);
 					});
@@ -635,7 +609,7 @@ function AdminPage() {
 			}
 			case 6: {
 				axios
-					.post(`https://bsite.net/IvanovIvan/history/update/number/${id}`, {
+					.post(`http://college-backend.somee.com/history/update/number/${id}`, {
 						number: parseInt(one),
 					})
 					.then((result) => {
@@ -646,14 +620,14 @@ function AdminPage() {
 		}
 	};
 	return (
-		<div className="">
-			<div className="admin_title">
+		<div className=''>
+			<div className='admin_title'>
 				<h1>Ласкаво просимо адміністраторе!</h1>
 			</div>
-			<div className="all_admin">
-				<div className="menu_admin">
-					<div className="main_menu">
-						<div className="admin_menu_title">
+			<div className='all_admin'>
+				<div className='menu_admin'>
+					<div className='main_menu'>
+						<div className='admin_menu_title'>
 							<p>Меню</p>
 						</div>
 						<ul>
@@ -670,17 +644,17 @@ function AdminPage() {
 							<li onClick={(i) => OppClick(i)}>ОПП</li>
 						</ul>
 					</div>
-					<div className="sub_menu">
-						<div className="pidmenu">
+					<div className='sub_menu'>
+						<div className='pidmenu'>
 							<ul>
 								{state === 1 ? (
 									student.map((s, index) => (
-										<div className="qwert">
-											<li onClick={(i) => clickElement(i, "student", s.id)}>
+										<div className='qwert'>
+											<li onClick={(i) => clickElement(i, 'student', s.id)}>
 												{s.name}
 											</li>
 											<input
-												type="number"
+												type='number'
 												placeholder={s.number}
 												onChange={(i) => setOne(i.target.value)}
 											/>
@@ -694,12 +668,14 @@ function AdminPage() {
 								)}
 								{state === 2 ? (
 									speciality.map((s, index) => (
-										<div className="qwert">
-											<li onClick={(i) => clickElement(i, "speciality", s.id)}>
+										<div className='qwert'>
+											<li
+												onClick={(i) => clickElement(i, 'speciality', s.id)}
+											>
 												{s.name}
 											</li>
 											<input
-												type="number"
+												type='number'
 												placeholder={s.number}
 												onChange={(i) => setTwo(i.target.value)}
 											/>
@@ -713,10 +689,10 @@ function AdminPage() {
 								)}
 								{state === 4 ? (
 									employers.map((s, index) => (
-										<div className="qwert">
+										<div className='qwert'>
 											<li onClick={(i) => EmpSubClick(i, s.id)}>{s.name}</li>
 											<input
-												type="number"
+												type='number'
 												placeholder={s.number}
 												onChange={(i) => setThree(i.target.value)}
 											/>
@@ -730,16 +706,16 @@ function AdminPage() {
 								)}
 								{state === 5 ? (
 									activies.map((a, index) => (
-										<div className="qwert">
+										<div className='qwert'>
 											<li
 												onClick={(i) =>
-													clickElement(i, "collegeactivity", a.id)
+													clickElement(i, 'collegeactivity', a.id)
 												}
 											>
 												{a.name}
 											</li>
 											<input
-												type="number"
+												type='number'
 												placeholder={a.number}
 												onChange={(i) => setFour(i.target.value)}
 											/>
@@ -753,12 +729,12 @@ function AdminPage() {
 								)}
 								{state === 6 ? (
 									history.map((h, index) => (
-										<div className="qwert">
-											<li onClick={(i) => clickElement(i, "history", h.id)}>
+										<div className='qwert'>
+											<li onClick={(i) => clickElement(i, 'history', h.id)}>
 												{h.name}
 											</li>
 											<input
-												type="number"
+												type='number'
 												placeholder={h.number}
 												onChange={(i) => setFive(i.target.value)}
 											/>
@@ -773,36 +749,32 @@ function AdminPage() {
 								)}
 							</ul>
 						</div>
-						<button
-							id="add"
-							style={{ display: "none" }}
-							onClick={(i) => AddClick(i)}
-						>
+						<button id='add' style={{ display: 'none' }} onClick={(i) => AddClick(i)}>
 							Додати
 						</button>
 					</div>
 				</div>
-				<div className="other_admin">
+				<div className='other_admin'>
 					{showChudo === true ? (
 						<div>
-							<div className="input_block">
+							<div className='input_block'>
 								<form onSubmit={(i) => SaveButton(i)}>
 									<input
-										placeholder="Назва сторінки"
+										placeholder='Назва сторінки'
 										onChange={(i) => setTitlePage(i.target.value)}
 										value={titlePage}
 										required
 									></input>
 									<p>{linkres}</p>
 									<input
-										id="fileinput"
-										type="file"
+										id='fileinput'
+										type='file'
 										onChange={(i) => file(i)}
 									></input>
-									<div className="but">
-										<button type="submit">Зберегти</button>
+									<div className='but'>
+										<button type='submit'>Зберегти</button>
 										<button onClick={(i) => setShowChudo(false)}>
-											Закрити{" "}
+											Закрити{' '}
 										</button>
 									</div>
 								</form>
@@ -814,19 +786,19 @@ function AdminPage() {
 					)}
 					{state === 7 ? (
 						<div>
-							<div className="news_add_block">
+							<div className='news_add_block'>
 								<News />
 							</div>
-							<div className="news_admin">
+							<div className='news_admin'>
 								{news.map((n, index) => (
-									<div className="one_admin_news">
+									<div className='one_admin_news'>
 										<h1>{n.title}</h1>
-										<div className="area_with_text">
+										<div className='area_with_text'>
 											<img src={n.image} />
 											<p>{n.short_text}</p>
 										</div>
 										<i
-											class="fas fa-minus-circle"
+											class='fas fa-minus-circle'
 											onClick={(i) => DeleteNewsClick(i, n.id)}
 										></i>
 									</div>
@@ -836,41 +808,50 @@ function AdminPage() {
 					) : (
 						<></>
 					)}
-					<div className="slider_all">
-						<div className="slider_image">
+					<div className='slider_all'>
+						<div className='slider_image'>
 							{
 								//СЛАЙДЕР
 								state === 8 ? (
 									<div>
-										<div className="slider_image">
+										<div className='slider_image'>
 											{slider.map((s, index) => (
-												<div className="image_with_delete">
+												<div className='image_with_delete'>
 													<img src={s.image}></img>
-													<div className="knopku">
+													<div className='knopku'>
 														<input
-															type="number"
+															type='number'
 															placeholder={s.number}
-															onChange={(i) => setNumber(i.target.value)}
+															onChange={(i) =>
+																setNumber(i.target.value)
+															}
 														/>
 														<button
-															onClick={(i) => SaveSliderClick(i, s.id, number)}
+															onClick={(i) =>
+																SaveSliderClick(i, s.id, number)
+															}
 														>
 															Зберегти
 														</button>
-														<button onClick={(i) => DeleteClick(i, s.id)}>
+														<button
+															onClick={(i) => DeleteClick(i, s.id)}
+														>
 															Видалити
 														</button>
 													</div>
 												</div>
 											))}
 										</div>
-										<div className="upload">
+										<div className='upload'>
 											<input
-												type="file"
-												id="selectFile"
+												type='file'
+												id='selectFile'
 												onChange={(i) => handleFileSelected(i)}
 											/>
-											<button id="slideradd" onClick={(i) => SliderAddClick(i)}>
+											<button
+												id='slideradd'
+												onClick={(i) => SliderAddClick(i)}
+											>
 												Додати
 											</button>
 										</div>
@@ -883,13 +864,9 @@ function AdminPage() {
 					</div>
 					{element ? (
 						<div>
-							<div className="special_editor_buttons">
+							<div className='special_editor_buttons'>
 								<p>{linkres}</p>
-								<input
-									id="fileinput"
-									type="file"
-									onChange={(i) => file(i)}
-								></input>
+								<input id='fileinput' type='file' onChange={(i) => file(i)}></input>
 								<button onClick={(i) => SavePage(i, res.id, barabulya2)}>
 									Зберегти
 								</button>
@@ -902,15 +879,15 @@ function AdminPage() {
 					)}
 					{state === 12 ? (
 						<div>
-							<div className="title_galery">
-								<input type="file" onChange={(i) => handleFileSelected(i)} />
+							<div className='title_galery'>
+								<input type='file' onChange={(i) => handleFileSelected(i)} />
 								<button onClick={(i) => AddGalleryFile(i)}>Додати</button>
 							</div>
-							<div className="admin_gallery">
+							<div className='admin_gallery'>
 								{gallery.map((g, index) => (
-									<div className="gallery_item">
+									<div className='gallery_item'>
 										<img src={g.image} />
-										<div className="knopku_gallery">
+										<div className='knopku_gallery'>
 											<button onClick={(i) => DeleteGallery(i, g.id)}>
 												Видалити
 											</button>
@@ -923,22 +900,22 @@ function AdminPage() {
 						<></>
 					)}
 					{state === 13 ? (
-						<div className="opp_admin">
+						<div className='opp_admin'>
 							{opp?.map((o, index) => (
-								<div className="one_opp_admin">
+								<div className='one_opp_admin'>
 									<h2>{o.name}</h2>
 									<ul>
-										<div className="input_for_opp">
+										<div className='input_for_opp'>
 											{o?.opp?.map((i, index) => (
 												<li>{i}</li>
 											))}
 											<form onSubmit={(i) => AddSubOpp(i, o.id, suboppfield)}>
 												<input
-													type="text"
+													type='text'
 													onChange={(i) => setSubOppField(i.target.value)}
 													required
 												/>
-												<button type="submit">Додати Опп</button>
+												<button type='submit'>Додати Опп</button>
 											</form>
 										</div>
 									</ul>
@@ -950,8 +927,8 @@ function AdminPage() {
 					)}
 					{state === 9 ? <Uvaha /> : <></>}
 					{state === 15 ? (
-						<div className="admin_employers">
-							<div className="forma_add_emp">
+						<div className='admin_employers'>
+							<div className='forma_add_emp'>
 								<form
 									onSubmit={(i) =>
 										SubmitFormEmp(
@@ -961,48 +938,48 @@ function AdminPage() {
 											posada,
 											kval,
 											number,
-											pred,
+											pred
 										)
 									}
 								>
 									<input
-										type="text"
-										placeholder="Повне ім`я"
+										type='text'
+										placeholder='Повне ім`я'
 										required
 										onChange={(i) => setFullname(i.target.value)}
 										value={fullname}
 									/>
 									<input
-										type="text"
-										placeholder="Посада"
+										type='text'
+										placeholder='Посада'
 										required
 										onChange={(i) => setPosada(i.target.value)}
 										value={posada}
 									/>
 									<input
-										type="text"
-										placeholder="Кваліфікація"
+										type='text'
+										placeholder='Кваліфікація'
 										onChange={(i) => setKval(i.target.value)}
 										value={kval}
 									/>
 									<input
-										type="text"
-										placeholder="Номер телефону"
+										type='text'
+										placeholder='Номер телефону'
 										onChange={(i) => setNumber(i.target.value)}
 									/>
 									<input
-										type="text"
-										placeholder="Предмети"
+										type='text'
+										placeholder='Предмети'
 										onChange={(i) => setPred(i.target.value)}
 										value={pred}
 									/>
-									<input type="file" onChange={(i) => file(i)} />
+									<input type='file' onChange={(i) => file(i)} />
 
-									<button type="submit">Додати</button>
+									<button type='submit'>Додати</button>
 								</form>
 							</div>
 							{obj.employers?.map((e, index) => (
-								<div className="one_admin_emp">
+								<div className='one_admin_emp'>
 									<h2>{e.full_name}</h2>
 									<p>{e.posada}</p>
 									<button onClick={(i) => DeleteEmployer(i, obj.id, e.id)}>

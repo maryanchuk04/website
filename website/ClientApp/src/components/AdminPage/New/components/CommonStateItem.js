@@ -1,27 +1,25 @@
-import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import { ClipLoader } from "react-spinners";
-import Chudo from "../../Chudo";
-import SubSidebar from "./SubSidebar";
-import "./CommonStateItem.css";
-import QuillEditor from "./Editor/QuillEditor";
-import { showAlert } from "../../../Shared/Alert";
+import axios from 'axios';
+import React, { useEffect, useRef, useState } from 'react';
+import { ClipLoader } from 'react-spinners';
+import Chudo from '../../Chudo';
+import SubSidebar from './SubSidebar';
+import './CommonStateItem.css';
+import QuillEditor from './Editor/QuillEditor';
+import { showAlert } from '../../../Shared/Alert';
 
 const CommonStateItem = ({ name, toDefault }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [items, setItems] = useState(null);
 	const [editor, setEditor] = useState(null);
 	const [title, setTitle] = useState(null);
-	const [uploadLink, setUploadLink] = useState("");
+	const [uploadLink, setUploadLink] = useState('');
 	const [currentPageId, setCurrentPageId] = useState(null);
 
 	const editorRef = useRef(null);
 
 	useEffect(() => {
 		(async () => {
-			const response = await axios.get(
-				`https://bsite.net/IvanovIvan/${name}`,
-			);
+			const response = await axios.get(`http://college-backend.somee.com/${name}`);
 			setIsOpen(false);
 			setItems(response.data);
 		})();
@@ -34,12 +32,12 @@ const CommonStateItem = ({ name, toDefault }) => {
 	const uploadFile = (e) => {
 		const files = Object(e.currentTarget.files)[0];
 		const bodyFormData = new FormData();
-		bodyFormData.append("file", files);
+		bodyFormData.append('file', files);
 		axios({
-			method: "POST",
-			url: "https://bsite.net/IvanovIvan/upload",
+			method: 'POST',
+			url: 'http://college-backend.somee.com/upload',
 			data: bodyFormData,
-			headers: { "Content-Type": "multipart/form-data" },
+			headers: { 'Content-Type': 'multipart/form-data' },
 		}).then((result) => {
 			setUploadLink(result.data);
 		});
@@ -55,14 +53,15 @@ const CommonStateItem = ({ name, toDefault }) => {
 
 	const deletePage = () => {
 		if (currentPageId) {
-			axios.delete(`https://bsite.net/IvanovIvan/${name}/delete/${currentPageId}`)
+			axios
+				.delete(`http://college-backend.somee.com/${name}/delete/${currentPageId}`)
 				.then(() => {
-					showAlert("Сторінку було успішно видалено", "info");
+					showAlert('Сторінку було успішно видалено', 'info');
 					toDefault();
 				})
-				.catch(() => showAlert("Щось пішло не так!", "error"));
+				.catch(() => showAlert('Щось пішло не так!', 'error'));
 		}
-	}
+	};
 
 	const submitEditor = (e) => {
 		e.preventDefault();
@@ -71,70 +70,64 @@ const CommonStateItem = ({ name, toDefault }) => {
 		//create
 		if (!currentPageId) {
 			axios
-				.post(`https://bsite.net/IvanovIvan/${name}/add`, {
+				.post(`http://college-backend.somee.com/${name}/add`, {
 					name: title,
 					page: editorRef.current.value,
 				})
 				.then((result) => {
-					showAlert("Нова сторінка успішно створена!", "success");
+					showAlert('Нова сторінка успішно створена!', 'success');
 					toDefault();
 				})
-				.catch(() => showAlert("Щось пішло не так!", "error"));
+				.catch(() => showAlert('Щось пішло не так!', 'error'));
 			return;
 		}
 
 		// update
-		axios.post(`https://bsite.net/IvanovIvan/${name}/update/${currentPageId}`, {
-			name: title,
-			page: editorRef.current.value,
-			number: 0,
-			// TODO Number update
-		})
+		axios
+			.post(`http://college-backend.somee.com/${name}/update/${currentPageId}`, {
+				name: title,
+				page: editorRef.current.value,
+				number: 0,
+				// TODO Number update
+			})
 			.then(() => {
-				showAlert("Данні було збережено!", "info");
+				showAlert('Данні було збережено!', 'info');
 				toDefault();
 			})
-			.catch(() => showAlert("Щось пішло не так!", "error"))
-
+			.catch(() => showAlert('Щось пішло не так!', 'error'));
 	};
 
 	return items === null ? (
-		<div style={{ display: "grid", placeItems: "center", height: "100%" }}>
+		<div style={{ display: 'grid', placeItems: 'center', height: '100%' }}>
 			<ClipLoader size={70} />
 		</div>
 	) : (
-		<div className="comm_state">
-			<SubSidebar
-				activeItem={title}
-				elements={items}
-				handleClick={handleClick}
-			/>
+		<div className='comm_state'>
+			<SubSidebar activeItem={title} elements={items} handleClick={handleClick} />
 			{isOpen && (
-				<div className="editor_container">
-					<div className="controll">
+				<div className='editor_container'>
+					<div className='controll'>
 						<form onSubmit={submitEditor}>
 							<input
-								id="title"
-								placeholder={title === "" && `Назва сторінки`}
+								id='title'
+								placeholder={title === '' && `Назва сторінки`}
 								onChange={(i) => setTitle(i.target.value)}
 								value={title}
 								required
 							></input>
-							<div className="btns">
+							<div className='btns'>
 								<button>Зберегти</button>
-								<button type="button" onClick={deletePage}>Видалити</button>
+								<button type='button' onClick={deletePage}>
+									Видалити
+								</button>
 							</div>
 						</form>
 						<div>
 							<p>Посилання на файл буде тут: {uploadLink}</p>
-							<input
-								id="fileinput"
-								type="file"
-								onChange={uploadFile}
-							></input>
+							<input id='fileinput' type='file' onChange={uploadFile}></input>
 						</div>
 					</div>
-					<div className="editor">
+					<div className='editor'>
 						<QuillEditor value={editor} quillRef={editorRef} />
 					</div>
 				</div>

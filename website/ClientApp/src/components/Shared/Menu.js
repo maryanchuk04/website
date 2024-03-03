@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import "./Menu.css";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import './Menu.css';
 
 function Menu() {
 	const [students, setStrudents] = useState([]);
@@ -11,25 +11,21 @@ function Menu() {
 	const [speciality, setSpeciality] = useState([]);
 	const [employers, setEmployers] = useState([]);
 	const [toggleBurger, setToggleBurger] = useState(false);
-	const st = "student";
-	const act = "collegeactivity";
-	const his = "history";
-	const abit = "entrant";
-	const spec = "speciality";
-	const emp = "employerspage";
+	const st = 'student';
+	const act = 'collegeactivity';
+	const his = 'history';
+	const abit = 'entrant';
+	const spec = 'speciality';
+	const emp = 'employerspage';
 
 	useEffect(() => {
 		(async () => {
-			const res1 = await axios.get("https://bsite.net/IvanovIvan/student");
-			const res5 = await axios.get(
-				"https://bsite.net/IvanovIvan/collegeactivity",
-			);
-			const res2 = await axios.get("https://bsite.net/IvanovIvan/speciality");
-			const res3 = await axios.get("https://bsite.net/IvanovIvan/history");
-			const res4 = await axios.get("https://bsite.net/IvanovIvan/entrant");
-			const res6 = await axios.get(
-				"https://bsite.net/IvanovIvan/employerspage",
-			);
+			const res1 = await axios.get('http://college-backend.somee.com/student');
+			const res5 = await axios.get('http://college-backend.somee.com/collegeactivity');
+			const res2 = await axios.get('http://college-backend.somee.com/speciality');
+			const res3 = await axios.get('http://college-backend.somee.com/history');
+			const res4 = await axios.get('http://college-backend.somee.com/entrant');
+			const res6 = await axios.get('http://college-backend.somee.com/employerspage');
 			setStrudents(res1.data);
 			setActivity(res5.data);
 			setSpeciality(res2.data);
@@ -40,38 +36,38 @@ function Menu() {
 	}, []);
 
 	return (
-		<div className="menu_header">
-			<div class="container_all">
-				<nav className="one">
+		<div className='menu_header'>
+			<div class='container_all'>
+				<nav className='one'>
 					<button
-						class={`burger ${toggleBurger && "opened"}`}
+						class={`burger ${toggleBurger && 'opened'}`}
 						onClick={() => setToggleBurger(!toggleBurger)}
-						aria-label="Main Menu"
+						aria-label='Main Menu'
 						aria-expanded={toggleBurger}
 					>
-						<svg width="100" height="100" viewBox="0 0 100 100">
+						<svg width='100' height='100' viewBox='0 0 100 100'>
 							<path
-								class="line line1"
-								d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+								class='line line1'
+								d='M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058'
 							/>
-							<path class="line line2" d="M 20,50 H 80" />
+							<path class='line line2' d='M 20,50 H 80' />
 							<path
-								class="line line3"
-								d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+								class='line line3'
+								d='M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942'
 							/>
 						</svg>
 					</button>
-					<ul className={!toggleBurger && "showHeader" && "topmenu"}>
+					<ul className={!toggleBurger && 'showHeader' && 'topmenu'}>
 						<li>
-							<Link to="/">Головна</Link>
+							<Link to='/'>Головна</Link>
 						</li>
 						<li>
-							{" "}
-							<Link to="/news">Новини</Link>
+							{' '}
+							<Link to='/news'>Новини</Link>
 						</li>
 						<li>
 							Діяльність коледжу
-							<ul className="submenu">
+							<ul className='submenu'>
 								{activity.map((a, index) => (
 									<li>
 										<a key={(act, a.id)} href={`/${act}/${a.id}`}>
@@ -84,10 +80,10 @@ function Menu() {
 
 						<li>
 							Студенту
-							<ul className="submenu">
+							<ul className='submenu'>
 								<li>
-									{" "}
-									<Link to="/student/callshedule">Розклад дзвінків</Link>
+									{' '}
+									<Link to='/student/callshedule'>Розклад дзвінків</Link>
 								</li>
 
 								{students.map((s, index) => (
@@ -101,8 +97,8 @@ function Menu() {
 						</li>
 
 						<li>
-							<Link to="/entrant"> Абітурієнту</Link>
-							<ul className="submenu">
+							<Link to='/entrant'> Абітурієнту</Link>
+							<ul className='submenu'>
 								{abiturient.map((s, index) => (
 									<li>
 										<Link key={(abit, s.id)} to={`/${abit}/${s.id}`}>
@@ -113,9 +109,9 @@ function Menu() {
 							</ul>
 						</li>
 						<li>
-							{" "}
-							<Link to="/speciality"> Спеціальності </Link>
-							<ul className="submenu">
+							{' '}
+							<Link to='/speciality'> Спеціальності </Link>
+							<ul className='submenu'>
 								{/* <li>
 									{" "}
 									<Link to="/speciality/cooking">Харчові технології</Link>
@@ -140,27 +136,27 @@ function Menu() {
 
 						<li>
 							Колектив
-							<ul className="submenu">
+							<ul className='submenu'>
 								<li>
-									<Link to="/employers/admin">Адміністрація</Link>
+									<Link to='/employers/admin'>Адміністрація</Link>
 								</li>
 								<li>
-									<Link to="/employers/ped">Педагогічний склад</Link>
+									<Link to='/employers/ped'>Педагогічний склад</Link>
 								</li>
 								<li>
-									<Link to="/employers/gosp">Господарська частина</Link>
+									<Link to='/employers/gosp'>Господарська частина</Link>
 								</li>
 								<li>
-									<Link to="/employers/not">Невикладацький склад</Link>
+									<Link to='/employers/not'>Невикладацький склад</Link>
 								</li>
 							</ul>
 						</li>
 
 						<li>
-							<Link to="/history">Про коледж</Link>
-							<ul className="submenu">
+							<Link to='/history'>Про коледж</Link>
+							<ul className='submenu'>
 								<li>
-									<Link to="/history/galery">Галерея</Link>
+									<Link to='/history/galery'>Галерея</Link>
 								</li>
 								{history.map((a, index) => (
 									<li>

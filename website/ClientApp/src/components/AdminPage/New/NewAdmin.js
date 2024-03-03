@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AdminSidebar from "./AdminSidebar";
 import "./NewAdmin.css";
 import Wrapper from "./Wrapper";
 
 const NewAdmin = () => {
 	const [menuState, setMenuState] = useState(null);
+
+	useEffect(() => {
+		if (!localStorage.getItem("AdminValue") || localStorage.getItem("AdminValue") === false) {
+			window.location = "/login"
+		}
+	}, [])
 
 	return (
 		<div className="admin">
