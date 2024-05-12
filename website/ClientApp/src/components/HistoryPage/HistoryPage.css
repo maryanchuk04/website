@@ -1,26 +1,30 @@
-.title_history{
+.title_history {
     margin: 0 auto;
     height: 10vh;
     text-align: center;
     align-items: center;
     display: grid;
 }
-.title_history h1{
+
+.title_history h1 {
     font-size: 40px;
     font-weight: 800;
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
 
 }
-.historypage .container_all{
+
+.historypage .container_all {
     display: flex !important;
     flex-direction: column !important;
 }
-.title_history h1:hover{
+
+.title_history h1:hover {
     font-size: 40px;
     font-weight: 800;
-    color:rgb(194, 44, 44);
+    color: rgb(194, 44, 44);
     transition: 1s;
 }
+
 .tsutata {
     margin: 10px;
     border-radius: 10px;
@@ -30,251 +34,300 @@
     justify-content: space-between;
     align-items: center;
 }
-.tsutata img{
+
+.tsutata img {
     height: 30%;
     width: 30%;
     margin: 20px;
-    
+
 }
 
-.tsutata >.text{
+.tsutata>.text {
     font-size: 20px;
     font-style: italic;
-    margin: 20px 30px 20px 20px ;
+    margin: 20px 30px 20px 20px;
     text-align: right;
     display: flex;
 }
 
-.else_text p{
+.else_text p {
     font-size: 20px;
     text-align: justify;
     font-size: 20px;
-    margin: 25px 10px ;
+    margin: 25px 10px;
 }
-.else_text .zavdannya{
-    background-color:rgb(220, 244, 255);
-    margin-top:20px;
+
+.else_text .zavdannya {
+    background-color: rgb(220, 244, 255);
+    margin-top: 20px;
     font-size: 20px;
     font-style: italic;
     padding: 20px 10px 20px 10px;
     border-radius: 10px;
 }
-.else_text .zavdannya h1{
+
+.else_text .zavdannya h1 {
     font-size: 24px;
     font-weight: 900;
 }
-.else_text .zavdannya ol{
+
+.else_text .zavdannya ol {
     display: block;
-    
-}
-.else_text .zavdannya ol li {
-    margin-top: 15px;
-    
+
 }
 
-.text_history p{
-   
+.else_text .zavdannya ol li {
+    margin-top: 15px;
+
 }
+
+.text_history p {}
+
 .pidgotovka ul {
     display: flex;
     flex-direction: column;
-    margin: 40px 0 ;
+    margin: 40px 0;
 }
-.pidgotovka h2{
+
+.pidgotovka h2 {
     font-size: 26px;
     font-weight: 800;
 }
 
-.kursuv{
+.kursuv {
     font-style: italic;
     font-weight: 600;
 }
-.pidgotovka ul li{
-    list-style:inside;
+
+.pidgotovka ul li {
+    list-style: inside;
+}
+
+.book-link-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.book-link-container img {
+    width: 400px;
+    height: 550px;
 }
 
 @media (max-width:1025px) {
 
-    .title_history h1{
+    .title_history h1 {
         font-size: 32px;
         font-weight: 800;
-        color:rgb(0, 0, 0);
-    
+        color: rgb(0, 0, 0);
+
     }
-    .tsutata >.text{
+
+    .tsutata>.text {
         font-size: 17px;
         font-style: italic;
-        margin: 20px 30px 20px 20px ;
+        margin: 20px 30px 20px 20px;
         text-align: right;
         display: flex;
     }
-    .else_text p{
-        
+
+    .else_text p {
+
         text-align: justify;
         font-size: 17px;
-        margin: 25px 10px ;
-    } 
-    .else_text .zavdannya h1{
-        font-size: 21px;
-       
+        margin: 25px 10px;
     }
 
-    .else_text .zavdannya{
-       
-        margin-top:20px;
+    .else_text .zavdannya h1 {
+        font-size: 21px;
+
+    }
+
+    .else_text .zavdannya {
+
+        margin-top: 20px;
         font-size: 17px;
         padding: 20px 10px 20px 10px;
         border-radius: 10px;
     }
-    .pidgotovka h2{
+
+    .pidgotovka h2 {
         font-size: 21px;
     }
-    .pidgotovka ul{
-        font-size: 17px;  
+
+    .pidgotovka ul {
+        font-size: 17px;
     }
 }
 
 @media (max-width:769px) {
 
-    .title_history h1{
+    .title_history h1 {
         font-size: 27px;
         font-weight: 800;
-        color:rgb(0, 0, 0);
-    
+        color: rgb(0, 0, 0);
+
     }
-    .tsutata >.text{
+
+    .tsutata>.text {
         font-size: 13px;
         font-style: italic;
-        margin: 20px 30px 20px 20px ;
+        margin: 20px 30px 20px 20px;
         text-align: right;
         display: flex;
     }
-    .else_text p{
-        
+
+    .else_text p {
+
         text-align: justify;
         font-size: 13px;
-        margin: 15px 10px ;
-    } 
-    .else_text .zavdannya h1{
-        font-size: 16px;
-       
+        margin: 15px 10px;
     }
 
-    .else_text .zavdannya{
-       
-        margin-top:20px;
+    .else_text .zavdannya h1 {
+        font-size: 16px;
+
+    }
+
+    .else_text .zavdannya {
+
+        margin-top: 20px;
         font-size: 13px;
         padding: 20px 10px 20px 10px;
         border-radius: 10px;
     }
 
-    .pidgotovka h2{
+    .pidgotovka h2 {
         font-size: 16px;
     }
-    .pidgotovka ul{
-        font-size: 13px;  
+
+    .pidgotovka ul {
+        font-size: 13px;
+    }
+
+
+    .book-link-container img {
+        width: 300px;
+        height: 480px;
     }
 }
 
 @media (max-width:426px) {
 
-    .title_history h1{
+    .title_history h1 {
         font-size: 20px;
         font-weight: 800;
-        color:rgb(0, 0, 0);
-    
+        color: rgb(0, 0, 0);
+
     }
+
     .tsutata {
         display: flex;
         flex-direction: column;
     }
-    .tsutata img{
+
+    .tsutata img {
         height: 50%;
         width: 50%;
         margin: 20px;
-        
+
     }
-    .tsutata >.text{
+
+    .tsutata>.text {
         font-size: 12px;
         font-style: italic;
-        margin: 10px ;
+        margin: 10px;
         text-align: justify;
         display: flex;
     }
-    .else_text p{
-        
+
+    .else_text p {
+
         text-align: justify;
         font-size: 12px;
-        margin: 10px ;
-    } 
-    .else_text .zavdannya h1{
-        font-size: 14px;
-       
+        margin: 10px;
     }
 
-    .else_text .zavdannya{
-       
-        margin-top:20px;
+    .else_text .zavdannya h1 {
+        font-size: 14px;
+
+    }
+
+    .else_text .zavdannya {
+
+        margin-top: 20px;
         font-size: 12px;
         padding: 10px;
         border-radius: 10px;
     }
 
-    .pidgotovka h2{
+    .pidgotovka h2 {
         font-size: 14px;
     }
-    .pidgotovka ul{
-        font-size: 12px;  
+
+    .pidgotovka ul {
+        font-size: 12px;
+    }
+
+    .book-link-container img {
+        width: 250px;
+        height: 400px;
     }
 }
 
 @media (max-width:376px) {
 
-    .title_history h1{
+    .title_history h1 {
         font-size: 17px;
         font-weight: 800;
-        color:rgb(0, 0, 0);
-    
+        color: rgb(0, 0, 0);
+
     }
+
     .tsutata {
         display: flex;
         flex-direction: column;
     }
-    .tsutata img{
+
+    .tsutata img {
         height: 50%;
         width: 50%;
         margin: 10px;
-        
+
     }
-    .tsutata >.text{
+
+    .tsutata>.text {
         font-size: 12px;
         font-style: italic;
-        margin: 10px ;
+        margin: 10px;
         text-align: justify;
         display: flex;
     }
-    .else_text p{
-        
+
+    .else_text p {
+
         text-align: justify;
         font-size: 12px;
-        margin: 10px ;
-    } 
-    .else_text .zavdannya h1{
-        font-size: 14px;
-       
+        margin: 10px;
     }
 
-    .else_text .zavdannya{
-       
-        margin-top:20px;
+    .else_text .zavdannya h1 {
+        font-size: 14px;
+
+    }
+
+    .else_text .zavdannya {
+
+        margin-top: 20px;
         font-size: 12px;
         padding: 10px;
         border-radius: 10px;
     }
-    .pidgotovka h2{
+
+    .pidgotovka h2 {
         font-size: 14pxpx;
     }
-    .pidgotovka ul{
-        font-size: 12px;  
+
+    .pidgotovka ul {
+        font-size: 12px;
     }
 }
